@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Lab1_Sol_2020.X.production.sym \
   --cmf=dist/default/production\Lab1_Sol_2020.X.production.cmf -z -Q18F458 \
-  -oC:\Users\tge\AppData\Local\Temp\sck4.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\tge\AppData\Local\Temp\s9pc.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Lab1_Sol_2020.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0A0h-05FFh -pstack=STACK -ACODE=00h-03FFFhx2 \
   -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\tge\AppData\Local\Temp\sck4.o \
+  C:\Users\tge\AppData\Local\Temp\s9pc.o \
   dist/default/production\Lab1_Sol_2020.X.production.o 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\tge\AppData\Local\Temp\sck4.o
+C:\Users\tge\AppData\Local\Temp\s9pc.o
                 text                                B56      B56        2      30A       0
                 init                                 2A       2A        4        C       0
                 reset_vec                             0        0        6        0       0
@@ -379,7 +379,7 @@ ___rparam_used                                                      (abs)       
 ___sp                                                               stack        000000
 __accesstop                                                         (abs)        000060
 __activetblptr                                                      (abs)        000002
-__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\sck4.o               (abs)        000001
+__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\s9pc.o               (abs)        000001
 __cntErrataNOP_dist/default/production\Lab1_Sol_2020.X.production.o (abs)        000045
 __end_of__initialization                                            cinit        000ACE
 __end_of_high_isr                                                   intcode_body 0007A0
@@ -493,7 +493,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 32 in file "main.c"
+		line 33 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -913,7 +913,7 @@ Total ram usage:        0 bytes
 
  *************** function _initialisation *****************
  Defined at:
-		line 64 in file "main.c"
+		line 65 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
