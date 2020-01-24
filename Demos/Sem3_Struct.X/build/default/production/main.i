@@ -4817,6 +4817,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 9 "main.c" 2
 
 
+
+
 struct moteur
 {
     int vitesse;
@@ -4824,11 +4826,27 @@ struct moteur
     int courant;
 };
 
-struct moteur stMotMoulin;
 
 void main(void)
 {
+    struct moteur stMotMoulin;
 
+    stMotMoulin.vitesse = 100;
+    stMotMoulin.temperature = 33;
+    stMotMoulin.courant = 12;
+
+    TRISD = 0;
+    TRISBbits.RB0 = 1;
+
+    while (1)
+    {
+        PORTD = stMotMoulin.courant;
+        if (PORTBbits.RB0 == 0)
+        {
+            while (PORTBbits.RB0 == 0);
+            stMotMoulin.courant ++;
+        }
+    }
 
 
 }

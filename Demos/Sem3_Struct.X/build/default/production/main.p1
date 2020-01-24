@@ -1,9 +1,61 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"12 main.c
-[; ;main.c: 12: {
+[p mainexit ]
+"14 main.c
+[; ;main.c: 14: {
 [s S301 `i 1 `i 1 `i 1 ]
 [n S301 moteur vitesse temperature courant ]
-[p mainexit ]
+"2698 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 2698: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"2265
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 2265:     struct {
+[s S90 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"2275
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 2275:     struct {
+[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S91 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"2264
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 2264: typedef union {
+[u S89 `S90 1 `S91 1 ]
+[n S89 . . . ]
+"2286
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 2286: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
+[v _TRISBbits `VS89 ~T0 @X0 0 e@3987 ]
+"1184
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 1184: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+"794
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 794:     struct {
+[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S38 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"804
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 804:     struct {
+[s S39 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S39 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"814
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 814:     struct {
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . AN12 AN10 AN8 AN9 AN11 PGM PGC PGD ]
+"824
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 824:     struct {
+[s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S41 . FLT0 C12IN3M . C12IN2M ]
+"830
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 830:     struct {
+[s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S42 . . C12IN3N . C12IN2N ]
+"836
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 836:     struct {
+[s S43 :3 `uc 1 :1 `uc 1 ]
+[n S43 . . CCP2_PA2 ]
+"793
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 793: typedef union {
+[u S37 `S38 1 `S39 1 `S40 1 `S41 1 `S42 1 `S43 1 ]
+[n S37 . . . . . . . ]
+"841
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 841: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS37 ~T0 @X0 0 e@3969 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -442,19 +494,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7326
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 7326: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"18 main.c
-[; ;main.c: 18: struct moteur stMotMoulin;
-[v _stMotMoulin `S301 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"20
-[; ;main.c: 20: void main(void)
+"21 main.c
+[; ;main.c: 21: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"21
-[; ;main.c: 21: {
+"22
+[; ;main.c: 22: {
 {
 [e :U _main ]
 [f ]
+"23
+[; ;main.c: 23:     struct moteur stMotMoulin;
+[v _stMotMoulin `S301 ~T0 @X0 1 a ]
 "25
-[; ;main.c: 25: }
+[; ;main.c: 25:     stMotMoulin.vitesse = 100;
+[e = . _stMotMoulin 0 -> 100 `i ]
+"26
+[; ;main.c: 26:     stMotMoulin.temperature = 33;
+[e = . _stMotMoulin 1 -> 33 `i ]
+"27
+[; ;main.c: 27:     stMotMoulin.courant = 12;
+[e = . _stMotMoulin 2 -> 12 `i ]
+"29
+[; ;main.c: 29:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"30
+[; ;main.c: 30:     TRISBbits.RB0 = 1;
+[e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
+"32
+[; ;main.c: 32:     while (1)
+[e :U 304 ]
+"33
+[; ;main.c: 33:     {
+{
+"34
+[; ;main.c: 34:         PORTD = stMotMoulin.courant;
+[e = _PORTD -> . _stMotMoulin 2 `uc ]
+"35
+[; ;main.c: 35:         if (PORTBbits.RB0 == 0)
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 306  ]
+"36
+[; ;main.c: 36:         {
+{
+"37
+[; ;main.c: 37:             while (PORTBbits.RB0 == 0);
+[e $U 307  ]
+[e :U 308 ]
+[e :U 307 ]
+[e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 308  ]
+[e :U 309 ]
+"38
+[; ;main.c: 38:             stMotMoulin.courant ++;
+[e ++ . _stMotMoulin 2 -> 1 `i ]
+"39
+[; ;main.c: 39:         }
+}
+[e :U 306 ]
+"40
+[; ;main.c: 40:     }
+}
+[e :U 303 ]
+[e $U 304  ]
+[e :U 305 ]
+"43
+[; ;main.c: 43: }
 [e :UE 302 ]
 }
