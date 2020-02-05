@@ -10048,6 +10048,7 @@ extern unsigned char g_temponClavier[10];
 
 void main(void)
 {
+    const unsigned char t[] = "allo";
     initialisation();
     lcd_init();
 
@@ -10057,7 +10058,9 @@ void main(void)
 
 
 
-    lcd_putMessage("Lab1 Benoit 2020");
+
+    lcd_putMessage(&t);
+
     while(1)
     {
 

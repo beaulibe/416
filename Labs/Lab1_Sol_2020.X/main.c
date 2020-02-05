@@ -31,7 +31,8 @@ extern unsigned int  g_nombreCar; //Nombre de caractères dans le tampon
 extern unsigned char g_temponClavier[NOMBRE_CAR_MAX]; //Tampon de réception des caractères
 
 void main(void)
-{
+{    
+    const unsigned char t[] = "allo";
     initialisation(); //Initialise les ports et l,interruption INT0 du PIC18
     lcd_init(); //Initialise l'afficheur LCD
     
@@ -41,7 +42,9 @@ void main(void)
     
 	//Ajoutez du code ici pour afficher sur le LCD votre message "Lab1 VotreNom"
 	
-    lcd_putMessage("Lab1 Benoit 2020");
+   // lcd_putMessage("Lab1 Benoit 2020");
+    lcd_putMessage(&t);
+    
     while(1) // Boucle principale du programme
     {
 		//Vous pouvez retirer les deux lignes de code ci-dessous pour le clignotement de la DEL. Elles ne

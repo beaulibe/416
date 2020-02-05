@@ -61,7 +61,7 @@
 [v _lcd_strobeEnableBit lcd_strobeEnableBit `(v  1 s 1 lcd_strobeEnableBit ]
 "33 C:\Users\tge\Documents\GitHub\416\Labs\Lab1_Sol_2020.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"65
+"68
 [v _initialisation initialisation `(v  1 e 1 0 ]
 "10241 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -280,7 +280,9 @@
 "33 C:\Users\tge\Documents\GitHub\416\Labs\Lab1_Sol_2020.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"60
+"35
+[v main@t t `C[5]uc  1 s 5 t ]
+"63
 } 0
 "385 C:\Users\tge\Documents\GitHub\416\Labs\Lab1_Sol_2020.X\Lcd4Lignes.c
 [v _lcd_putMessage lcd_putMessage `(v  1 e 1 0 ]
@@ -370,10 +372,10 @@
 {
 "96
 } 0
-"65 C:\Users\tge\Documents\GitHub\416\Labs\Lab1_Sol_2020.X\main.c
+"68 C:\Users\tge\Documents\GitHub\416\Labs\Lab1_Sol_2020.X\main.c
 [v _initialisation initialisation `(v  1 e 1 0 ]
 {
-"93
+"96
 } 0
 "48 C:\Users\tge\Documents\GitHub\416\Labs\Lab1_Sol_2020.X\interrupts.c
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
