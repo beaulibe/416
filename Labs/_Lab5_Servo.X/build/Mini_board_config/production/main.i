@@ -10040,10 +10040,7 @@ void initialisation_ActiverTmr0(void);
 # 64
 void initialisation_ConfigTmr3(void);
 
-# 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 19 "main.c"
+# 12 "commun.h"
 enum enumModes
 {
 enumArret = 0,
@@ -10056,11 +10053,14 @@ enumDelaiTrois,
 enumEtatMax
 };
 
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
 
+# 22 "main.c"
 extern int g_resAN;
 int g_etat = enumArret;
 
-# 38
+# 28
 void initialisation(void)
 {
 initialisation_ConfigurerPortDSortie();
@@ -10068,6 +10068,7 @@ initialisation_ConfigurerAdc();
 initialisation_ActiverIntAdc();
 initialisation_ActiverPWM();
 initialisation_ActiverTmr0();
+initialisation_ConfigTmr3();
 initialisation_ActiverInterruptions();
 
 }
@@ -10089,32 +10090,33 @@ PORTDbits.RD7 = 1;
 else
 PORTDbits.RD7 = 0;
 
-# 70
+# 61
 g_etat = g_resAN / enumEtatMax;
 
 switch (g_etat)
 {
 case enumArret :
+
 T0CONbits.TMR0ON = 0;
 break;
 case enumLent :
 T0CONbits.T0PS = 2;
-T0CONbits.TMR0ON = 1;
+
 break;
 
 case enumMoyen :
 T0CONbits.T0PS = 1;
-T0CONbits.TMR0ON = 1;
+
 break;
 case enumVite :
 T0CONbits.T0PS = 0;
-T0CONbits.TMR0ON = 1;
+
 break;
 case enumDelaiUn :
-T3CONbits.TMR3ON = 1;
+
 break;
 
-# 98
+# 90
 }
 }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/Mini_board_config/debug\Sem4_Ex1_ADC_Int.X.debug.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>32768</length>
+      <used>216</used>
+      <free>32552</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>1536</length>
+      <used>13</used>
+      <free>1523</free>
+    </memory>
+  </executable>
+</project>

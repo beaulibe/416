@@ -153,6 +153,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
 "13899
 [v _T3CON `Vuc ~T0 @X0 0 e@4017 ]
+"12816
+[s S402 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S402 . ECCP1IE TMR3IE LVDIE BCLIE EEIE . CMIE ]
+"12815
+[u S401 `S402 1 ]
+[n S401 . . ]
+"12826
+[v _PIE2bits `VS401 ~T0 @X0 0 e@4000 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6574,7 +6582,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;initialisation.c: 121: T3CON = 0;
 "121
 [e = _T3CON -> -> 0 `i `uc ]
-[; ;initialisation.c: 122: }
+[; ;initialisation.c: 122: PIE2bits.TMR3IE = 1;
 "122
+[e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
+[; ;initialisation.c: 123: }
+"123
 [e :UE 583 ]
 }

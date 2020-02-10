@@ -10010,7 +10010,20 @@ extern __nonreentrant void _delay3(unsigned char);
 # 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 20 "interrupts.c"
+# 12 "commun.h"
+enum enumModes
+{
+enumArret = 0,
+enumLent,
+enumMoyen,
+enumVite,
+enumDelaiUn,
+enumDelaiDeux,
+enumDelaiTrois,
+enumEtatMax
+};
+
+# 19 "interrupts.c"
 int g_resAN = 0;
 extern int g_etat;
 
@@ -10019,6 +10032,7 @@ void interrupt high_isr(void)
 {
 static unsigned char dutyWiper = 9;
 static bool sensUp = 1;
+static int compte = 0;
 
 
 if (PIR1bits.ADIF)
@@ -10045,8 +10059,10 @@ else
 dutyWiper--;
 if (dutyWiper <= 9)
 {
-
-
+if (g_etat >= enumDelaiUn )
+{
+T0CONbits.TMR0ON = 0;
+}
 sensUp = 1;
 }
 }
@@ -10054,6 +10070,25 @@ sensUp = 1;
 INTCONbits.TMR0IF = 0;
 TMR0H = 0xE2;
 TMR0L = 0xB4;
+
+
+
+if (PIR2bits.TMR3IF)
+{
+
+compte++;
+
+if (g_etat == enumDelaiUn && compte > 10)
+{
+T0CONbits.T0PS = 1;
+T0CONbits.TMR0ON = 1;
+compte = 0;
+}
+
+PIR2bits.TMR3IF = 0;
+}
+
+
 
 }
 

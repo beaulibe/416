@@ -10098,5 +10098,6 @@ void initialisation_ConfigTmr3(void)
 {
 
 T3CON = 0;
+PIE2bits.TMR3IE = 1;
 }
 

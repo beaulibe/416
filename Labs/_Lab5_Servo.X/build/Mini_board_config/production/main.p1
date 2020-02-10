@@ -1,7 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"33 main.c
-[c E5536 0 1 2 3 4 5 6 7 .. ]
-[n E5536 enumModes enumArret enumLent enumMoyen enumVite enumDelaiUn enumDelaiDeux enumDelaiTrois enumEtatMax  ]
+"23 main.c
+[c E5535 0 1 2 3 4 5 6 7 .. ]
+[n E5535 enumModes enumArret enumLent enumMoyen enumVite enumDelaiUn enumDelaiDeux enumDelaiTrois enumEtatMax  ]
 "19 initialisation.h
 [v _initialisation_ConfigurerPortDSortie `(v ~T0 @X0 0 ef ]
 "44
@@ -12,10 +12,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _initialisation_ActiverPWM `(v ~T0 @X0 0 ef ]
 "59
 [v _initialisation_ActiverTmr0 `(v ~T0 @X0 0 ef ]
+"64
+[v _initialisation_ConfigTmr3 `(v ~T0 @X0 0 ef ]
 "24
 [v _initialisation_ActiverInterruptions `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"32 main.c
+"22 main.c
 [v _g_resAN `i ~T0 @X0 0 e ]
 "10703 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [s S330 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -48,29 +50,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S549 . . . ]
 "15805
 [v _T0CONbits `VS549 ~T0 @X0 0 e@4053 ]
-"13905
-[s S449 :2 `uc 1 :1 `uc 1 ]
-[n S449 . . NOT_T3SYNC ]
-"13909
-[s S450 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S450 . TMR3ON TMR3CS nT3SYNC T3CCP1 T3CKPS T3ECCP1 RD16 ]
-"13918
-[s S451 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S451 . . T3INSYNC . T3CKPS0 T3CKPS1 ]
-"13925
-[s S452 :2 `uc 1 :1 `uc 1 ]
-[n S452 . . T3SYNC ]
-"13929
-[s S453 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S453 . . SOSCEN3 . RD163 ]
-"13935
-[s S454 :7 `uc 1 :1 `uc 1 ]
-[n S454 . . T3RD16 ]
-"13904
-[u S448 `S449 1 `S450 1 `S451 1 `S452 1 `S453 1 `S454 1 ]
-[n S448 . . . . . . . ]
-"13940
-[v _T3CONbits `VS448 ~T0 @X0 0 e@4017 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6321,182 +6300,173 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;initialisation.h: 54: void initialisation_ActiverPWM(void);
 [; ;initialisation.h: 59: void initialisation_ActiverTmr0(void);
 [; ;initialisation.h: 64: void initialisation_ConfigTmr3(void);
+[; ;commun.h: 12: enum enumModes
+[; ;commun.h: 13: {
+[; ;commun.h: 14: enumArret = 0,
+[; ;commun.h: 15: enumLent,
+[; ;commun.h: 16: enumMoyen,
+[; ;commun.h: 17: enumVite,
+[; ;commun.h: 18: enumDelaiUn,
+[; ;commun.h: 19: enumDelaiDeux,
+[; ;commun.h: 20: enumDelaiTrois,
+[; ;commun.h: 21: enumEtatMax
+[; ;commun.h: 22: };
 [; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;main.c: 19: enum enumModes
-[; ;main.c: 20: {
-[; ;main.c: 21: enumArret = 0,
-[; ;main.c: 22: enumLent,
-[; ;main.c: 23: enumMoyen,
-[; ;main.c: 24: enumVite,
-[; ;main.c: 25: enumDelaiUn,
-[; ;main.c: 26: enumDelaiDeux,
-[; ;main.c: 27: enumDelaiTrois,
-[; ;main.c: 28: enumEtatMax
-[; ;main.c: 29: };
-[; ;main.c: 32: extern int g_resAN;
-"33 main.c
+[; ;main.c: 22: extern int g_resAN;
+"23 main.c
 [v _g_etat `Ai ~T0 @X0 1 e ]
 [i _g_etat
--> . `E5536 0 `i
+-> . `E5535 0 `i
 ]
-[; ;main.c: 33: int g_etat = enumArret;
+[; ;main.c: 23: int g_etat = enumArret;
 [v F5549 `(v ~T0 @X0 1 tf ]
-"38
+"28
 [v _initialisation `AF5549 ~T0 @X0 1 e ]
-"39
+"29
 {
-[; ;main.c: 38: void initialisation(void)
-[; ;main.c: 39: {
+[; ;main.c: 28: void initialisation(void)
+[; ;main.c: 29: {
 [e :U _initialisation ]
 [f ]
-[; ;main.c: 40: initialisation_ConfigurerPortDSortie();
-"40
+[; ;main.c: 30: initialisation_ConfigurerPortDSortie();
+"30
 [e ( _initialisation_ConfigurerPortDSortie ..  ]
-[; ;main.c: 41: initialisation_ConfigurerAdc();
-"41
+[; ;main.c: 31: initialisation_ConfigurerAdc();
+"31
 [e ( _initialisation_ConfigurerAdc ..  ]
-[; ;main.c: 42: initialisation_ActiverIntAdc();
-"42
+[; ;main.c: 32: initialisation_ActiverIntAdc();
+"32
 [e ( _initialisation_ActiverIntAdc ..  ]
-[; ;main.c: 43: initialisation_ActiverPWM();
-"43
+[; ;main.c: 33: initialisation_ActiverPWM();
+"33
 [e ( _initialisation_ActiverPWM ..  ]
-[; ;main.c: 44: initialisation_ActiverTmr0();
-"44
+[; ;main.c: 34: initialisation_ActiverTmr0();
+"34
 [e ( _initialisation_ActiverTmr0 ..  ]
-[; ;main.c: 45: initialisation_ActiverInterruptions();
-"45
+[; ;main.c: 35: initialisation_ConfigTmr3();
+"35
+[e ( _initialisation_ConfigTmr3 ..  ]
+[; ;main.c: 36: initialisation_ActiverInterruptions();
+"36
 [e ( _initialisation_ActiverInterruptions ..  ]
-[; ;main.c: 47: }
-"47
+[; ;main.c: 38: }
+"38
 [e :UE 574 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
 [v F5552 `(v ~T0 @X0 1 tf ]
-"49
+"40
 [v _main `AF5552 ~T0 @X0 1 e ]
-"50
+"41
 {
-[; ;main.c: 49: void main(void)
-[; ;main.c: 50: {
+[; ;main.c: 40: void main(void)
+[; ;main.c: 41: {
 [e :U _main ]
 [f ]
-"51
+"42
 [v _dutyWiper `uc ~T0 @X0 1 a ]
-[; ;main.c: 51: unsigned char dutyWiper = 9;
+[; ;main.c: 42: unsigned char dutyWiper = 9;
 [e = _dutyWiper -> -> 9 `i `uc ]
-"52
+"43
 [v _sensUp `uc ~T0 @X0 1 a ]
-[; ;main.c: 52: bool sensUp = 1;
+[; ;main.c: 43: bool sensUp = 1;
 [e = _sensUp -> -> 1 `i `uc ]
-[; ;main.c: 54: initialisation();
-"54
+[; ;main.c: 45: initialisation();
+"45
 [e ( _initialisation ..  ]
-[; ;main.c: 58: while(1)
-"58
+[; ;main.c: 49: while(1)
+"49
 [e :U 577 ]
-[; ;main.c: 59: {
-"59
+[; ;main.c: 50: {
+"50
 {
-[; ;main.c: 61: if (g_resAN > 128)
-"61
+[; ;main.c: 52: if (g_resAN > 128)
+"52
 [e $ ! > _g_resAN -> 128 `i 579  ]
-[; ;main.c: 62: PORTDbits.RD7 = 1;
-"62
+[; ;main.c: 53: PORTDbits.RD7 = 1;
+"53
 [e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
 [e $U 580  ]
-"63
+"54
 [e :U 579 ]
-[; ;main.c: 63: else
-[; ;main.c: 64: PORTDbits.RD7 = 0;
-"64
+[; ;main.c: 54: else
+[; ;main.c: 55: PORTDbits.RD7 = 0;
+"55
 [e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 [e :U 580 ]
-[; ;main.c: 70: g_etat = g_resAN / enumEtatMax;
-"70
-[e = _g_etat / _g_resAN -> . `E5536 7 `i ]
-[; ;main.c: 72: switch (g_etat)
-"72
+[; ;main.c: 61: g_etat = g_resAN / enumEtatMax;
+"61
+[e = _g_etat / _g_resAN -> . `E5535 7 `i ]
+[; ;main.c: 63: switch (g_etat)
+"63
 [e $U 582  ]
-[; ;main.c: 73: {
-"73
+[; ;main.c: 64: {
+"64
 {
-[; ;main.c: 74: case enumArret :
-"74
+[; ;main.c: 65: case enumArret :
+"65
 [e :U 583 ]
-[; ;main.c: 75: T0CONbits.TMR0ON = 0;
-"75
+[; ;main.c: 67: T0CONbits.TMR0ON = 0;
+"67
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 76: break;
-"76
+[; ;main.c: 68: break;
+"68
 [e $U 581  ]
-[; ;main.c: 77: case enumLent :
-"77
+[; ;main.c: 69: case enumLent :
+"69
 [e :U 584 ]
-[; ;main.c: 78: T0CONbits.T0PS = 2;
-"78
+[; ;main.c: 70: T0CONbits.T0PS = 2;
+"70
 [e = . . _T0CONbits 0 0 -> -> 2 `i `uc ]
-[; ;main.c: 79: T0CONbits.TMR0ON = 1;
-"79
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 80: break;
-"80
-[e $U 581  ]
-[; ;main.c: 82: case enumMoyen :
-"82
-[e :U 585 ]
-[; ;main.c: 83: T0CONbits.T0PS = 1;
-"83
-[e = . . _T0CONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 84: T0CONbits.TMR0ON = 1;
-"84
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 85: break;
-"85
-[e $U 581  ]
-[; ;main.c: 86: case enumVite :
-"86
-[e :U 586 ]
-[; ;main.c: 87: T0CONbits.T0PS = 0;
-"87
-[e = . . _T0CONbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 88: T0CONbits.TMR0ON = 1;
-"88
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 89: break;
-"89
-[e $U 581  ]
-[; ;main.c: 90: case enumDelaiUn :
-"90
-[e :U 587 ]
-[; ;main.c: 91: T3CONbits.TMR3ON = 1;
-"91
-[e = . . _T3CONbits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 92: break;
-"92
-[e $U 581  ]
-"98
-}
-[; ;main.c: 98: }
-[e $U 581  ]
+[; ;main.c: 72: break;
 "72
+[e $U 581  ]
+[; ;main.c: 74: case enumMoyen :
+"74
+[e :U 585 ]
+[; ;main.c: 75: T0CONbits.T0PS = 1;
+"75
+[e = . . _T0CONbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 77: break;
+"77
+[e $U 581  ]
+[; ;main.c: 78: case enumVite :
+"78
+[e :U 586 ]
+[; ;main.c: 79: T0CONbits.T0PS = 0;
+"79
+[e = . . _T0CONbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 81: break;
+"81
+[e $U 581  ]
+[; ;main.c: 82: case enumDelaiUn :
+"82
+[e :U 587 ]
+[; ;main.c: 84: break;
+"84
+[e $U 581  ]
+"90
+}
+[; ;main.c: 90: }
+[e $U 581  ]
+"63
 [e :U 582 ]
-[e [\ _g_etat , $ -> . `E5536 0 `i 583
- , $ -> . `E5536 1 `i 584
- , $ -> . `E5536 2 `i 585
- , $ -> . `E5536 3 `i 586
- , $ -> . `E5536 4 `i 587
+[e [\ _g_etat , $ -> . `E5535 0 `i 583
+ , $ -> . `E5535 1 `i 584
+ , $ -> . `E5535 2 `i 585
+ , $ -> . `E5535 3 `i 586
+ , $ -> . `E5535 4 `i 587
  581 ]
-"98
+"90
 [e :U 581 ]
-"99
+"91
 }
 [e :U 576 ]
-"58
+"49
 [e $U 577  ]
 [e :U 578 ]
-[; ;main.c: 99: }
-[; ;main.c: 100: }
-"100
+[; ;main.c: 91: }
+[; ;main.c: 92: }
+"92
 [e :UE 575 ]
 }

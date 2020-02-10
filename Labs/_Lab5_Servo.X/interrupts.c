@@ -9,9 +9,8 @@
 //#include "commun.h"
 #include <xc.h>
 #include <stdbool.h>
+#include "commun.h"
 
-#define PWM_MIN 9
-#define PWM_MAX 0x25
 
 
 /** valeur à utiliser pour la sortie PWM */

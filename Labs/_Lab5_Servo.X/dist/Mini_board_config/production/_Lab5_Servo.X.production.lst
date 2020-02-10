@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Wed Feb 05 15:25:56 2020
+                                                                                               Thu Feb 06 10:45:41 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F458
@@ -21,1245 +21,1380 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
     15                           	psect	text5,global,reloc=2,class=CODE,delta=1,minocg
     16                           	psect	text6,global,reloc=2,class=CODE,delta=1,minocg
     17                           	psect	text7,global,reloc=2,class=CODE,delta=1,minocg
-    18                           	psect	text8,global,reloc=2,class=CODE,delta=1,group=1,minocg
-    19                           	psect	intcode,global,reloc=2,class=CODE,delta=1,minocg
-    20                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
-    21                           	psect	param0,global,class=BANK0,space=1,delta=1,noexec
-    22                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
-    23  0000                     
-    24                           ; Version 2.10
-    25                           ; Generated 31/07/2019 GMT
-    26                           ; 
-    27                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    28                           ; All rights reserved.
-    29                           ; 
-    30                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+    18                           	psect	text8,global,reloc=2,class=CODE,delta=1,minocg
+    19                           	psect	text9,global,reloc=2,class=CODE,delta=1,group=1,minocg
+    20                           	psect	intcode,global,reloc=2,class=CODE,delta=1,minocg
+    21                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    22                           	psect	param0,global,class=BANK0,space=1,delta=1,noexec
+    23                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
+    24  0000                     
+    25                           ; Version 2.10
+    26                           ; Generated 31/07/2019 GMT
+    27                           ; 
+    28                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    29                           ; All rights reserved.
+    30                           ; 
+    31                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    31                           ; 
-    32                           ; Redistribution and use in source and binary forms, with or without modification, are
-    33                           ; permitted provided that the following conditions are met:
-    34                           ; 
-    35                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+    32                           ; 
+    33                           ; Redistribution and use in source and binary forms, with or without modification, are
+    34                           ; permitted provided that the following conditions are met:
+    35                           ; 
+    36                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
       +                          t of
-    36                           ;        conditions and the following disclaimer.
-    37                           ; 
-    38                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+    37                           ;        conditions and the following disclaimer.
+    38                           ; 
+    39                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
       +                          list
-    39                           ;        of conditions and the following disclaimer in the documentation and/or other
-    40                           ;        materials provided with the distribution.
-    41                           ; 
-    42                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+    40                           ;        of conditions and the following disclaimer in the documentation and/or other
+    41                           ;        materials provided with the distribution.
+    42                           ; 
+    43                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
       +                          is
-    43                           ;        software without specific prior written permission.
-    44                           ; 
-    45                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    46                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    44                           ;        software without specific prior written permission.
+    45                           ; 
+    46                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    47                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    47                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    48                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    48                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    49                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    50                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    49                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    50                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    51                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    51                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    52                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    52                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    53                           ; 
+    53                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     54                           ; 
-    55                           ; Code-generator required, PIC18F458 Definitions
-    56                           ; 
-    57                           ; SFR Addresses
-    58  0000                     
-    59                           	psect	idataBANK0
-    60  000368                     __pidataBANK0:
-    61                           	opt callstack 0
-    62                           
-    63                           ;initializer for high_isr@sensUp
-    64  000368  01                 	db	1
-    65                           
-    66                           ;initializer for high_isr@dutyWiper
-    67  000369  09                 	db	9
-    68  0000                     _T3CON	set	4017
-    69  0000                     _T2CONbits	set	4042
-    70  0000                     _TRISCbits	set	3988
-    71  0000                     _CCP1CONbits	set	4029
-    72  0000                     _PR2	set	4043
-    73  0000                     _PIE1bits	set	3997
-    74  0000                     _ADCON1bits	set	4033
-    75  0000                     _ADCON1	set	4033
-    76  0000                     _TRISAbits	set	3986
-    77  0000                     _TRISD	set	3989
-    78  0000                     _TMR0L	set	4054
-    79  0000                     _TMR0H	set	4055
-    80  0000                     _CCPR1L	set	4030
-    81  0000                     _INTCONbits	set	4082
-    82  0000                     _ADCON0bits	set	4034
-    83  0000                     _ADRESH	set	4036
-    84  0000                     _PIR1bits	set	3998
-    85  0000                     _T3CONbits	set	4017
-    86  0000                     _T0CONbits	set	4053
-    87  0000                     _PORTDbits	set	3971
-    88                           
-    89                           ; #config settings
-    90  0000                     
-    91                           	psect	cinit
-    92  0002CE                     __pcinit:
-    93                           	opt callstack 0
-    94  0002CE                     start_initialization:
+    55                           ; 
+    56                           ; Code-generator required, PIC18F458 Definitions
+    57                           ; 
+    58                           ; SFR Addresses
+    59  0000                     
+    60                           	psect	idataBANK0
+    61  000400                     __pidataBANK0:
+    62                           	opt callstack 0
+    63                           
+    64                           ;initializer for high_isr@sensUp
+    65  000400  01                 	db	1
+    66                           
+    67                           ;initializer for high_isr@dutyWiper
+    68  000401  09                 	db	9
+    69  0000                     _PIE2bits	set	4000
+    70  0000                     _T3CON	set	4017
+    71  0000                     _T2CONbits	set	4042
+    72  0000                     _TRISCbits	set	3988
+    73  0000                     _CCP1CONbits	set	4029
+    74  0000                     _PR2	set	4043
+    75  0000                     _PIE1bits	set	3997
+    76  0000                     _ADCON1bits	set	4033
+    77  0000                     _ADCON1	set	4033
+    78  0000                     _TRISAbits	set	3986
+    79  0000                     _TRISD	set	3989
+    80  0000                     _PIR2bits	set	4001
+    81  0000                     _TMR0L	set	4054
+    82  0000                     _TMR0H	set	4055
+    83  0000                     _CCPR1L	set	4030
+    84  0000                     _INTCONbits	set	4082
+    85  0000                     _ADCON0bits	set	4034
+    86  0000                     _ADRESH	set	4036
+    87  0000                     _PIR1bits	set	3998
+    88  0000                     _T0CONbits	set	4053
+    89  0000                     _PORTDbits	set	3971
+    90                           
+    91                           ; #config settings
+    92  0000                     
+    93                           	psect	cinit
+    94  000352                     __pcinit:
     95                           	opt callstack 0
-    96  0002CE                     __initialization:
+    96  000352                     start_initialization:
     97                           	opt callstack 0
-    98                           
-    99                           ; Initialize objects allocated to BANK0 (2 bytes)
-   100                           ; load TBLPTR registers with __pidataBANK0
-   101  0002CE  0E68               	movlw	low __pidataBANK0
-   102  0002D0  6EF6               	movwf	tblptrl,c
-   103  0002D2  0E03               	movlw	high __pidataBANK0
-   104  0002D4  6EF7               	movwf	tblptrh,c
-   105  0002D6  0E00               	movlw	low (__pidataBANK0 shr (0+16))
-   106  0002D8  6EF8               	movwf	tblptru,c
-   107  0002DA  0009               	tblrd		*+	;fetch initializer
-   108  0002DC  CFF5 F070          	movff	tablat,__pdataBANK0
-   109  0002E0  0009               	tblrd		*+	;fetch initializer
-   110  0002E2  CFF5 F071          	movff	tablat,__pdataBANK0+1
-   111                           
-   112                           ; Clear objects allocated to BANK0 (4 bytes)
-   113  0002E6  0100               	movlb	0
-   114  0002E8  6B6F               	clrf	(__pbssBANK0+3)& (0+255),b
-   115  0002EA  6B6E               	clrf	(__pbssBANK0+2)& (0+255),b
-   116  0002EC  6B6D               	clrf	(__pbssBANK0+1)& (0+255),b
-   117  0002EE  6B6C               	clrf	__pbssBANK0& (0+255),b
-   118  0002F0                     end_of_initialization:
-   119                           	opt callstack 0
-   120  0002F0                     __end_of__initialization:
-   121                           	opt callstack 0
-   122  0002F0  9001               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
-   123  0002F2  9201               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
-   124  0002F4  0100               	movlb	0
-   125  0002F6  EFD5  F000         	goto	_main	;jump to C main() function
-   126                           
-   127                           	psect	bssBANK0
-   128  00006C                     __pbssBANK0:
-   129                           	opt callstack 0
-   130  00006C                     _g_etat:
-   131                           	opt callstack 0
-   132  00006C                     	ds	2
-   133  00006E                     _g_resAN:
-   134                           	opt callstack 0
-   135  00006E                     	ds	2
-   136                           
-   137                           	psect	dataBANK0
-   138  000070                     __pdataBANK0:
-   139                           	opt callstack 0
-   140  000070                     high_isr@sensUp:
+    98  000352                     __initialization:
+    99                           	opt callstack 0
+   100                           
+   101                           ; Initialize objects allocated to BANK0 (2 bytes)
+   102                           ; load TBLPTR registers with __pidataBANK0
+   103  000352  0E00               	movlw	low __pidataBANK0
+   104  000354  6EF6               	movwf	tblptrl,c
+   105  000356  0E04               	movlw	high __pidataBANK0
+   106  000358  6EF7               	movwf	tblptrh,c
+   107  00035A  0E00               	movlw	low (__pidataBANK0 shr (0+16))
+   108  00035C  6EF8               	movwf	tblptru,c
+   109  00035E  0009               	tblrd		*+	;fetch initializer
+   110  000360  CFF5 F072          	movff	tablat,__pdataBANK0
+   111  000364  0009               	tblrd		*+	;fetch initializer
+   112  000366  CFF5 F073          	movff	tablat,__pdataBANK0+1
+   113                           
+   114                           ; Clear objects allocated to BANK0 (6 bytes)
+   115  00036A  0100               	movlb	0
+   116  00036C  6B71               	clrf	(__pbssBANK0+5)& (0+255),b
+   117  00036E  6B70               	clrf	(__pbssBANK0+4)& (0+255),b
+   118  000370  6B6F               	clrf	(__pbssBANK0+3)& (0+255),b
+   119  000372  6B6E               	clrf	(__pbssBANK0+2)& (0+255),b
+   120  000374  6B6D               	clrf	(__pbssBANK0+1)& (0+255),b
+   121  000376  6B6C               	clrf	__pbssBANK0& (0+255),b
+   122  000378                     end_of_initialization:
+   123                           	opt callstack 0
+   124  000378                     __end_of__initialization:
+   125                           	opt callstack 0
+   126  000378  9001               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+   127  00037A  9201               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   128  00037C  0100               	movlb	0
+   129  00037E  EF1E  F001         	goto	_main	;jump to C main() function
+   130                           
+   131                           	psect	bssBANK0
+   132  00006C                     __pbssBANK0:
+   133                           	opt callstack 0
+   134  00006C                     high_isr@compte:
+   135                           	opt callstack 0
+   136  00006C                     	ds	2
+   137  00006E                     _g_etat:
+   138                           	opt callstack 0
+   139  00006E                     	ds	2
+   140  000070                     _g_resAN:
    141                           	opt callstack 0
-   142  000070                     	ds	1
-   143  000071                     high_isr@dutyWiper:
-   144                           	opt callstack 0
-   145  000071                     	ds	1
-   146                           
-   147                           	psect	cstackBANK0
-   148  000060                     __pcstackBANK0:
-   149                           	opt callstack 0
-   150  000060                     ?___awdiv:
+   142  000070                     	ds	2
+   143                           
+   144                           	psect	dataBANK0
+   145  000072                     __pdataBANK0:
+   146                           	opt callstack 0
+   147  000072                     high_isr@sensUp:
+   148                           	opt callstack 0
+   149  000072                     	ds	1
+   150  000073                     high_isr@dutyWiper:
    151                           	opt callstack 0
-   152  000060                     ___awdiv@dividend:
-   153                           	opt callstack 0
-   154                           
-   155                           ; 2 bytes @ 0x0
-   156  000060                     	ds	2
-   157  000062                     ___awdiv@divisor:
+   152  000073                     	ds	1
+   153                           
+   154                           	psect	cstackBANK0
+   155  000060                     __pcstackBANK0:
+   156                           	opt callstack 0
+   157  000060                     ?___awdiv:
    158                           	opt callstack 0
-   159                           
-   160                           ; 2 bytes @ 0x2
-   161  000062                     	ds	2
-   162  000064                     ___awdiv@counter:
-   163                           	opt callstack 0
-   164                           
-   165                           ; 1 bytes @ 0x4
-   166  000064                     	ds	1
-   167  000065                     ___awdiv@sign:
-   168                           	opt callstack 0
-   169                           
-   170                           ; 1 bytes @ 0x5
-   171  000065                     	ds	1
-   172  000066                     ___awdiv@quotient:
-   173                           	opt callstack 0
-   174                           
-   175                           ; 2 bytes @ 0x6
-   176  000066                     	ds	2
-   177  000068                     ??_main:
-   178                           
-   179                           ; 1 bytes @ 0x8
-   180  000068                     	ds	2
-   181  00006A                     main@dutyWiper:
-   182                           	opt callstack 0
-   183                           
-   184                           ; 1 bytes @ 0xA
-   185  00006A                     	ds	1
-   186  00006B                     main@sensUp:
-   187                           	opt callstack 0
-   188                           
-   189                           ; 1 bytes @ 0xB
-   190  00006B                     	ds	1
-   191                           
-   192 ;;
-   193 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
-   194 ;;
-   195 ;; *************** function _main *****************
-   196 ;; Defined at:
-   197 ;;		line 49 in file "main.c"
-   198 ;; Parameters:    Size  Location     Type
-   199 ;;		None
-   200 ;; Auto vars:     Size  Location     Type
-   201 ;;  sensUp          1   11[BANK0 ] unsigned char 
-   202 ;;  dutyWiper       1   10[BANK0 ] unsigned char 
-   203 ;; Return value:  Size  Location     Type
-   204 ;;                  1    wreg      void 
-   205 ;; Registers used:
-   206 ;;		wreg, status,2, status,0, cstack
-   207 ;; Tracked objects:
-   208 ;;		On entry : 0/0
-   209 ;;		On exit  : 0/0
-   210 ;;		Unchanged: 0/0
-   211 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   212 ;;      Params:         0       0       0       0       0       0       0
-   213 ;;      Locals:         0       2       0       0       0       0       0
-   214 ;;      Temps:          0       2       0       0       0       0       0
-   215 ;;      Totals:         0       4       0       0       0       0       0
-   216 ;;Total ram usage:        4 bytes
-   217 ;; Hardware stack levels required when called:    3
-   218 ;; This function calls:
-   219 ;;		___awdiv
-   220 ;;		_initialisation
-   221 ;; This function is called by:
-   222 ;;		Startup code after reset
-   223 ;; This function uses a non-reentrant model
-   224 ;;
-   225                           
-   226                           	psect	text0
-   227  0001AA                     __ptext0:
-   228                           	opt callstack 0
-   229  0001AA                     _main:
-   230                           	opt callstack 28
-   231  0001AA  FFFF               	dw	65535	; assembler added errata NOP
+   159  000060                     ___awdiv@dividend:
+   160                           	opt callstack 0
+   161                           
+   162                           ; 2 bytes @ 0x0
+   163  000060                     	ds	2
+   164  000062                     ___awdiv@divisor:
+   165                           	opt callstack 0
+   166                           
+   167                           ; 2 bytes @ 0x2
+   168  000062                     	ds	2
+   169  000064                     ___awdiv@counter:
+   170                           	opt callstack 0
+   171                           
+   172                           ; 1 bytes @ 0x4
+   173  000064                     	ds	1
+   174  000065                     ___awdiv@sign:
+   175                           	opt callstack 0
+   176                           
+   177                           ; 1 bytes @ 0x5
+   178  000065                     	ds	1
+   179  000066                     ___awdiv@quotient:
+   180                           	opt callstack 0
+   181                           
+   182                           ; 2 bytes @ 0x6
+   183  000066                     	ds	2
+   184  000068                     ??_main:
+   185                           
+   186                           ; 1 bytes @ 0x8
+   187  000068                     	ds	2
+   188  00006A                     main@dutyWiper:
+   189                           	opt callstack 0
+   190                           
+   191                           ; 1 bytes @ 0xA
+   192  00006A                     	ds	1
+   193  00006B                     main@sensUp:
+   194                           	opt callstack 0
+   195                           
+   196                           ; 1 bytes @ 0xB
+   197  00006B                     	ds	1
+   198                           
+   199 ;;
+   200 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   201 ;;
+   202 ;; *************** function _main *****************
+   203 ;; Defined at:
+   204 ;;		line 40 in file "main.c"
+   205 ;; Parameters:    Size  Location     Type
+   206 ;;		None
+   207 ;; Auto vars:     Size  Location     Type
+   208 ;;  sensUp          1   11[BANK0 ] unsigned char 
+   209 ;;  dutyWiper       1   10[BANK0 ] unsigned char 
+   210 ;; Return value:  Size  Location     Type
+   211 ;;                  1    wreg      void 
+   212 ;; Registers used:
+   213 ;;		wreg, status,2, status,0, cstack
+   214 ;; Tracked objects:
+   215 ;;		On entry : 0/0
+   216 ;;		On exit  : 0/0
+   217 ;;		Unchanged: 0/0
+   218 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   219 ;;      Params:         0       0       0       0       0       0       0
+   220 ;;      Locals:         0       2       0       0       0       0       0
+   221 ;;      Temps:          0       2       0       0       0       0       0
+   222 ;;      Totals:         0       4       0       0       0       0       0
+   223 ;;Total ram usage:        4 bytes
+   224 ;; Hardware stack levels required when called:    3
+   225 ;; This function calls:
+   226 ;;		___awdiv
+   227 ;;		_initialisation
+   228 ;; This function is called by:
+   229 ;;		Startup code after reset
+   230 ;; This function uses a non-reentrant model
+   231 ;;
    232                           
-   233                           ;main.c: 51: unsigned char dutyWiper = 9;
-   234  0001AC  0E09               	movlw	9
-   235  0001AE  0100               	movlb	0	; force () banked
-   236  0001B0  6F6A               	movwf	main@dutyWiper& (0+255),b
-   237                           
-   238                           ;main.c: 52: bool sensUp = 1;
-   239  0001B2  0E01               	movlw	1
-   240  0001B4  0100               	movlb	0	; force () banked
-   241  0001B6  6F6B               	movwf	main@sensUp& (0+255),b
-   242  0001B8                     
-   243                           ; BSR set to: 0
-   244                           ;main.c: 54: initialisation();
-   245  0001B8  EC7D  F001         	call	_initialisation	;wreg free
-   246  0001BC                     l1147:
-   247  0001BC  FFFF               	dw	65535	; assembler added errata NOP
-   248                           
-   249                           ;main.c: 59: {;main.c: 61: if (g_resAN > 128)
-   250  0001BE  0100               	movlb	0	; force () banked
-   251  0001C0  BF6F               	btfsc	(_g_resAN+1)& (0+255),7,b
-   252  0001C2  EFEC  F000         	goto	u211
-   253  0001C6  516F               	movf	(_g_resAN+1)& (0+255),w,b
-   254  0001C8  E10A               	bnz	u210
-   255  0001CA  0E81               	movlw	129
-   256  0001CC  5D6E               	subwf	_g_resAN& (0+255),w,b
-   257  0001CE  A0D8               	btfss	status,0,c
-   258  0001D0  EFEC  F000         	goto	u211
-   259  0001D4  EFEF  F000         	goto	u210
-   260  0001D8                     u211:
-   261  0001D8  FFFF               	dw	65535	; assembler added errata NOP
-   262  0001DA  EFF3  F000         	goto	l31
-   263  0001DE                     u210:
-   264  0001DE  FFFF               	dw	65535	; assembler added errata NOP
-   265  0001E0                     
-   266                           ; BSR set to: 0
-   267                           ;main.c: 62: PORTDbits.RD7 = 1;
-   268  0001E0  8E83               	bsf	131,7,c	;volatile
-   269  0001E2  EFF5  F000         	goto	l1151
-   270  0001E6                     l31:
-   271  0001E6  FFFF               	dw	65535	; assembler added errata NOP
-   272                           
+   233                           	psect	text0
+   234  00023C                     __ptext0:
+   235                           	opt callstack 0
+   236  00023C                     _main:
+   237                           	opt callstack 28
+   238  00023C  FFFF               	dw	65535	; assembler added errata NOP
+   239                           
+   240                           ;main.c: 42: unsigned char dutyWiper = 9;
+   241  00023E  0E09               	movlw	9
+   242  000240  0100               	movlb	0	; force () banked
+   243  000242  6F6A               	movwf	main@dutyWiper& (0+255),b
+   244                           
+   245                           ;main.c: 43: bool sensUp = 1;
+   246  000244  0E01               	movlw	1
+   247  000246  0100               	movlb	0	; force () banked
+   248  000248  6F6B               	movwf	main@sensUp& (0+255),b
+   249  00024A                     
+   250                           ; BSR set to: 0
+   251                           ;main.c: 45: initialisation();
+   252  00024A  ECC1  F001         	call	_initialisation	;wreg free
+   253  00024E                     l1178:
+   254  00024E  FFFF               	dw	65535	; assembler added errata NOP
+   255                           
+   256                           ;main.c: 50: {;main.c: 52: if (g_resAN > 128)
+   257  000250  0100               	movlb	0	; force () banked
+   258  000252  BF71               	btfsc	(_g_resAN+1)& (0+255),7,b
+   259  000254  EF35  F001         	goto	u251
+   260  000258  5171               	movf	(_g_resAN+1)& (0+255),w,b
+   261  00025A  E10A               	bnz	u250
+   262  00025C  0E81               	movlw	129
+   263  00025E  5D70               	subwf	_g_resAN& (0+255),w,b
+   264  000260  A0D8               	btfss	status,0,c
+   265  000262  EF35  F001         	goto	u251
+   266  000266  EF38  F001         	goto	u250
+   267  00026A                     u251:
+   268  00026A  FFFF               	dw	65535	; assembler added errata NOP
+   269  00026C  EF3C  F001         	goto	l31
+   270  000270                     u250:
+   271  000270  FFFF               	dw	65535	; assembler added errata NOP
+   272  000272                     
    273                           ; BSR set to: 0
-   274                           ;main.c: 63: else;main.c: 64: PORTDbits.RD7 = 0;
-   275  0001E8  9E83               	bcf	131,7,c	;volatile
-   276  0001EA                     l1151:
-   277  0001EA  FFFF               	dw	65535	; assembler added errata NOP
-   278                           
-   279                           ; BSR set to: 0
-   280                           ;main.c: 70: g_etat = g_resAN / enumEtatMax;
-   281  0001EC  C06E  F060         	movff	_g_resAN,___awdiv@dividend
-   282  0001F0  C06F  F061         	movff	_g_resAN+1,___awdiv@dividend+1
-   283  0001F4  0E00               	movlw	0
-   284  0001F6  0100               	movlb	0	; force () banked
-   285  0001F8  6F63               	movwf	(___awdiv@divisor+1)& (0+255),b
-   286  0001FA  0E07               	movlw	7
-   287  0001FC  6F62               	movwf	___awdiv@divisor& (0+255),b
-   288  0001FE  EC5C  F000         	call	___awdiv	;wreg free
-   289  000202  C060  F06C         	movff	?___awdiv,_g_etat
-   290  000206  C061  F06D         	movff	?___awdiv+1,_g_etat+1
-   291                           
-   292                           ;main.c: 72: switch (g_etat)
-   293  00020A  EF25  F001         	goto	l1167
-   294  00020E                     l34:
-   295  00020E  FFFF               	dw	65535	; assembler added errata NOP
-   296                           
-   297                           ; BSR set to: 0
-   298                           ;main.c: 75: T0CONbits.TMR0ON = 0;
-   299  000210  9ED5               	bcf	213,7,c	;volatile
-   300                           
-   301                           ;main.c: 76: break;
-   302  000212  EFDE  F000         	goto	l1147
-   303  000216                     l1153:
-   304  000216  FFFF               	dw	65535	; assembler added errata NOP
-   305                           
-   306                           ; BSR set to: 0
-   307                           ;main.c: 78: T0CONbits.T0PS = 2;
-   308  000218  50D5               	movf	213,w,c	;volatile
-   309  00021A  0BF8               	andlw	-8
-   310  00021C  0902               	iorlw	2
-   311  00021E  6ED5               	movwf	213,c	;volatile
-   312  000220                     
+   274                           ;main.c: 53: PORTDbits.RD7 = 1;
+   275  000272  8E83               	bsf	131,7,c	;volatile
+   276  000274  EF3E  F001         	goto	l1182
+   277  000278                     l31:
+   278  000278  FFFF               	dw	65535	; assembler added errata NOP
+   279                           
+   280                           ; BSR set to: 0
+   281                           ;main.c: 54: else;main.c: 55: PORTDbits.RD7 = 0;
+   282  00027A  9E83               	bcf	131,7,c	;volatile
+   283  00027C                     l1182:
+   284  00027C  FFFF               	dw	65535	; assembler added errata NOP
+   285                           
+   286                           ; BSR set to: 0
+   287                           ;main.c: 61: g_etat = g_resAN / enumEtatMax;
+   288  00027E  C070  F060         	movff	_g_resAN,___awdiv@dividend
+   289  000282  C071  F061         	movff	_g_resAN+1,___awdiv@dividend+1
+   290  000286  0E00               	movlw	0
+   291  000288  0100               	movlb	0	; force () banked
+   292  00028A  6F63               	movwf	(___awdiv@divisor+1)& (0+255),b
+   293  00028C  0E07               	movlw	7
+   294  00028E  6F62               	movwf	___awdiv@divisor& (0+255),b
+   295  000290  ECA5  F000         	call	___awdiv	;wreg free
+   296  000294  C060  F06E         	movff	?___awdiv,_g_etat
+   297  000298  C061  F06F         	movff	?___awdiv+1,_g_etat+1
+   298                           
+   299                           ;main.c: 63: switch (g_etat)
+   300  00029C  EF67  F001         	goto	l1192
+   301  0002A0                     l34:
+   302  0002A0  FFFF               	dw	65535	; assembler added errata NOP
+   303                           
+   304                           ; BSR set to: 0
+   305                           ;main.c: 67: T0CONbits.TMR0ON = 0;
+   306  0002A2  9ED5               	bcf	213,7,c	;volatile
+   307                           
+   308                           ;main.c: 68: break;
+   309  0002A4  EF27  F001         	goto	l1178
+   310  0002A8                     l1184:
+   311  0002A8  FFFF               	dw	65535	; assembler added errata NOP
+   312                           
    313                           ; BSR set to: 0
-   314                           ;main.c: 79: T0CONbits.TMR0ON = 1;
-   315  000220  8ED5               	bsf	213,7,c	;volatile
-   316                           
-   317                           ;main.c: 80: break;
-   318  000222  EFDE  F000         	goto	l1147
-   319  000226                     l1157:
-   320  000226  FFFF               	dw	65535	; assembler added errata NOP
-   321                           
-   322                           ; BSR set to: 0
-   323                           ;main.c: 83: T0CONbits.T0PS = 1;
-   324  000228  50D5               	movf	213,w,c	;volatile
-   325  00022A  0BF8               	andlw	-8
-   326  00022C  0901               	iorlw	1
-   327  00022E  6ED5               	movwf	213,c	;volatile
-   328  000230                     
-   329                           ; BSR set to: 0
-   330                           ;main.c: 84: T0CONbits.TMR0ON = 1;
-   331  000230  8ED5               	bsf	213,7,c	;volatile
-   332                           
-   333                           ;main.c: 85: break;
-   334  000232  EFDE  F000         	goto	l1147
-   335  000236                     l1161:
-   336  000236  FFFF               	dw	65535	; assembler added errata NOP
-   337                           
-   338                           ; BSR set to: 0
-   339                           ;main.c: 87: T0CONbits.T0PS = 0;
-   340  000238  0EF8               	movlw	-8
-   341  00023A  16D5               	andwf	213,f,c	;volatile
-   342  00023C                     
-   343                           ; BSR set to: 0
-   344                           ;main.c: 88: T0CONbits.TMR0ON = 1;
-   345  00023C  8ED5               	bsf	213,7,c	;volatile
-   346                           
-   347                           ;main.c: 89: break;
-   348  00023E  EFDE  F000         	goto	l1147
-   349  000242                     l39:
-   350  000242  FFFF               	dw	65535	; assembler added errata NOP
-   351                           
-   352                           ; BSR set to: 0
-   353                           ;main.c: 91: T3CONbits.TMR3ON = 1;
-   354  000244  80B1               	bsf	177,0,c	;volatile
-   355                           
-   356                           ;main.c: 92: break;
-   357  000246  EFDE  F000         	goto	l1147
-   358  00024A                     l1167:
-   359  00024A  FFFF               	dw	65535	; assembler added errata NOP
-   360  00024C  C06C  F068         	movff	_g_etat,??_main
-   361  000250  C06D  F069         	movff	_g_etat+1,??_main+1
-   362                           
-   363                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+   314                           ;main.c: 70: T0CONbits.T0PS = 2;
+   315  0002AA  50D5               	movf	213,w,c	;volatile
+   316  0002AC  0BF8               	andlw	-8
+   317  0002AE  0902               	iorlw	2
+   318  0002B0  6ED5               	movwf	213,c	;volatile
+   319                           
+   320                           ;main.c: 72: break;
+   321  0002B2  EF27  F001         	goto	l1178
+   322  0002B6                     l1186:
+   323  0002B6  FFFF               	dw	65535	; assembler added errata NOP
+   324                           
+   325                           ; BSR set to: 0
+   326                           ;main.c: 75: T0CONbits.T0PS = 1;
+   327  0002B8  50D5               	movf	213,w,c	;volatile
+   328  0002BA  0BF8               	andlw	-8
+   329  0002BC  0901               	iorlw	1
+   330  0002BE  6ED5               	movwf	213,c	;volatile
+   331                           
+   332                           ;main.c: 77: break;
+   333  0002C0  EF27  F001         	goto	l1178
+   334  0002C4                     l1188:
+   335  0002C4  FFFF               	dw	65535	; assembler added errata NOP
+   336                           
+   337                           ; BSR set to: 0
+   338                           ;main.c: 79: T0CONbits.T0PS = 0;
+   339  0002C6  0EF8               	movlw	-8
+   340  0002C8  16D5               	andwf	213,f,c	;volatile
+   341                           
+   342                           ;main.c: 81: break;
+   343  0002CA  EF27  F001         	goto	l1178
+   344  0002CE                     l1192:
+   345  0002CE  FFFF               	dw	65535	; assembler added errata NOP
+   346  0002D0  C06E  F068         	movff	_g_etat,??_main
+   347  0002D4  C06F  F069         	movff	_g_etat+1,??_main+1
+   348                           
+   349                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-   364                           ; Switch size 1, requested type "simple"
-   365                           ; Number of cases is 1, Range of values is 0 to 0
-   366                           ; switch strategies available:
-   367                           ; Name         Instructions Cycles
-   368                           ; simple_byte            4     3 (average)
-   369                           ;	Chosen strategy is simple_byte
-   370  000254  0100               	movlb	0	; force () banked
-   371  000256  5169               	movf	(??_main+1)& (0+255),w,b
-   372  000258  0A00               	xorlw	0	; case 0
-   373  00025A  B4D8               	btfsc	status,2,c
-   374  00025C  EF32  F001         	goto	l1227
-   375  000260  EFDE  F000         	goto	l1147
-   376  000264                     l1227:
-   377  000264  FFFF               	dw	65535	; assembler added errata NOP
-   378                           
-   379                           ; BSR set to: 0
-   380                           ; Switch size 1, requested type "simple"
-   381                           ; Number of cases is 5, Range of values is 0 to 4
-   382                           ; switch strategies available:
-   383                           ; Name         Instructions Cycles
-   384                           ; simple_byte           16     9 (average)
-   385                           ;	Chosen strategy is simple_byte
-   386  000266  5168               	movf	??_main& (0+255),w,b
-   387  000268  0A00               	xorlw	0	; case 0
-   388  00026A  B4D8               	btfsc	status,2,c
-   389  00026C  EF07  F001         	goto	l34
-   390  000270  0A01               	xorlw	1	; case 1
-   391  000272  B4D8               	btfsc	status,2,c
-   392  000274  EF0B  F001         	goto	l1153
-   393  000278  0A03               	xorlw	3	; case 2
-   394  00027A  B4D8               	btfsc	status,2,c
-   395  00027C  EF13  F001         	goto	l1157
-   396  000280  0A01               	xorlw	1	; case 3
-   397  000282  B4D8               	btfsc	status,2,c
-   398  000284  EF1B  F001         	goto	l1161
-   399  000288  0A07               	xorlw	7	; case 4
-   400  00028A  B4D8               	btfsc	status,2,c
-   401  00028C  EF21  F001         	goto	l39
-   402  000290  EFDE  F000         	goto	l1147
-   403  000294  EF5A  F000         	goto	start
-   404  000298                     __end_of_main:
-   405                           	opt callstack 0
-   406                           
-   407 ;; *************** function _initialisation *****************
-   408 ;; Defined at:
-   409 ;;		line 38 in file "main.c"
-   410 ;; Parameters:    Size  Location     Type
-   411 ;;		None
-   412 ;; Auto vars:     Size  Location     Type
-   413 ;;		None
-   414 ;; Return value:  Size  Location     Type
-   415 ;;                  1    wreg      void 
-   416 ;; Registers used:
-   417 ;;		wreg, status,2, cstack
-   418 ;; Tracked objects:
-   419 ;;		On entry : 0/0
-   420 ;;		On exit  : 0/0
-   421 ;;		Unchanged: 0/0
-   422 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   423 ;;      Params:         0       0       0       0       0       0       0
-   424 ;;      Locals:         0       0       0       0       0       0       0
-   425 ;;      Temps:          0       0       0       0       0       0       0
-   426 ;;      Totals:         0       0       0       0       0       0       0
-   427 ;;Total ram usage:        0 bytes
-   428 ;; Hardware stack levels used:    1
-   429 ;; Hardware stack levels required when called:    2
-   430 ;; This function calls:
-   431 ;;		_initialisation_ActiverIntAdc
-   432 ;;		_initialisation_ActiverInterruptions
-   433 ;;		_initialisation_ActiverPWM
-   434 ;;		_initialisation_ActiverTmr0
-   435 ;;		_initialisation_ConfigurerAdc
-   436 ;;		_initialisation_ConfigurerPortDSortie
-   437 ;; This function is called by:
-   438 ;;		_main
-   439 ;; This function uses a non-reentrant model
-   440 ;;
-   441                           
-   442                           	psect	text1
-   443  0002FA                     __ptext1:
-   444                           	opt callstack 0
-   445  0002FA                     _initialisation:
-   446                           	opt callstack 0
-   447  0002FA  FFFF               	dw	65535	; assembler added errata NOP
-   448  0002FC                     
-   449                           ;main.c: 40: initialisation_ConfigurerPortDSortie();
-   450  0002FC  ECAA  F001         	call	_initialisation_ConfigurerPortDSortie	;wreg free
-   451                           
-   452                           ;main.c: 41: initialisation_ConfigurerAdc();
-   453  000300  EC8C  F001         	call	_initialisation_ConfigurerAdc	;wreg free
-   454  000304                     
-   455                           ;main.c: 42: initialisation_ActiverIntAdc();
-   456  000304  ECA4  F001         	call	_initialisation_ActiverIntAdc	;wreg free
-   457  000308                     
-   458                           ;main.c: 43: initialisation_ActiverPWM();
-   459  000308  EC4C  F001         	call	_initialisation_ActiverPWM	;wreg free
-   460  00030C                     
-   461                           ;main.c: 44: initialisation_ActiverTmr0();
-   462  00030C  EC99  F001         	call	_initialisation_ActiverTmr0	;wreg free
-   463  000310                     
-   464                           ;main.c: 45: initialisation_ActiverInterruptions();
-   465  000310  ECAF  F001         	call	_initialisation_ActiverInterruptions	;wreg free
-   466  000314  0012               	return		;funcret
-   467  000316  FFFF               	dw	65535	; errata NOP
-   468  000318                     __end_of_initialisation:
-   469                           	opt callstack 0
-   470                           
-   471 ;; *************** function _initialisation_ConfigurerPortDSortie *****************
-   472 ;; Defined at:
-   473 ;;		line 17 in file "initialisation.c"
-   474 ;; Parameters:    Size  Location     Type
-   475 ;;		None
-   476 ;; Auto vars:     Size  Location     Type
-   477 ;;		None
-   478 ;; Return value:  Size  Location     Type
-   479 ;;                  1    wreg      void 
-   480 ;; Registers used:
-   481 ;;		wreg, status,2
-   482 ;; Tracked objects:
-   483 ;;		On entry : 0/0
-   484 ;;		On exit  : 0/0
-   485 ;;		Unchanged: 0/0
-   486 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   487 ;;      Params:         0       0       0       0       0       0       0
-   488 ;;      Locals:         0       0       0       0       0       0       0
-   489 ;;      Temps:          0       0       0       0       0       0       0
-   490 ;;      Totals:         0       0       0       0       0       0       0
-   491 ;;Total ram usage:        0 bytes
-   492 ;; Hardware stack levels used:    1
-   493 ;; Hardware stack levels required when called:    1
-   494 ;; This function calls:
-   495 ;;		Nothing
-   496 ;; This function is called by:
-   497 ;;		_initialisation
-   498 ;; This function uses a non-reentrant model
-   499 ;;
-   500                           
-   501                           	psect	text2
-   502  000354                     __ptext2:
-   503                           	opt callstack 0
-   504  000354                     _initialisation_ConfigurerPortDSortie:
-   505                           	opt callstack 0
-   506  000354  FFFF               	dw	65535	; assembler added errata NOP
-   507  000356                     
-   508                           ;initialisation.c: 19: TRISD = 0;
-   509  000356  0E00               	movlw	0
-   510  000358  6E95               	movwf	149,c	;volatile
-   511  00035A  0012               	return		;funcret
-   512  00035C  FFFF               	dw	65535	; errata NOP
-   513  00035E                     __end_of_initialisation_ConfigurerPortDSortie:
-   514                           	opt callstack 0
-   515                           
-   516 ;; *************** function _initialisation_ConfigurerAdc *****************
-   517 ;; Defined at:
-   518 ;;		line 35 in file "initialisation.c"
-   519 ;; Parameters:    Size  Location     Type
-   520 ;;		None
-   521 ;; Auto vars:     Size  Location     Type
-   522 ;;		None
-   523 ;; Return value:  Size  Location     Type
-   524 ;;                  1    wreg      void 
-   525 ;; Registers used:
-   526 ;;		wreg, status,2
-   527 ;; Tracked objects:
-   528 ;;		On entry : 0/0
-   529 ;;		On exit  : 0/0
-   530 ;;		Unchanged: 0/0
-   531 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   532 ;;      Params:         0       0       0       0       0       0       0
-   533 ;;      Locals:         0       0       0       0       0       0       0
-   534 ;;      Temps:          0       0       0       0       0       0       0
-   535 ;;      Totals:         0       0       0       0       0       0       0
-   536 ;;Total ram usage:        0 bytes
-   537 ;; Hardware stack levels used:    1
-   538 ;; Hardware stack levels required when called:    1
-   539 ;; This function calls:
-   540 ;;		Nothing
-   541 ;; This function is called by:
-   542 ;;		_initialisation
-   543 ;; This function uses a non-reentrant model
-   544 ;;
-   545                           
-   546                           	psect	text3
-   547  000318                     __ptext3:
-   548                           	opt callstack 0
-   549  000318                     _initialisation_ConfigurerAdc:
-   550                           	opt callstack 0
-   551  000318  FFFF               	dw	65535	; assembler added errata NOP
-   552  00031A                     
-   553                           ;initialisation.c: 38: TRISAbits.TRISA0 = 1;
-   554  00031A  8092               	bsf	146,0,c	;volatile
-   555  00031C                     
-   556                           ;initialisation.c: 40: ADCON1 = 0;
-   557  00031C  0E00               	movlw	0
-   558  00031E  6EC1               	movwf	193,c	;volatile
-   559  000320                     
-   560                           ;initialisation.c: 42: ADCON0bits.ADON = 1;
-   561  000320  80C2               	bsf	194,0,c	;volatile
-   562  000322                     
-   563                           ;initialisation.c: 43: ADCON1bits.ADFM = 0;
-   564  000322  9EC1               	bcf	193,7,c	;volatile
-   565                           
-   566                           ;initialisation.c: 46: ADCON0bits.ADCS = 0b10;
-   567  000324  50C2               	movf	194,w,c	;volatile
-   568  000326  0B3F               	andlw	-193
-   569  000328  0980               	iorlw	128
-   570  00032A  6EC2               	movwf	194,c	;volatile
-   571  00032C                     
-   572                           ;initialisation.c: 47: ADCON1bits.ADCS2 = 1;
-   573  00032C  8CC1               	bsf	193,6,c	;volatile
-   574  00032E  0012               	return		;funcret
-   575  000330  FFFF               	dw	65535	; errata NOP
-   576  000332                     __end_of_initialisation_ConfigurerAdc:
-   577                           	opt callstack 0
-   578                           
-   579 ;; *************** function _initialisation_ActiverTmr0 *****************
-   580 ;; Defined at:
-   581 ;;		line 104 in file "initialisation.c"
-   582 ;; Parameters:    Size  Location     Type
-   583 ;;		None
-   584 ;; Auto vars:     Size  Location     Type
-   585 ;;		None
-   586 ;; Return value:  Size  Location     Type
-   587 ;;                  1    wreg      void 
-   588 ;; Registers used:
-   589 ;;		wreg, status,2
-   590 ;; Tracked objects:
-   591 ;;		On entry : 0/0
-   592 ;;		On exit  : 0/0
-   593 ;;		Unchanged: 0/0
-   594 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   595 ;;      Params:         0       0       0       0       0       0       0
-   596 ;;      Locals:         0       0       0       0       0       0       0
-   597 ;;      Temps:          0       0       0       0       0       0       0
-   598 ;;      Totals:         0       0       0       0       0       0       0
-   599 ;;Total ram usage:        0 bytes
-   600 ;; Hardware stack levels used:    1
-   601 ;; Hardware stack levels required when called:    1
-   602 ;; This function calls:
-   603 ;;		Nothing
-   604 ;; This function is called by:
-   605 ;;		_initialisation
-   606 ;; This function uses a non-reentrant model
-   607 ;;
-   608                           
-   609                           	psect	text4
-   610  000332                     __ptext4:
-   611                           	opt callstack 0
-   612  000332                     _initialisation_ActiverTmr0:
-   613                           	opt callstack 0
-   614  000332  FFFF               	dw	65535	; assembler added errata NOP
-   615  000334                     
-   616                           ;initialisation.c: 106: T0CONbits.TMR0ON = 1;
-   617  000334  8ED5               	bsf	213,7,c	;volatile
-   618                           
-   619                           ;initialisation.c: 107: T0CONbits.PSA = 0;
-   620  000336  96D5               	bcf	213,3,c	;volatile
-   621                           
-   622                           ;initialisation.c: 108: T0CONbits.T0CS = 0;
-   623  000338  9AD5               	bcf	213,5,c	;volatile
-   624                           
-   625                           ;initialisation.c: 109: INTCONbits.TMR0IE = 1;
-   626  00033A  8AF2               	bsf	242,5,c	;volatile
-   627  00033C                     
-   628                           ;initialisation.c: 110: TMR0H = 0xE2;
-   629  00033C  0EE2               	movlw	226
-   630  00033E  6ED7               	movwf	215,c	;volatile
-   631                           
-   632                           ;initialisation.c: 111: TMR0L = 0xB4;
-   633  000340  0EB4               	movlw	180
-   634  000342  6ED6               	movwf	214,c	;volatile
-   635  000344  0012               	return		;funcret
-   636  000346  FFFF               	dw	65535	; errata NOP
-   637  000348                     __end_of_initialisation_ActiverTmr0:
-   638                           	opt callstack 0
-   639                           
-   640 ;; *************** function _initialisation_ActiverPWM *****************
-   641 ;; Defined at:
-   642 ;;		line 65 in file "initialisation.c"
-   643 ;; Parameters:    Size  Location     Type
-   644 ;;		None
-   645 ;; Auto vars:     Size  Location     Type
-   646 ;;		None
-   647 ;; Return value:  Size  Location     Type
-   648 ;;                  1    wreg      void 
-   649 ;; Registers used:
-   650 ;;		wreg, status,2
-   651 ;; Tracked objects:
-   652 ;;		On entry : 0/0
-   653 ;;		On exit  : 0/0
-   654 ;;		Unchanged: 0/0
-   655 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   656 ;;      Params:         0       0       0       0       0       0       0
-   657 ;;      Locals:         0       0       0       0       0       0       0
-   658 ;;      Temps:          0       0       0       0       0       0       0
-   659 ;;      Totals:         0       0       0       0       0       0       0
-   660 ;;Total ram usage:        0 bytes
-   661 ;; Hardware stack levels used:    1
-   662 ;; Hardware stack levels required when called:    1
-   663 ;; This function calls:
-   664 ;;		Nothing
-   665 ;; This function is called by:
-   666 ;;		_initialisation
-   667 ;; This function uses a non-reentrant model
-   668 ;;
+   350                           ; Switch size 1, requested type "simple"
+   351                           ; Number of cases is 1, Range of values is 0 to 0
+   352                           ; switch strategies available:
+   353                           ; Name         Instructions Cycles
+   354                           ; simple_byte            4     3 (average)
+   355                           ;	Chosen strategy is simple_byte
+   356  0002D8  0100               	movlb	0	; force () banked
+   357  0002DA  5169               	movf	(??_main+1)& (0+255),w,b
+   358  0002DC  0A00               	xorlw	0	; case 0
+   359  0002DE  B4D8               	btfsc	status,2,c
+   360  0002E0  EF74  F001         	goto	l1270
+   361  0002E4  EF27  F001         	goto	l1178
+   362  0002E8                     l1270:
+   363  0002E8  FFFF               	dw	65535	; assembler added errata NOP
+   364                           
+   365                           ; BSR set to: 0
+   366                           ; Switch size 1, requested type "simple"
+   367                           ; Number of cases is 5, Range of values is 0 to 4
+   368                           ; switch strategies available:
+   369                           ; Name         Instructions Cycles
+   370                           ; simple_byte           16     9 (average)
+   371                           ;	Chosen strategy is simple_byte
+   372  0002EA  5168               	movf	??_main& (0+255),w,b
+   373  0002EC  0A00               	xorlw	0	; case 0
+   374  0002EE  B4D8               	btfsc	status,2,c
+   375  0002F0  EF50  F001         	goto	l34
+   376  0002F4  0A01               	xorlw	1	; case 1
+   377  0002F6  B4D8               	btfsc	status,2,c
+   378  0002F8  EF54  F001         	goto	l1184
+   379  0002FC  0A03               	xorlw	3	; case 2
+   380  0002FE  B4D8               	btfsc	status,2,c
+   381  000300  EF5B  F001         	goto	l1186
+   382  000304  0A01               	xorlw	1	; case 3
+   383  000306  B4D8               	btfsc	status,2,c
+   384  000308  EF62  F001         	goto	l1188
+   385  00030C  0A07               	xorlw	7	; case 4
+   386  00030E  B4D8               	btfsc	status,2,c
+   387  000310  EF27  F001         	goto	l1178
+   388  000314  EF27  F001         	goto	l1178
+   389  000318  EFA3  F000         	goto	start
+   390  00031C                     __end_of_main:
+   391                           	opt callstack 0
+   392                           
+   393 ;; *************** function _initialisation *****************
+   394 ;; Defined at:
+   395 ;;		line 28 in file "main.c"
+   396 ;; Parameters:    Size  Location     Type
+   397 ;;		None
+   398 ;; Auto vars:     Size  Location     Type
+   399 ;;		None
+   400 ;; Return value:  Size  Location     Type
+   401 ;;                  1    wreg      void 
+   402 ;; Registers used:
+   403 ;;		wreg, status,2, cstack
+   404 ;; Tracked objects:
+   405 ;;		On entry : 0/0
+   406 ;;		On exit  : 0/0
+   407 ;;		Unchanged: 0/0
+   408 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   409 ;;      Params:         0       0       0       0       0       0       0
+   410 ;;      Locals:         0       0       0       0       0       0       0
+   411 ;;      Temps:          0       0       0       0       0       0       0
+   412 ;;      Totals:         0       0       0       0       0       0       0
+   413 ;;Total ram usage:        0 bytes
+   414 ;; Hardware stack levels used:    1
+   415 ;; Hardware stack levels required when called:    2
+   416 ;; This function calls:
+   417 ;;		_initialisation_ActiverIntAdc
+   418 ;;		_initialisation_ActiverInterruptions
+   419 ;;		_initialisation_ActiverPWM
+   420 ;;		_initialisation_ActiverTmr0
+   421 ;;		_initialisation_ConfigTmr3
+   422 ;;		_initialisation_ConfigurerAdc
+   423 ;;		_initialisation_ConfigurerPortDSortie
+   424 ;; This function is called by:
+   425 ;;		_main
+   426 ;; This function uses a non-reentrant model
+   427 ;;
+   428                           
+   429                           	psect	text1
+   430  000382                     __ptext1:
+   431                           	opt callstack 0
+   432  000382                     _initialisation:
+   433                           	opt callstack 0
+   434  000382  FFFF               	dw	65535	; assembler added errata NOP
+   435  000384                     
+   436                           ;main.c: 30: initialisation_ConfigurerPortDSortie();
+   437  000384  ECF6  F001         	call	_initialisation_ConfigurerPortDSortie	;wreg free
+   438                           
+   439                           ;main.c: 31: initialisation_ConfigurerAdc();
+   440  000388  ECD2  F001         	call	_initialisation_ConfigurerAdc	;wreg free
+   441  00038C                     
+   442                           ;main.c: 32: initialisation_ActiverIntAdc();
+   443  00038C  ECF0  F001         	call	_initialisation_ActiverIntAdc	;wreg free
+   444  000390                     
+   445                           ;main.c: 33: initialisation_ActiverPWM();
+   446  000390  EC8E  F001         	call	_initialisation_ActiverPWM	;wreg free
+   447  000394                     
+   448                           ;main.c: 34: initialisation_ActiverTmr0();
+   449  000394  ECDF  F001         	call	_initialisation_ActiverTmr0	;wreg free
+   450  000398                     
+   451                           ;main.c: 35: initialisation_ConfigTmr3();
+   452  000398  ECEA  F001         	call	_initialisation_ConfigTmr3	;wreg free
+   453                           
+   454                           ;main.c: 36: initialisation_ActiverInterruptions();
+   455  00039C  ECFB  F001         	call	_initialisation_ActiverInterruptions	;wreg free
+   456  0003A0  0012               	return		;funcret
+   457  0003A2  FFFF               	dw	65535	; errata NOP
+   458  0003A4                     __end_of_initialisation:
+   459                           	opt callstack 0
+   460                           
+   461 ;; *************** function _initialisation_ConfigurerPortDSortie *****************
+   462 ;; Defined at:
+   463 ;;		line 17 in file "initialisation.c"
+   464 ;; Parameters:    Size  Location     Type
+   465 ;;		None
+   466 ;; Auto vars:     Size  Location     Type
+   467 ;;		None
+   468 ;; Return value:  Size  Location     Type
+   469 ;;                  1    wreg      void 
+   470 ;; Registers used:
+   471 ;;		wreg, status,2
+   472 ;; Tracked objects:
+   473 ;;		On entry : 0/0
+   474 ;;		On exit  : 0/0
+   475 ;;		Unchanged: 0/0
+   476 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   477 ;;      Params:         0       0       0       0       0       0       0
+   478 ;;      Locals:         0       0       0       0       0       0       0
+   479 ;;      Temps:          0       0       0       0       0       0       0
+   480 ;;      Totals:         0       0       0       0       0       0       0
+   481 ;;Total ram usage:        0 bytes
+   482 ;; Hardware stack levels used:    1
+   483 ;; Hardware stack levels required when called:    1
+   484 ;; This function calls:
+   485 ;;		Nothing
+   486 ;; This function is called by:
+   487 ;;		_initialisation
+   488 ;; This function uses a non-reentrant model
+   489 ;;
+   490                           
+   491                           	psect	text2
+   492  0003EC                     __ptext2:
+   493                           	opt callstack 0
+   494  0003EC                     _initialisation_ConfigurerPortDSortie:
+   495                           	opt callstack 0
+   496  0003EC  FFFF               	dw	65535	; assembler added errata NOP
+   497  0003EE                     
+   498                           ;initialisation.c: 19: TRISD = 0;
+   499  0003EE  0E00               	movlw	0
+   500  0003F0  6E95               	movwf	149,c	;volatile
+   501  0003F2  0012               	return		;funcret
+   502  0003F4  FFFF               	dw	65535	; errata NOP
+   503  0003F6                     __end_of_initialisation_ConfigurerPortDSortie:
+   504                           	opt callstack 0
+   505                           
+   506 ;; *************** function _initialisation_ConfigurerAdc *****************
+   507 ;; Defined at:
+   508 ;;		line 35 in file "initialisation.c"
+   509 ;; Parameters:    Size  Location     Type
+   510 ;;		None
+   511 ;; Auto vars:     Size  Location     Type
+   512 ;;		None
+   513 ;; Return value:  Size  Location     Type
+   514 ;;                  1    wreg      void 
+   515 ;; Registers used:
+   516 ;;		wreg, status,2
+   517 ;; Tracked objects:
+   518 ;;		On entry : 0/0
+   519 ;;		On exit  : 0/0
+   520 ;;		Unchanged: 0/0
+   521 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   522 ;;      Params:         0       0       0       0       0       0       0
+   523 ;;      Locals:         0       0       0       0       0       0       0
+   524 ;;      Temps:          0       0       0       0       0       0       0
+   525 ;;      Totals:         0       0       0       0       0       0       0
+   526 ;;Total ram usage:        0 bytes
+   527 ;; Hardware stack levels used:    1
+   528 ;; Hardware stack levels required when called:    1
+   529 ;; This function calls:
+   530 ;;		Nothing
+   531 ;; This function is called by:
+   532 ;;		_initialisation
+   533 ;; This function uses a non-reentrant model
+   534 ;;
+   535                           
+   536                           	psect	text3
+   537  0003A4                     __ptext3:
+   538                           	opt callstack 0
+   539  0003A4                     _initialisation_ConfigurerAdc:
+   540                           	opt callstack 0
+   541  0003A4  FFFF               	dw	65535	; assembler added errata NOP
+   542  0003A6                     
+   543                           ;initialisation.c: 38: TRISAbits.TRISA0 = 1;
+   544  0003A6  8092               	bsf	146,0,c	;volatile
+   545  0003A8                     
+   546                           ;initialisation.c: 40: ADCON1 = 0;
+   547  0003A8  0E00               	movlw	0
+   548  0003AA  6EC1               	movwf	193,c	;volatile
+   549  0003AC                     
+   550                           ;initialisation.c: 42: ADCON0bits.ADON = 1;
+   551  0003AC  80C2               	bsf	194,0,c	;volatile
+   552  0003AE                     
+   553                           ;initialisation.c: 43: ADCON1bits.ADFM = 0;
+   554  0003AE  9EC1               	bcf	193,7,c	;volatile
+   555                           
+   556                           ;initialisation.c: 46: ADCON0bits.ADCS = 0b10;
+   557  0003B0  50C2               	movf	194,w,c	;volatile
+   558  0003B2  0B3F               	andlw	-193
+   559  0003B4  0980               	iorlw	128
+   560  0003B6  6EC2               	movwf	194,c	;volatile
+   561  0003B8                     
+   562                           ;initialisation.c: 47: ADCON1bits.ADCS2 = 1;
+   563  0003B8  8CC1               	bsf	193,6,c	;volatile
+   564  0003BA  0012               	return		;funcret
+   565  0003BC  FFFF               	dw	65535	; errata NOP
+   566  0003BE                     __end_of_initialisation_ConfigurerAdc:
+   567                           	opt callstack 0
+   568                           
+   569 ;; *************** function _initialisation_ConfigTmr3 *****************
+   570 ;; Defined at:
+   571 ;;		line 118 in file "initialisation.c"
+   572 ;; Parameters:    Size  Location     Type
+   573 ;;		None
+   574 ;; Auto vars:     Size  Location     Type
+   575 ;;		None
+   576 ;; Return value:  Size  Location     Type
+   577 ;;                  1    wreg      void 
+   578 ;; Registers used:
+   579 ;;		wreg, status,2
+   580 ;; Tracked objects:
+   581 ;;		On entry : 0/0
+   582 ;;		On exit  : 0/0
+   583 ;;		Unchanged: 0/0
+   584 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   585 ;;      Params:         0       0       0       0       0       0       0
+   586 ;;      Locals:         0       0       0       0       0       0       0
+   587 ;;      Temps:          0       0       0       0       0       0       0
+   588 ;;      Totals:         0       0       0       0       0       0       0
+   589 ;;Total ram usage:        0 bytes
+   590 ;; Hardware stack levels used:    1
+   591 ;; Hardware stack levels required when called:    1
+   592 ;; This function calls:
+   593 ;;		Nothing
+   594 ;; This function is called by:
+   595 ;;		_initialisation
+   596 ;; This function uses a non-reentrant model
+   597 ;;
+   598                           
+   599                           	psect	text4
+   600  0003D4                     __ptext4:
+   601                           	opt callstack 0
+   602  0003D4                     _initialisation_ConfigTmr3:
+   603                           	opt callstack 0
+   604  0003D4  FFFF               	dw	65535	; assembler added errata NOP
+   605  0003D6                     
+   606                           ;initialisation.c: 121: T3CON = 0;
+   607  0003D6  0E00               	movlw	0
+   608  0003D8  6EB1               	movwf	177,c	;volatile
+   609  0003DA                     
+   610                           ;initialisation.c: 122: PIE2bits.TMR3IE = 1;
+   611  0003DA  82A0               	bsf	160,1,c	;volatile
+   612  0003DC  0012               	return		;funcret
+   613  0003DE  FFFF               	dw	65535	; errata NOP
+   614  0003E0                     __end_of_initialisation_ConfigTmr3:
+   615                           	opt callstack 0
+   616                           
+   617 ;; *************** function _initialisation_ActiverTmr0 *****************
+   618 ;; Defined at:
+   619 ;;		line 104 in file "initialisation.c"
+   620 ;; Parameters:    Size  Location     Type
+   621 ;;		None
+   622 ;; Auto vars:     Size  Location     Type
+   623 ;;		None
+   624 ;; Return value:  Size  Location     Type
+   625 ;;                  1    wreg      void 
+   626 ;; Registers used:
+   627 ;;		wreg, status,2
+   628 ;; Tracked objects:
+   629 ;;		On entry : 0/0
+   630 ;;		On exit  : 0/0
+   631 ;;		Unchanged: 0/0
+   632 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   633 ;;      Params:         0       0       0       0       0       0       0
+   634 ;;      Locals:         0       0       0       0       0       0       0
+   635 ;;      Temps:          0       0       0       0       0       0       0
+   636 ;;      Totals:         0       0       0       0       0       0       0
+   637 ;;Total ram usage:        0 bytes
+   638 ;; Hardware stack levels used:    1
+   639 ;; Hardware stack levels required when called:    1
+   640 ;; This function calls:
+   641 ;;		Nothing
+   642 ;; This function is called by:
+   643 ;;		_initialisation
+   644 ;; This function uses a non-reentrant model
+   645 ;;
+   646                           
+   647                           	psect	text5
+   648  0003BE                     __ptext5:
+   649                           	opt callstack 0
+   650  0003BE                     _initialisation_ActiverTmr0:
+   651                           	opt callstack 0
+   652  0003BE  FFFF               	dw	65535	; assembler added errata NOP
+   653  0003C0                     
+   654                           ;initialisation.c: 106: T0CONbits.TMR0ON = 1;
+   655  0003C0  8ED5               	bsf	213,7,c	;volatile
+   656                           
+   657                           ;initialisation.c: 107: T0CONbits.PSA = 0;
+   658  0003C2  96D5               	bcf	213,3,c	;volatile
+   659                           
+   660                           ;initialisation.c: 108: T0CONbits.T0CS = 0;
+   661  0003C4  9AD5               	bcf	213,5,c	;volatile
+   662                           
+   663                           ;initialisation.c: 109: INTCONbits.TMR0IE = 1;
+   664  0003C6  8AF2               	bsf	242,5,c	;volatile
+   665  0003C8                     
+   666                           ;initialisation.c: 110: TMR0H = 0xE2;
+   667  0003C8  0EE2               	movlw	226
+   668  0003CA  6ED7               	movwf	215,c	;volatile
    669                           
-   670                           	psect	text5
-   671  000298                     __ptext5:
-   672                           	opt callstack 0
-   673  000298                     _initialisation_ActiverPWM:
-   674                           	opt callstack 0
-   675  000298  FFFF               	dw	65535	; assembler added errata NOP
-   676  00029A                     
-   677                           ;initialisation.c: 73: PR2 = 255;
-   678  00029A  68CB               	setf	203,c	;volatile
-   679  00029C                     
-   680                           ;initialisation.c: 76: CCPR1L = 0x80;
-   681  00029C  0E80               	movlw	128
-   682  00029E  6EBE               	movwf	190,c	;volatile
-   683                           
-   684                           ;initialisation.c: 77: CCP1CONbits.DC1B = 0b00;
-   685  0002A0  0ECF               	movlw	-49
-   686  0002A2  16BD               	andwf	189,f,c	;volatile
-   687  0002A4                     
-   688                           ;initialisation.c: 81: TRISCbits.RC0 = 1;
-   689  0002A4  8094               	bsf	148,0,c	;volatile
-   690  0002A6                     
-   691                           ;initialisation.c: 82: TRISCbits.RC2 = 0;
-   692  0002A6  9494               	bcf	148,2,c	;volatile
-   693  0002A8                     
-   694                           ;initialisation.c: 86: PIR1bits.TMR2IF = 0;
-   695  0002A8  929E               	bcf	158,1,c	;volatile
-   696                           
-   697                           ;initialisation.c: 87: T2CONbits.T2CKPS = 3;
-   698  0002AA  0E03               	movlw	3
-   699  0002AC  12CA               	iorwf	202,f,c	;volatile
-   700  0002AE                     
-   701                           ;initialisation.c: 88: T2CONbits.TMR2ON = 1;
-   702  0002AE  84CA               	bsf	202,2,c	;volatile
-   703                           
-   704                           ;initialisation.c: 92: CCP1CONbits.CCP1M = 0b1111;
-   705  0002B0  0E0F               	movlw	15
-   706  0002B2  12BD               	iorwf	189,f,c	;volatile
-   707  0002B4                     l122:
-   708  0002B4  FFFF               	dw	65535	; assembler added errata NOP
-   709  0002B6  A29E               	btfss	158,1,c	;volatile
-   710  0002B8  EF60  F001         	goto	u141
-   711  0002BC  EF63  F001         	goto	u140
-   712  0002C0                     u141:
-   713  0002C0  FFFF               	dw	65535	; assembler added errata NOP
-   714  0002C2  EF5A  F001         	goto	l122
-   715  0002C6                     u140:
-   716  0002C6  FFFF               	dw	65535	; assembler added errata NOP
-   717  0002C8                     
-   718                           ;initialisation.c: 97: TRISCbits.RC1 = 0;
-   719  0002C8  9294               	bcf	148,1,c	;volatile
-   720  0002CA  0012               	return		;funcret
-   721  0002CC  FFFF               	dw	65535	; errata NOP
-   722  0002CE                     __end_of_initialisation_ActiverPWM:
-   723                           	opt callstack 0
-   724                           
-   725 ;; *************** function _initialisation_ActiverInterruptions *****************
-   726 ;; Defined at:
-   727 ;;		line 25 in file "initialisation.c"
-   728 ;; Parameters:    Size  Location     Type
-   729 ;;		None
-   730 ;; Auto vars:     Size  Location     Type
-   731 ;;		None
-   732 ;; Return value:  Size  Location     Type
-   733 ;;                  1    wreg      void 
-   734 ;; Registers used:
-   735 ;;		None
-   736 ;; Tracked objects:
-   737 ;;		On entry : 0/0
-   738 ;;		On exit  : 0/0
-   739 ;;		Unchanged: 0/0
-   740 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   741 ;;      Params:         0       0       0       0       0       0       0
-   742 ;;      Locals:         0       0       0       0       0       0       0
-   743 ;;      Temps:          0       0       0       0       0       0       0
-   744 ;;      Totals:         0       0       0       0       0       0       0
-   745 ;;Total ram usage:        0 bytes
-   746 ;; Hardware stack levels used:    1
-   747 ;; Hardware stack levels required when called:    1
-   748 ;; This function calls:
-   749 ;;		Nothing
-   750 ;; This function is called by:
-   751 ;;		_initialisation
-   752 ;; This function uses a non-reentrant model
-   753 ;;
-   754                           
-   755                           	psect	text6
-   756  00035E                     __ptext6:
-   757                           	opt callstack 0
-   758  00035E                     _initialisation_ActiverInterruptions:
-   759                           	opt callstack 0
-   760  00035E  FFFF               	dw	65535	; assembler added errata NOP
-   761  000360                     
-   762                           ;initialisation.c: 27: INTCONbits.PEIE = 1;
-   763  000360  8CF2               	bsf	242,6,c	;volatile
-   764                           
-   765                           ;initialisation.c: 28: INTCONbits.GIE = 1;
-   766  000362  8EF2               	bsf	242,7,c	;volatile
-   767  000364  0012               	return		;funcret
-   768  000366  FFFF               	dw	65535	; errata NOP
-   769  000368                     __end_of_initialisation_ActiverInterruptions:
-   770                           	opt callstack 0
-   771                           
-   772 ;; *************** function _initialisation_ActiverIntAdc *****************
-   773 ;; Defined at:
-   774 ;;		line 54 in file "initialisation.c"
-   775 ;; Parameters:    Size  Location     Type
-   776 ;;		None
-   777 ;; Auto vars:     Size  Location     Type
-   778 ;;		None
-   779 ;; Return value:  Size  Location     Type
-   780 ;;                  1    wreg      void 
-   781 ;; Registers used:
-   782 ;;		None
-   783 ;; Tracked objects:
-   784 ;;		On entry : 0/0
-   785 ;;		On exit  : 0/0
-   786 ;;		Unchanged: 0/0
-   787 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   788 ;;      Params:         0       0       0       0       0       0       0
-   789 ;;      Locals:         0       0       0       0       0       0       0
-   790 ;;      Temps:          0       0       0       0       0       0       0
-   791 ;;      Totals:         0       0       0       0       0       0       0
-   792 ;;Total ram usage:        0 bytes
-   793 ;; Hardware stack levels used:    1
-   794 ;; Hardware stack levels required when called:    1
-   795 ;; This function calls:
-   796 ;;		Nothing
-   797 ;; This function is called by:
-   798 ;;		_initialisation
-   799 ;; This function uses a non-reentrant model
-   800 ;;
-   801                           
-   802                           	psect	text7
-   803  000348                     __ptext7:
-   804                           	opt callstack 0
-   805  000348                     _initialisation_ActiverIntAdc:
-   806                           	opt callstack 0
-   807  000348  FFFF               	dw	65535	; assembler added errata NOP
-   808  00034A                     
-   809                           ;initialisation.c: 57: PIR1bits.ADIF = 0;
-   810  00034A  9C9E               	bcf	158,6,c	;volatile
-   811                           
-   812                           ;initialisation.c: 58: PIE1bits.ADIE = 1;
-   813  00034C  8C9D               	bsf	157,6,c	;volatile
-   814                           
-   815                           ;initialisation.c: 59: ADCON0bits.GO_DONE = 1;
-   816  00034E  84C2               	bsf	194,2,c	;volatile
-   817  000350  0012               	return		;funcret
-   818  000352  FFFF               	dw	65535	; errata NOP
-   819  000354                     __end_of_initialisation_ActiverIntAdc:
-   820                           	opt callstack 0
-   821                           
-   822 ;; *************** function ___awdiv *****************
-   823 ;; Defined at:
-   824 ;;		line 7 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c"
-   825 ;; Parameters:    Size  Location     Type
-   826 ;;  dividend        2    0[BANK0 ] int 
-   827 ;;  divisor         2    2[BANK0 ] int 
-   828 ;; Auto vars:     Size  Location     Type
-   829 ;;  quotient        2    6[BANK0 ] int 
-   830 ;;  sign            1    5[BANK0 ] unsigned char 
-   831 ;;  counter         1    4[BANK0 ] unsigned char 
-   832 ;; Return value:  Size  Location     Type
-   833 ;;                  2    0[BANK0 ] int 
-   834 ;; Registers used:
-   835 ;;		wreg, status,2, status,0
-   836 ;; Tracked objects:
-   837 ;;		On entry : 0/0
-   838 ;;		On exit  : 0/0
-   839 ;;		Unchanged: 0/0
-   840 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   841 ;;      Params:         0       4       0       0       0       0       0
-   842 ;;      Locals:         0       4       0       0       0       0       0
-   843 ;;      Temps:          0       0       0       0       0       0       0
-   844 ;;      Totals:         0       8       0       0       0       0       0
-   845 ;;Total ram usage:        8 bytes
-   846 ;; Hardware stack levels used:    1
-   847 ;; Hardware stack levels required when called:    1
-   848 ;; This function calls:
-   849 ;;		Nothing
-   850 ;; This function is called by:
-   851 ;;		_main
-   852 ;; This function uses a non-reentrant model
-   853 ;;
-   854                           
-   855                           	psect	text8
-   856  0000B8                     __ptext8:
-   857                           	opt callstack 0
-   858  0000B8                     ___awdiv:
-   859                           	opt callstack 0
-   860  0000B8  FFFF               	dw	65535	; assembler added errata NOP
-   861  0000BA  0E00               	movlw	0
-   862  0000BC  0100               	movlb	0	; () banked
-   863  0000BE  6F65               	movwf	___awdiv@sign& (0+255),b
-   864  0000C0                     
-   865                           ; BSR set to: 0
-   866  0000C0  BF63               	btfsc	(___awdiv@divisor+1)& (0+255),7,b
-   867  0000C2  EF68  F000         	goto	u150
-   868  0000C6  EF65  F000         	goto	u151
-   869  0000CA                     u151:
-   870  0000CA  FFFF               	dw	65535	; assembler added errata NOP
-   871  0000CC  EF6F  F000         	goto	l1107
-   872  0000D0                     u150:
-   873  0000D0  FFFF               	dw	65535	; assembler added errata NOP
-   874  0000D2                     
-   875                           ; BSR set to: 0
-   876  0000D2  6D62               	negf	___awdiv@divisor& (0+255),b
-   877  0000D4  1F63               	comf	(___awdiv@divisor+1)& (0+255),f,b
-   878  0000D6  B0D8               	btfsc	status,0,c
-   879  0000D8  2B63               	incf	(___awdiv@divisor+1)& (0+255),f,b
-   880  0000DA                     
-   881                           ; BSR set to: 0
-   882  0000DA  0E01               	movlw	1
-   883  0000DC  6F65               	movwf	___awdiv@sign& (0+255),b
-   884  0000DE                     l1107:
-   885  0000DE  FFFF               	dw	65535	; assembler added errata NOP
-   886                           
-   887                           ; BSR set to: 0
-   888  0000E0  BF61               	btfsc	(___awdiv@dividend+1)& (0+255),7,b
-   889  0000E2  EF78  F000         	goto	u160
-   890  0000E6  EF75  F000         	goto	u161
-   891  0000EA                     u161:
-   892  0000EA  FFFF               	dw	65535	; assembler added errata NOP
-   893  0000EC  EF7F  F000         	goto	l1113
-   894  0000F0                     u160:
-   895  0000F0  FFFF               	dw	65535	; assembler added errata NOP
-   896  0000F2                     
-   897                           ; BSR set to: 0
-   898  0000F2  6D60               	negf	___awdiv@dividend& (0+255),b
-   899  0000F4  1F61               	comf	(___awdiv@dividend+1)& (0+255),f,b
-   900  0000F6  B0D8               	btfsc	status,0,c
-   901  0000F8  2B61               	incf	(___awdiv@dividend+1)& (0+255),f,b
-   902  0000FA                     
+   670                           ;initialisation.c: 111: TMR0L = 0xB4;
+   671  0003CC  0EB4               	movlw	180
+   672  0003CE  6ED6               	movwf	214,c	;volatile
+   673  0003D0  0012               	return		;funcret
+   674  0003D2  FFFF               	dw	65535	; errata NOP
+   675  0003D4                     __end_of_initialisation_ActiverTmr0:
+   676                           	opt callstack 0
+   677                           
+   678 ;; *************** function _initialisation_ActiverPWM *****************
+   679 ;; Defined at:
+   680 ;;		line 65 in file "initialisation.c"
+   681 ;; Parameters:    Size  Location     Type
+   682 ;;		None
+   683 ;; Auto vars:     Size  Location     Type
+   684 ;;		None
+   685 ;; Return value:  Size  Location     Type
+   686 ;;                  1    wreg      void 
+   687 ;; Registers used:
+   688 ;;		wreg, status,2
+   689 ;; Tracked objects:
+   690 ;;		On entry : 0/0
+   691 ;;		On exit  : 0/0
+   692 ;;		Unchanged: 0/0
+   693 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   694 ;;      Params:         0       0       0       0       0       0       0
+   695 ;;      Locals:         0       0       0       0       0       0       0
+   696 ;;      Temps:          0       0       0       0       0       0       0
+   697 ;;      Totals:         0       0       0       0       0       0       0
+   698 ;;Total ram usage:        0 bytes
+   699 ;; Hardware stack levels used:    1
+   700 ;; Hardware stack levels required when called:    1
+   701 ;; This function calls:
+   702 ;;		Nothing
+   703 ;; This function is called by:
+   704 ;;		_initialisation
+   705 ;; This function uses a non-reentrant model
+   706 ;;
+   707                           
+   708                           	psect	text6
+   709  00031C                     __ptext6:
+   710                           	opt callstack 0
+   711  00031C                     _initialisation_ActiverPWM:
+   712                           	opt callstack 0
+   713  00031C  FFFF               	dw	65535	; assembler added errata NOP
+   714  00031E                     
+   715                           ;initialisation.c: 73: PR2 = 255;
+   716  00031E  68CB               	setf	203,c	;volatile
+   717  000320                     
+   718                           ;initialisation.c: 76: CCPR1L = 0x80;
+   719  000320  0E80               	movlw	128
+   720  000322  6EBE               	movwf	190,c	;volatile
+   721                           
+   722                           ;initialisation.c: 77: CCP1CONbits.DC1B = 0b00;
+   723  000324  0ECF               	movlw	-49
+   724  000326  16BD               	andwf	189,f,c	;volatile
+   725  000328                     
+   726                           ;initialisation.c: 81: TRISCbits.RC0 = 1;
+   727  000328  8094               	bsf	148,0,c	;volatile
+   728  00032A                     
+   729                           ;initialisation.c: 82: TRISCbits.RC2 = 0;
+   730  00032A  9494               	bcf	148,2,c	;volatile
+   731  00032C                     
+   732                           ;initialisation.c: 86: PIR1bits.TMR2IF = 0;
+   733  00032C  929E               	bcf	158,1,c	;volatile
+   734                           
+   735                           ;initialisation.c: 87: T2CONbits.T2CKPS = 3;
+   736  00032E  0E03               	movlw	3
+   737  000330  12CA               	iorwf	202,f,c	;volatile
+   738  000332                     
+   739                           ;initialisation.c: 88: T2CONbits.TMR2ON = 1;
+   740  000332  84CA               	bsf	202,2,c	;volatile
+   741                           
+   742                           ;initialisation.c: 92: CCP1CONbits.CCP1M = 0b1111;
+   743  000334  0E0F               	movlw	15
+   744  000336  12BD               	iorwf	189,f,c	;volatile
+   745  000338                     l135:
+   746  000338  FFFF               	dw	65535	; assembler added errata NOP
+   747  00033A  A29E               	btfss	158,1,c	;volatile
+   748  00033C  EFA2  F001         	goto	u181
+   749  000340  EFA5  F001         	goto	u180
+   750  000344                     u181:
+   751  000344  FFFF               	dw	65535	; assembler added errata NOP
+   752  000346  EF9C  F001         	goto	l135
+   753  00034A                     u180:
+   754  00034A  FFFF               	dw	65535	; assembler added errata NOP
+   755  00034C                     
+   756                           ;initialisation.c: 97: TRISCbits.RC1 = 0;
+   757  00034C  9294               	bcf	148,1,c	;volatile
+   758  00034E  0012               	return		;funcret
+   759  000350  FFFF               	dw	65535	; errata NOP
+   760  000352                     __end_of_initialisation_ActiverPWM:
+   761                           	opt callstack 0
+   762                           
+   763 ;; *************** function _initialisation_ActiverInterruptions *****************
+   764 ;; Defined at:
+   765 ;;		line 25 in file "initialisation.c"
+   766 ;; Parameters:    Size  Location     Type
+   767 ;;		None
+   768 ;; Auto vars:     Size  Location     Type
+   769 ;;		None
+   770 ;; Return value:  Size  Location     Type
+   771 ;;                  1    wreg      void 
+   772 ;; Registers used:
+   773 ;;		None
+   774 ;; Tracked objects:
+   775 ;;		On entry : 0/0
+   776 ;;		On exit  : 0/0
+   777 ;;		Unchanged: 0/0
+   778 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   779 ;;      Params:         0       0       0       0       0       0       0
+   780 ;;      Locals:         0       0       0       0       0       0       0
+   781 ;;      Temps:          0       0       0       0       0       0       0
+   782 ;;      Totals:         0       0       0       0       0       0       0
+   783 ;;Total ram usage:        0 bytes
+   784 ;; Hardware stack levels used:    1
+   785 ;; Hardware stack levels required when called:    1
+   786 ;; This function calls:
+   787 ;;		Nothing
+   788 ;; This function is called by:
+   789 ;;		_initialisation
+   790 ;; This function uses a non-reentrant model
+   791 ;;
+   792                           
+   793                           	psect	text7
+   794  0003F6                     __ptext7:
+   795                           	opt callstack 0
+   796  0003F6                     _initialisation_ActiverInterruptions:
+   797                           	opt callstack 0
+   798  0003F6  FFFF               	dw	65535	; assembler added errata NOP
+   799  0003F8                     
+   800                           ;initialisation.c: 27: INTCONbits.PEIE = 1;
+   801  0003F8  8CF2               	bsf	242,6,c	;volatile
+   802                           
+   803                           ;initialisation.c: 28: INTCONbits.GIE = 1;
+   804  0003FA  8EF2               	bsf	242,7,c	;volatile
+   805  0003FC  0012               	return		;funcret
+   806  0003FE  FFFF               	dw	65535	; errata NOP
+   807  000400                     __end_of_initialisation_ActiverInterruptions:
+   808                           	opt callstack 0
+   809                           
+   810 ;; *************** function _initialisation_ActiverIntAdc *****************
+   811 ;; Defined at:
+   812 ;;		line 54 in file "initialisation.c"
+   813 ;; Parameters:    Size  Location     Type
+   814 ;;		None
+   815 ;; Auto vars:     Size  Location     Type
+   816 ;;		None
+   817 ;; Return value:  Size  Location     Type
+   818 ;;                  1    wreg      void 
+   819 ;; Registers used:
+   820 ;;		None
+   821 ;; Tracked objects:
+   822 ;;		On entry : 0/0
+   823 ;;		On exit  : 0/0
+   824 ;;		Unchanged: 0/0
+   825 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   826 ;;      Params:         0       0       0       0       0       0       0
+   827 ;;      Locals:         0       0       0       0       0       0       0
+   828 ;;      Temps:          0       0       0       0       0       0       0
+   829 ;;      Totals:         0       0       0       0       0       0       0
+   830 ;;Total ram usage:        0 bytes
+   831 ;; Hardware stack levels used:    1
+   832 ;; Hardware stack levels required when called:    1
+   833 ;; This function calls:
+   834 ;;		Nothing
+   835 ;; This function is called by:
+   836 ;;		_initialisation
+   837 ;; This function uses a non-reentrant model
+   838 ;;
+   839                           
+   840                           	psect	text8
+   841  0003E0                     __ptext8:
+   842                           	opt callstack 0
+   843  0003E0                     _initialisation_ActiverIntAdc:
+   844                           	opt callstack 0
+   845  0003E0  FFFF               	dw	65535	; assembler added errata NOP
+   846  0003E2                     
+   847                           ;initialisation.c: 57: PIR1bits.ADIF = 0;
+   848  0003E2  9C9E               	bcf	158,6,c	;volatile
+   849                           
+   850                           ;initialisation.c: 58: PIE1bits.ADIE = 1;
+   851  0003E4  8C9D               	bsf	157,6,c	;volatile
+   852                           
+   853                           ;initialisation.c: 59: ADCON0bits.GO_DONE = 1;
+   854  0003E6  84C2               	bsf	194,2,c	;volatile
+   855  0003E8  0012               	return		;funcret
+   856  0003EA  FFFF               	dw	65535	; errata NOP
+   857  0003EC                     __end_of_initialisation_ActiverIntAdc:
+   858                           	opt callstack 0
+   859                           
+   860 ;; *************** function ___awdiv *****************
+   861 ;; Defined at:
+   862 ;;		line 7 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c"
+   863 ;; Parameters:    Size  Location     Type
+   864 ;;  dividend        2    0[BANK0 ] int 
+   865 ;;  divisor         2    2[BANK0 ] int 
+   866 ;; Auto vars:     Size  Location     Type
+   867 ;;  quotient        2    6[BANK0 ] int 
+   868 ;;  sign            1    5[BANK0 ] unsigned char 
+   869 ;;  counter         1    4[BANK0 ] unsigned char 
+   870 ;; Return value:  Size  Location     Type
+   871 ;;                  2    0[BANK0 ] int 
+   872 ;; Registers used:
+   873 ;;		wreg, status,2, status,0
+   874 ;; Tracked objects:
+   875 ;;		On entry : 0/0
+   876 ;;		On exit  : 0/0
+   877 ;;		Unchanged: 0/0
+   878 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   879 ;;      Params:         0       4       0       0       0       0       0
+   880 ;;      Locals:         0       4       0       0       0       0       0
+   881 ;;      Temps:          0       0       0       0       0       0       0
+   882 ;;      Totals:         0       8       0       0       0       0       0
+   883 ;;Total ram usage:        8 bytes
+   884 ;; Hardware stack levels used:    1
+   885 ;; Hardware stack levels required when called:    1
+   886 ;; This function calls:
+   887 ;;		Nothing
+   888 ;; This function is called by:
+   889 ;;		_main
+   890 ;; This function uses a non-reentrant model
+   891 ;;
+   892                           
+   893                           	psect	text9
+   894  00014A                     __ptext9:
+   895                           	opt callstack 0
+   896  00014A                     ___awdiv:
+   897                           	opt callstack 0
+   898  00014A  FFFF               	dw	65535	; assembler added errata NOP
+   899  00014C  0E00               	movlw	0
+   900  00014E  0100               	movlb	0	; () banked
+   901  000150  6F65               	movwf	___awdiv@sign& (0+255),b
+   902  000152                     
    903                           ; BSR set to: 0
-   904  0000FA  0E01               	movlw	1
-   905  0000FC  1B65               	xorwf	___awdiv@sign& (0+255),f,b
-   906  0000FE                     l1113:
-   907  0000FE  FFFF               	dw	65535	; assembler added errata NOP
-   908                           
-   909                           ; BSR set to: 0
-   910  000100  0E00               	movlw	0
-   911  000102  6F67               	movwf	(___awdiv@quotient+1)& (0+255),b
-   912  000104  0E00               	movlw	0
-   913  000106  6F66               	movwf	___awdiv@quotient& (0+255),b
-   914  000108                     
-   915                           ; BSR set to: 0
-   916  000108  5162               	movf	___awdiv@divisor& (0+255),w,b
-   917  00010A  1163               	iorwf	(___awdiv@divisor+1)& (0+255),w,b
-   918  00010C  B4D8               	btfsc	status,2,c
-   919  00010E  EF8B  F000         	goto	u171
-   920  000112  EF8E  F000         	goto	u170
-   921  000116                     u171:
-   922  000116  FFFF               	dw	65535	; assembler added errata NOP
-   923  000118  EFBF  F000         	goto	l1135
-   924  00011C                     u170:
-   925  00011C  FFFF               	dw	65535	; assembler added errata NOP
-   926  00011E                     
-   927                           ; BSR set to: 0
-   928  00011E  0E01               	movlw	1
-   929  000120  6F64               	movwf	___awdiv@counter& (0+255),b
-   930  000122  EF98  F000         	goto	l1121
-   931  000126                     l1119:
-   932  000126  FFFF               	dw	65535	; assembler added errata NOP
-   933                           
-   934                           ; BSR set to: 0
-   935  000128  90D8               	bcf	status,0,c
-   936  00012A  3762               	rlcf	___awdiv@divisor& (0+255),f,b
-   937  00012C  3763               	rlcf	(___awdiv@divisor+1)& (0+255),f,b
-   938  00012E  2B64               	incf	___awdiv@counter& (0+255),f,b
-   939  000130                     l1121:
-   940  000130  FFFF               	dw	65535	; assembler added errata NOP
-   941                           
-   942                           ; BSR set to: 0
-   943  000132  AF63               	btfss	(___awdiv@divisor+1)& (0+255),7,b
-   944  000134  EF9E  F000         	goto	u181
-   945  000138  EFA1  F000         	goto	u180
-   946  00013C                     u181:
-   947  00013C  FFFF               	dw	65535	; assembler added errata NOP
-   948  00013E  EF93  F000         	goto	l1119
-   949  000142                     u180:
-   950  000142  FFFF               	dw	65535	; assembler added errata NOP
-   951  000144                     l1123:
-   952  000144  FFFF               	dw	65535	; assembler added errata NOP
-   953                           
-   954                           ; BSR set to: 0
-   955  000146  90D8               	bcf	status,0,c
-   956  000148  3766               	rlcf	___awdiv@quotient& (0+255),f,b
-   957  00014A  3767               	rlcf	(___awdiv@quotient+1)& (0+255),f,b
-   958  00014C                     
-   959                           ; BSR set to: 0
-   960  00014C  5162               	movf	___awdiv@divisor& (0+255),w,b
-   961  00014E  5D60               	subwf	___awdiv@dividend& (0+255),w,b
-   962  000150  5163               	movf	(___awdiv@divisor+1)& (0+255),w,b
-   963  000152  5961               	subwfb	(___awdiv@dividend+1)& (0+255),w,b
-   964  000154  A0D8               	btfss	status,0,c
-   965  000156  EFAF  F000         	goto	u191
-   966  00015A  EFB2  F000         	goto	u190
-   967  00015E                     u191:
-   968  00015E  FFFF               	dw	65535	; assembler added errata NOP
-   969  000160  EFB8  F000         	goto	l1131
-   970  000164                     u190:
-   971  000164  FFFF               	dw	65535	; assembler added errata NOP
-   972  000166                     
-   973                           ; BSR set to: 0
-   974  000166  5162               	movf	___awdiv@divisor& (0+255),w,b
-   975  000168  5F60               	subwf	___awdiv@dividend& (0+255),f,b
-   976  00016A  5163               	movf	(___awdiv@divisor+1)& (0+255),w,b
-   977  00016C  5B61               	subwfb	(___awdiv@dividend+1)& (0+255),f,b
-   978  00016E                     
-   979                           ; BSR set to: 0
-   980  00016E  8166               	bsf	___awdiv@quotient& (0+255),0,b
-   981  000170                     l1131:
-   982  000170  FFFF               	dw	65535	; assembler added errata NOP
-   983                           
-   984                           ; BSR set to: 0
-   985  000172  90D8               	bcf	status,0,c
-   986  000174  3363               	rrcf	(___awdiv@divisor+1)& (0+255),f,b
-   987  000176  3362               	rrcf	___awdiv@divisor& (0+255),f,b
-   988  000178                     
-   989                           ; BSR set to: 0
-   990  000178  2F64               	decfsz	___awdiv@counter& (0+255),f,b
-   991  00017A  EFA2  F000         	goto	l1123
-   992  00017E                     l1135:
-   993  00017E  FFFF               	dw	65535	; assembler added errata NOP
-   994                           
-   995                           ; BSR set to: 0
-   996  000180  5165               	movf	___awdiv@sign& (0+255),w,b
-   997  000182  B4D8               	btfsc	status,2,c
-   998  000184  EFC6  F000         	goto	u201
-   999  000188  EFC9  F000         	goto	u200
-  1000  00018C                     u201:
-  1001  00018C  FFFF               	dw	65535	; assembler added errata NOP
-  1002  00018E  EFCE  F000         	goto	l1139
-  1003  000192                     u200:
-  1004  000192  FFFF               	dw	65535	; assembler added errata NOP
-  1005  000194                     
-  1006                           ; BSR set to: 0
-  1007  000194  6D66               	negf	___awdiv@quotient& (0+255),b
-  1008  000196  1F67               	comf	(___awdiv@quotient+1)& (0+255),f,b
-  1009  000198  B0D8               	btfsc	status,0,c
-  1010  00019A  2B67               	incf	(___awdiv@quotient+1)& (0+255),f,b
-  1011  00019C                     l1139:
-  1012  00019C  FFFF               	dw	65535	; assembler added errata NOP
-  1013                           
-  1014                           ; BSR set to: 0
-  1015  00019E  C066  F060         	movff	___awdiv@quotient,?___awdiv
-  1016  0001A2  C067  F061         	movff	___awdiv@quotient+1,?___awdiv+1
-  1017  0001A6                     
-  1018                           ; BSR set to: 0
-  1019  0001A6  0012               	return		;funcret
-  1020  0001A8  FFFF               	dw	65535	; errata NOP
-  1021  0001AA                     __end_of___awdiv:
-  1022                           	opt callstack 0
-  1023                           
-  1024 ;; *************** function _high_isr *****************
-  1025 ;; Defined at:
-  1026 ;;		line 27 in file "interrupts.c"
-  1027 ;; Parameters:    Size  Location     Type
-  1028 ;;		None
-  1029 ;; Auto vars:     Size  Location     Type
-  1030 ;;		None
-  1031 ;; Return value:  Size  Location     Type
-  1032 ;;                  1    wreg      void 
-  1033 ;; Registers used:
-  1034 ;;		wreg, status,2, status,0
-  1035 ;; Tracked objects:
-  1036 ;;		On entry : 0/0
-  1037 ;;		On exit  : 0/0
-  1038 ;;		Unchanged: 0/0
-  1039 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-  1040 ;;      Params:         0       0       0       0       0       0       0
-  1041 ;;      Locals:         0       0       0       0       0       0       0
-  1042 ;;      Temps:          0       0       0       0       0       0       0
-  1043 ;;      Totals:         0       0       0       0       0       0       0
-  1044 ;;Total ram usage:        0 bytes
-  1045 ;; Hardware stack levels used:    1
-  1046 ;; This function calls:
-  1047 ;;		Nothing
-  1048 ;; This function is called by:
-  1049 ;;		Interrupt level 2
-  1050 ;; This function uses a non-reentrant model
-  1051 ;;
-  1052                           
-  1053                           	psect	intcode
-  1054  000008                     __pintcode:
-  1055                           	opt callstack 0
-  1056  000008                     _high_isr:
-  1057                           	opt callstack 0
-  1058  000008  FFFF               	dw	65535	; assembler added errata NOP
-  1059                           
-  1060                           ; BSR set to: 0
-  1061                           ;incstack = 0
-  1062  00000A  8201               	bsf	int$flags,1,c	;set compiler interrupt flag (level 2)
-  1063  00000C                     
-  1064                           ;interrupts.c: 29: static unsigned char dutyWiper = 9;;interrupts.c: 30: static bool sen
-      +                          sUp = 1;;interrupts.c: 33: if (PIR1bits.ADIF)
-  1065  00000C  AC9E               	btfss	158,6,c	;volatile
-  1066  00000E  EF0B  F000         	goto	i2u22_41
-  1067  000012  EF0E  F000         	goto	i2u22_40
-  1068  000016                     i2u22_41:
-  1069  000016  FFFF               	dw	65535	; assembler added errata NOP
-  1070  000018  EF15  F000         	goto	i2l67
-  1071  00001C                     i2u22_40:
-  1072  00001C  FFFF               	dw	65535	; assembler added errata NOP
-  1073  00001E                     
-  1074                           ;interrupts.c: 34: {;interrupts.c: 35: g_resAN = ADRESH;
-  1075  00001E  CFC4 F06E          	movff	4036,_g_resAN	;volatile
-  1076  000022  0100               	movlb	0	; force () banked
-  1077  000024  6B6F               	clrf	(_g_resAN+1)& (0+255),b
-  1078                           
-  1079                           ;interrupts.c: 37: PIR1bits.ADIF = 0;
-  1080  000026  9C9E               	bcf	158,6,c	;volatile
-  1081                           
-  1082                           ;interrupts.c: 38: ADCON0bits.GO_DONE = 1;
-  1083  000028  84C2               	bsf	194,2,c	;volatile
-  1084  00002A                     i2l67:
-  1085  00002A  FFFF               	dw	65535	; assembler added errata NOP
-  1086                           
-  1087                           ;interrupts.c: 39: };interrupts.c: 42: if (INTCONbits.TMR0IF)
-  1088  00002C  A4F2               	btfss	242,2,c	;volatile
-  1089  00002E  EF1B  F000         	goto	i2u23_41
-  1090  000032  EF1E  F000         	goto	i2u23_40
-  1091  000036                     i2u23_41:
-  1092  000036  FFFF               	dw	65535	; assembler added errata NOP
-  1093  000038  EF55  F000         	goto	i2l73
-  1094  00003C                     i2u23_40:
-  1095  00003C  FFFF               	dw	65535	; assembler added errata NOP
-  1096  00003E                     
-  1097                           ;interrupts.c: 43: {;interrupts.c: 45: CCPR1L = dutyWiper;
-  1098  00003E  C071  FFBE         	movff	high_isr@dutyWiper,4030	;volatile
-  1099  000042                     
-  1100                           ;interrupts.c: 46: if (sensUp)
-  1101  000042  0100               	movlb	0	; force () banked
-  1102  000044  5170               	movf	high_isr@sensUp& (0+255),w,b
-  1103  000046  B4D8               	btfsc	status,2,c
-  1104  000048  EF28  F000         	goto	i2u24_41
-  1105  00004C  EF2B  F000         	goto	i2u24_40
-  1106  000050                     i2u24_41:
-  1107  000050  FFFF               	dw	65535	; assembler added errata NOP
-  1108  000052  EF3E  F000         	goto	i2l1189
-  1109  000056                     i2u24_40:
-  1110  000056  FFFF               	dw	65535	; assembler added errata NOP
-  1111  000058                     
-  1112                           ; BSR set to: 0
-  1113                           ;interrupts.c: 47: {;interrupts.c: 48: dutyWiper++;
-  1114  000058  0100               	movlb	0	; force () banked
-  1115  00005A  2B71               	incf	high_isr@dutyWiper& (0+255),f,b
-  1116  00005C                     
-  1117                           ; BSR set to: 0
-  1118                           ;interrupts.c: 49: if (dutyWiper >= 0x25)
-  1119  00005C  0E24               	movlw	36
-  1120  00005E  0100               	movlb	0	; force () banked
-  1121  000060  6571               	cpfsgt	high_isr@dutyWiper& (0+255),b
-  1122  000062  EF35  F000         	goto	i2u25_41
-  1123  000066  EF38  F000         	goto	i2u25_40
-  1124  00006A                     i2u25_41:
-  1125  00006A  FFFF               	dw	65535	; assembler added errata NOP
-  1126  00006C  EF4F  F000         	goto	i2l1195
-  1127  000070                     i2u25_40:
-  1128  000070  FFFF               	dw	65535	; assembler added errata NOP
-  1129  000072                     
-  1130                           ; BSR set to: 0
-  1131                           ;interrupts.c: 50: sensUp = 0;
-  1132  000072  0E00               	movlw	0
-  1133  000074  0100               	movlb	0	; force () banked
-  1134  000076  6F70               	movwf	high_isr@sensUp& (0+255),b
-  1135  000078  EF4F  F000         	goto	i2l1195
-  1136  00007C                     i2l1189:
-  1137  00007C  FFFF               	dw	65535	; assembler added errata NOP
-  1138                           
-  1139                           ; BSR set to: 0
-  1140                           ;interrupts.c: 52: else;interrupts.c: 53: {;interrupts.c: 54: dutyWiper--;
-  1141  00007E  0100               	movlb	0	; force () banked
-  1142  000080  0771               	decf	high_isr@dutyWiper& (0+255),f,b
-  1143  000082                     
-  1144                           ; BSR set to: 0
-  1145                           ;interrupts.c: 55: if (dutyWiper <= 9)
-  1146  000082  0E0A               	movlw	10
-  1147  000084  0100               	movlb	0	; force () banked
-  1148  000086  6171               	cpfslt	high_isr@dutyWiper& (0+255),b
-  1149  000088  EF48  F000         	goto	i2u26_41
-  1150  00008C  EF4B  F000         	goto	i2u26_40
-  1151  000090                     i2u26_41:
-  1152  000090  FFFF               	dw	65535	; assembler added errata NOP
-  1153  000092  EF4F  F000         	goto	i2l1195
-  1154  000096                     i2u26_40:
-  1155  000096  FFFF               	dw	65535	; assembler added errata NOP
-  1156  000098                     
-  1157                           ; BSR set to: 0
-  1158                           ;interrupts.c: 56: {;interrupts.c: 59: sensUp = 1;
-  1159  000098  0E01               	movlw	1
-  1160  00009A  0100               	movlb	0	; force () banked
-  1161  00009C  6F70               	movwf	high_isr@sensUp& (0+255),b
-  1162  00009E                     i2l1195:
-  1163  00009E  FFFF               	dw	65535	; assembler added errata NOP
-  1164                           
-  1165                           ; BSR set to: 0
-  1166                           ;interrupts.c: 60: };interrupts.c: 61: };interrupts.c: 63: INTCONbits.TMR0IF = 0;
-  1167  0000A0  94F2               	bcf	242,2,c	;volatile
-  1168                           
-  1169                           ;interrupts.c: 64: TMR0H = 0xE2;
-  1170  0000A2  0EE2               	movlw	226
-  1171  0000A4  6ED7               	movwf	215,c	;volatile
-  1172                           
-  1173                           ;interrupts.c: 65: TMR0L = 0xB4;
-  1174  0000A6  0EB4               	movlw	180
-  1175  0000A8  6ED6               	movwf	214,c	;volatile
-  1176  0000AA                     i2l73:
-  1177  0000AA  FFFF               	dw	65535	; assembler added errata NOP
-  1178  0000AC  9201               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
-  1179  0000AE  0011               	retfie		f
-  1180  0000B0  FFFF               	dw	65535	; errata NOP
-  1181  0000B2                     __end_of_high_isr:
-  1182                           	opt callstack 0
-  1183  0000B2  FFFF               	dw	65535	; assembler added errata NOP
-  1184                           
-  1185                           	psect	param0
-  1186  0000                     
-  1187                           	psect	temp
-  1188  000001                     btemp:
-  1189                           	opt callstack 0
-  1190  000001                     	ds	1
-  1191  0000                     int$flags	set	btemp
-  1192  0000                     wtemp8	set	btemp+1
-  1193  0000                     ttemp5	set	btemp+1
-  1194  0000                     ttemp6	set	btemp+4
-  1195  0000                     ttemp7	set	btemp+8
-  1196                           tosu	equ	0xFFF
-  1197                           tosh	equ	0xFFE
-  1198                           tosl	equ	0xFFD
-  1199                           stkptr	equ	0xFFC
-  1200                           pclatu	equ	0xFFB
-  1201                           pclath	equ	0xFFA
-  1202                           pcl	equ	0xFF9
-  1203                           tblptru	equ	0xFF8
-  1204                           tblptrh	equ	0xFF7
-  1205                           tblptrl	equ	0xFF6
-  1206                           tablat	equ	0xFF5
-  1207                           prodh	equ	0xFF4
-  1208                           prodl	equ	0xFF3
-  1209                           indf0	equ	0xFEF
-  1210                           postinc0	equ	0xFEE
-  1211                           postdec0	equ	0xFED
-  1212                           preinc0	equ	0xFEC
-  1213                           plusw0	equ	0xFEB
-  1214                           fsr0h	equ	0xFEA
-  1215                           fsr0l	equ	0xFE9
-  1216                           wreg	equ	0xFE8
-  1217                           indf1	equ	0xFE7
-  1218                           postinc1	equ	0xFE6
-  1219                           postdec1	equ	0xFE5
-  1220                           preinc1	equ	0xFE4
-  1221                           plusw1	equ	0xFE3
-  1222                           fsr1h	equ	0xFE2
-  1223                           fsr1l	equ	0xFE1
-  1224                           bsr	equ	0xFE0
-  1225                           indf2	equ	0xFDF
-  1226                           postinc2	equ	0xFDE
-  1227                           postdec2	equ	0xFDD
-  1228                           preinc2	equ	0xFDC
-  1229                           plusw2	equ	0xFDB
-  1230                           fsr2h	equ	0xFDA
-  1231                           fsr2l	equ	0xFD9
-  1232                           status	equ	0xFD8
+   904  000152  BF63               	btfsc	(___awdiv@divisor+1)& (0+255),7,b
+   905  000154  EFB1  F000         	goto	u190
+   906  000158  EFAE  F000         	goto	u191
+   907  00015C                     u191:
+   908  00015C  FFFF               	dw	65535	; assembler added errata NOP
+   909  00015E  EFB8  F000         	goto	l1138
+   910  000162                     u190:
+   911  000162  FFFF               	dw	65535	; assembler added errata NOP
+   912  000164                     
+   913                           ; BSR set to: 0
+   914  000164  6D62               	negf	___awdiv@divisor& (0+255),b
+   915  000166  1F63               	comf	(___awdiv@divisor+1)& (0+255),f,b
+   916  000168  B0D8               	btfsc	status,0,c
+   917  00016A  2B63               	incf	(___awdiv@divisor+1)& (0+255),f,b
+   918  00016C                     
+   919                           ; BSR set to: 0
+   920  00016C  0E01               	movlw	1
+   921  00016E  6F65               	movwf	___awdiv@sign& (0+255),b
+   922  000170                     l1138:
+   923  000170  FFFF               	dw	65535	; assembler added errata NOP
+   924                           
+   925                           ; BSR set to: 0
+   926  000172  BF61               	btfsc	(___awdiv@dividend+1)& (0+255),7,b
+   927  000174  EFC1  F000         	goto	u200
+   928  000178  EFBE  F000         	goto	u201
+   929  00017C                     u201:
+   930  00017C  FFFF               	dw	65535	; assembler added errata NOP
+   931  00017E  EFC8  F000         	goto	l1144
+   932  000182                     u200:
+   933  000182  FFFF               	dw	65535	; assembler added errata NOP
+   934  000184                     
+   935                           ; BSR set to: 0
+   936  000184  6D60               	negf	___awdiv@dividend& (0+255),b
+   937  000186  1F61               	comf	(___awdiv@dividend+1)& (0+255),f,b
+   938  000188  B0D8               	btfsc	status,0,c
+   939  00018A  2B61               	incf	(___awdiv@dividend+1)& (0+255),f,b
+   940  00018C                     
+   941                           ; BSR set to: 0
+   942  00018C  0E01               	movlw	1
+   943  00018E  1B65               	xorwf	___awdiv@sign& (0+255),f,b
+   944  000190                     l1144:
+   945  000190  FFFF               	dw	65535	; assembler added errata NOP
+   946                           
+   947                           ; BSR set to: 0
+   948  000192  0E00               	movlw	0
+   949  000194  6F67               	movwf	(___awdiv@quotient+1)& (0+255),b
+   950  000196  0E00               	movlw	0
+   951  000198  6F66               	movwf	___awdiv@quotient& (0+255),b
+   952  00019A                     
+   953                           ; BSR set to: 0
+   954  00019A  5162               	movf	___awdiv@divisor& (0+255),w,b
+   955  00019C  1163               	iorwf	(___awdiv@divisor+1)& (0+255),w,b
+   956  00019E  B4D8               	btfsc	status,2,c
+   957  0001A0  EFD4  F000         	goto	u211
+   958  0001A4  EFD7  F000         	goto	u210
+   959  0001A8                     u211:
+   960  0001A8  FFFF               	dw	65535	; assembler added errata NOP
+   961  0001AA  EF08  F001         	goto	l1166
+   962  0001AE                     u210:
+   963  0001AE  FFFF               	dw	65535	; assembler added errata NOP
+   964  0001B0                     
+   965                           ; BSR set to: 0
+   966  0001B0  0E01               	movlw	1
+   967  0001B2  6F64               	movwf	___awdiv@counter& (0+255),b
+   968  0001B4  EFE1  F000         	goto	l1152
+   969  0001B8                     l1150:
+   970  0001B8  FFFF               	dw	65535	; assembler added errata NOP
+   971                           
+   972                           ; BSR set to: 0
+   973  0001BA  90D8               	bcf	status,0,c
+   974  0001BC  3762               	rlcf	___awdiv@divisor& (0+255),f,b
+   975  0001BE  3763               	rlcf	(___awdiv@divisor+1)& (0+255),f,b
+   976  0001C0  2B64               	incf	___awdiv@counter& (0+255),f,b
+   977  0001C2                     l1152:
+   978  0001C2  FFFF               	dw	65535	; assembler added errata NOP
+   979                           
+   980                           ; BSR set to: 0
+   981  0001C4  AF63               	btfss	(___awdiv@divisor+1)& (0+255),7,b
+   982  0001C6  EFE7  F000         	goto	u221
+   983  0001CA  EFEA  F000         	goto	u220
+   984  0001CE                     u221:
+   985  0001CE  FFFF               	dw	65535	; assembler added errata NOP
+   986  0001D0  EFDC  F000         	goto	l1150
+   987  0001D4                     u220:
+   988  0001D4  FFFF               	dw	65535	; assembler added errata NOP
+   989  0001D6                     l1154:
+   990  0001D6  FFFF               	dw	65535	; assembler added errata NOP
+   991                           
+   992                           ; BSR set to: 0
+   993  0001D8  90D8               	bcf	status,0,c
+   994  0001DA  3766               	rlcf	___awdiv@quotient& (0+255),f,b
+   995  0001DC  3767               	rlcf	(___awdiv@quotient+1)& (0+255),f,b
+   996  0001DE                     
+   997                           ; BSR set to: 0
+   998  0001DE  5162               	movf	___awdiv@divisor& (0+255),w,b
+   999  0001E0  5D60               	subwf	___awdiv@dividend& (0+255),w,b
+  1000  0001E2  5163               	movf	(___awdiv@divisor+1)& (0+255),w,b
+  1001  0001E4  5961               	subwfb	(___awdiv@dividend+1)& (0+255),w,b
+  1002  0001E6  A0D8               	btfss	status,0,c
+  1003  0001E8  EFF8  F000         	goto	u231
+  1004  0001EC  EFFB  F000         	goto	u230
+  1005  0001F0                     u231:
+  1006  0001F0  FFFF               	dw	65535	; assembler added errata NOP
+  1007  0001F2  EF01  F001         	goto	l1162
+  1008  0001F6                     u230:
+  1009  0001F6  FFFF               	dw	65535	; assembler added errata NOP
+  1010  0001F8                     
+  1011                           ; BSR set to: 0
+  1012  0001F8  5162               	movf	___awdiv@divisor& (0+255),w,b
+  1013  0001FA  5F60               	subwf	___awdiv@dividend& (0+255),f,b
+  1014  0001FC  5163               	movf	(___awdiv@divisor+1)& (0+255),w,b
+  1015  0001FE  5B61               	subwfb	(___awdiv@dividend+1)& (0+255),f,b
+  1016  000200                     
+  1017                           ; BSR set to: 0
+  1018  000200  8166               	bsf	___awdiv@quotient& (0+255),0,b
+  1019  000202                     l1162:
+  1020  000202  FFFF               	dw	65535	; assembler added errata NOP
+  1021                           
+  1022                           ; BSR set to: 0
+  1023  000204  90D8               	bcf	status,0,c
+  1024  000206  3363               	rrcf	(___awdiv@divisor+1)& (0+255),f,b
+  1025  000208  3362               	rrcf	___awdiv@divisor& (0+255),f,b
+  1026  00020A                     
+  1027                           ; BSR set to: 0
+  1028  00020A  2F64               	decfsz	___awdiv@counter& (0+255),f,b
+  1029  00020C  EFEB  F000         	goto	l1154
+  1030  000210                     l1166:
+  1031  000210  FFFF               	dw	65535	; assembler added errata NOP
+  1032                           
+  1033                           ; BSR set to: 0
+  1034  000212  5165               	movf	___awdiv@sign& (0+255),w,b
+  1035  000214  B4D8               	btfsc	status,2,c
+  1036  000216  EF0F  F001         	goto	u241
+  1037  00021A  EF12  F001         	goto	u240
+  1038  00021E                     u241:
+  1039  00021E  FFFF               	dw	65535	; assembler added errata NOP
+  1040  000220  EF17  F001         	goto	l1170
+  1041  000224                     u240:
+  1042  000224  FFFF               	dw	65535	; assembler added errata NOP
+  1043  000226                     
+  1044                           ; BSR set to: 0
+  1045  000226  6D66               	negf	___awdiv@quotient& (0+255),b
+  1046  000228  1F67               	comf	(___awdiv@quotient+1)& (0+255),f,b
+  1047  00022A  B0D8               	btfsc	status,0,c
+  1048  00022C  2B67               	incf	(___awdiv@quotient+1)& (0+255),f,b
+  1049  00022E                     l1170:
+  1050  00022E  FFFF               	dw	65535	; assembler added errata NOP
+  1051                           
+  1052                           ; BSR set to: 0
+  1053  000230  C066  F060         	movff	___awdiv@quotient,?___awdiv
+  1054  000234  C067  F061         	movff	___awdiv@quotient+1,?___awdiv+1
+  1055  000238                     
+  1056                           ; BSR set to: 0
+  1057  000238  0012               	return		;funcret
+  1058  00023A  FFFF               	dw	65535	; errata NOP
+  1059  00023C                     __end_of___awdiv:
+  1060                           	opt callstack 0
+  1061                           
+  1062 ;; *************** function _high_isr *****************
+  1063 ;; Defined at:
+  1064 ;;		line 27 in file "interrupts.c"
+  1065 ;; Parameters:    Size  Location     Type
+  1066 ;;		None
+  1067 ;; Auto vars:     Size  Location     Type
+  1068 ;;		None
+  1069 ;; Return value:  Size  Location     Type
+  1070 ;;                  1    wreg      void 
+  1071 ;; Registers used:
+  1072 ;;		wreg, status,2, status,0
+  1073 ;; Tracked objects:
+  1074 ;;		On entry : 0/0
+  1075 ;;		On exit  : 0/0
+  1076 ;;		Unchanged: 0/0
+  1077 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1078 ;;      Params:         0       0       0       0       0       0       0
+  1079 ;;      Locals:         0       0       0       0       0       0       0
+  1080 ;;      Temps:          0       0       0       0       0       0       0
+  1081 ;;      Totals:         0       0       0       0       0       0       0
+  1082 ;;Total ram usage:        0 bytes
+  1083 ;; Hardware stack levels used:    1
+  1084 ;; This function calls:
+  1085 ;;		Nothing
+  1086 ;; This function is called by:
+  1087 ;;		Interrupt level 2
+  1088 ;; This function uses a non-reentrant model
+  1089 ;;
+  1090                           
+  1091                           	psect	intcode
+  1092  000008                     __pintcode:
+  1093                           	opt callstack 0
+  1094  000008                     _high_isr:
+  1095                           	opt callstack 0
+  1096  000008  FFFF               	dw	65535	; assembler added errata NOP
+  1097                           
+  1098                           ; BSR set to: 0
+  1099                           ;incstack = 0
+  1100  00000A  8201               	bsf	int$flags,1,c	;set compiler interrupt flag (level 2)
+  1101  00000C                     
+  1102                           ;interrupts.c: 29: static unsigned char dutyWiper = 9;;interrupts.c: 30: static bool sen
+      +                          sUp = 1;;interrupts.c: 31: static int compte = 0;;interrupts.c: 34: if (PIR1bits.ADIF)
+  1103  00000C  AC9E               	btfss	158,6,c	;volatile
+  1104  00000E  EF0B  F000         	goto	i2u26_41
+  1105  000012  EF0E  F000         	goto	i2u26_40
+  1106  000016                     i2u26_41:
+  1107  000016  FFFF               	dw	65535	; assembler added errata NOP
+  1108  000018  EF15  F000         	goto	i2l75
+  1109  00001C                     i2u26_40:
+  1110  00001C  FFFF               	dw	65535	; assembler added errata NOP
+  1111  00001E                     
+  1112                           ;interrupts.c: 35: {;interrupts.c: 36: g_resAN = ADRESH;
+  1113  00001E  CFC4 F070          	movff	4036,_g_resAN	;volatile
+  1114  000022  0100               	movlb	0	; force () banked
+  1115  000024  6B71               	clrf	(_g_resAN+1)& (0+255),b
+  1116                           
+  1117                           ;interrupts.c: 38: PIR1bits.ADIF = 0;
+  1118  000026  9C9E               	bcf	158,6,c	;volatile
+  1119                           
+  1120                           ;interrupts.c: 39: ADCON0bits.GO_DONE = 1;
+  1121  000028  84C2               	bsf	194,2,c	;volatile
+  1122  00002A                     i2l75:
+  1123  00002A  FFFF               	dw	65535	; assembler added errata NOP
+  1124                           
+  1125                           ;interrupts.c: 40: };interrupts.c: 43: if (INTCONbits.TMR0IF)
+  1126  00002C  A4F2               	btfss	242,2,c	;volatile
+  1127  00002E  EF1B  F000         	goto	i2u27_41
+  1128  000032  EF1E  F000         	goto	i2u27_40
+  1129  000036                     i2u27_41:
+  1130  000036  FFFF               	dw	65535	; assembler added errata NOP
+  1131  000038  EF9E  F000         	goto	i2l84
+  1132  00003C                     i2u27_40:
+  1133  00003C  FFFF               	dw	65535	; assembler added errata NOP
+  1134  00003E                     
+  1135                           ;interrupts.c: 44: {;interrupts.c: 46: CCPR1L = dutyWiper;
+  1136  00003E  C073  FFBE         	movff	high_isr@dutyWiper,4030	;volatile
+  1137  000042                     
+  1138                           ;interrupts.c: 47: if (sensUp)
+  1139  000042  0100               	movlb	0	; force () banked
+  1140  000044  5172               	movf	high_isr@sensUp& (0+255),w,b
+  1141  000046  B4D8               	btfsc	status,2,c
+  1142  000048  EF28  F000         	goto	i2u28_41
+  1143  00004C  EF2B  F000         	goto	i2u28_40
+  1144  000050                     i2u28_41:
+  1145  000050  FFFF               	dw	65535	; assembler added errata NOP
+  1146  000052  EF3E  F000         	goto	i2l1214
+  1147  000056                     i2u28_40:
+  1148  000056  FFFF               	dw	65535	; assembler added errata NOP
+  1149  000058                     
+  1150                           ; BSR set to: 0
+  1151                           ;interrupts.c: 48: {;interrupts.c: 49: dutyWiper++;
+  1152  000058  0100               	movlb	0	; force () banked
+  1153  00005A  2B73               	incf	high_isr@dutyWiper& (0+255),f,b
+  1154  00005C                     
+  1155                           ; BSR set to: 0
+  1156                           ;interrupts.c: 50: if (dutyWiper >= 0x25)
+  1157  00005C  0E24               	movlw	36
+  1158  00005E  0100               	movlb	0	; force () banked
+  1159  000060  6573               	cpfsgt	high_isr@dutyWiper& (0+255),b
+  1160  000062  EF35  F000         	goto	i2u29_41
+  1161  000066  EF38  F000         	goto	i2u29_40
+  1162  00006A                     i2u29_41:
+  1163  00006A  FFFF               	dw	65535	; assembler added errata NOP
+  1164  00006C  EF62  F000         	goto	i2l1224
+  1165  000070                     i2u29_40:
+  1166  000070  FFFF               	dw	65535	; assembler added errata NOP
+  1167  000072                     
+  1168                           ; BSR set to: 0
+  1169                           ;interrupts.c: 51: sensUp = 0;
+  1170  000072  0E00               	movlw	0
+  1171  000074  0100               	movlb	0	; force () banked
+  1172  000076  6F72               	movwf	high_isr@sensUp& (0+255),b
+  1173  000078  EF62  F000         	goto	i2l1224
+  1174  00007C                     i2l1214:
+  1175  00007C  FFFF               	dw	65535	; assembler added errata NOP
+  1176                           
+  1177                           ; BSR set to: 0
+  1178                           ;interrupts.c: 53: else;interrupts.c: 54: {;interrupts.c: 55: dutyWiper--;
+  1179  00007E  0100               	movlb	0	; force () banked
+  1180  000080  0773               	decf	high_isr@dutyWiper& (0+255),f,b
+  1181  000082                     
+  1182                           ; BSR set to: 0
+  1183                           ;interrupts.c: 56: if (dutyWiper <= 9)
+  1184  000082  0E0A               	movlw	10
+  1185  000084  0100               	movlb	0	; force () banked
+  1186  000086  6173               	cpfslt	high_isr@dutyWiper& (0+255),b
+  1187  000088  EF48  F000         	goto	i2u30_41
+  1188  00008C  EF4B  F000         	goto	i2u30_40
+  1189  000090                     i2u30_41:
+  1190  000090  FFFF               	dw	65535	; assembler added errata NOP
+  1191  000092  EF62  F000         	goto	i2l1224
+  1192  000096                     i2u30_40:
+  1193  000096  FFFF               	dw	65535	; assembler added errata NOP
+  1194  000098                     
+  1195                           ; BSR set to: 0
+  1196                           ;interrupts.c: 57: {;interrupts.c: 58: if (g_etat >= enumDelaiUn )
+  1197  000098  0100               	movlb	0	; force () banked
+  1198  00009A  BF6F               	btfsc	(_g_etat+1)& (0+255),7,b
+  1199  00009C  EF59  F000         	goto	i2u31_41
+  1200  0000A0  516F               	movf	(_g_etat+1)& (0+255),w,b
+  1201  0000A2  E10A               	bnz	i2u31_40
+  1202  0000A4  0E04               	movlw	4
+  1203  0000A6  5D6E               	subwf	_g_etat& (0+255),w,b
+  1204  0000A8  A0D8               	btfss	status,0,c
+  1205  0000AA  EF59  F000         	goto	i2u31_41
+  1206  0000AE  EF5C  F000         	goto	i2u31_40
+  1207  0000B2                     i2u31_41:
+  1208  0000B2  FFFF               	dw	65535	; assembler added errata NOP
+  1209  0000B4  EF5E  F000         	goto	i2l1222
+  1210  0000B8                     i2u31_40:
+  1211  0000B8  FFFF               	dw	65535	; assembler added errata NOP
+  1212  0000BA                     
+  1213                           ; BSR set to: 0
+  1214                           ;interrupts.c: 59: {;interrupts.c: 60: T0CONbits.TMR0ON = 0;
+  1215  0000BA  9ED5               	bcf	213,7,c	;volatile
+  1216  0000BC                     i2l1222:
+  1217  0000BC  FFFF               	dw	65535	; assembler added errata NOP
+  1218                           
+  1219                           ; BSR set to: 0
+  1220                           ;interrupts.c: 61: };interrupts.c: 62: sensUp = 1;
+  1221  0000BE  0E01               	movlw	1
+  1222  0000C0  0100               	movlb	0	; force () banked
+  1223  0000C2  6F72               	movwf	high_isr@sensUp& (0+255),b
+  1224  0000C4                     i2l1224:
+  1225  0000C4  FFFF               	dw	65535	; assembler added errata NOP
+  1226                           
+  1227                           ; BSR set to: 0
+  1228                           ;interrupts.c: 63: };interrupts.c: 64: };interrupts.c: 66: INTCONbits.TMR0IF = 0;
+  1229  0000C6  94F2               	bcf	242,2,c	;volatile
+  1230                           
+  1231                           ;interrupts.c: 67: TMR0H = 0xE2;
+  1232  0000C8  0EE2               	movlw	226
+  1233  0000CA  6ED7               	movwf	215,c	;volatile
+  1234                           
+  1235                           ;interrupts.c: 68: TMR0L = 0xB4;
+  1236  0000CC  0EB4               	movlw	180
+  1237  0000CE  6ED6               	movwf	214,c	;volatile
+  1238  0000D0                     
+  1239                           ; BSR set to: 0
+  1240                           ;interrupts.c: 72: if (PIR2bits.TMR3IF)
+  1241  0000D0  A2A1               	btfss	161,1,c	;volatile
+  1242  0000D2  EF6D  F000         	goto	i2u32_41
+  1243  0000D6  EF70  F000         	goto	i2u32_40
+  1244  0000DA                     i2u32_41:
+  1245  0000DA  FFFF               	dw	65535	; assembler added errata NOP
+  1246  0000DC  EF9E  F000         	goto	i2l84
+  1247  0000E0                     i2u32_40:
+  1248  0000E0  FFFF               	dw	65535	; assembler added errata NOP
+  1249  0000E2                     
+  1250                           ; BSR set to: 0
+  1251                           ;interrupts.c: 73: {;interrupts.c: 75: compte++;
+  1252  0000E2  0100               	movlb	0	; force () banked
+  1253  0000E4  4B6C               	infsnz	high_isr@compte& (0+255),f,b
+  1254  0000E6  2B6D               	incf	(high_isr@compte+1)& (0+255),f,b
+  1255  0000E8                     
+  1256                           ; BSR set to: 0
+  1257                           ;interrupts.c: 77: if (g_etat == enumDelaiUn && compte > 10)
+  1258  0000E8  0E04               	movlw	4
+  1259  0000EA  0100               	movlb	0	; force () banked
+  1260  0000EC  196E               	xorwf	_g_etat& (0+255),w,b
+  1261  0000EE  116F               	iorwf	(_g_etat+1)& (0+255),w,b
+  1262  0000F0  A4D8               	btfss	status,2,c
+  1263  0000F2  EF7D  F000         	goto	i2u33_41
+  1264  0000F6  EF80  F000         	goto	i2u33_40
+  1265  0000FA                     i2u33_41:
+  1266  0000FA  FFFF               	dw	65535	; assembler added errata NOP
+  1267  0000FC  EF9C  F000         	goto	i2l1238
+  1268  000100                     i2u33_40:
+  1269  000100  FFFF               	dw	65535	; assembler added errata NOP
+  1270  000102                     
+  1271                           ; BSR set to: 0
+  1272  000102  0100               	movlb	0	; force () banked
+  1273  000104  BF6D               	btfsc	(high_isr@compte+1)& (0+255),7,b
+  1274  000106  EF8E  F000         	goto	i2u34_41
+  1275  00010A  516D               	movf	(high_isr@compte+1)& (0+255),w,b
+  1276  00010C  E10A               	bnz	i2u34_40
+  1277  00010E  0E0B               	movlw	11
+  1278  000110  5D6C               	subwf	high_isr@compte& (0+255),w,b
+  1279  000112  A0D8               	btfss	status,0,c
+  1280  000114  EF8E  F000         	goto	i2u34_41
+  1281  000118  EF91  F000         	goto	i2u34_40
+  1282  00011C                     i2u34_41:
+  1283  00011C  FFFF               	dw	65535	; assembler added errata NOP
+  1284  00011E  EF9C  F000         	goto	i2l1238
+  1285  000122                     i2u34_40:
+  1286  000122  FFFF               	dw	65535	; assembler added errata NOP
+  1287  000124                     
+  1288                           ; BSR set to: 0
+  1289                           ;interrupts.c: 78: {;interrupts.c: 79: T0CONbits.T0PS = 1;
+  1290  000124  50D5               	movf	213,w,c	;volatile
+  1291  000126  0BF8               	andlw	-8
+  1292  000128  0901               	iorlw	1
+  1293  00012A  6ED5               	movwf	213,c	;volatile
+  1294  00012C                     
+  1295                           ; BSR set to: 0
+  1296                           ;interrupts.c: 80: T0CONbits.TMR0ON = 1;
+  1297  00012C  8ED5               	bsf	213,7,c	;volatile
+  1298                           
+  1299                           ;interrupts.c: 81: compte = 0;
+  1300  00012E  0E00               	movlw	0
+  1301  000130  0100               	movlb	0	; force () banked
+  1302  000132  6F6D               	movwf	(high_isr@compte+1)& (0+255),b
+  1303  000134  0E00               	movlw	0
+  1304  000136  6F6C               	movwf	high_isr@compte& (0+255),b
+  1305  000138                     i2l1238:
+  1306  000138  FFFF               	dw	65535	; assembler added errata NOP
+  1307                           
+  1308                           ; BSR set to: 0
+  1309                           ;interrupts.c: 82: };interrupts.c: 84: PIR2bits.TMR3IF = 0;
+  1310  00013A  92A1               	bcf	161,1,c	;volatile
+  1311  00013C                     i2l84:
+  1312  00013C  FFFF               	dw	65535	; assembler added errata NOP
+  1313  00013E  9201               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+  1314  000140  0011               	retfie		f
+  1315  000142  FFFF               	dw	65535	; errata NOP
+  1316  000144                     __end_of_high_isr:
+  1317                           	opt callstack 0
+  1318  000144  FFFF               	dw	65535	; assembler added errata NOP
+  1319                           
+  1320                           	psect	param0
+  1321  0000                     
+  1322                           	psect	temp
+  1323  000001                     btemp:
+  1324                           	opt callstack 0
+  1325  000001                     	ds	1
+  1326  0000                     int$flags	set	btemp
+  1327  0000                     wtemp8	set	btemp+1
+  1328  0000                     ttemp5	set	btemp+1
+  1329  0000                     ttemp6	set	btemp+4
+  1330  0000                     ttemp7	set	btemp+8
+  1331                           tosu	equ	0xFFF
+  1332                           tosh	equ	0xFFE
+  1333                           tosl	equ	0xFFD
+  1334                           stkptr	equ	0xFFC
+  1335                           pclatu	equ	0xFFB
+  1336                           pclath	equ	0xFFA
+  1337                           pcl	equ	0xFF9
+  1338                           tblptru	equ	0xFF8
+  1339                           tblptrh	equ	0xFF7
+  1340                           tblptrl	equ	0xFF6
+  1341                           tablat	equ	0xFF5
+  1342                           prodh	equ	0xFF4
+  1343                           prodl	equ	0xFF3
+  1344                           indf0	equ	0xFEF
+  1345                           postinc0	equ	0xFEE
+  1346                           postdec0	equ	0xFED
+  1347                           preinc0	equ	0xFEC
+  1348                           plusw0	equ	0xFEB
+  1349                           fsr0h	equ	0xFEA
+  1350                           fsr0l	equ	0xFE9
+  1351                           wreg	equ	0xFE8
+  1352                           indf1	equ	0xFE7
+  1353                           postinc1	equ	0xFE6
+  1354                           postdec1	equ	0xFE5
+  1355                           preinc1	equ	0xFE4
+  1356                           plusw1	equ	0xFE3
+  1357                           fsr1h	equ	0xFE2
+  1358                           fsr1l	equ	0xFE1
+  1359                           bsr	equ	0xFE0
+  1360                           indf2	equ	0xFDF
+  1361                           postinc2	equ	0xFDE
+  1362                           postdec2	equ	0xFDD
+  1363                           preinc2	equ	0xFDC
+  1364                           plusw2	equ	0xFDB
+  1365                           fsr2h	equ	0xFDA
+  1366                           fsr2l	equ	0xFD9
+  1367                           status	equ	0xFD8
 
 
 Data Sizes:
     Strings     0
     Constant    0
     Data        2
-    BSS         4
+    BSS         6
     Persistent  0
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
     COMRAM           94      0       0
-    BANK0           160     12      18
+    BANK0           160     12      20
     BANK1           256      0       0
     BANK2           256      0       0
     BANK3           256      0       0
@@ -1341,12 +1476,15 @@ Call Graph Tables:
 _initialisation_ActiverInterruptions
           _initialisation_ActiverPWM
          _initialisation_ActiverTmr0
+          _initialisation_ConfigTmr3
        _initialisation_ConfigurerAdc
 _initialisation_ConfigurerPortDSorti
  ---------------------------------------------------------------------------------
  (2) _initialisation_ConfigurerPortDSortie                 0     0      0       0
  ---------------------------------------------------------------------------------
  (2) _initialisation_ConfigurerAdc                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _initialisation_ConfigTmr3                            0     0      0       0
  ---------------------------------------------------------------------------------
  (2) _initialisation_ActiverTmr0                           0     0      0       0
  ---------------------------------------------------------------------------------
@@ -1377,6 +1515,7 @@ _initialisation_ConfigurerPortDSorti
      _initialisation_ActiverInterruptions
      _initialisation_ActiverPWM
      _initialisation_ActiverTmr0
+     _initialisation_ConfigTmr3
      _initialisation_ConfigurerAdc
      _initialisation_ConfigurerPortDSortie
 
@@ -1397,7 +1536,7 @@ BANK2              100      0       0       8        0.0%
 BITBANK1           100      0       0       5        0.0%
 BANK1              100      0       0       6        0.0%
 BITBANK0            A0      0       0       3        0.0%
-BANK0               A0      C      12       4       11.3%
+BANK0               A0      C      14       4       12.5%
 BITCOMRAM           5E      0       0       0        0.0%
 COMRAM              5E      0       0       1        0.0%
 BITSFR_1             0      0       0     200        0.0%
@@ -1406,127 +1545,127 @@ BITSFR               0      0       0     200        0.0%
 SFR                  0      0       0     200        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0      12       9        0.0%
-DATA                 0      0      12      17        0.0%
+ABS                  0      0      14       9        0.0%
+DATA                 0      0      14      17        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Wed Feb 05 15:25:56 2020
+Symbol Table                                                                                   Thu Feb 06 10:45:41 2020
 
-                                      __end_of_initialisation_ActiverIntAdc 0354  
+                                      __end_of_initialisation_ActiverIntAdc 03EC  
                                      __size_of_initialisation_ActiverIntAdc 000C  
-                                              _initialisation_ActiverIntAdc 0348  
-                                                                        l31 01E6  
-                                                                        l25 0314  
-                                                                        l34 020E  
-                                                                        l39 0242  
+                                              _initialisation_ActiverIntAdc 03E0  
+                                                                        l31 0278  
+                                                                        l25 03A0  
+                                                                        l34 02A0  
                                                               ___awdiv@sign 0065  
                                                               __CFG_CP0$OFF 000000  
                                                               __CFG_CP1$OFF 000000  
                                                               __CFG_CP2$OFF 000000  
                                                               __CFG_CP3$OFF 000000  
                                                                __CFG_OSC$HS 000000  
-                                                                       l110 035A  
-                                                                       l113 0364  
-                                                                       l122 02B4  
-                                                                       l124 02C8  
-                                                                       l116 032E  
-                                                                       l125 02CA  
-                                                                       l119 0350  
-                                                                       l128 0344  
+                                                                       l123 03F2  
+                                                                       l132 03E8  
+                                                                       l141 03D0  
+                                                                       l126 03FC  
+                                                                       l135 0338  
+                                                                       l144 03DC  
                                                ?_initialisation_ActiverTmr0 0060  
-                                                                       l365 01A6  
+                                                                       l137 034C  
+                                                                       l129 03BA  
+                                                                       l138 034E  
+                                                                       l378 0238  
                                                               __CFG_CPB$OFF 000000  
-                                                                       u200 0192  
-                                                                       u201 018C  
-                                                                       u210 01DE  
-                                                                       u211 01D8  
-                                                                       u140 02C6  
-                                                                       u141 02C0  
-                                                                       u150 00D0  
-                                                                       u151 00CA  
-                                                                       u160 00F0  
-                                                                       u161 00EA  
-                                                                       u170 011C  
-                                                                       u171 0116  
-                                                                       u180 0142  
-                                                                       u181 013C  
-                                                                       u190 0164  
+                                                                       u200 0182  
+                                                                       u201 017C  
+                                                                       u210 01AE  
+                                                                       u211 01A8  
+                                                                       u220 01D4  
+                                                                       u221 01CE  
+                                                                       u230 01F6  
+                                                                       u231 01F0  
+                                                                       u240 0224  
+                                                                       u241 021E  
+                                                                       u250 0270  
+                                                                       u251 026A  
+                                                                       u180 034A  
+                                                                       u181 0344  
+                                                                       u190 0162  
                                                                        _PR2 000FCB  
-                                                                       u191 015E  
+                                                                       u191 015C  
                                                               __CFG_CPD$OFF 000000  
                                                               __CFG_BOR$OFF 000000  
+                                               ??_initialisation_ConfigTmr3 0060  
                                                               __CFG_BORV$25 000000  
                                                               __CFG_LVP$OFF 000000  
                                                               __CFG_WDT$OFF 000000  
-                                                                      l1101 00C0  
-                                                                      l1111 00FA  
-                                                                      l1103 00D2  
-                                                                      l1121 0130  
-                                                                      l1113 00FE  
-                                                                      l1105 00DA  
-                                                                      l1131 0170  
-                                                                      l1123 0144  
-                                                                      l1115 0108  
-                                                                      l1107 00DE  
-                                                                      l1133 0178  
-                                                                      l1125 014C  
-                                                                      l1117 011E  
-                                                                      l1109 00F2  
-                                                                      l1061 031C  
-                                                                      l1127 0166  
-                                                                      l1119 0126  
-                                                                      l1135 017E  
-                                                                      l1071 029A  
-                                                                      l1063 0320  
-                                                                      l1151 01EA  
-                                                                      l1143 01AA  
-                                                                      l1137 0194  
-                                                                      l1129 016E  
-                                                                      l1081 02AE  
-                                                                      l1073 029C  
-                                                                      l1065 0322  
-                                                                      l1057 0356  
-                                                                      l1161 0236  
-                                                                      l1153 0216  
-                                                                      l1145 01B8  
-                                                                      l1139 019C  
-                                                                      l1075 02A4  
-                                                                      l1083 0334  
-                                                                      l1067 032C  
-                                                                      l1059 031A  
-                                                                      l1091 0304  
-                                                                      l1227 0264  
-                                                                      l1163 023C  
-                                                                      l1155 0220  
-                                                                      l1147 01BC  
-                                                                      l1069 034A  
-                                                                      l1077 02A6  
-                                                                      l1085 033C  
-                                                                      l1093 0308  
-                                                                      l1157 0226  
-                                                                      l1149 01E0  
-                                                                      l1087 0360  
-                                                                      l1079 02A8  
-                                                                      l1095 030C  
-                                                                      l1159 0230  
-                                                                      l1167 024A  
-                                                                      l1097 0310  
-                                                                      l1089 02FC  
-                                                                      l1099 00BA  
-                                                                      i2l73 00AA  
-                                                                      i2l67 002A  
+                                                                      l1100 0320  
+                                                                      l1102 0328  
+                                                                      l1110 03C0  
+                                                                      l1104 032A  
+                                                                      l1112 03C8  
+                                                                      l1120 0384  
+                                                                      l1130 014C  
+                                                                      l1106 032C  
+                                                                      l1114 03D6  
+                                                                      l1122 038C  
+                                                                      l1140 0184  
+                                                                      l1132 0152  
+                                                                      l1108 0332  
+                                                                      l1116 03DA  
+                                                                      l1124 0390  
+                                                                      l1150 01B8  
+                                                                      l1142 018C  
+                                                                      l1134 0164  
+                                                                      l1118 03F8  
+                                                                      l1126 0394  
+                                                                      l1160 0200  
+                                                                      l1152 01C2  
+                                                                      l1144 0190  
+                                                                      l1136 016C  
+                                                                      l1128 0398  
+                                                                      l1170 022E  
+                                                                      l1162 0202  
+                                                                      l1154 01D6  
+                                                                      l1146 019A  
+                                                                      l1138 0170  
+                                                                      l1090 03AC  
+                                                                      l1164 020A  
+                                                                      l1156 01DE  
+                                                                      l1148 01B0  
+                                                                      l1092 03AE  
+                                                                      l1084 03EE  
+                                                                      l1180 0272  
+                                                                      l1158 01F8  
+                                                                      l1166 0210  
+                                                                      l1094 03B8  
+                                                                      l1086 03A6  
+                                                                      l1270 02E8  
+                                                                      l1182 027C  
+                                                                      l1174 023C  
+                                                                      l1168 0226  
+                                                                      l1096 03E2  
+                                                                      l1088 03A8  
+                                                                      l1184 02A8  
+                                                                      l1192 02CE  
+                                                                      l1176 024A  
+                                                                      l1098 031E  
+                                                                      l1186 02B6  
+                                                                      l1178 024E  
+                                                                      l1188 02C4  
+                                                                      i2l75 002A  
+                                                                      i2l84 013C  
                                                           ??_initialisation 0060  
-                                                                      _main 01AA  
+                                                                      _main 023C  
                                                                       btemp 0001  
-                                                                      start 00B4  
+                                                                      start 0146  
                                                               ___param_bank 000000  
-                                                 _initialisation_ActiverPWM 0298  
+                                                 _initialisation_ActiverPWM 031C  
                                                              __CFG_OSCS$OFF 000000  
                                              ?_initialisation_ActiverIntAdc 0060  
                                                                      ?_main 0060  
-                                                           __end_of___awdiv 01AA  
+                                                           __end_of___awdiv 023C  
                                                            ___awdiv@divisor 0062  
                                                                      _T3CON 000FB1  
                                                            ___awdiv@counter 0064  
@@ -1553,120 +1692,144 @@ Symbol Table                                                                    
                                                                      ttemp7 0009  
                                                                      status 000FD8  
                                                                      wtemp8 0002  
-                                                           __initialization 02CE  
-                                                              __end_of_main 0298  
+                                                 _initialisation_ConfigTmr3 03D4  
+                                                           __initialization 0352  
+                                                              __end_of_main 031C  
                                                                     ??_main 0068  
                                                              __activetblptr 000003  
                                                                     _ADCON1 000FC1  
                                                                     _ADRESH 000FC4  
                                                                     _CCPR1L 000FBE  
                                                           ___awdiv@dividend 0060  
-                                                                    i2l1181 0042  
-                                                                    i2l1191 0082  
-                                                                    i2l1183 0058  
-                                                                    i2l1175 000C  
-                                                                    i2l1193 0098  
-                                                                    i2l1185 005C  
-                                                                    i2l1177 001E  
-                                                                    i2l1187 0072  
-                                                                    i2l1195 009E  
-                                                                    i2l1179 003E  
-                                                                    i2l1189 007C  
+                                                                    i2l1200 000C  
+                                                                    i2l1210 005C  
+                                                                    i2l1202 001E  
+                                                                    i2l1220 00BA  
+                                                                    i2l1212 0072  
+                                                                    i2l1204 003E  
+                                                                    i2l1230 00E8  
+                                                                    i2l1222 00BC  
+                                                                    i2l1214 007C  
+                                                                    i2l1206 0042  
+                                                                    i2l1232 0102  
+                                                                    i2l1216 0082  
+                                                                    i2l1224 00C4  
+                                                                    i2l1208 0058  
+                                                                    i2l1234 0124  
+                                                                    i2l1226 00D0  
+                                                                    i2l1218 0098  
+                                                                    i2l1236 012C  
+                                                                    i2l1228 00E2  
+                                                                    i2l1238 0138  
                                                             __CFG_WDTPS$128 000000  
                                                              main@dutyWiper 006A  
-                                                          __end_of_high_isr 00B2  
+                                                          __end_of_high_isr 0144  
                                                                  ??___awdiv 0064  
-                                                                    _g_etat 006C  
+                                                                    _g_etat 006E  
                                                           ___awdiv@quotient 0066  
                                             ??_initialisation_ActiverIntAdc 0060  
                                                                     tblptrh 000FF7  
                                                                     tblptrl 000FF6  
                                                                     tblptru 000FF8  
-                              __end_of_initialisation_ConfigurerPortDSortie 035E  
+                              __end_of_initialisation_ConfigurerPortDSortie 03F6  
                              __size_of_initialisation_ConfigurerPortDSortie 000A  
                                     ??_initialisation_ConfigurerPortDSortie 0060  
                                      ?_initialisation_ConfigurerPortDSortie 0060  
-                                      _initialisation_ConfigurerPortDSortie 0354  
+                                      _initialisation_ConfigurerPortDSortie 03EC  
                                                                 __accesstop 0060  
-                                                   __end_of__initialization 02F0  
+                                                   __end_of__initialization 0378  
                                                              ___rparam_used 000000  
-                                                              __pidataBANK0 0368  
-                                                            high_isr@sensUp 0070  
+                                                              __pidataBANK0 0400  
+                                                            high_isr@compte 006C  
+                                                            high_isr@sensUp 0072  
                                         __size_of_initialisation_ActiverPWM 0036  
-                                                         high_isr@dutyWiper 0071  
+                                                         high_isr@dutyWiper 0073  
                                                                 __pbssBANK0 006C  
-                                                                   i2u22_40 001C  
-                                                                   i2u22_41 0016  
-                                                                   i2u23_40 003C  
-                                                                   i2u23_41 0036  
-                                                                   i2u24_40 0056  
-                                                                   i2u24_41 0050  
-                                                                   i2u25_40 0070  
-                                                                   i2u25_41 006A  
-                                                                   i2u26_40 0096  
-                                                                   i2u26_41 0090  
+                                        __size_of_initialisation_ConfigTmr3 000C  
+                                                                   i2u30_40 0096  
+                                                                   i2u30_41 0090  
+                                                                   i2u31_40 00B8  
+                                                                   i2u31_41 00B2  
+                                                                   i2u32_40 00E0  
+                                                                   i2u32_41 00DA  
+                                                                   i2u33_40 0100  
+                                                                   i2u33_41 00FA  
+                                                                   i2u34_40 0122  
+                                                                   i2u26_40 001C  
+                                                                   i2u34_41 011C  
+                                                                   i2u26_41 0016  
+                                                                   i2u27_40 003C  
+                                                                   i2u27_41 0036  
+                                                                   i2u28_40 0056  
+                                                                   i2u28_41 0050  
+                                                                   i2u29_40 0070  
+                                                                   i2u29_41 006A  
                                                                  ?_high_isr 0060  
-                                         __end_of_initialisation_ActiverPWM 02CE  
-                                      __end_of_initialisation_ConfigurerAdc 0332  
+                                         __end_of_initialisation_ActiverPWM 0352  
+                                      __end_of_initialisation_ConfigurerAdc 03BE  
                                      __size_of_initialisation_ConfigurerAdc 001A  
-                                              _initialisation_ConfigurerAdc 0318  
+                                              _initialisation_ConfigurerAdc 03A4  
                                                                    __Hparam 0000  
                                                                    __Lparam 0000  
-                                                                   ___awdiv 00B8  
-                                                                   __pcinit 02CE  
-                                                                   _g_resAN 006E  
+                                                                   ___awdiv 014A  
+                                                                   __pcinit 0352  
+                                                                   _g_resAN 0070  
                                                                    __ramtop 0600  
-                                                                   __ptext0 01AA  
-                                                                   __ptext1 02FA  
-                                                                   __ptext2 0354  
-                                                                   __ptext3 0318  
-                                                                   __ptext4 0332  
-                                                                   __ptext5 0298  
-                                                                   __ptext6 035E  
-                                                                   __ptext7 0348  
-                                                                   __ptext8 00B8  
+                                                                   __ptext0 023C  
+                                                                   __ptext1 0382  
+                                                                   __ptext2 03EC  
+                                                                   __ptext3 03A4  
+                                                                   __ptext4 03D4  
+                                                                   __ptext5 03BE  
+                                                                   __ptext6 031C  
+                                                                   __ptext7 03F6  
+                                                                   __ptext8 03E0  
+                                                                   __ptext9 014A  
+                                         __end_of_initialisation_ConfigTmr3 03E0  
                                                                  _T0CONbits 000FD5  
                                                                  _T2CONbits 000FCA  
-                                                                 _T3CONbits 000FB1  
                                                                 ??_high_isr 0060  
-                                                      end_of_initialization 02F0  
+                                                      end_of_initialization 0378  
                                              ?_initialisation_ConfigurerAdc 0060  
-                                                   __size_of_initialisation 001E  
+                                                   __size_of_initialisation 0022  
                                                                  _PORTDbits 000F83  
                                                                  _TRISAbits 000F92  
                                                                  _TRISCbits 000F94  
                                                                _CCP1CONbits 000FBD  
                                                                 main@sensUp 006B  
                                               ??_initialisation_ActiverTmr0 0060  
-                                                       start_initialization 02CE  
+                                                       start_initialization 0352  
                                        __size_of_initialisation_ActiverTmr0 0016  
-                                                               __pdataBANK0 0070  
+                                                               __pdataBANK0 0072  
                                             ??_initialisation_ConfigurerAdc 0060  
-                               __end_of_initialisation_ActiverInterruptions 0368  
+                               __end_of_initialisation_ActiverInterruptions 0400  
                               __size_of_initialisation_ActiverInterruptions 000A  
                                      ??_initialisation_ActiverInterruptions 0060  
                                       ?_initialisation_ActiverInterruptions 0060  
-                                       _initialisation_ActiverInterruptions 035E  
+                                       _initialisation_ActiverInterruptions 03F6  
                                                              __pcstackBANK0 0060  
-                                                         __size_of_high_isr 00AA  
+                                                         __size_of_high_isr 013C  
                                                                  __pintcode 0008  
-                                                            _initialisation 02FA  
+                                                            _initialisation 0382  
                                                                   ?___awdiv 0060  
                                                 ?_initialisation_ActiverPWM 0060  
                                                                   _PIE1bits 000F9D  
-                                                    __end_of_initialisation 0318  
+                                                                  _PIE2bits 000FA0  
+                                                    __end_of_initialisation 03A4  
                                                                   _PIR1bits 000F9E  
+                                                                  _PIR2bits 000FA1  
                                                                 _ADCON0bits 000FC2  
                                                                 _ADCON1bits 000FC1  
-                                        __end_of_initialisation_ActiverTmr0 0348  
-                                                _initialisation_ActiverTmr0 0332  
+                                        __end_of_initialisation_ActiverTmr0 03D4  
+                                                _initialisation_ActiverTmr0 03BE  
+                                                ?_initialisation_ConfigTmr3 0060  
                                                                   __Hparam0 0000  
                                                                   __Lparam0 0000  
                                                            ?_initialisation 0060  
                                                           __size_of___awdiv 00F2  
                                                                   _high_isr 0008  
-                                                             __size_of_main 00EE  
+                                                             __size_of_main 00E0  
                                                                   int$flags 0001  
                                                                 _INTCONbits 000FF2  
-                                                                  intlevel2 036A  
+                                                                  intlevel2 0402  
                                                ??_initialisation_ActiverPWM 0060  
