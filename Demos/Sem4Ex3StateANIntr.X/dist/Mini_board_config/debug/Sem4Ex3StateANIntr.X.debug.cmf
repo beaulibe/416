@@ -11,52 +11,53 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\tge\AppData\Local\Temp\s59k.obj
-idloc IDLOC 0 200000 200000 8 1
-init CODE 0 C6 C6 4 1
-reset_vec CODE 0 0 0 6 1
-config CONFIG 0 300000 300000 E 1
-$dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-intcodelo CODE 0 18 18 AE 1
-cinit CODE 0 24E 24E 12 1
-intcode_body CODE 0 CA CA AE 1
-text0 CODE 0 178 178 AA 1
-text1 CODE 0 222 222 2C 1
-cstackCOMRAM COMRAM 1 1 1 29 1
-temp COMRAM 1 2C 2C 1 1
+$dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+intcodelo CODE 0 18 18 E 1
+cinit CODE 0 1A8 1A8 10 1
+intcode_body CODE 0 148 148 36 1
+text0 CODE 0 2A 2A 11E 1
+text1 CODE 0 17E 17E 2A 1
+cstackBANK0 BANK0 1 60 60 3 1
+temp COMRAM 1 1 1 1 1
+bssBANK0 BANK0 1 63 63 2 1
 intcode CODE 0 8 8 6 1
-bssCOMRAM COMRAM 1 2A 2A 2 1
+$C:\Users\tge\AppData\Local\Temp\sbq8.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 26 26 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 60-5EE 1
+RAM 65-5F3 1
 SFR F60-F9B 1
 SFR F9D-FD3 1
 SFR FD5-FDA 1
 SFR FE0-FE2 1
 SFR FE8-FEA 1
-SFR FF0-FFB 1
-BANK0 60-FF 1
+SFR FF0-FFC 1
+BANK0 65-FF 1
 BANK1 100-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
 BANK4 400-4FF 1
-BANK5 500-5EE 1
-CONST 6-7 1
+BANK5 500-5F3 1
+CONST 4-7 1
 CONST E-17 1
-CONST 260-7CFF 1
-STACK 60-5EE 1
-SMALLCONST 600-7CFF 1
-CODE 6-7 1
+CONST 1B8-7DBF 1
+STACK 65-5F3 1
+SMALLCONST 600-7DBF 1
+CODE 4-7 1
 CODE E-17 1
-CODE 260-7CFF 1
-BIGRAM 2D-5EE 1
-COMRAM 2D-5F 1
+CODE 1B8-7DBF 1
+BIGRAM 2-5F 1
+BIGRAM 65-5F3 1
+COMRAM 2-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 600-7CFF 1
+MEDIUMCONST 600-7DBF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -70,82 +71,72 @@ MEDIUMCONST 600-7CFF 1
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-18 intcodelo CODE >37:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-18 intcodelo CODE >114:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-6E intcodelo CODE >40:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-8 intcode CODE >21:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-8 intcode CODE >40:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-CA intcode_body CODE >21:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-112 intcode_body CODE >25:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-116 intcode_body CODE >27:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-11A intcode_body CODE >28:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-122 intcode_body CODE >29:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-126 intcode_body CODE >30:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-12A intcode_body CODE >31:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-12C intcode_body CODE >32:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-12C intcode_body CODE >34:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\interrupts.c
-222 text1 CODE >89:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-222 text1 CODE >92:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-224 text1 CODE >93:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-226 text1 CODE >94:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-228 text1 CODE >96:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-22A text1 CODE >98:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-22C text1 CODE >99:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-230 text1 CODE >101:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-234 text1 CODE >104:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-236 text1 CODE >105:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-238 text1 CODE >106:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-23A text1 CODE >107:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-23C text1 CODE >108:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-23E text1 CODE >109:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-244 text1 CODE >110:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-24C text1 CODE >114:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-178 text0 CODE >25:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-178 text0 CODE >29:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-17C text0 CODE >31:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-180 text0 CODE >37:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-182 text0 CODE >39:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-182 text0 CODE >40:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-184 text0 CODE >41:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-186 text0 CODE >43:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-186 text0 CODE >45:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-18C text0 CODE >46:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-190 text0 CODE >48:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-196 text0 CODE >50:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-19E text0 CODE >51:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1A2 text0 CODE >53:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1AA text0 CODE >54:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1AE text0 CODE >55:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1B0 text0 CODE >57:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1B0 text0 CODE >59:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1B6 text0 CODE >60:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1BA text0 CODE >62:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1C0 text0 CODE >63:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1C8 text0 CODE >64:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1CA text0 CODE >65:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1CC text0 CODE >67:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1CC text0 CODE >68:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1CE text0 CODE >69:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1D2 text0 CODE >70:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1D6 text0 CODE >76:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-1D8 text0 CODE >37:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-202 text0 CODE >76:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-202 text0 CODE >79:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-212 text0 CODE >80:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-220 text0 CODE >34:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\main.c
-24E cinit CODE >1029:C:\Users\tge\AppData\Local\Temp\s59k.
-24E cinit CODE >1031:C:\Users\tge\AppData\Local\Temp\s59k.
-24E cinit CODE >1034:C:\Users\tge\AppData\Local\Temp\s59k.
-24E cinit CODE >1046:C:\Users\tge\AppData\Local\Temp\s59k.
-250 cinit CODE >1047:C:\Users\tge\AppData\Local\Temp\s59k.
-252 cinit CODE >1053:C:\Users\tge\AppData\Local\Temp\s59k.
-252 cinit CODE >1055:C:\Users\tge\AppData\Local\Temp\s59k.
-254 cinit CODE >1056:C:\Users\tge\AppData\Local\Temp\s59k.
-256 cinit CODE >1058:C:\Users\tge\AppData\Local\Temp\s59k.
-258 cinit CODE >1059:C:\Users\tge\AppData\Local\Temp\s59k.
-25A cinit CODE >1060:C:\Users\tge\AppData\Local\Temp\s59k.
-25C cinit CODE >1061:C:\Users\tge\AppData\Local\Temp\s59k.
+$dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+18 intcodelo CODE >1781:C:\Users\tge\AppData\Local\Temp\sbq8.s
+18 intcodelo CODE >37:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+1E intcodelo CODE >40:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+8 intcode CODE >1837:C:\Users\tge\AppData\Local\Temp\sbq8.s
+8 intcode CODE >21:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+148 intcode_body CODE >21:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+148 intcode_body CODE >25:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+156 intcode_body CODE >27:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+15C intcode_body CODE >28:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+166 intcode_body CODE >29:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+16A intcode_body CODE >30:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+178 intcode_body CODE >31:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+17A intcode_body CODE >34:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\interrupts.c
+17E text1 CODE >89:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+17E text1 CODE >92:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+180 text1 CODE >93:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+182 text1 CODE >94:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+184 text1 CODE >96:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+186 text1 CODE >98:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+188 text1 CODE >99:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+18C text1 CODE >101:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+190 text1 CODE >104:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+192 text1 CODE >105:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+194 text1 CODE >106:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+196 text1 CODE >107:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+198 text1 CODE >108:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+19A text1 CODE >109:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+19E text1 CODE >110:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+1A6 text1 CODE >114:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+2A text0 CODE >25:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+2A text0 CODE >29:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+2E text0 CODE >31:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+36 text0 CODE >40:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+38 text0 CODE >41:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+3C text0 CODE >45:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+4C text0 CODE >46:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+50 text0 CODE >48:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+56 text0 CODE >50:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+68 text0 CODE >51:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+6C text0 CODE >53:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+7E text0 CODE >54:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+86 text0 CODE >59:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+96 text0 CODE >60:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+9A text0 CODE >62:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+A0 text0 CODE >63:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+B2 text0 CODE >64:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+B8 text0 CODE >67:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+B8 text0 CODE >68:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+BA text0 CODE >69:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+C8 text0 CODE >70:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+CC text0 CODE >72:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+D0 text0 CODE >37:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+10E text0 CODE >79:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+12C text0 CODE >80:C:\Users\tge\Documents\GitHub\416\Demos\Sem4Ex3StateANIntr.X\main.c
+1A8 cinit CODE >1092:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1A8 cinit CODE >1094:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1A8 cinit CODE >1097:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1A8 cinit CODE >1109:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1AA cinit CODE >1110:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1AC cinit CODE >1111:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1AE cinit CODE >1117:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1AE cinit CODE >1119:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1B0 cinit CODE >1120:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1B2 cinit CODE >1121:C:\Users\tge\AppData\Local\Temp\sbq8.s
+1B4 cinit CODE >1122:C:\Users\tge\AppData\Local\Temp\sbq8.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -158,220 +149,223 @@ CA intcode_body CODE >21:C:\Users\tge\Desktop\416 Travail\Sem4Ex3StateANIntr.X\i
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hspace_0 30000E 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hspace_1 2D 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hspace_2 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_IESO$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hibigdata 0 0 CODE 0 ibigdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\tge\AppData\Local\Temp\s59k.obj
-__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_MCLRE$ON 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-___sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\s59k.obj
-_main 178 0 CODE 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-btemp 2C 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-start C6 0 CODE 0 init C:\Users\tge\AppData\Local\Temp\s59k.obj
-__size_of_main 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WDTEN$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hpowerup C6 0 CODE 0 powerup dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__size_of_low_isr 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__accesstop 60 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\s59k.obj
-intlevel0 0 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\s59k.obj
-intlevel1 0 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\s59k.obj
-intlevel2 0 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\s59k.obj
-intlevel3 0 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\s59k.obj
-__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-wtemp6 2D 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_EBTR0$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_EBTR1$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_EBTR2$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_EBTR3$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_EBTRB$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hifardata 0 0 CODE 0 ifardata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hclrtext 0 0 ABS 0 clrtext dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_FOSC$INTIO67 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_ADRESL FC3 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_ANSELH F7F 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\s59k.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\s59k.obj
-__Hintcode_body 0 0 ABS 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_initialisation 222 0 CODE 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hintcodelo C6 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_INTCON2bits FF1 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lintcodelo 18 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_FCMEN$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__end_of_low_isr C6 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-start_initialization 24E 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_PBADEN$ON 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_TRISBbits F93 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__end_of_initialisation 24E 0 CODE 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-___rparam_used 1 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WDTPS$32768 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbank0 0 0 ABS 0 bank0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbank1 0 0 ABS 0 bank1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbank2 0 0 ABS 0 bank2 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbank3 0 0 ABS 0 bank3 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbank4 0 0 ABS 0 bank4 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbank5 0 0 ABS 0 bank5 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hcinit 0 0 ABS 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hconst 0 0 CONST 0 const dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hidata 0 0 CODE 0 idata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hidloc 200008 0 IDLOC 0 idloc dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hnvbit 0 0 COMRAM 1 nvbit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hparam 0 0 COMRAM 1 rparam dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hrdata 0 0 COMRAM 1 rdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hstack 0 0 STACK 2 stack dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Htext0 0 0 ABS 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Htext1 0 0 ABS 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbigbss 0 0 BIGRAM 1 bigbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbigram 0 0 ABS 0 bigram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\tge\AppData\Local\Temp\s59k.obj
-__Hcomram 0 0 ABS 0 comram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hconfig 30000E 0 CONFIG 0 config dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbank0 0 0 ABS 0 bank0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbank1 0 0 ABS 0 bank1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbank2 0 0 ABS 0 bank2 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbank3 0 0 ABS 0 bank3 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbank4 0 0 ABS 0 bank4 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbank5 0 0 ABS 0 bank5 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lcinit 0 0 ABS 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lconst 0 0 CONST 0 const dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lidata 0 0 CODE 0 idata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lidloc 200000 0 IDLOC 0 idloc dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lnvbit 0 0 COMRAM 1 nvbit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lparam 0 0 COMRAM 1 rparam dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lrdata 0 0 COMRAM 1 rdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lstack 0 0 STACK 2 stack dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Ltext0 0 0 ABS 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Ltext1 0 0 ABS 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hfarbss 0 0 FARRAM 0 farbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lintcode_body 0 0 ABS 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_PORTBbits F81 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_PORTDbits F83 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_INTCONbits FF2 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Habs1 0 0 ABS 0 abs1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hdata 0 0 ABS 0 data dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hinit CA 0 CODE 0 init dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hrbit 0 0 COMRAM 1 rbit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hrbss 0 0 COMRAM 1 rbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Htemp 2D 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Htext 0 0 ABS 0 text dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Labs1 0 0 ABS 0 abs1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Ldata 0 0 ABS 0 data dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Linit C6 0 CODE 0 init dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lrbit 0 0 COMRAM 1 rbit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lrbss 0 0 COMRAM 1 rbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Ltemp 2C 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Ltext 0 0 ABS 0 text dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_XINST$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-int$flags 2C 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hintret 0 0 ABS 0 intret dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hirdata 0 0 CODE 0 irdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__S0 30000E 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__S1 2D 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__S2 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbigdata 0 0 BIGRAM 1 bigdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hnvrram 0 0 COMRAM 1 nvrram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-int_func CA 0 CODE 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_g_etat 2A 0 COMRAM 1 bssCOMRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_CCP2MX$PORTC 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lintentry 0 0 ABS 0 intentry dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hramtop 600 0 RAM 0 ramtop dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hrparam 0 0 COMRAM 1 rparam dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__size_of_high_isr 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__activetblptr 2 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hstruct 0 0 COMRAM 1 struct dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_HFOFST$ON 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__pintcode_body CA 0 CODE 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbigbss 0 0 BIGRAM 1 bigbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbigram 0 0 ABS 0 bigram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_BORV$18 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lcomram 0 0 ABS 0 comram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lconfig 300000 0 CONFIG 0 config dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lfarbss 0 0 FARRAM 0 farbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lfardata 0 0 FARRAM 0 fardata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_low_isr 18 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-stackhi 5EE 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\s59k.obj
-stacklo 60 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\s59k.obj
-__Lintcode 8 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lintret 0 0 ABS 0 intret dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lirdata 0 0 CODE 0 irdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_ADCON0bits FC2 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_ADCON1bits FC1 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_ADCON2bits FC0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_LVP$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_high_isr 8 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lspace_0 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lspace_1 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lspace_2 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__pbssCOMRAM 2A 0 COMRAM 1 bssCOMRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__end_of_high_isr 178 0 CODE 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-end_of_initialization 252 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lnvrram 0 0 COMRAM 1 nvrram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hintentry 0 0 ABS 0 intentry dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_STVREN$ON 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hreset_vec 6 0 CODE 0 reset_vec dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lramtop 600 0 RAM 0 ramtop dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__size_of_initialisation 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lrparam 0 0 COMRAM 1 rparam dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__pcinit 24E 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__ptext0 178 0 CODE 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__ptext1 222 0 CODE 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lstruct 0 0 COMRAM 1 struct dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__ramtop 600 0 RAM 0 ramtop C:\Users\tge\AppData\Local\Temp\s59k.obj
-__Lpowerup C6 0 CODE 0 powerup dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lreset_vec 0 0 CODE 0 reset_vec dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-___param_bank 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbigdata 0 0 BIGRAM 1 bigdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__end_of__initialization 252 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WRT0$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WRT1$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WRT2$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WRT3$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WRTB$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Libigdata 0 0 CODE 0 ibigdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WRTC$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_WRTD$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lclrtext 0 0 ABS 0 clrtext dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_PWRT$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__pintcodelo 18 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_ANSELbits F7E 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__end_of_main 222 0 CODE 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__pintcode 8 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_PORTD F83 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-_TRISD F95 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_CP0$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_CP1$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__HRAM 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hbss 0 0 RAM 1 bss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hram 0 0 ABS 0 ram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hsfr 0 0 ABS 0 sfr dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__LRAM 1 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lbss 0 0 RAM 1 bss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lram 0 0 ABS 0 ram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lsfr 0 0 ABS 0 sfr dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_CP2$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_CP3$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_CPB$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__CFG_CPD$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__initialization 24E 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hfardata 0 0 FARRAM 0 fardata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Lifardata 0 0 CODE 0 ifardata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
-__Hintcode E 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.obj
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hspace_0 30000E 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hspace_1 65 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hspace_2 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_IESO$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\tge\AppData\Local\Temp\sbq8.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+___sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\sbq8.o
+_main 2A 0 CODE 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+btemp 1 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+start 26 0 CODE 0 init C:\Users\tge\AppData\Local\Temp\sbq8.o
+__size_of_main 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WDTEN$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hpowerup 26 0 CODE 0 powerup dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+ttemp5 2 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+ttemp6 5 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+ttemp7 9 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__size_of_low_isr 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__accesstop 60 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\sbq8.o
+intlevel0 0 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\sbq8.o
+intlevel1 0 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\sbq8.o
+intlevel2 0 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\sbq8.o
+intlevel3 0 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\sbq8.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+wtemp8 2 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hifardata 0 0 CODE 0 ifardata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hclrtext 0 0 ABS 0 clrtext dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_FOSC$INTIO67 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_ADRESL FC3 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_ANSELH F7F 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\sbq8.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\sbq8.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_initialisation 17E 0 CODE 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hintcodelo 26 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_INTCON2bits FF1 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lintcodelo 18 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__end_of_low_isr 26 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+start_initialization 1A8 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_PBADEN$ON 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_TRISBbits F93 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__end_of_initialisation 1A8 0 CODE 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+___rparam_used 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbank0 0 0 ABS 0 bank0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbank1 0 0 ABS 0 bank1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbank2 0 0 ABS 0 bank2 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbank3 0 0 ABS 0 bank3 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbank4 0 0 ABS 0 bank4 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbank5 0 0 ABS 0 bank5 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hcinit 0 0 ABS 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hconst 0 0 CONST 0 const dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hidata 0 0 CODE 0 idata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hidloc 200008 0 IDLOC 0 idloc dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hparam 0 0 BANK0 1 param0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hrdata 0 0 COMRAM 1 rdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hstack 0 0 STACK 2 stack dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Htext0 0 0 ABS 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Htext1 0 0 ABS 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbigram 0 0 ABS 0 bigram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\tge\AppData\Local\Temp\sbq8.o
+__Hcomram 0 0 ABS 0 comram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hconfig 30000E 0 CONFIG 0 config dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbank0 0 0 ABS 0 bank0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbank1 0 0 ABS 0 bank1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbank2 0 0 ABS 0 bank2 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbank3 0 0 ABS 0 bank3 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbank4 0 0 ABS 0 bank4 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbank5 0 0 ABS 0 bank5 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lcinit 0 0 ABS 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lconst 0 0 CONST 0 const dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lidata 0 0 CODE 0 idata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lidloc 200000 0 IDLOC 0 idloc dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lparam 0 0 BANK0 1 param0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lrdata 0 0 COMRAM 1 rdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lstack 0 0 STACK 2 stack dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Ltext0 0 0 ABS 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Ltext1 0 0 ABS 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_PORTBbits F81 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_PORTDbits F83 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_INTCONbits FF2 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Habs1 0 0 ABS 0 abs1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hdata 0 0 ABS 0 data dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hinit 2A 0 CODE 0 init dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hrbit 0 0 COMRAM 1 rbit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hrbss 0 0 COMRAM 1 rbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Htemp 2 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Htext 0 0 ABS 0 text dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Labs1 0 0 ABS 0 abs1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Ldata 0 0 ABS 0 data dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Linit 26 0 CODE 0 init dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lrbit 0 0 COMRAM 1 rbit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lrbss 0 0 COMRAM 1 rbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Ltemp 1 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Ltext 0 0 ABS 0 text dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_XINST$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+int$flags 1 0 COMRAM 1 temp dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hintret 0 0 ABS 0 intret dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hirdata 0 0 CODE 0 irdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__S0 30000E 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__S1 65 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__S2 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hparam0 0 0 BANK0 1 param0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+int_func 148 0 CODE 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_g_etat 63 0 BANK0 1 bssBANK0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_CCP2MX$PORTC 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lintentry 0 0 ABS 0 intentry dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hramtop 600 0 RAM 0 ramtop dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__size_of_high_isr 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__activetblptr 3 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hstruct 0 0 COMRAM 1 struct dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_HFOFST$ON 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__pintcode_body 148 0 CODE 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbigram 0 0 ABS 0 bigram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_BORV$18 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lcomram 0 0 ABS 0 comram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lconfig 300000 0 CONFIG 0 config dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lfardata 0 0 FARRAM 0 fardata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_low_isr 18 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+stackhi 5F3 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\sbq8.o
+stacklo 65 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\sbq8.o
+__Lintcode 8 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lintret 0 0 ABS 0 intret dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lirdata 0 0 CODE 0 irdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_ADCON0bits FC2 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_ADCON1bits FC1 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_ADCON2bits FC0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_LVP$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_high_isr 8 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lspace_0 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lspace_1 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lspace_2 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__end_of_high_isr 17E 0 CODE 0 intcode_body dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+end_of_initialization 1AE 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hintentry 0 0 ABS 0 intentry dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_STVREN$ON 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lparam0 0 0 BANK0 1 param0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hreset_vec 4 0 CODE 0 reset_vec dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lramtop 600 0 RAM 0 ramtop dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__size_of_initialisation 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__pcinit 1A8 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__ptext0 2A 0 CODE 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__ptext1 17E 0 CODE 0 text1 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lstruct 0 0 COMRAM 1 struct dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\tge\AppData\Local\Temp\sbq8.o
+__Lpowerup 26 0 CODE 0 powerup dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+___param_bank 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__end_of__initialization 1AE 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Libigdata 0 0 CODE 0 ibigdata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lclrtext 0 0 ABS 0 clrtext dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__pintcodelo 18 0 CODE 0 intcodelo dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_ANSELbits F7E 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__end_of_main 148 0 CODE 0 text0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__pintcode 8 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_PORTD F83 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+_TRISD F95 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_CP0$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_CP1$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__HRAM 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hbss 0 0 RAM 1 bss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hram 0 0 ABS 0 ram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hsfr 0 0 ABS 0 sfr dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__LRAM 1 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lbss 0 0 RAM 1 bss dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lram 0 0 ABS 0 ram dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lsfr 0 0 ABS 0 sfr dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_CP2$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_CP3$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_CPB$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__CFG_CPD$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__initialization 1A8 0 CODE 0 cinit dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__pbssBANK0 63 0 BANK0 1 bssBANK0 dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hfardata 0 0 FARRAM 0 fardata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Lifardata 0 0 CODE 0 ifardata dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
+__Hintcode E 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.debug.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -396,9 +390,18 @@ __Hintcode E 0 CODE 0 intcode dist/Mini_board_config/debug\Sem4Ex3StateANIntr.X.
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intcodelo 0 18 18 248 1
+intcodelo 0 18 18 1A0 1
 idloc 0 200000 200000 8 1
-cstackCOMRAM 1 1 1 2C 1
-reset_vec 0 0 0 6 1
+cstackBANK0 1 60 60 5 1
+temp 1 1 1 1 1
+reset_vec 0 0 0 4 1
 intcode 0 8 8 6 1
 config 0 300000 300000 E 1
+# OTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by OTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

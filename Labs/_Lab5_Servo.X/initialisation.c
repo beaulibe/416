@@ -104,11 +104,18 @@ void initialisation_ActiverPWM(void)
 void initialisation_ActiverTmr0(void)
 {
     T0CONbits.TMR0ON = 1;
-    T0CONbits.PSA = 0; //on utilise un psc
-    T0CONbits.T0CS      = 0;
+    T0CONbits.T08BIT = 0; //0=16bits
+    T0CONbits.PSA = 0; //0 = on utilise. 1 = on utilise PAS de psc
+    T0CONbits.T0CS = 0;
+    T0CONbits.T0PS = 0b000; //0b000 = psc/2
     INTCONbits.TMR0IE = 1;
-    TMR0H = 0xE2;
-    TMR0L = 0xB4;
+    
+    //1MHz/4/2/2500 = 50Hz -> 65536-63036 = 2500 ->63036=0xF63C
+    TMR0H = 0xF6;
+    TMR0L = 0x3C;
+
+//    TMR0H = 0xEC;
+//    TMR0L = 0x78;
 }
 
 

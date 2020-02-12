@@ -10050,13 +10050,13 @@ if (INTCONbits.TMR0IF)
 CCPR1L = dutyWiper;
 if (sensUp)
 {
-dutyWiper++;
+
 if (dutyWiper >= 0x25)
 sensUp = 0;
 }
 else
 {
-dutyWiper--;
+
 if (dutyWiper <= 9)
 {
 if (g_etat >= enumDelaiUn )
@@ -10067,10 +10067,11 @@ sensUp = 1;
 }
 }
 
+PORTDbits.RD7 = PORTDbits.RD7 ^ 1;
 INTCONbits.TMR0IF = 0;
-TMR0H = 0xE2;
-TMR0L = 0xB4;
-
+TMR0H = 0xEC;
+TMR0L = 0x78;
+}
 
 
 if (PIR2bits.TMR3IF)
@@ -10088,10 +10089,6 @@ compte = 0;
 PIR2bits.TMR3IF = 0;
 }
 
-
-
-}
-
-
+# 93
 }
 

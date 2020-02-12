@@ -30,9 +30,9 @@ void initialisation(void)
     initialisation_ConfigurerPortDSortie();
     initialisation_ConfigurerAdc();
     initialisation_ActiverIntAdc();
-//    initialisation_ActiverPWM();
-  //  initialisation_ActiverTmr0(); //Pour rapidité du wiper
-    initialisation_ConfigTmr3(); //Utilisé pour la duré des //delais des états enumDelaiUn à enumDelaiTrois
+    initialisation_ActiverPWM();
+    initialisation_ActiverTmr0(); //Pour rapidité du wiper
+ //   initialisation_ConfigTmr3(); //Utilisé pour la duré des //delais des états enumDelaiUn à enumDelaiTrois
     initialisation_ActiverInterruptions();
     
 }
@@ -43,43 +43,50 @@ void main(void)
     bool sensUp = true;
     
     initialisation();
-
+    T0CONbits.TMR0ON = 1;
+    
     // Boucle principale du programme
     //On affichera sur la Del7 la sortie du PWM
     while(1)
     {
         //nous permet de voir si conversion analog fonctionne
-        if (g_resAN > 128)
+    /*    if (g_resAN > 128)
+        {
             PORTDbits.RD7 = 1; //DEL rouge on
+            T0CONbits.TMR0ON = 1;
+        }
         else
+        {
             PORTDbits.RD7 = 0; //DEL rouge off
-         
-//        CCPR1L = g_resAN; // on change le duty cycle du PWM
+            T0CONbits.TMR0ON = 0;
+        }*/
+       // CCPR1L = g_resAN; // on change le duty cycle du PWM
+        
         
 
         //La conversion analogique détermine l'état (g_etat) de la machine à état
-        g_etat = g_resAN * enumEtatMax / 256; 
+ //       g_etat = g_resAN * enumEtatMax / 256; 
         
         switch (g_etat)
         {
             case enumArret :
                 /****** tester si on arrete avec TMR0ON ou avec INTCONbits.TMR0IE = 0 ??????? *********/
-                T0CONbits.TMR0ON = 0; //arrêt du tmr0
+  //              T0CONbits.TMR0ON = 1; //arrêt du tmr0
             break;
             case enumLent : 
-                T0CONbits.T0PS = 2; // psc/8
+    //            T0CONbits.T0PS = 2; // psc/8
              //   T0CONbits.TMR0ON = 1; //part du tmr0
             break;
             
             case enumMoyen : 
-                T0CONbits.T0PS = 1; // psc/4
+   //             T0CONbits.T0PS = 1; // psc/4
               //  T0CONbits.TMR0ON = 1; //part du tmr0
             break;
             case enumVite : 
-                T0CONbits.T0PS = 0; // psc/2
+     //           T0CONbits.T0PS = 0; // psc/2
               //  T0CONbits.TMR0ON = 1; //part du tmr0
             break;
-            case enumDelaiUn : 
+    //        case enumDelaiUn : 
            //     T3CONbits.TMR3ON = 1; //part du tmr3
             break;
 

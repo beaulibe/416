@@ -46,13 +46,13 @@ void interrupt high_isr(void)
         CCPR1L = dutyWiper;
         if (sensUp)
         {
-            dutyWiper++;
+           // dutyWiper++;
             if (dutyWiper >= PWM_MAX)
                 sensUp = false;
         }
         else
         {
-            dutyWiper--;
+            //dutyWiper--;
             if (dutyWiper <= PWM_MIN)
             {
                 if (g_etat >= enumDelaiUn )
@@ -63,30 +63,35 @@ void interrupt high_isr(void)
             }
         }   
 
+        PORTDbits.RD7 = PORTDbits.RD7 ^ 1; //DEL rouge toggle
         INTCONbits.TMR0IF = 0;
-        TMR0H = 0xE2;
-        TMR0L = 0xB4;
-    
+        //1MHz/4/2/2500 = 50Hz -> 65536-63036 = 2500 ->63036=0xF63C
+        TMR0H = 0xF6;
+        TMR0L = 0x3C;
         
-       // ***** Tmr3 ****** 
-        if (PIR2bits.TMR3IF)     
-        {  
-
-            compte++;
-            
-            if (g_etat == enumDelaiUn && compte > 10)
-            {
-                T0CONbits.T0PS = 1; // psc/4 ... On se met en mode moyen
-                T0CONbits.TMR0ON = 1; //part le tmr0. Il y aura donc 1 coup de wiper. Le tmr0 se fermera dans l'interruption du tmr 0
-                compte = 0;
-            }
-            
-            PIR2bits.TMR3IF = 0;
-        } 
-
-        
-        
+//        TMR0H = 0xEC;
+//        TMR0L = 0x78;
     }
+        
+    // ***** Tmr3 ****** 
+     if (PIR2bits.TMR3IF)     
+     {  
+
+         compte++;
+
+         if (g_etat == enumDelaiUn && compte > 10)
+         {
+             T0CONbits.T0PS = 1; // psc/4 ... On se met en mode moyen
+             T0CONbits.TMR0ON = 1; //part le tmr0. Il y aura donc 1 coup de wiper. Le tmr0 se fermera dans l'interruption du tmr 0
+             compte = 0;
+         }
+
+         PIR2bits.TMR3IF = 0;
+     } 
+
+
+        
+    
 
 
 }

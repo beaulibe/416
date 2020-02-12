@@ -10068,7 +10068,7 @@ initialisation_ConfigurerAdc();
 initialisation_ActiverIntAdc();
 initialisation_ActiverPWM();
 initialisation_ActiverTmr0();
-initialisation_ConfigTmr3();
+
 initialisation_ActiverInterruptions();
 
 }
@@ -10079,44 +10079,38 @@ unsigned char dutyWiper = 9;
 bool sensUp = 1;
 
 initialisation();
+T0CONbits.TMR0ON = 1;
 
 
 
 while(1)
 {
 
-if (g_resAN > 128)
-PORTDbits.RD7 = 1;
-else
-PORTDbits.RD7 = 0;
-
-# 61
-g_etat = g_resAN / enumEtatMax;
-
+# 70
 switch (g_etat)
 {
 case enumArret :
 
-T0CONbits.TMR0ON = 0;
+
 break;
 case enumLent :
-T0CONbits.T0PS = 2;
+
 
 break;
 
 case enumMoyen :
-T0CONbits.T0PS = 1;
+
 
 break;
 case enumVite :
-T0CONbits.T0PS = 0;
 
-break;
-case enumDelaiUn :
 
 break;
 
-# 90
+
+break;
+
+# 97
 }
 }
 }

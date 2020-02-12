@@ -6551,41 +6551,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;initialisation.c: 106: T0CONbits.TMR0ON = 1;
 "106
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;initialisation.c: 107: T0CONbits.PSA = 0;
+[; ;initialisation.c: 107: T0CONbits.T08BIT = 0;
 "107
-[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
-[; ;initialisation.c: 108: T0CONbits.T0CS = 0;
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+[; ;initialisation.c: 108: T0CONbits.PSA = 0;
 "108
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
-[; ;initialisation.c: 109: INTCONbits.TMR0IE = 1;
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+[; ;initialisation.c: 109: T0CONbits.T0CS = 0;
 "109
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;initialisation.c: 110: TMR0H = 0xE2;
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;initialisation.c: 110: T0CONbits.T0PS = 0b000;
 "110
-[e = _TMR0H -> -> 226 `i `uc ]
-[; ;initialisation.c: 111: TMR0L = 0xB4;
+[e = . . _T0CONbits 0 0 -> -> 0 `i `uc ]
+[; ;initialisation.c: 111: INTCONbits.TMR0IE = 1;
 "111
-[e = _TMR0L -> -> 180 `i `uc ]
-[; ;initialisation.c: 112: }
-"112
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;initialisation.c: 114: TMR0H = 0xF6;
+"114
+[e = _TMR0H -> -> 246 `i `uc ]
+[; ;initialisation.c: 115: TMR0L = 0x3C;
+"115
+[e = _TMR0L -> -> 60 `i `uc ]
+[; ;initialisation.c: 119: }
+"119
 [e :UE 582 ]
 }
 [v F5534 `(v ~T0 @X0 1 tf ]
-"118
+"125
 [v _initialisation_ConfigTmr3 `AF5534 ~T0 @X0 1 e ]
-"119
+"126
 {
-[; ;initialisation.c: 118: void initialisation_ConfigTmr3(void)
-[; ;initialisation.c: 119: {
+[; ;initialisation.c: 125: void initialisation_ConfigTmr3(void)
+[; ;initialisation.c: 126: {
 [e :U _initialisation_ConfigTmr3 ]
 [f ]
-[; ;initialisation.c: 121: T3CON = 0;
-"121
+[; ;initialisation.c: 128: T3CON = 0;
+"128
 [e = _T3CON -> -> 0 `i `uc ]
-[; ;initialisation.c: 122: PIE2bits.TMR3IE = 1;
-"122
+[; ;initialisation.c: 129: PIE2bits.TMR3IE = 1;
+"129
 [e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
-[; ;initialisation.c: 123: }
-"123
+[; ;initialisation.c: 130: }
+"130
 [e :UE 583 ]
 }

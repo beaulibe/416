@@ -10086,14 +10086,21 @@ TRISCbits.RC1 = 0;
 void initialisation_ActiverTmr0(void)
 {
 T0CONbits.TMR0ON = 1;
+T0CONbits.T08BIT = 0;
 T0CONbits.PSA = 0;
 T0CONbits.T0CS = 0;
+T0CONbits.T0PS = 0b000;
 INTCONbits.TMR0IE = 1;
-TMR0H = 0xE2;
-TMR0L = 0xB4;
+
+
+TMR0H = 0xF6;
+TMR0L = 0x3C;
+
+
+
 }
 
-# 118
+# 125
 void initialisation_ConfigTmr3(void)
 {
 
