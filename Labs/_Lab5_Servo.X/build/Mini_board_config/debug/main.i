@@ -10016,59 +10016,55 @@ void initialisation_ConfigurerPortDSortie(void);
 # 24
 void initialisation_ActiverInterruptions(void);
 
-# 29
-void initialisation_ConfigurerInterrupteurRB0(void);
-
-# 34
+# 30
 void initialisation_ActiverInt0(void);
 
-# 39
-void initialisation_ActiverTimer0(void);
+# 35
+void initialisation_ConfigTmr0(void);
 
-# 44
+# 40
 void initialisation_ConfigurerAdc(void);
 
-# 49
+# 45
 void initialisation_ActiverIntAdc(void);
 
-# 54
+# 50
 void initialisation_ActiverPWM(void);
 
-# 59
-void initialisation_ActiverTmr0(void);
-
-# 64
+# 56
 void initialisation_ConfigTmr3(void);
 
 # 12 "commun.h"
 enum enumModes
 {
 enumArret = 0,
+enumDelaiUn,
+enumDelaiDeux,
 enumLent,
 enumMoyen,
 enumVite,
-enumDelaiUn,
-enumDelaiDeux,
-enumDelaiTrois,
 enumEtatMax
 };
 
 # 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 22 "main.c"
+# 32 "main.c"
 extern int g_resAN;
-int g_etat = enumArret;
+extern unsigned int g_compteurTmr3;
 
-# 28
+int g_etat = enumArret;
+unsigned char g_chargeTMR0 = 0xF2;
+
+# 42
 void initialisation(void)
 {
 initialisation_ConfigurerPortDSortie();
 initialisation_ConfigurerAdc();
 initialisation_ActiverIntAdc();
 initialisation_ActiverPWM();
-initialisation_ActiverTmr0();
-
+initialisation_ConfigTmr0();
+initialisation_ConfigTmr3();
 initialisation_ActiverInterruptions();
 
 }
@@ -10076,41 +10072,64 @@ initialisation_ActiverInterruptions();
 void main(void)
 {
 unsigned char dutyWiper = 9;
-bool sensUp = 1;
 
 initialisation();
-T0CONbits.TMR0ON = 1;
+
+CCPR1L = 9;
 
 
 
 while(1)
 {
 
-# 70
+
+g_etat = g_resAN * enumEtatMax / 256;
+PORTD = g_etat << 5;
+
 switch (g_etat)
 {
 case enumArret :
 
 
+
+
 break;
+
+case enumDelaiUn :
+if (g_compteurTmr3 > 15)
+{
+
+g_chargeTMR0 = 0xED;
+T0CONbits.TMR0ON = 1;
+g_compteurTmr3 = 0;
+}
+break;
+
+case enumDelaiDeux :
+if (g_compteurTmr3 > 11)
+{
+g_chargeTMR0 = 0xED;
+T0CONbits.TMR0ON = 1;
+g_compteurTmr3 = 0;
+}
+break;
+
 case enumLent :
-
-
+g_chargeTMR0 = 0xE8;
+T0CONbits.TMR0ON = 1;
 break;
 
 case enumMoyen :
-
-
+g_chargeTMR0 = 0xED;
+T0CONbits.TMR0ON = 1;
 break;
+
 case enumVite :
-
-
+g_chargeTMR0 = 0xF2;
+T0CONbits.TMR0ON = 1;
 break;
 
 
-break;
-
-# 97
 }
 }
 }

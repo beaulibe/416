@@ -10062,7 +10062,6 @@ CCP1CONbits.DC1B = 0b00;
 
 
 
-TRISCbits.RC0 = 1;
 TRISCbits.RC2 = 0;
 
 
@@ -10075,36 +10074,31 @@ T2CONbits.TMR2ON = 1;
 
 CCP1CONbits.CCP1M = 0b1111;
 
-
-
-while (PIR1bits.TMR2IF ==0);
-TRISCbits.RC1 = 0;
-
 }
 
-# 104
-void initialisation_ActiverTmr0(void)
+# 98
+void initialisation_ConfigTmr0(void)
 {
-T0CONbits.TMR0ON = 1;
+T0CONbits.TMR0ON = 0;
 T0CONbits.T08BIT = 0;
 T0CONbits.PSA = 0;
 T0CONbits.T0CS = 0;
 T0CONbits.T0PS = 0b000;
 INTCONbits.TMR0IE = 1;
 
-
-TMR0H = 0xF6;
-TMR0L = 0x3C;
-
+# 113
+TMR0H = 0xF2;
+TMR0L = 0x0D;
 
 
 }
 
-# 125
+# 123
 void initialisation_ConfigTmr3(void)
 {
 
-T3CON = 0;
+T3CON = 1;
 PIE2bits.TMR3IE = 1;
+TRISCbits.RC0 = 0;
 }
 

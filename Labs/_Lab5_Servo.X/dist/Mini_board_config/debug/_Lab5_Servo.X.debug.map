@@ -5,9 +5,9 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt -cs \
   -h+dist/Mini_board_config/debug\_Lab5_Servo.X.debug.sym \
   --cmf=dist/Mini_board_config/debug\_Lab5_Servo.X.debug.cmf -z -Q18F458 \
-  -oC:\Users\tge\AppData\Local\Temp\s7n4.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\tge\AppData\Local\Temp\sbjk.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/Mini_board_config/debug/_Lab5_Servo.X.debug.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=06Ch-05EEh -pstack=STACK \
+  --acfsm=1493 -ASTACK=07Ch-05EEh -pstack=STACK \
   -ACODE=00h-03FFFh,04000h-07D3Fh -ACONST=00h-07D3Fh \
   -ASMALLCONST=0600h-06FFhx119,07D00h-07D3Fh -AMEDIUMCONST=0600h-07D3Fh \
   -ACOMRAM=01h-05Fh -AABS1=00h-05EEh -ABIGRAM=01h-05EEh \
@@ -24,7 +24,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\tge\AppData\Local\Temp\s7n4.o \
+  C:\Users\tge\AppData\Local\Temp\sbjk.o \
   dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o 
 
 Object code version is 3.11
@@ -37,47 +37,54 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\tge\AppData\Local\Temp\s7n4.o
-                text                                296      296        2        4       0
-                init                                158      158        4        4       0
+C:\Users\tge\AppData\Local\Temp\sbjk.o
+                text                                44A      44A        2      225       0
+                init                                10E      10E        4        4       0
                 reset_vec                             0        0        6        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-                intcode                               8        8      150        4       0
+                intcode                               8        8      106        4       0
                 temp                                  1        1        1        1       1
-                text7                               274      274        C        4       0
-                text6                               28A      28A        A        4       0
-                text5                               1BA      1BA       36        4       0
-                text4                               23E      23E       1C        4       0
-                text3                               25A      25A       1A        4       0
-                text2                               280      280        A        4       0
-                text1                               220      220       1E        4       0
-                text0                               15C      15C       5E        4       0
-                cstackBANK0                          66       66        4       60       1
-                dataBANK0                            6A       6A        2       60       1
-                bssBANK0                             60       60        6       60       1
-                cinit                               1F0      1F0       30        4       0
-                idataBANK0                          294      294        2        4       0
+                text10                              24E      24E       F2        4       0
+                text9                               376      376       2C        4       0
+                text8                               426      426        C        4       0
+                text7                               43C      43C        A        4       0
+                text6                               3C4      3C4       1E        4       0
+                text5                               3E2      3E2       1C        4       0
+                text4                               418      418        E        4       0
+                text3                               3FE      3FE       1A        4       0
+                text2                               432      432        A        4       0
+                text1                               3A2      3A2       22        4       0
+                text0                               112      112      13C        4       0
+                cstackBANK0                          60       60       11       60       1
+                dataBANK0                            77       77        3       60       1
+                bssBANK0                             71       71        6       60       1
+                cinit                               340      340       36        4       0
+                nvBANK0                              7A       7A        2       60       1
+                idataBANK0                          446      446        3        4       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
-                intcode                               8        8      150         0
-                text                                296      296        2         0
-                init                                158      158        4         0
+                intcode                               8        8      106         0
+                text                                44A      44A        2         0
+                init                                10E      10E        4         0
                 reset_vec                             0        0        6         0
-                text7                               274      274        C         0
-                text6                               28A      28A        A         0
-                text5                               1BA      1BA       36         0
-                text4                               23E      23E       1C         0
-                text3                               25A      25A       1A         0
-                text2                               280      280        A         0
-                text1                               220      220       1E         0
-                text0                               15C      15C       5E         0
-                cinit                               1F0      1F0       30         0
-                idataBANK0                          294      294        2         0
+                text10                              24E      24E       F2         0
+                text9                               376      376       2C         0
+                text8                               426      426        C         0
+                text7                               43C      43C        A         0
+                text6                               3C4      3C4       1E         0
+                text5                               3E2      3E2       1C         0
+                text4                               418      418        E         0
+                text3                               3FE      3FE       1A         0
+                text2                               432      432        A         0
+                text1                               3A2      3A2       22         0
+                text0                               112      112      13C         0
+                cinit                               340      340       36         0
+                idataBANK0                          446      446        3         0
 
         CLASS   CONST          
 
@@ -95,9 +102,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                cstackBANK0                          66       66        4         1
-                dataBANK0                            6A       6A        2         1
-                bssBANK0                             60       60        6         1
+                cstackBANK0                          60       60       11         1
+                dataBANK0                            77       77        3         1
+                bssBANK0                             71       71        6         1
+                nvBANK0                              7A       7A        2         1
 
         CLASS   BANK1          
 
@@ -127,8 +135,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000006  000006         0       0  CODE    
                 temp                           000001  000001  000002         1       1  COMRAM  
-                intcode                        000008  000290  000298         4       0  CODE    
-                bssBANK0                       000060  00000C  00006C        60       1  BANK0   
+                intcode                        000008  000441  000449         4       0  CODE    
+                cstackBANK0                    000060  00001C  00007C        60       1  BANK0   
+                text                           00044A  000002  00044C       225       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -136,22 +145,24 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            00006C-0000FF               94
+        BANK0            00007C-0000FF               84
         BANK1            000100-0001FF              100
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
         BANK4            000400-0004FF              100
         BANK5            000500-0005EE               EF
         BIGRAM           000002-00005F               5E
-                         00006C-0005EE              583
+                         00007C-0005EE              573
         CODE             000006-000007                2
-                         000298-007D3F             3D68
+                         000449-000449                1
+                         00044C-007D3F             3BB4
         COMRAM           000002-00005F               5E
         CONST            000006-000007                2
-                         000298-007D3F             7AA8
+                         000449-000449                1
+                         00044C-007D3F             78F4
         EEDATA           F00000-F000FF              100
         MEDIUMCONST      000600-007D3F             7740
-        RAM              00006C-0005EE              100
+        RAM              00007C-0005EE              100
         SFR              000F00-000F9B               60
                          000F9D-000FD3               37
                          000FD5-000FDA                6
@@ -159,10 +170,12 @@ UNUSED ADDRESS RANGES
                          000FE8-000FEA                3
                          000FF0-000FFB                C
         SMALLCONST       000600-007D3F              100
-        STACK            00006C-0005EE              583
+        STACK            00007C-0005EE              573
 
                                   Symbol Table
 
+?___awdiv                                                         cstackBANK0  000066
+?___wmul                                                          cstackBANK0  000060
 _ADCON0bits                                                       (abs)        000FC2
 _ADCON1                                                           (abs)        000FC1
 _ADCON1bits                                                       (abs)        000FC1
@@ -174,7 +187,8 @@ _PIE1bits                                                         (abs)        0
 _PIE2bits                                                         (abs)        000FA0
 _PIR1bits                                                         (abs)        000F9E
 _PIR2bits                                                         (abs)        000FA1
-_PORTDbits                                                        (abs)        000F83
+_PORTCbits                                                        (abs)        000F82
+_PORTD                                                            (abs)        000F83
 _PR2                                                              (abs)        000FCB
 _T0CONbits                                                        (abs)        000FD5
 _T2CONbits                                                        (abs)        000FCA
@@ -240,21 +254,22 @@ __Hidata                                                          idata        0
 __HidataBANK0                                                     idataBANK0   000000
 __Hidloc                                                          idloc        200008
 __Hifardata                                                       ifardata     000000
-__Hinit                                                           init         00015C
-__Hintcode                                                        intcode      000158
+__Hinit                                                           init         000112
+__Hintcode                                                        intcode      00010E
 __Hintcode_body                                                   intcode_body 000000
-__Hintcodelo                                                      intcodelo    000158
+__Hintcodelo                                                      intcodelo    00010E
 __Hintentry                                                       intentry     000000
 __Hintret                                                         intret       000000
 __Hintsave_regs                                                   intsave_regs 000000
 __Hirdata                                                         irdata       000000
 __Hmediumconst                                                    mediumconst  000000
+__HnvBANK0                                                        nvBANK0      000000
 __HnvFARRAM                                                       nvFARRAM     000000
 __Hnvbit                                                          nvbit        000000
 __Hnvrram                                                         nvrram       000000
 __Hparam                                                          param0       000000
 __Hparam0                                                         param0       000000
-__Hpowerup                                                        powerup      000158
+__Hpowerup                                                        powerup      00010E
 __Hram                                                            ram          000000
 __Hramtop                                                         ramtop       000600
 __Hrbit                                                           rbit         000000
@@ -264,7 +279,7 @@ __Hreset_vec                                                      reset_vec    0
 __Hsfr                                                            sfr          000000
 __Hsmallconst                                                     smallconst   000000
 __Hspace_0                                                        (abs)        30000E
-__Hspace_1                                                        (abs)        00006C
+__Hspace_1                                                        (abs)        00007C
 __Hspace_2                                                        (abs)        000000
 __Hstack                                                          stack        000000
 __Hstruct                                                         struct       000000
@@ -272,12 +287,15 @@ __Htemp                                                           temp         0
 __Htext                                                           text         000000
 __Htext0                                                          text0        000000
 __Htext1                                                          text1        000000
+__Htext10                                                         text10       000000
 __Htext2                                                          text2        000000
 __Htext3                                                          text3        000000
 __Htext4                                                          text4        000000
 __Htext5                                                          text5        000000
 __Htext6                                                          text6        000000
 __Htext7                                                          text7        000000
+__Htext8                                                          text8        000000
+__Htext9                                                          text9        000000
 __LRAM                                                            (abs)        000001
 __Labs1                                                           abs1         000000
 __Lbank0                                                          bank0        000000
@@ -307,21 +325,22 @@ __Lidata                                                          idata        0
 __LidataBANK0                                                     idataBANK0   000000
 __Lidloc                                                          idloc        200000
 __Lifardata                                                       ifardata     000000
-__Linit                                                           init         000158
+__Linit                                                           init         00010E
 __Lintcode                                                        intcode      000008
 __Lintcode_body                                                   intcode_body 000000
-__Lintcodelo                                                      intcodelo    000158
+__Lintcodelo                                                      intcodelo    00010E
 __Lintentry                                                       intentry     000000
 __Lintret                                                         intret       000000
 __Lintsave_regs                                                   intsave_regs 000000
 __Lirdata                                                         irdata       000000
 __Lmediumconst                                                    mediumconst  000000
+__LnvBANK0                                                        nvBANK0      000000
 __LnvFARRAM                                                       nvFARRAM     000000
 __Lnvbit                                                          nvbit        000000
 __Lnvrram                                                         nvrram       000000
 __Lparam                                                          param0       000000
 __Lparam0                                                         param0       000000
-__Lpowerup                                                        powerup      000158
+__Lpowerup                                                        powerup      00010E
 __Lram                                                            ram          000000
 __Lramtop                                                         ramtop       000600
 __Lrbit                                                           rbit         000000
@@ -339,88 +358,112 @@ __Ltemp                                                           temp         0
 __Ltext                                                           text         000000
 __Ltext0                                                          text0        000000
 __Ltext1                                                          text1        000000
+__Ltext10                                                         text10       000000
 __Ltext2                                                          text2        000000
 __Ltext3                                                          text3        000000
 __Ltext4                                                          text4        000000
 __Ltext5                                                          text5        000000
 __Ltext6                                                          text6        000000
 __Ltext7                                                          text7        000000
+__Ltext8                                                          text8        000000
+__Ltext9                                                          text9        000000
 __S0                                                              (abs)        30000E
-__S1                                                              (abs)        00006C
+__S1                                                              (abs)        00007C
 __S2                                                              (abs)        000000
+___awdiv                                                          text10       00024E
+___awdiv@counter                                                  cstackBANK0  00006A
+___awdiv@dividend                                                 cstackBANK0  000066
+___awdiv@divisor                                                  cstackBANK0  000068
+___awdiv@quotient                                                 cstackBANK0  00006C
+___awdiv@sign                                                     cstackBANK0  00006B
 ___inthi_sp                                                       stack        000000
 ___intlo_sp                                                       stack        000000
 ___param_bank                                                     (abs)        000000
 ___rparam_used                                                    (abs)        000000
 ___sp                                                             stack        000000
+___wmul                                                           text9        000376
+___wmul@multiplicand                                              cstackBANK0  000062
+___wmul@multiplier                                                cstackBANK0  000060
+___wmul@product                                                   cstackBANK0  000064
 __accesstop                                                       (abs)        000060
 __activetblptr                                                    (abs)        000003
-__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\s7n4.o             (abs)        000001
-__cntErrataNOP_dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o (abs)        000032
-__end_of__initialization                                          cinit        000216
-__end_of_high_isr                                                 intcode      000156
-__end_of_initialisation                                           text1        00023E
-__end_of_initialisation_ActiverIntAdc                             text7        000280
-__end_of_initialisation_ActiverInterruptions                      text6        000294
-__end_of_initialisation_ActiverPWM                                text5        0001F0
-__end_of_initialisation_ActiverTmr0                               text4        00025A
-__end_of_initialisation_ConfigurerAdc                             text3        000274
-__end_of_initialisation_ConfigurerPortDSortie                     text2        00028A
-__end_of_main                                                     text0        0001BA
-__initialization                                                  cinit        0001F0
+__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\sbjk.o             (abs)        000001
+__cntErrataNOP_dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o (abs)        000047
+__end_of___awdiv                                                  text10       000340
+__end_of___wmul                                                   text9        0003A2
+__end_of__initialization                                          cinit        00036C
+__end_of_high_isr                                                 intcode      00010C
+__end_of_initialisation                                           text1        0003C4
+__end_of_initialisation_ActiverIntAdc                             text8        000432
+__end_of_initialisation_ActiverInterruptions                      text7        000446
+__end_of_initialisation_ActiverPWM                                text6        0003E2
+__end_of_initialisation_ConfigTmr0                                text5        0003FE
+__end_of_initialisation_ConfigTmr3                                text4        000426
+__end_of_initialisation_ConfigurerAdc                             text3        000418
+__end_of_initialisation_ConfigurerPortDSortie                     text2        00043C
+__end_of_main                                                     text0        00024E
+__initialization                                                  cinit        000340
 __mediumconst                                                     mediumconst  000000
-__pbssBANK0                                                       bssBANK0     000060
-__pcinit                                                          cinit        0001F0
-__pcstackBANK0                                                    cstackBANK0  000066
-__pdataBANK0                                                      dataBANK0    00006A
-__pidataBANK0                                                     idataBANK0   000294
+__pbssBANK0                                                       bssBANK0     000071
+__pcinit                                                          cinit        000340
+__pcstackBANK0                                                    cstackBANK0  000060
+__pdataBANK0                                                      dataBANK0    000077
+__pidataBANK0                                                     idataBANK0   000446
 __pintcode                                                        intcode      000008
-__ptext0                                                          text0        00015C
-__ptext1                                                          text1        000220
-__ptext2                                                          text2        000280
-__ptext3                                                          text3        00025A
-__ptext4                                                          text4        00023E
-__ptext5                                                          text5        0001BA
-__ptext6                                                          text6        00028A
-__ptext7                                                          text7        000274
+__pnvBANK0                                                        nvBANK0      00007A
+__ptext0                                                          text0        000112
+__ptext1                                                          text1        0003A2
+__ptext10                                                         text10       00024E
+__ptext2                                                          text2        000432
+__ptext3                                                          text3        0003FE
+__ptext4                                                          text4        000418
+__ptext5                                                          text5        0003E2
+__ptext6                                                          text6        0003C4
+__ptext7                                                          text7        00043C
+__ptext8                                                          text8        000426
+__ptext9                                                          text9        000376
 __ramtop                                                          ramtop       000600
+__size_of___awdiv                                                 (abs)        000000
+__size_of___wmul                                                  (abs)        000000
 __size_of_high_isr                                                (abs)        000000
 __size_of_initialisation                                          (abs)        000000
 __size_of_initialisation_ActiverIntAdc                            (abs)        000000
 __size_of_initialisation_ActiverInterruptions                     (abs)        000000
 __size_of_initialisation_ActiverPWM                               (abs)        000000
-__size_of_initialisation_ActiverTmr0                              (abs)        000000
+__size_of_initialisation_ConfigTmr0                               (abs)        000000
+__size_of_initialisation_ConfigTmr3                               (abs)        000000
 __size_of_initialisation_ConfigurerAdc                            (abs)        000000
 __size_of_initialisation_ConfigurerPortDSortie                    (abs)        000000
 __size_of_main                                                    (abs)        000000
 __smallconst                                                      smallconst   000000
-_g_etat                                                           bssBANK0     000064
-_g_resAN                                                          bssBANK0     000062
+_g_chargeTMR0                                                     dataBANK0    000079
+_g_compteurTmr3                                                   bssBANK0     000073
+_g_etat                                                           nvBANK0      00007A
+_g_resAN                                                          bssBANK0     000075
 _high_isr                                                         intcode      000008
-_initialisation                                                   text1        000220
-_initialisation_ActiverIntAdc                                     text7        000274
-_initialisation_ActiverInterruptions                              text6        00028A
-_initialisation_ActiverPWM                                        text5        0001BA
-_initialisation_ActiverTmr0                                       text4        00023E
-_initialisation_ConfigurerAdc                                     text3        00025A
-_initialisation_ConfigurerPortDSortie                             text2        000280
-_main                                                             text0        00015C
+_initialisation                                                   text1        0003A2
+_initialisation_ActiverIntAdc                                     text8        000426
+_initialisation_ActiverInterruptions                              text7        00043C
+_initialisation_ActiverPWM                                        text6        0003C4
+_initialisation_ConfigTmr0                                        text5        0003E2
+_initialisation_ConfigTmr3                                        text4        000418
+_initialisation_ConfigurerAdc                                     text3        0003FE
+_initialisation_ConfigurerPortDSortie                             text2        000432
+_main                                                             text0        000112
 btemp                                                             temp         000001
-end_of_initialization                                             cinit        000216
-high_isr@compte                                                   bssBANK0     000060
-high_isr@dutyWiper                                                dataBANK0    00006B
-high_isr@sensUp                                                   dataBANK0    00006A
+end_of_initialization                                             cinit        00036C
+high_isr@dutyWiper                                                dataBANK0    000078
+high_isr@sensUp                                                   dataBANK0    000077
 int$flags                                                         temp         000001
-intlevel0                                                         text         000296
-intlevel1                                                         text         000296
-intlevel2                                                         text         000296
-intlevel3                                                         text         000296
-main@dutyWiper                                                    cstackBANK0  000068
-main@sensUp                                                       cstackBANK0  000069
+intlevel0                                                         text         00044A
+intlevel1                                                         text         00044A
+intlevel2                                                         text         00044A
+intlevel3                                                         text         00044A
+main@dutyWiper                                                    cstackBANK0  000070
 stackhi                                                           (abs)        0005EE
-stacklo                                                           (abs)        00006C
-start                                                             init         000158
-start_initialization                                              cinit        0001F0
+stacklo                                                           (abs)        00007C
+start                                                             init         00010E
+start_initialization                                              cinit        000340
 ttemp5                                                            temp         000002
 ttemp6                                                            temp         000005
 ttemp7                                                            temp         000009
@@ -431,28 +474,29 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 40 in file "main.c"
+		line 54 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  sensUp          1    3[BANK0 ] unsigned char 
-  dutyWiper       1    2[BANK0 ] unsigned char 
+  dutyWiper       1   16[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0, cstack
+		wreg, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
       Params:         0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0
+      Locals:         0       1       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0
-      Totals:         0       4       0       0       0       0       0
-Total ram usage:        4 bytes
+      Totals:         0       3       0       0       0       0       0
+Total ram usage:        3 bytes
  Hardware stack levels required when called:    3
  This function calls:
+		___awdiv
+		___wmul
 		_initialisation
  This function is called by:
 		Startup code after reset
@@ -461,7 +505,7 @@ Total ram usage:        4 bytes
 
  *************** function _initialisation *****************
  Defined at:
-		line 28 in file "main.c"
+		line 42 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -486,7 +530,8 @@ Total ram usage:        0 bytes
 		_initialisation_ActiverIntAdc
 		_initialisation_ActiverInterruptions
 		_initialisation_ActiverPWM
-		_initialisation_ActiverTmr0
+		_initialisation_ConfigTmr0
+		_initialisation_ConfigTmr3
 		_initialisation_ConfigurerAdc
 		_initialisation_ConfigurerPortDSortie
  This function is called by:
@@ -554,9 +599,39 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _initialisation_ActiverTmr0 *****************
+ *************** function _initialisation_ConfigTmr3 *****************
  Defined at:
-		line 104 in file "initialisation.c"
+		line 123 in file "initialisation.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+      Params:         0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_initialisation
+ This function uses a non-reentrant model
+
+
+ *************** function _initialisation_ConfigTmr0 *****************
+ Defined at:
+		line 98 in file "initialisation.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -674,9 +749,73 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function ___wmul *****************
+ Defined at:
+		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c"
+ Parameters:    Size  Location     Type
+  multiplier      2    0[BANK0 ] unsigned int 
+  multiplicand    2    2[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+  product         2    4[BANK0 ] unsigned int 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] unsigned int 
+ Registers used:
+		wreg, status,2, status,0, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+      Params:         0       4       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       6       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function ___awdiv *****************
+ Defined at:
+		line 7 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c"
+ Parameters:    Size  Location     Type
+  dividend        2    6[BANK0 ] int 
+  divisor         2    8[BANK0 ] int 
+ Auto vars:     Size  Location     Type
+  quotient        2   12[BANK0 ] int 
+  sign            1   11[BANK0 ] unsigned char 
+  counter         1   10[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2    6[BANK0 ] int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+      Params:         0       4       0       0       0       0       0
+      Locals:         0       4       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0
+      Totals:         0       8       0       0       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
  *************** function _high_isr *****************
  Defined at:
-		line 27 in file "interrupts.c"
+		line 30 in file "interrupts.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -707,29 +846,40 @@ Total ram usage:        0 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-interrupts.c
-		_high_isr      		CODE           	0008	0000	335
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+		___awdiv       		CODE           	024E	0000	243
 
-interrupts.c estimated size: 335
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c estimated size: 243
+
+interrupts.c
+		_high_isr      		CODE           	0008	0000	261
+
+interrupts.c estimated size: 261
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+		___wmul        		CODE           	0376	0000	45
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c estimated size: 45
 
 initialisation.c
-		_initialisation_ConfigurerPortDSortie		CODE           	0280	0000	11
-		_initialisation_ConfigurerAdc		CODE           	025A	0000	27
-		_initialisation_ActiverTmr0		CODE           	023E	0000	29
-		_initialisation_ActiverInterruptions		CODE           	028A	0000	11
-		_initialisation_ActiverPWM		CODE           	01BA	0000	55
-		_initialisation_ActiverIntAdc		CODE           	0274	0000	13
+		_initialisation_ConfigurerPortDSortie		CODE           	0432	0000	11
+		_initialisation_ConfigurerAdc		CODE           	03FE	0000	27
+		_initialisation_ConfigTmr0		CODE           	03E2	0000	29
+		_initialisation_ConfigTmr3		CODE           	0418	0000	15
+		_initialisation_ActiverInterruptions		CODE           	043C	0000	11
+		_initialisation_ActiverPWM		CODE           	03C4	0000	31
+		_initialisation_ActiverIntAdc		CODE           	0426	0000	13
 
-initialisation.c estimated size: 146
+initialisation.c estimated size: 137
 
 shared
-		__initialization		CODE           	01F0	0000	39
+		__initialization		CODE           	0340	0000	45
 
-shared estimated size: 39
+shared estimated size: 45
 
 main.c
-		_initialisation		CODE           	0220	0000	31
-		_main          		CODE           	015C	0000	95
+		_initialisation		CODE           	03A2	0000	35
+		_main          		CODE           	0112	0000	317
 
-main.c estimated size: 126
+main.c estimated size: 352
 

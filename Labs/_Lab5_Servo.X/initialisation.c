@@ -78,8 +78,7 @@ void initialisation_ActiverPWM(void)
 
 
     //#3
-    TRISCbits.RC0 = 1; //met RC0 en entré car on va y shorter RC2 pour voir effet sur la DEL jaune
-    TRISCbits.RC2 = 0;
+    TRISCbits.RC2 = 0; //broche de sortie reliée au moteur
     
 
     //#4 init du timer 2
@@ -90,32 +89,31 @@ void initialisation_ActiverPWM(void)
     
     //#4
     CCP1CONbits.CCP1M = 0b1111; //mode PWM
-
-
-    //#7 étape 7 du 45k20
-    while (PIR1bits.TMR2IF ==0); //Attend 1 overflow du timer2
-    TRISCbits.RC1 = 0; //PWM sur broche P1D/RD7
        
 }
 
 /**
  * @brief Configuration Timer 0
  */
-void initialisation_ActiverTmr0(void)
+void initialisation_ConfigTmr0(void)
 {
-    T0CONbits.TMR0ON = 1;
+    T0CONbits.TMR0ON = 0; //à off au début
     T0CONbits.T08BIT = 0; //0=16bits
     T0CONbits.PSA = 0; //0 = on utilise. 1 = on utilise PAS de psc
     T0CONbits.T0CS = 0;
-    T0CONbits.T0PS = 0b000; //0b000 = psc/2
+    T0CONbits.T0PS = 0b000; //0b000 = psc/2    
     INTCONbits.TMR0IE = 1;
     
-    //1MHz/4/2/2500 = 50Hz -> 65536-63036 = 2500 ->63036=0xF63C
+ 
+   /* //1MHz/4/4/2500 = 25Hz -> 65536-63036 = 2500 ->63036=0xF63C
     TMR0H = 0xF6;
-    TMR0L = 0x3C;
+    TMR0L = 0x3C;*/
 
-//    TMR0H = 0xEC;
-//    TMR0L = 0x78;
+    //1MHz/4/2/3571 = 35Hz -> 65536-61976 = 3571 ->61976=0xF20D
+    TMR0H = 0xF2;
+    TMR0L = 0x0D;
+
+
 }
 
 
@@ -124,10 +122,12 @@ void initialisation_ActiverTmr0(void)
  */
 void initialisation_ConfigTmr3(void)
 {
-    
-    T3CON = 0; //valeurs par défaut sont tous ok
+    //1MHz/4/65536 = 3,8Hz -> 260ms
+    T3CON = 1; //valeurs par défaut sont tous ok
     PIE2bits.TMR3IE = 1; //interruptions permises
+    TRISCbits.RC0 = 0; //en sortie pour voir effet sur del
 }
+
 
 
 

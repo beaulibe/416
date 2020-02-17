@@ -6507,91 +6507,81 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;initialisation.c: 77: CCP1CONbits.DC1B = 0b00;
 "77
 [e = . . _CCP1CONbits 0 1 -> -> 0 `i `uc ]
-[; ;initialisation.c: 81: TRISCbits.RC0 = 1;
+[; ;initialisation.c: 81: TRISCbits.RC2 = 0;
 "81
-[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
-[; ;initialisation.c: 82: TRISCbits.RC2 = 0;
-"82
 [e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
-[; ;initialisation.c: 86: PIR1bits.TMR2IF = 0;
-"86
+[; ;initialisation.c: 85: PIR1bits.TMR2IF = 0;
+"85
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;initialisation.c: 87: T2CONbits.T2CKPS = 3;
-"87
+[; ;initialisation.c: 86: T2CONbits.T2CKPS = 3;
+"86
 [e = . . _T2CONbits 0 0 -> -> 3 `i `uc ]
-[; ;initialisation.c: 88: T2CONbits.TMR2ON = 1;
-"88
+[; ;initialisation.c: 87: T2CONbits.TMR2ON = 1;
+"87
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;initialisation.c: 92: CCP1CONbits.CCP1M = 0b1111;
-"92
+[; ;initialisation.c: 91: CCP1CONbits.CCP1M = 0b1111;
+"91
 [e = . . _CCP1CONbits 0 0 -> -> 15 `i `uc ]
-[; ;initialisation.c: 96: while (PIR1bits.TMR2IF ==0);
-"96
-[e $U 579  ]
-[e :U 580 ]
-[e :U 579 ]
-[e $ == -> . . _PIR1bits 0 1 `i -> 0 `i 580  ]
-[e :U 581 ]
-[; ;initialisation.c: 97: TRISCbits.RC1 = 0;
-"97
-[e = . . _TRISCbits 1 1 -> -> 0 `i `uc ]
-[; ;initialisation.c: 99: }
-"99
+[; ;initialisation.c: 93: }
+"93
 [e :UE 578 ]
 }
 [v F5531 `(v ~T0 @X0 1 tf ]
-"104
-[v _initialisation_ActiverTmr0 `AF5531 ~T0 @X0 1 e ]
-"105
+"98
+[v _initialisation_ConfigTmr0 `AF5531 ~T0 @X0 1 e ]
+"99
 {
-[; ;initialisation.c: 104: void initialisation_ActiverTmr0(void)
-[; ;initialisation.c: 105: {
-[e :U _initialisation_ActiverTmr0 ]
+[; ;initialisation.c: 98: void initialisation_ConfigTmr0(void)
+[; ;initialisation.c: 99: {
+[e :U _initialisation_ConfigTmr0 ]
 [f ]
-[; ;initialisation.c: 106: T0CONbits.TMR0ON = 1;
-"106
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;initialisation.c: 107: T0CONbits.T08BIT = 0;
-"107
+[; ;initialisation.c: 100: T0CONbits.TMR0ON = 0;
+"100
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+[; ;initialisation.c: 101: T0CONbits.T08BIT = 0;
+"101
 [e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
-[; ;initialisation.c: 108: T0CONbits.PSA = 0;
-"108
+[; ;initialisation.c: 102: T0CONbits.PSA = 0;
+"102
 [e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
-[; ;initialisation.c: 109: T0CONbits.T0CS = 0;
-"109
+[; ;initialisation.c: 103: T0CONbits.T0CS = 0;
+"103
 [e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
-[; ;initialisation.c: 110: T0CONbits.T0PS = 0b000;
-"110
+[; ;initialisation.c: 104: T0CONbits.T0PS = 0b000;
+"104
 [e = . . _T0CONbits 0 0 -> -> 0 `i `uc ]
-[; ;initialisation.c: 111: INTCONbits.TMR0IE = 1;
-"111
+[; ;initialisation.c: 105: INTCONbits.TMR0IE = 1;
+"105
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;initialisation.c: 114: TMR0H = 0xF6;
+[; ;initialisation.c: 113: TMR0H = 0xF2;
+"113
+[e = _TMR0H -> -> 242 `i `uc ]
+[; ;initialisation.c: 114: TMR0L = 0x0D;
 "114
-[e = _TMR0H -> -> 246 `i `uc ]
-[; ;initialisation.c: 115: TMR0L = 0x3C;
-"115
-[e = _TMR0L -> -> 60 `i `uc ]
-[; ;initialisation.c: 119: }
-"119
-[e :UE 582 ]
+[e = _TMR0L -> -> 13 `i `uc ]
+[; ;initialisation.c: 117: }
+"117
+[e :UE 579 ]
 }
 [v F5534 `(v ~T0 @X0 1 tf ]
-"125
+"123
 [v _initialisation_ConfigTmr3 `AF5534 ~T0 @X0 1 e ]
-"126
+"124
 {
-[; ;initialisation.c: 125: void initialisation_ConfigTmr3(void)
-[; ;initialisation.c: 126: {
+[; ;initialisation.c: 123: void initialisation_ConfigTmr3(void)
+[; ;initialisation.c: 124: {
 [e :U _initialisation_ConfigTmr3 ]
 [f ]
-[; ;initialisation.c: 128: T3CON = 0;
-"128
-[e = _T3CON -> -> 0 `i `uc ]
-[; ;initialisation.c: 129: PIE2bits.TMR3IE = 1;
-"129
+[; ;initialisation.c: 126: T3CON = 1;
+"126
+[e = _T3CON -> -> 1 `i `uc ]
+[; ;initialisation.c: 127: PIE2bits.TMR3IE = 1;
+"127
 [e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
-[; ;initialisation.c: 130: }
-"130
-[e :UE 583 ]
+[; ;initialisation.c: 128: TRISCbits.RC0 = 0;
+"128
+[e = . . _TRISCbits 1 0 -> -> 0 `i `uc ]
+[; ;initialisation.c: 129: }
+"129
+[e :UE 580 ]
 }

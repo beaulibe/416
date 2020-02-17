@@ -1,4 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T45 __interrupt high_priority  ]
 "12662 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [s S396 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S396 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
@@ -60,11 +62,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS562 ~T0 @X0 0 e@4082 ]
 "14566
 [v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
-"20 interrupts.c
+"22 interrupts.c
 [v _g_etat `i ~T0 @X0 0 e ]
-"58
-[c E5514 0 1 2 3 4 5 6 7 .. ]
-[n E5514 enumModes enumArret enumLent enumMoyen enumVite enumDelaiUn enumDelaiDeux enumDelaiTrois enumEtatMax  ]
+"61
+[c E5514 0 1 2 3 4 5 6 .. ]
+[n E5514 enumModes enumArret enumDelaiUn enumDelaiDeux enumLent enumMoyen enumVite enumEtatMax  ]
 "15791 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [s S550 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S550 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
@@ -76,29 +78,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S549 . . . ]
 "15805
 [v _T0CONbits `VS549 ~T0 @X0 0 e@4053 ]
-"10703
-[s S330 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S330 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"10713
-[s S331 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S331 . C1INP C1INM C2INP C2INM P1A P1B P1C P1D ]
-"10723
-[s S332 :4 `uc 1 :1 `uc 1 ]
-[n S332 . . ECCP1 ]
-"10727
-[s S333 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S333 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
-"10737
-[s S334 :7 `uc 1 :1 `uc 1 ]
-[n S334 . . SS2 ]
-"10702
-[u S329 `S330 1 `S331 1 `S332 1 `S333 1 `S334 1 ]
-[n S329 . . . . . . ]
-"10742
-[v _PORTDbits `VS329 ~T0 @X0 0 e@3971 ]
 "15869
 [v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
-"15862
+"21 interrupts.c
+[v _g_chargeTMR0 `uc ~T0 @X0 0 e ]
+"15862 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
 "12867
 [s S404 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -108,6 +92,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S403 . . ]
 "12877
 [v _PIR2bits `VS403 ~T0 @X0 0 e@4001 ]
+"10532
+[s S324 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S324 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"10542
+[s S325 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S325 . T1OSO T1OSI . SCK SDI SDO TX RX ]
+"10552
+[s S326 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S326 . T1CKI . CCP1 SCL SDA . CK DT ]
+"10562
+[s S327 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S327 . . CCP2 PA1 ]
+"10567
+[s S328 :1 `uc 1 :1 `uc 1 ]
+[n S328 . . PA2 ]
+"10531
+[u S323 `S324 1 `S325 1 `S326 1 `S327 1 `S328 1 ]
+[n S323 . . . . . . ]
+"10572
+[v _PORTCbits `VS323 ~T0 @X0 0 e@3970 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6351,182 +6355,175 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;commun.h: 12: enum enumModes
 [; ;commun.h: 13: {
 [; ;commun.h: 14: enumArret = 0,
-[; ;commun.h: 15: enumLent,
-[; ;commun.h: 16: enumMoyen,
-[; ;commun.h: 17: enumVite,
-[; ;commun.h: 18: enumDelaiUn,
-[; ;commun.h: 19: enumDelaiDeux,
-[; ;commun.h: 20: enumDelaiTrois,
-[; ;commun.h: 21: enumEtatMax
-[; ;commun.h: 22: };
+[; ;commun.h: 15: enumDelaiUn,
+[; ;commun.h: 16: enumDelaiDeux,
+[; ;commun.h: 17: enumLent,
+[; ;commun.h: 18: enumMoyen,
+[; ;commun.h: 19: enumVite,
+[; ;commun.h: 20: enumEtatMax
+[; ;commun.h: 21: };
 "19 interrupts.c
 [v _g_resAN `Ai ~T0 @X0 1 e ]
 [i _g_resAN
 -> 0 `i
 ]
 [; ;interrupts.c: 19: int g_resAN = 0;
-[; ;interrupts.c: 20: extern int g_etat;
+"20
+[v _g_compteurTmr3 `Aui ~T0 @X0 1 e ]
+[i _g_compteurTmr3
+-> -> 0 `i `ui
+]
+[; ;interrupts.c: 20: unsigned int g_compteurTmr3 = 0;
+[; ;interrupts.c: 21: extern unsigned char g_chargeTMR0;
+[; ;interrupts.c: 22: extern int g_etat;
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
-[v F5527 `(v ~T0 @X0 1 tf ]
-"27
-[v _high_isr `IAF5527 ~T0 @X0 1 e ]
-"28
+[v F5528 `(v ~T0 @X0 1 tf ]
+"30
+[v _high_isr `AF5528 ~T45 @X0 1 e ]
+"31
 {
-[; ;interrupts.c: 27: void interrupt high_isr(void)
-[; ;interrupts.c: 28: {
+[; ;interrupts.c: 30: void __interrupt(high_priority) high_isr(void)
+[; ;interrupts.c: 31: {
 [e :U _high_isr ]
 [f ]
-"29
-[v F5528 `Auc ~T0 @X0 1 s dutyWiper ]
-[i F5528
+"32
+[v F5529 `Auc ~T0 @X0 1 s dutyWiper ]
+[i F5529
 -> -> 9 `i `uc
 ]
-"30
-[v F5529 `Auc ~T0 @X0 1 s sensUp ]
-[i F5529
+"33
+[v F5530 `Auc ~T0 @X0 1 s sensUp ]
+[i F5530
 -> -> 1 `i `uc
 ]
-"31
-[v F5530 `Ai ~T0 @X0 1 s compte ]
-[i F5530
+"34
+[v F5531 `Ai ~T0 @X0 1 s compte ]
+[i F5531
 -> 0 `i
 ]
-[; ;interrupts.c: 29: static unsigned char dutyWiper = 9;
-[; ;interrupts.c: 30: static bool sensUp = 1;
-[; ;interrupts.c: 31: static int compte = 0;
-[; ;interrupts.c: 34: if (PIR1bits.ADIF)
-"34
+[; ;interrupts.c: 32: static unsigned char dutyWiper = 9;
+[; ;interrupts.c: 33: static bool sensUp = 1;
+[; ;interrupts.c: 34: static int compte = 0;
+[; ;interrupts.c: 37: if (PIR1bits.ADIF)
+"37
 [e $ ! != -> . . _PIR1bits 0 6 `i -> -> -> 0 `i `Vuc `i 575  ]
-[; ;interrupts.c: 35: {
-"35
-{
-[; ;interrupts.c: 36: g_resAN = ADRESH;
-"36
-[e = _g_resAN -> _ADRESH `i ]
-[; ;interrupts.c: 38: PIR1bits.ADIF = 0;
+[; ;interrupts.c: 38: {
 "38
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-[; ;interrupts.c: 39: ADCON0bits.GO_DONE = 1;
+{
+[; ;interrupts.c: 39: g_resAN = ADRESH;
 "39
+[e = _g_resAN -> _ADRESH `i ]
+[; ;interrupts.c: 41: PIR1bits.ADIF = 0;
+"41
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;interrupts.c: 42: ADCON0bits.GO_DONE = 1;
+"42
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
-"40
+"43
 }
 [e :U 575 ]
-[; ;interrupts.c: 40: }
-[; ;interrupts.c: 43: if (INTCONbits.TMR0IF)
-"43
-[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 576  ]
-[; ;interrupts.c: 44: {
-"44
-{
-[; ;interrupts.c: 46: CCPR1L = dutyWiper;
+[; ;interrupts.c: 43: }
+[; ;interrupts.c: 46: if (INTCONbits.TMR0IF)
 "46
-[e = _CCPR1L F5528 ]
-[; ;interrupts.c: 47: if (sensUp)
+[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 576  ]
+[; ;interrupts.c: 47: {
 "47
-[e $ ! != -> F5529 `i -> -> -> 0 `i `Auc `i 577  ]
-[; ;interrupts.c: 48: {
-"48
 {
-[; ;interrupts.c: 50: if (dutyWiper >= 0x25)
+[; ;interrupts.c: 49: CCPR1L = dutyWiper;
+"49
+[e = _CCPR1L F5529 ]
+[; ;interrupts.c: 50: if (sensUp)
 "50
-[e $ ! >= -> F5528 `i -> 37 `i 578  ]
-[; ;interrupts.c: 51: sensUp = 0;
+[e $ ! != -> F5530 `i -> -> -> 0 `i `Auc `i 577  ]
+[; ;interrupts.c: 51: {
 "51
-[e = F5529 -> -> 0 `i `uc ]
-[e :U 578 ]
-"52
-}
-[; ;interrupts.c: 52: }
-[e $U 579  ]
-"53
-[e :U 577 ]
-[; ;interrupts.c: 53: else
-[; ;interrupts.c: 54: {
-"54
 {
-[; ;interrupts.c: 56: if (dutyWiper <= 9)
+[; ;interrupts.c: 52: dutyWiper++;
+"52
+[e ++ F5529 -> -> 1 `i `uc ]
+[; ;interrupts.c: 53: if (dutyWiper >= 0x25)
+"53
+[e $ ! >= -> F5529 `i -> 37 `i 578  ]
+[; ;interrupts.c: 54: sensUp = 0;
+"54
+[e = F5530 -> -> 0 `i `uc ]
+[e :U 578 ]
+"55
+}
+[; ;interrupts.c: 55: }
+[e $U 579  ]
 "56
-[e $ ! <= -> F5528 `i -> 9 `i 580  ]
+[e :U 577 ]
+[; ;interrupts.c: 56: else
 [; ;interrupts.c: 57: {
 "57
 {
-[; ;interrupts.c: 58: if (g_etat >= enumDelaiUn )
+[; ;interrupts.c: 58: dutyWiper--;
 "58
-[e $ ! >= _g_etat -> . `E5514 4 `i 581  ]
-[; ;interrupts.c: 59: {
+[e -- F5529 -> -> 1 `i `uc ]
+[; ;interrupts.c: 59: if (dutyWiper <= 9)
 "59
-{
-[; ;interrupts.c: 60: T0CONbits.TMR0ON = 0;
+[e $ ! <= -> F5529 `i -> 9 `i 580  ]
+[; ;interrupts.c: 60: {
 "60
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+{
+[; ;interrupts.c: 61: if (g_etat <= enumDelaiDeux )
 "61
+[e $ ! <= _g_etat -> . `E5514 2 `i 581  ]
+[; ;interrupts.c: 62: {
+"62
+{
+[; ;interrupts.c: 63: T0CONbits.TMR0ON = 0;
+"63
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"66
 }
 [e :U 581 ]
-[; ;interrupts.c: 61: }
-[; ;interrupts.c: 62: sensUp = 1;
-"62
-[e = F5529 -> -> 1 `i `uc ]
-"63
+[; ;interrupts.c: 66: }
+[; ;interrupts.c: 67: sensUp = 1;
+"67
+[e = F5530 -> -> 1 `i `uc ]
+"68
 }
 [e :U 580 ]
-"64
+"69
 }
 [e :U 579 ]
-[; ;interrupts.c: 63: }
-[; ;interrupts.c: 64: }
-[; ;interrupts.c: 66: PORTDbits.RD7 = PORTDbits.RD7 ^ 1;
-"66
-[e = . . _PORTDbits 0 7 -> ^ -> . . _PORTDbits 0 7 `i -> 1 `i `uc ]
-[; ;interrupts.c: 67: INTCONbits.TMR0IF = 0;
-"67
+[; ;interrupts.c: 68: }
+[; ;interrupts.c: 69: }
+[; ;interrupts.c: 72: INTCONbits.TMR0IF = 0;
+"72
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;interrupts.c: 68: TMR0H = 0xEC;
-"68
-[e = _TMR0H -> -> 236 `i `uc ]
-[; ;interrupts.c: 69: TMR0L = 0x78;
-"69
-[e = _TMR0L -> -> 120 `i `uc ]
-"70
+[; ;interrupts.c: 78: TMR0H = g_chargeTMR0;
+"78
+[e = _TMR0H _g_chargeTMR0 ]
+[; ;interrupts.c: 80: TMR0L = 0x00;
+"80
+[e = _TMR0L -> -> 0 `i `uc ]
+"84
 }
 [e :U 576 ]
-[; ;interrupts.c: 70: }
-[; ;interrupts.c: 73: if (PIR2bits.TMR3IF)
-"73
+[; ;interrupts.c: 84: }
+[; ;interrupts.c: 87: if (PIR2bits.TMR3IF)
+"87
 [e $ ! != -> . . _PIR2bits 0 1 `i -> -> -> 0 `i `Vuc `i 582  ]
-[; ;interrupts.c: 74: {
-"74
+[; ;interrupts.c: 88: {
+"88
 {
-[; ;interrupts.c: 76: compte++;
-"76
-[e ++ F5530 -> 1 `i ]
-[; ;interrupts.c: 78: if (g_etat == enumDelaiUn && compte > 10)
-"78
-[e $ ! && == _g_etat -> . `E5514 4 `i > F5530 -> 10 `i 583  ]
-[; ;interrupts.c: 79: {
-"79
-{
-[; ;interrupts.c: 80: T0CONbits.T0PS = 1;
-"80
-[e = . . _T0CONbits 0 0 -> -> 1 `i `uc ]
-[; ;interrupts.c: 81: T0CONbits.TMR0ON = 1;
-"81
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;interrupts.c: 82: compte = 0;
-"82
-[e = F5530 -> 0 `i ]
-"83
-}
-[e :U 583 ]
-[; ;interrupts.c: 83: }
-[; ;interrupts.c: 85: PIR2bits.TMR3IF = 0;
-"85
+[; ;interrupts.c: 89: g_compteurTmr3++;
+"89
+[e ++ _g_compteurTmr3 -> -> 1 `i `ui ]
+[; ;interrupts.c: 91: PORTCbits.RC0 = PORTCbits.RC0 ^ 1;
+"91
+[e = . . _PORTCbits 0 0 -> ^ -> . . _PORTCbits 0 0 `i -> 1 `i `uc ]
+[; ;interrupts.c: 92: PIR2bits.TMR3IF = 0;
+"92
 [e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
-"86
+"93
 }
 [e :U 582 ]
-[; ;interrupts.c: 86: }
 [; ;interrupts.c: 93: }
-"93
+[; ;interrupts.c: 100: }
+"100
 [e :UE 574 ]
 }

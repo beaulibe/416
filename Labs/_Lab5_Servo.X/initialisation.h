@@ -23,10 +23,6 @@ void initialisation_ConfigurerPortDSortie(void);
  */
 void initialisation_ActiverInterruptions(void);
 
-/**
- * @brief Fonction utilisée pour mettre la ligne RB0 en entrée et activer les résistances de "PULL-UP" internes.
- */
-void initialisation_ConfigurerInterrupteurRB0(void);
 
 /**
  * @brief Fonction utilisée pour activer l'INT0
@@ -34,9 +30,9 @@ void initialisation_ConfigurerInterrupteurRB0(void);
 void initialisation_ActiverInt0(void);
 
 /**
- * @brief Fonction utilisée pour activer Timer0 avec un délai d'une seconde
+ * @brief Fonction utilisée pour config Timer0 
  */
-void initialisation_ActiverTimer0(void);
+void initialisation_ConfigTmr0(void);
 
 /**
  * @brief Configuration du mode Analogique pour AN0
@@ -53,10 +49,6 @@ void initialisation_ActiverIntAdc(void);
  */
 void initialisation_ActiverPWM(void);
 
-/**
- * @brief Configuration Timer 0
- */
-void initialisation_ActiverTmr0(void);
 
 /**
  * @brief Configuration Timer 3

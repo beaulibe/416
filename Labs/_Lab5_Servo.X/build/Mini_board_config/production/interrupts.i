@@ -10014,21 +10014,22 @@ typedef unsigned char bool;
 enum enumModes
 {
 enumArret = 0,
+enumDelaiUn,
+enumDelaiDeux,
 enumLent,
 enumMoyen,
 enumVite,
-enumDelaiUn,
-enumDelaiDeux,
-enumDelaiTrois,
 enumEtatMax
 };
 
 # 19 "interrupts.c"
 int g_resAN = 0;
+unsigned int g_compteurTmr3 = 0;
+extern unsigned char g_chargeTMR0;
 extern int g_etat;
 
-# 27
-void interrupt high_isr(void)
+# 30
+void __interrupt(high_priority) high_isr(void)
 {
 static unsigned char dutyWiper = 9;
 static bool sensUp = 1;
@@ -10050,45 +10051,46 @@ if (INTCONbits.TMR0IF)
 CCPR1L = dutyWiper;
 if (sensUp)
 {
-
+dutyWiper++;
 if (dutyWiper >= 0x25)
 sensUp = 0;
 }
 else
 {
-
+dutyWiper--;
 if (dutyWiper <= 9)
 {
-if (g_etat >= enumDelaiUn )
+if (g_etat <= enumDelaiDeux )
 {
 T0CONbits.TMR0ON = 0;
+
+
 }
 sensUp = 1;
 }
 }
 
-PORTDbits.RD7 = PORTDbits.RD7 ^ 1;
+
 INTCONbits.TMR0IF = 0;
-TMR0H = 0xEC;
-TMR0L = 0x78;
+
+# 78
+TMR0H = g_chargeTMR0;
+
+TMR0L = 0x00;
+
+
+
 }
 
 
 if (PIR2bits.TMR3IF)
 {
+g_compteurTmr3++;
 
-compte++;
-
-if (g_etat == enumDelaiUn && compte > 10)
-{
-T0CONbits.T0PS = 1;
-T0CONbits.TMR0ON = 1;
-compte = 0;
-}
-
+PORTCbits.RC0 = PORTCbits.RC0 ^ 1;
 PIR2bits.TMR3IF = 0;
 }
 
-# 93
+# 100
 }
 

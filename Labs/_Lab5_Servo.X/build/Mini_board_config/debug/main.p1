@@ -1,20 +1,30 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"23 main.c
-[c E5535 0 1 2 3 4 5 6 7 .. ]
-[n E5535 enumModes enumArret enumLent enumMoyen enumVite enumDelaiUn enumDelaiDeux enumDelaiTrois enumEtatMax  ]
+"35 main.c
+[c E5531 0 1 2 3 4 5 6 .. ]
+[n E5531 enumModes enumArret enumDelaiUn enumDelaiDeux enumLent enumMoyen enumVite enumEtatMax  ]
 "19 initialisation.h
 [v _initialisation_ConfigurerPortDSortie `(v ~T0 @X0 0 ef ]
-"44
+"40
 [v _initialisation_ConfigurerAdc `(v ~T0 @X0 0 ef ]
-"49
+"45
 [v _initialisation_ActiverIntAdc `(v ~T0 @X0 0 ef ]
-"54
+"50
 [v _initialisation_ActiverPWM `(v ~T0 @X0 0 ef ]
-"59
-[v _initialisation_ActiverTmr0 `(v ~T0 @X0 0 ef ]
+"35
+[v _initialisation_ConfigTmr0 `(v ~T0 @X0 0 ef ]
+"56
+[v _initialisation_ConfigTmr3 `(v ~T0 @X0 0 ef ]
 "24
 [v _initialisation_ActiverInterruptions `(v ~T0 @X0 0 ef ]
 [p mainexit ]
+"14566 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"32 main.c
+[v _g_resAN `i ~T0 @X0 0 e ]
+"10697 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+"33 main.c
+[v _g_compteurTmr3 `ui ~T0 @X0 0 e ]
 "15791 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [s S550 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S550 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
@@ -6268,148 +6278,224 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;initialisation.h: 14: void initialisation_ConfigurerRegistres(void);
 [; ;initialisation.h: 19: void initialisation_ConfigurerPortDSortie(void);
 [; ;initialisation.h: 24: void initialisation_ActiverInterruptions(void);
-[; ;initialisation.h: 29: void initialisation_ConfigurerInterrupteurRB0(void);
-[; ;initialisation.h: 34: void initialisation_ActiverInt0(void);
-[; ;initialisation.h: 39: void initialisation_ActiverTimer0(void);
-[; ;initialisation.h: 44: void initialisation_ConfigurerAdc(void);
-[; ;initialisation.h: 49: void initialisation_ActiverIntAdc(void);
-[; ;initialisation.h: 54: void initialisation_ActiverPWM(void);
-[; ;initialisation.h: 59: void initialisation_ActiverTmr0(void);
-[; ;initialisation.h: 64: void initialisation_ConfigTmr3(void);
+[; ;initialisation.h: 30: void initialisation_ActiverInt0(void);
+[; ;initialisation.h: 35: void initialisation_ConfigTmr0(void);
+[; ;initialisation.h: 40: void initialisation_ConfigurerAdc(void);
+[; ;initialisation.h: 45: void initialisation_ActiverIntAdc(void);
+[; ;initialisation.h: 50: void initialisation_ActiverPWM(void);
+[; ;initialisation.h: 56: void initialisation_ConfigTmr3(void);
 [; ;commun.h: 12: enum enumModes
 [; ;commun.h: 13: {
 [; ;commun.h: 14: enumArret = 0,
-[; ;commun.h: 15: enumLent,
-[; ;commun.h: 16: enumMoyen,
-[; ;commun.h: 17: enumVite,
-[; ;commun.h: 18: enumDelaiUn,
-[; ;commun.h: 19: enumDelaiDeux,
-[; ;commun.h: 20: enumDelaiTrois,
-[; ;commun.h: 21: enumEtatMax
-[; ;commun.h: 22: };
+[; ;commun.h: 15: enumDelaiUn,
+[; ;commun.h: 16: enumDelaiDeux,
+[; ;commun.h: 17: enumLent,
+[; ;commun.h: 18: enumMoyen,
+[; ;commun.h: 19: enumVite,
+[; ;commun.h: 20: enumEtatMax
+[; ;commun.h: 21: };
 [; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;main.c: 22: extern int g_resAN;
-"23 main.c
+[; ;main.c: 32: extern int g_resAN;
+[; ;main.c: 33: extern unsigned int g_compteurTmr3;
+"35 main.c
 [v _g_etat `Ai ~T0 @X0 1 e ]
 [i _g_etat
--> . `E5535 0 `i
+-> . `E5531 0 `i
 ]
-[; ;main.c: 23: int g_etat = enumArret;
-[v F5549 `(v ~T0 @X0 1 tf ]
-"28
-[v _initialisation `AF5549 ~T0 @X0 1 e ]
-"29
+[; ;main.c: 35: int g_etat = enumArret;
+"36
+[v _g_chargeTMR0 `Auc ~T0 @X0 1 e ]
+[i _g_chargeTMR0
+-> -> 242 `i `uc
+]
+[; ;main.c: 36: unsigned char g_chargeTMR0 = 0xF2;
+[v F5546 `(v ~T0 @X0 1 tf ]
+"42
+[v _initialisation `AF5546 ~T0 @X0 1 e ]
+"43
 {
-[; ;main.c: 28: void initialisation(void)
-[; ;main.c: 29: {
+[; ;main.c: 42: void initialisation(void)
+[; ;main.c: 43: {
 [e :U _initialisation ]
 [f ]
-[; ;main.c: 30: initialisation_ConfigurerPortDSortie();
-"30
+[; ;main.c: 44: initialisation_ConfigurerPortDSortie();
+"44
 [e ( _initialisation_ConfigurerPortDSortie ..  ]
-[; ;main.c: 31: initialisation_ConfigurerAdc();
-"31
+[; ;main.c: 45: initialisation_ConfigurerAdc();
+"45
 [e ( _initialisation_ConfigurerAdc ..  ]
-[; ;main.c: 32: initialisation_ActiverIntAdc();
-"32
+[; ;main.c: 46: initialisation_ActiverIntAdc();
+"46
 [e ( _initialisation_ActiverIntAdc ..  ]
-[; ;main.c: 33: initialisation_ActiverPWM();
-"33
+[; ;main.c: 47: initialisation_ActiverPWM();
+"47
 [e ( _initialisation_ActiverPWM ..  ]
-[; ;main.c: 34: initialisation_ActiverTmr0();
-"34
-[e ( _initialisation_ActiverTmr0 ..  ]
-[; ;main.c: 36: initialisation_ActiverInterruptions();
-"36
+[; ;main.c: 48: initialisation_ConfigTmr0();
+"48
+[e ( _initialisation_ConfigTmr0 ..  ]
+[; ;main.c: 49: initialisation_ConfigTmr3();
+"49
+[e ( _initialisation_ConfigTmr3 ..  ]
+[; ;main.c: 50: initialisation_ActiverInterruptions();
+"50
 [e ( _initialisation_ActiverInterruptions ..  ]
-[; ;main.c: 38: }
-"38
+[; ;main.c: 52: }
+"52
 [e :UE 574 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-[v F5552 `(v ~T0 @X0 1 tf ]
-"40
-[v _main `AF5552 ~T0 @X0 1 e ]
-"41
+[v F5549 `(v ~T0 @X0 1 tf ]
+"54
+[v _main `AF5549 ~T0 @X0 1 e ]
+"55
 {
-[; ;main.c: 40: void main(void)
-[; ;main.c: 41: {
+[; ;main.c: 54: void main(void)
+[; ;main.c: 55: {
 [e :U _main ]
 [f ]
-"42
+"56
 [v _dutyWiper `uc ~T0 @X0 1 a ]
-[; ;main.c: 42: unsigned char dutyWiper = 9;
+[; ;main.c: 56: unsigned char dutyWiper = 9;
 [e = _dutyWiper -> -> 9 `i `uc ]
-"43
-[v _sensUp `uc ~T0 @X0 1 a ]
-[; ;main.c: 43: bool sensUp = 1;
-[e = _sensUp -> -> 1 `i `uc ]
-[; ;main.c: 45: initialisation();
-"45
+[; ;main.c: 58: initialisation();
+"58
 [e ( _initialisation ..  ]
-[; ;main.c: 46: T0CONbits.TMR0ON = 1;
-"46
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 50: while(1)
-"50
+[; ;main.c: 60: CCPR1L = 9;
+"60
+[e = _CCPR1L -> -> 9 `i `uc ]
+[; ;main.c: 64: while(1)
+"64
 [e :U 577 ]
-[; ;main.c: 51: {
-"51
+[; ;main.c: 65: {
+"65
 {
-[; ;main.c: 70: switch (g_etat)
-"70
-[e $U 580  ]
-[; ;main.c: 71: {
+[; ;main.c: 68: g_etat = g_resAN * enumEtatMax / 256;
+"68
+[e = _g_etat / * _g_resAN -> . `E5531 6 `i -> 256 `i ]
+[; ;main.c: 69: PORTD = g_etat << 5;
+"69
+[e = _PORTD -> << _g_etat -> 5 `i `uc ]
+[; ;main.c: 71: switch (g_etat)
 "71
-{
-[; ;main.c: 72: case enumArret :
+[e $U 580  ]
+[; ;main.c: 72: {
 "72
+{
+[; ;main.c: 73: case enumArret :
+"73
 [e :U 581 ]
-[; ;main.c: 75: break;
-"75
+[; ;main.c: 78: break;
+"78
 [e $U 579  ]
-[; ;main.c: 76: case enumLent :
-"76
+[; ;main.c: 80: case enumDelaiUn :
+"80
 [e :U 582 ]
-[; ;main.c: 79: break;
-"79
-[e $U 579  ]
-[; ;main.c: 81: case enumMoyen :
+[; ;main.c: 81: if (g_compteurTmr3 > 15)
 "81
-[e :U 583 ]
-[; ;main.c: 84: break;
+[e $ ! > _g_compteurTmr3 -> -> 15 `i `ui 583  ]
+[; ;main.c: 82: {
+"82
+{
+[; ;main.c: 84: g_chargeTMR0 = 0xED;
 "84
-[e $U 579  ]
-[; ;main.c: 85: case enumVite :
+[e = _g_chargeTMR0 -> -> 237 `i `uc ]
+[; ;main.c: 85: T0CONbits.TMR0ON = 1;
 "85
-[e :U 584 ]
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 86: g_compteurTmr3 = 0;
+"86
+[e = _g_compteurTmr3 -> -> 0 `i `ui ]
+"87
+}
+[e :U 583 ]
+[; ;main.c: 87: }
 [; ;main.c: 88: break;
 "88
 [e $U 579  ]
-[; ;main.c: 91: break;
+[; ;main.c: 90: case enumDelaiDeux :
+"90
+[e :U 584 ]
+[; ;main.c: 91: if (g_compteurTmr3 > 11)
 "91
-[e $U 579  ]
-"97
+[e $ ! > _g_compteurTmr3 -> -> 11 `i `ui 585  ]
+[; ;main.c: 92: {
+"92
+{
+[; ;main.c: 93: g_chargeTMR0 = 0xED;
+"93
+[e = _g_chargeTMR0 -> -> 237 `i `uc ]
+[; ;main.c: 94: T0CONbits.TMR0ON = 1;
+"94
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 95: g_compteurTmr3 = 0;
+"95
+[e = _g_compteurTmr3 -> -> 0 `i `ui ]
+"96
 }
-[; ;main.c: 97: }
-[e $U 579  ]
-"70
-[e :U 580 ]
-[e [\ _g_etat , $ -> . `E5535 0 `i 581
- , $ -> . `E5535 1 `i 582
- , $ -> . `E5535 2 `i 583
- , $ -> . `E5535 3 `i 584
- 579 ]
+[e :U 585 ]
+[; ;main.c: 96: }
+[; ;main.c: 97: break;
 "97
+[e $U 579  ]
+[; ;main.c: 99: case enumLent :
+"99
+[e :U 586 ]
+[; ;main.c: 100: g_chargeTMR0 = 0xE8;
+"100
+[e = _g_chargeTMR0 -> -> 232 `i `uc ]
+[; ;main.c: 101: T0CONbits.TMR0ON = 1;
+"101
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 102: break;
+"102
+[e $U 579  ]
+[; ;main.c: 104: case enumMoyen :
+"104
+[e :U 587 ]
+[; ;main.c: 105: g_chargeTMR0 = 0xED;
+"105
+[e = _g_chargeTMR0 -> -> 237 `i `uc ]
+[; ;main.c: 106: T0CONbits.TMR0ON = 1;
+"106
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 107: break;
+"107
+[e $U 579  ]
+[; ;main.c: 109: case enumVite :
+"109
+[e :U 588 ]
+[; ;main.c: 110: g_chargeTMR0 = 0xF2;
+"110
+[e = _g_chargeTMR0 -> -> 242 `i `uc ]
+[; ;main.c: 111: T0CONbits.TMR0ON = 1;
+"111
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 112: break;
+"112
+[e $U 579  ]
+"115
+}
+[; ;main.c: 115: }
+[e $U 579  ]
+"71
+[e :U 580 ]
+[e [\ _g_etat , $ -> . `E5531 0 `i 581
+ , $ -> . `E5531 1 `i 582
+ , $ -> . `E5531 2 `i 584
+ , $ -> . `E5531 3 `i 586
+ , $ -> . `E5531 4 `i 587
+ , $ -> . `E5531 5 `i 588
+ 579 ]
+"115
 [e :U 579 ]
-"98
+"116
 }
 [e :U 576 ]
-"50
+"64
 [e $U 577  ]
 [e :U 578 ]
-[; ;main.c: 98: }
-[; ;main.c: 99: }
-"99
+[; ;main.c: 116: }
+[; ;main.c: 117: }
+"117
 [e :UE 575 ]
 }

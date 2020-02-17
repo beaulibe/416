@@ -17,6 +17,8 @@
 //int valeurPwm_                  = 0;
 /** valeur obtenue suite à la conversion A/N */
 int g_resAN = 0; //8 bits de poids fort de la conversion A/N
+unsigned int g_compteurTmr3 = 0;
+extern unsigned char g_chargeTMR0;
 extern int g_etat;  
 
 
@@ -24,7 +26,8 @@ extern int g_etat;
 /**
  * @brief Fonction qui reçoit les appels d'interruptions "high"
  */
-void interrupt high_isr(void)
+//void interrupt high_isr(void)
+void __interrupt(high_priority) high_isr(void)
 {
     static unsigned char dutyWiper = PWM_MIN;
     static bool sensUp = true;
@@ -46,47 +49,47 @@ void interrupt high_isr(void)
         CCPR1L = dutyWiper;
         if (sensUp)
         {
-           // dutyWiper++;
+            dutyWiper++;
             if (dutyWiper >= PWM_MAX)
                 sensUp = false;
         }
         else
         {
-            //dutyWiper--;
+            dutyWiper--;
             if (dutyWiper <= PWM_MIN)
             {
-                if (g_etat >= enumDelaiUn )
+                if (g_etat <= enumDelaiDeux )
                 {
                     T0CONbits.TMR0ON = 0; //arrêt du tmr0
+                    //g_compteurTmr3 = 0;
+                    
                 }
                 sensUp = true;
             }
         }   
 
-        PORTDbits.RD7 = PORTDbits.RD7 ^ 1; //DEL rouge toggle
+       // PORTDbits.RD7 = PORTDbits.RD7 ^ 1; //DEL rouge toggle
         INTCONbits.TMR0IF = 0;
-        //1MHz/4/2/2500 = 50Hz -> 65536-63036 = 2500 ->63036=0xF63C
-        TMR0H = 0xF6;
-        TMR0L = 0x3C;
+
+        //1MHz/4/2/3571 = 35Hz -> 65536-61976 = 3571 ->61976=0xF20D
+    //    TMR0H = 0xF2;
+    //    TMR0L = 0x0D;
+ 
+        TMR0H = g_chargeTMR0;
+        //TMR0H = 0xF2;
+        TMR0L = 0x00;
         
-//        TMR0H = 0xEC;
-//        TMR0L = 0x78;
+
+        
     }
         
     // ***** Tmr3 ****** 
      if (PIR2bits.TMR3IF)     
      {  
+        g_compteurTmr3++;
 
-         compte++;
-
-         if (g_etat == enumDelaiUn && compte > 10)
-         {
-             T0CONbits.T0PS = 1; // psc/4 ... On se met en mode moyen
-             T0CONbits.TMR0ON = 1; //part le tmr0. Il y aura donc 1 coup de wiper. Le tmr0 se fermera dans l'interruption du tmr 0
-             compte = 0;
-         }
-
-         PIR2bits.TMR3IF = 0;
+        PORTCbits.RC0 = PORTCbits.RC0 ^ 1; //DEL  toggle
+        PIR2bits.TMR3IF = 0;
      } 
 
 
