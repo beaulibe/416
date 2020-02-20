@@ -1,0 +1,1160 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Thu Feb 20 15:45:41 2020
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	18F458
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    12                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    13                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    14  0000                     
+    15                           ; Version 2.10
+    16                           ; Generated 31/07/2019 GMT
+    17                           ; 
+    18                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    19                           ; All rights reserved.
+    20                           ; 
+    21                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    22                           ; 
+    23                           ; Redistribution and use in source and binary forms, with or without modification, are
+    24                           ; permitted provided that the following conditions are met:
+    25                           ; 
+    26                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    27                           ;        conditions and the following disclaimer.
+    28                           ; 
+    29                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    30                           ;        of conditions and the following disclaimer in the documentation and/or other
+    31                           ;        materials provided with the distribution.
+    32                           ; 
+    33                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    34                           ;        software without specific prior written permission.
+    35                           ; 
+    36                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    37                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    38                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    39                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    40                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    41                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    42                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    43                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    44                           ; 
+    45                           ; 
+    46                           ; Code-generator required, PIC18F458 Definitions
+    47                           ; 
+    48                           ; SFR Addresses
+    49  0000                     _TRISD	set	3989
+    50  0000                     _PORTDbits	set	3971
+    51                           
+    52                           ; #config settings
+    53  0000                     
+    54                           	psect	cinit
+    55  003C2A                     __pcinit:
+    56                           	opt callstack 0
+    57  003C2A                     start_initialization:
+    58                           	opt callstack 0
+    59  003C2A                     __initialization:
+    60                           	opt callstack 0
+    61                           
+    62                           ; Clear objects allocated to COMRAM (36 bytes)
+    63  003C2A  EE00  F001         	lfsr	0,__pbssCOMRAM
+    64  003C2E  0E24               	movlw	36
+    65  003C30                     clear_0:
+    66  003C30  6AEE               	clrf	postinc0,c
+    67  003C32  06E8               	decf	wreg,f,c
+    68  003C34  E1FD               	bnz	clear_0
+    69  003C36                     end_of_initialization:
+    70                           	opt callstack 0
+    71  003C36                     __end_of__initialization:
+    72                           	opt callstack 0
+    73  003C36  0100               	movlb	0
+    74  003C38  EF1E  F01E         	goto	_main	;jump to C main() function
+    75                           
+    76                           	psect	bssCOMRAM
+    77  000001                     __pbssCOMRAM:
+    78                           	opt callstack 0
+    79  000001                     _NeoRed:
+    80                           	opt callstack 0
+    81  000001                     	ds	12
+    82  00000D                     _NeoBlue:
+    83                           	opt callstack 0
+    84  00000D                     	ds	12
+    85  000019                     _NeoGreen:
+    86                           	opt callstack 0
+    87  000019                     	ds	12
+    88                           
+    89                           	psect	cstackCOMRAM
+    90  000025                     __pcstackCOMRAM:
+    91                           	opt callstack 0
+    92  000025                     NeoBit@Bit:
+    93                           	opt callstack 0
+    94  000025                     NeoInit@NeoPixel:
+    95                           	opt callstack 0
+    96                           
+    97                           ; 1 bytes @ 0x0
+    98  000025                     	ds	1
+    99  000026                     ??_NeoDraw:
+   100                           
+   101                           ; 1 bytes @ 0x1
+   102  000026                     	ds	3
+   103  000029                     NeoDraw@NeoPixel:
+   104                           	opt callstack 0
+   105                           
+   106                           ; 1 bytes @ 0x4
+   107  000029                     	ds	1
+   108  00002A                     NeoDraw@BitCount:
+   109                           	opt callstack 0
+   110                           
+   111                           ; 1 bytes @ 0x5
+   112  00002A                     	ds	1
+   113  00002B                     ??_main:
+   114                           
+   115                           ; 1 bytes @ 0x6
+   116  00002B                     	ds	2
+   117                           
+   118 ;;
+   119 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   120 ;;
+   121 ;; *************** function _main *****************
+   122 ;; Defined at:
+   123 ;;		line 17 in file "main.c"
+   124 ;; Parameters:    Size  Location     Type
+   125 ;;		None
+   126 ;; Auto vars:     Size  Location     Type
+   127 ;;		None
+   128 ;; Return value:  Size  Location     Type
+   129 ;;                  1    wreg      void 
+   130 ;; Registers used:
+   131 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   132 ;; Tracked objects:
+   133 ;;		On entry : 0/0
+   134 ;;		On exit  : 0/0
+   135 ;;		Unchanged: 0/0
+   136 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   137 ;;      Params:         0       0       0       0       0       0       0
+   138 ;;      Locals:         0       0       0       0       0       0       0
+   139 ;;      Temps:          2       0       0       0       0       0       0
+   140 ;;      Totals:         2       0       0       0       0       0       0
+   141 ;;Total ram usage:        2 bytes
+   142 ;; Hardware stack levels required when called:    2
+   143 ;; This function calls:
+   144 ;;		_NeoDraw
+   145 ;;		_NeoInit
+   146 ;; This function is called by:
+   147 ;;		Startup code after reset
+   148 ;; This function uses a non-reentrant model
+   149 ;;
+   150                           
+   151                           	psect	text0
+   152  003C3C                     __ptext0:
+   153                           	opt callstack 0
+   154  003C3C                     _main:
+   155                           	opt callstack 29
+   156  003C3C  FFFF               	dw	65535	; assembler added errata NOP
+   157                           
+   158                           ;main.c: 20:     TRISD = 0;
+   159  003C3E  0E00               	movlw	0
+   160  003C40  6E95               	movwf	149,c	;volatile
+   161  003C42                     
+   162                           ;main.c: 21:     NeoInit();
+   163  003C42  ECDF  F01E         	call	_NeoInit	;wreg free
+   164  003C46                     
+   165                           ;main.c: 22:     NeoDraw ();
+   166  003C46  EC58  F01E         	call	_NeoDraw	;wreg free
+   167  003C4A                     l851:
+   168  003C4A  FFFF               	dw	65535	; assembler added errata NOP
+   169                           
+   170                           ;main.c: 25:     {;main.c: 28:       _delay((unsigned long)((25)*(40000000/4000.0)));
+   171  003C4C  0E01               	movlw	1
+   172  003C4E  6E2C               	movwf	(??_main+1)^0,c
+   173  003C50  0EF4               	movlw	244
+   174  003C52  6E2B               	movwf	??_main^0,c
+   175  003C54  0EA8               	movlw	168
+   176  003C56                     u227:
+   177  003C56  FFFF               	dw	65535	; errata NOP
+   178  003C58  2EE8               	decfsz	wreg,f,c
+   179  003C5A  D7FD               	bra	u227
+   180  003C5C  2E2B               	decfsz	??_main^0,f,c
+   181  003C5E  D7FB               	bra	u227
+   182  003C60  2E2C               	decfsz	(??_main+1)^0,f,c
+   183  003C62  D7F9               	bra	u227
+   184  003C64  D000               	nop2	
+   185  003C66  EF25  F01E         	goto	l851
+   186  003C6A  EF01  F000         	goto	start
+   187  003C6E                     __end_of_main:
+   188                           	opt callstack 0
+   189                           
+   190 ;; *************** function _NeoInit *****************
+   191 ;; Defined at:
+   192 ;;		line 53 in file "NeoCol.c"
+   193 ;; Parameters:    Size  Location     Type
+   194 ;;		None
+   195 ;; Auto vars:     Size  Location     Type
+   196 ;;  NeoPixel        1    0[COMRAM] unsigned char 
+   197 ;; Return value:  Size  Location     Type
+   198 ;;                  1    wreg      void 
+   199 ;; Registers used:
+   200 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+   201 ;; Tracked objects:
+   202 ;;		On entry : 0/0
+   203 ;;		On exit  : 0/0
+   204 ;;		Unchanged: 0/0
+   205 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   206 ;;      Params:         0       0       0       0       0       0       0
+   207 ;;      Locals:         1       0       0       0       0       0       0
+   208 ;;      Temps:          0       0       0       0       0       0       0
+   209 ;;      Totals:         1       0       0       0       0       0       0
+   210 ;;Total ram usage:        1 bytes
+   211 ;; Hardware stack levels used:    1
+   212 ;; This function calls:
+   213 ;;		Nothing
+   214 ;; This function is called by:
+   215 ;;		_main
+   216 ;; This function uses a non-reentrant model
+   217 ;;
+   218                           
+   219                           	psect	text1
+   220  003DBE                     __ptext1:
+   221                           	opt callstack 0
+   222  003DBE                     _NeoInit:
+   223                           	opt callstack 0
+   224  003DBE  FFFF               	dw	65535	; assembler added errata NOP
+   225  003DC0                     
+   226                           ;NeoCol.c: 55:    uint8_t NeoPixel;;NeoCol.c: 56:    for (NeoPixel = 0; NeoPixel < 12; N
+      +                          eoPixel++)
+   227  003DC0  0E00               	movlw	0
+   228  003DC2  6E25               	movwf	NeoInit@NeoPixel^0,c
+   229  003DC4                     l749:
+   230  003DC4  FFFF               	dw	65535	; assembler added errata NOP
+   231                           
+   232                           ;NeoCol.c: 57:    {;NeoCol.c: 58:       if (NeoPixel < 2)
+   233  003DC6  0E02               	movlw	2
+   234  003DC8  6025               	cpfslt	NeoInit@NeoPixel^0,c
+   235  003DCA  EFE9  F01E         	goto	u21
+   236  003DCE  EFEC  F01E         	goto	u20
+   237  003DD2                     u21:
+   238  003DD2  FFFF               	dw	65535	; assembler added errata NOP
+   239  003DD4  EF07  F01F         	goto	l753
+   240  003DD8                     u20:
+   241  003DD8  FFFF               	dw	65535	; assembler added errata NOP
+   242  003DDA                     
+   243                           ;NeoCol.c: 59:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixel
+      +                          ] = 64; }
+   244  003DDA  0E19               	movlw	low _NeoGreen
+   245  003DDC  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   246  003DDE  6ED9               	movwf	fsr2l,c
+   247  003DE0  6ADA               	clrf	fsr2h,c
+   248  003DE2  0E00               	movlw	high _NeoGreen
+   249  003DE4  22DA               	addwfc	fsr2h,f,c
+   250  003DE6  0E00               	movlw	0
+   251  003DE8  6EDF               	movwf	indf2,c
+   252  003DEA  0E0D               	movlw	low _NeoBlue
+   253  003DEC  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   254  003DEE  6ED9               	movwf	fsr2l,c
+   255  003DF0  6ADA               	clrf	fsr2h,c
+   256  003DF2  0E00               	movlw	high _NeoBlue
+   257  003DF4  22DA               	addwfc	fsr2h,f,c
+   258  003DF6  0E00               	movlw	0
+   259  003DF8  6EDF               	movwf	indf2,c
+   260  003DFA  0E01               	movlw	low _NeoRed
+   261  003DFC  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   262  003DFE  6ED9               	movwf	fsr2l,c
+   263  003E00  6ADA               	clrf	fsr2h,c
+   264  003E02  0E00               	movlw	high _NeoRed
+   265  003E04  22DA               	addwfc	fsr2h,f,c
+   266  003E06  0E40               	movlw	64
+   267  003E08  6EDF               	movwf	indf2,c
+   268  003E0A  EFF2  F01F         	goto	l783
+   269  003E0E                     l753:
+   270  003E0E  FFFF               	dw	65535	; assembler added errata NOP
+   271  003E10  0E01               	movlw	1
+   272  003E12  6425               	cpfsgt	NeoInit@NeoPixel^0,c
+   273  003E14  EF0E  F01F         	goto	u31
+   274  003E18  EF11  F01F         	goto	u30
+   275  003E1C                     u31:
+   276  003E1C  FFFF               	dw	65535	; assembler added errata NOP
+   277  003E1E  EF36  F01F         	goto	l759
+   278  003E22                     u30:
+   279  003E22  FFFF               	dw	65535	; assembler added errata NOP
+   280  003E24  0E04               	movlw	4
+   281  003E26  6025               	cpfslt	NeoInit@NeoPixel^0,c
+   282  003E28  EF18  F01F         	goto	u41
+   283  003E2C  EF1B  F01F         	goto	u40
+   284  003E30                     u41:
+   285  003E30  FFFF               	dw	65535	; assembler added errata NOP
+   286  003E32  EF36  F01F         	goto	l759
+   287  003E36                     u40:
+   288  003E36  FFFF               	dw	65535	; assembler added errata NOP
+   289  003E38                     
+   290                           ;NeoCol.c: 61:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixe
+      +                          l] = 0; }
+   291  003E38  0E19               	movlw	low _NeoGreen
+   292  003E3A  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   293  003E3C  6ED9               	movwf	fsr2l,c
+   294  003E3E  6ADA               	clrf	fsr2h,c
+   295  003E40  0E00               	movlw	high _NeoGreen
+   296  003E42  22DA               	addwfc	fsr2h,f,c
+   297  003E44  0E00               	movlw	0
+   298  003E46  6EDF               	movwf	indf2,c
+   299  003E48  0E0D               	movlw	low _NeoBlue
+   300  003E4A  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   301  003E4C  6ED9               	movwf	fsr2l,c
+   302  003E4E  6ADA               	clrf	fsr2h,c
+   303  003E50  0E00               	movlw	high _NeoBlue
+   304  003E52  22DA               	addwfc	fsr2h,f,c
+   305  003E54  0E40               	movlw	64
+   306  003E56  6EDF               	movwf	indf2,c
+   307  003E58  0E01               	movlw	low _NeoRed
+   308  003E5A  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   309  003E5C  6ED9               	movwf	fsr2l,c
+   310  003E5E  6ADA               	clrf	fsr2h,c
+   311  003E60  0E00               	movlw	high _NeoRed
+   312  003E62  22DA               	addwfc	fsr2h,f,c
+   313  003E64  0E00               	movlw	0
+   314  003E66  6EDF               	movwf	indf2,c
+   315  003E68  EFF2  F01F         	goto	l783
+   316  003E6C                     l759:
+   317  003E6C  FFFF               	dw	65535	; assembler added errata NOP
+   318  003E6E  0E03               	movlw	3
+   319  003E70  6425               	cpfsgt	NeoInit@NeoPixel^0,c
+   320  003E72  EF3D  F01F         	goto	u51
+   321  003E76  EF40  F01F         	goto	u50
+   322  003E7A                     u51:
+   323  003E7A  FFFF               	dw	65535	; assembler added errata NOP
+   324  003E7C  EF65  F01F         	goto	l765
+   325  003E80                     u50:
+   326  003E80  FFFF               	dw	65535	; assembler added errata NOP
+   327  003E82  0E06               	movlw	6
+   328  003E84  6025               	cpfslt	NeoInit@NeoPixel^0,c
+   329  003E86  EF47  F01F         	goto	u61
+   330  003E8A  EF4A  F01F         	goto	u60
+   331  003E8E                     u61:
+   332  003E8E  FFFF               	dw	65535	; assembler added errata NOP
+   333  003E90  EF65  F01F         	goto	l765
+   334  003E94                     u60:
+   335  003E94  FFFF               	dw	65535	; assembler added errata NOP
+   336  003E96                     
+   337                           ;NeoCol.c: 63:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixe
+      +                          l] = 64; }
+   338  003E96  0E19               	movlw	low _NeoGreen
+   339  003E98  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   340  003E9A  6ED9               	movwf	fsr2l,c
+   341  003E9C  6ADA               	clrf	fsr2h,c
+   342  003E9E  0E00               	movlw	high _NeoGreen
+   343  003EA0  22DA               	addwfc	fsr2h,f,c
+   344  003EA2  0E00               	movlw	0
+   345  003EA4  6EDF               	movwf	indf2,c
+   346  003EA6  0E0D               	movlw	low _NeoBlue
+   347  003EA8  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   348  003EAA  6ED9               	movwf	fsr2l,c
+   349  003EAC  6ADA               	clrf	fsr2h,c
+   350  003EAE  0E00               	movlw	high _NeoBlue
+   351  003EB0  22DA               	addwfc	fsr2h,f,c
+   352  003EB2  0E40               	movlw	64
+   353  003EB4  6EDF               	movwf	indf2,c
+   354  003EB6  0E01               	movlw	low _NeoRed
+   355  003EB8  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   356  003EBA  6ED9               	movwf	fsr2l,c
+   357  003EBC  6ADA               	clrf	fsr2h,c
+   358  003EBE  0E00               	movlw	high _NeoRed
+   359  003EC0  22DA               	addwfc	fsr2h,f,c
+   360  003EC2  0E40               	movlw	64
+   361  003EC4  6EDF               	movwf	indf2,c
+   362  003EC6  EFF2  F01F         	goto	l783
+   363  003ECA                     l765:
+   364  003ECA  FFFF               	dw	65535	; assembler added errata NOP
+   365  003ECC  0E05               	movlw	5
+   366  003ECE  6425               	cpfsgt	NeoInit@NeoPixel^0,c
+   367  003ED0  EF6C  F01F         	goto	u71
+   368  003ED4  EF6F  F01F         	goto	u70
+   369  003ED8                     u71:
+   370  003ED8  FFFF               	dw	65535	; assembler added errata NOP
+   371  003EDA  EF94  F01F         	goto	l771
+   372  003EDE                     u70:
+   373  003EDE  FFFF               	dw	65535	; assembler added errata NOP
+   374  003EE0  0E08               	movlw	8
+   375  003EE2  6025               	cpfslt	NeoInit@NeoPixel^0,c
+   376  003EE4  EF76  F01F         	goto	u81
+   377  003EE8  EF79  F01F         	goto	u80
+   378  003EEC                     u81:
+   379  003EEC  FFFF               	dw	65535	; assembler added errata NOP
+   380  003EEE  EF94  F01F         	goto	l771
+   381  003EF2                     u80:
+   382  003EF2  FFFF               	dw	65535	; assembler added errata NOP
+   383  003EF4                     
+   384                           ;NeoCol.c: 65:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixe
+      +                          l] = 0; }
+   385  003EF4  0E19               	movlw	low _NeoGreen
+   386  003EF6  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   387  003EF8  6ED9               	movwf	fsr2l,c
+   388  003EFA  6ADA               	clrf	fsr2h,c
+   389  003EFC  0E00               	movlw	high _NeoGreen
+   390  003EFE  22DA               	addwfc	fsr2h,f,c
+   391  003F00  0E40               	movlw	64
+   392  003F02  6EDF               	movwf	indf2,c
+   393  003F04  0E0D               	movlw	low _NeoBlue
+   394  003F06  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   395  003F08  6ED9               	movwf	fsr2l,c
+   396  003F0A  6ADA               	clrf	fsr2h,c
+   397  003F0C  0E00               	movlw	high _NeoBlue
+   398  003F0E  22DA               	addwfc	fsr2h,f,c
+   399  003F10  0E00               	movlw	0
+   400  003F12  6EDF               	movwf	indf2,c
+   401  003F14  0E01               	movlw	low _NeoRed
+   402  003F16  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   403  003F18  6ED9               	movwf	fsr2l,c
+   404  003F1A  6ADA               	clrf	fsr2h,c
+   405  003F1C  0E00               	movlw	high _NeoRed
+   406  003F1E  22DA               	addwfc	fsr2h,f,c
+   407  003F20  0E00               	movlw	0
+   408  003F22  6EDF               	movwf	indf2,c
+   409  003F24  EFF2  F01F         	goto	l783
+   410  003F28                     l771:
+   411  003F28  FFFF               	dw	65535	; assembler added errata NOP
+   412  003F2A  0E07               	movlw	7
+   413  003F2C  6425               	cpfsgt	NeoInit@NeoPixel^0,c
+   414  003F2E  EF9B  F01F         	goto	u91
+   415  003F32  EF9E  F01F         	goto	u90
+   416  003F36                     u91:
+   417  003F36  FFFF               	dw	65535	; assembler added errata NOP
+   418  003F38  EFC3  F01F         	goto	l777
+   419  003F3C                     u90:
+   420  003F3C  FFFF               	dw	65535	; assembler added errata NOP
+   421  003F3E  0E0A               	movlw	10
+   422  003F40  6025               	cpfslt	NeoInit@NeoPixel^0,c
+   423  003F42  EFA5  F01F         	goto	u101
+   424  003F46  EFA8  F01F         	goto	u100
+   425  003F4A                     u101:
+   426  003F4A  FFFF               	dw	65535	; assembler added errata NOP
+   427  003F4C  EFC3  F01F         	goto	l777
+   428  003F50                     u100:
+   429  003F50  FFFF               	dw	65535	; assembler added errata NOP
+   430  003F52                     
+   431                           ;NeoCol.c: 67:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixe
+      +                          l] = 64; }
+   432  003F52  0E19               	movlw	low _NeoGreen
+   433  003F54  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   434  003F56  6ED9               	movwf	fsr2l,c
+   435  003F58  6ADA               	clrf	fsr2h,c
+   436  003F5A  0E00               	movlw	high _NeoGreen
+   437  003F5C  22DA               	addwfc	fsr2h,f,c
+   438  003F5E  0E40               	movlw	64
+   439  003F60  6EDF               	movwf	indf2,c
+   440  003F62  0E0D               	movlw	low _NeoBlue
+   441  003F64  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   442  003F66  6ED9               	movwf	fsr2l,c
+   443  003F68  6ADA               	clrf	fsr2h,c
+   444  003F6A  0E00               	movlw	high _NeoBlue
+   445  003F6C  22DA               	addwfc	fsr2h,f,c
+   446  003F6E  0E00               	movlw	0
+   447  003F70  6EDF               	movwf	indf2,c
+   448  003F72  0E01               	movlw	low _NeoRed
+   449  003F74  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   450  003F76  6ED9               	movwf	fsr2l,c
+   451  003F78  6ADA               	clrf	fsr2h,c
+   452  003F7A  0E00               	movlw	high _NeoRed
+   453  003F7C  22DA               	addwfc	fsr2h,f,c
+   454  003F7E  0E40               	movlw	64
+   455  003F80  6EDF               	movwf	indf2,c
+   456  003F82  EFF2  F01F         	goto	l783
+   457  003F86                     l777:
+   458  003F86  FFFF               	dw	65535	; assembler added errata NOP
+   459  003F88  0E09               	movlw	9
+   460  003F8A  6425               	cpfsgt	NeoInit@NeoPixel^0,c
+   461  003F8C  EFCA  F01F         	goto	u111
+   462  003F90  EFCD  F01F         	goto	u110
+   463  003F94                     u111:
+   464  003F94  FFFF               	dw	65535	; assembler added errata NOP
+   465  003F96  EFF2  F01F         	goto	l25
+   466  003F9A                     u110:
+   467  003F9A  FFFF               	dw	65535	; assembler added errata NOP
+   468  003F9C  0E0C               	movlw	12
+   469  003F9E  6025               	cpfslt	NeoInit@NeoPixel^0,c
+   470  003FA0  EFD4  F01F         	goto	u121
+   471  003FA4  EFD7  F01F         	goto	u120
+   472  003FA8                     u121:
+   473  003FA8  FFFF               	dw	65535	; assembler added errata NOP
+   474  003FAA  EFF2  F01F         	goto	l25
+   475  003FAE                     u120:
+   476  003FAE  FFFF               	dw	65535	; assembler added errata NOP
+   477  003FB0                     
+   478                           ;NeoCol.c: 69:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 64; NeoRed[NeoPix
+      +                          el] = 0; }
+   479  003FB0  0E19               	movlw	low _NeoGreen
+   480  003FB2  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   481  003FB4  6ED9               	movwf	fsr2l,c
+   482  003FB6  6ADA               	clrf	fsr2h,c
+   483  003FB8  0E00               	movlw	high _NeoGreen
+   484  003FBA  22DA               	addwfc	fsr2h,f,c
+   485  003FBC  0E40               	movlw	64
+   486  003FBE  6EDF               	movwf	indf2,c
+   487  003FC0  0E0D               	movlw	low _NeoBlue
+   488  003FC2  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   489  003FC4  6ED9               	movwf	fsr2l,c
+   490  003FC6  6ADA               	clrf	fsr2h,c
+   491  003FC8  0E00               	movlw	high _NeoBlue
+   492  003FCA  22DA               	addwfc	fsr2h,f,c
+   493  003FCC  0E40               	movlw	64
+   494  003FCE  6EDF               	movwf	indf2,c
+   495  003FD0  0E01               	movlw	low _NeoRed
+   496  003FD2  2425               	addwf	NeoInit@NeoPixel^0,w,c
+   497  003FD4  6ED9               	movwf	fsr2l,c
+   498  003FD6  6ADA               	clrf	fsr2h,c
+   499  003FD8  0E00               	movlw	high _NeoRed
+   500  003FDA  22DA               	addwfc	fsr2h,f,c
+   501  003FDC  0E00               	movlw	0
+   502  003FDE  6EDF               	movwf	indf2,c
+   503  003FE0  EFF2  F01F         	goto	l783
+   504  003FE4                     l25:
+   505  003FE4                     l783:
+   506  003FE4  FFFF               	dw	65535	; assembler added errata NOP
+   507                           
+   508                           ;NeoCol.c: 70:    }
+   509  003FE6  2A25               	incf	NeoInit@NeoPixel^0,f,c
+   510  003FE8  0E0B               	movlw	11
+   511  003FEA  6425               	cpfsgt	NeoInit@NeoPixel^0,c
+   512  003FEC  EFFA  F01F         	goto	u131
+   513  003FF0  EFFD  F01F         	goto	u130
+   514  003FF4                     u131:
+   515  003FF4  FFFF               	dw	65535	; assembler added errata NOP
+   516  003FF6  EFE2  F01E         	goto	l749
+   517  003FFA                     u130:
+   518  003FFA  FFFF               	dw	65535	; assembler added errata NOP
+   519  003FFC  0012               	return		;funcret
+   520  003FFE  FFFF               	dw	65535	; errata NOP
+   521  004000                     __end_of_NeoInit:
+   522                           	opt callstack 0
+   523                           
+   524 ;; *************** function _NeoDraw *****************
+   525 ;; Defined at:
+   526 ;;		line 72 in file "NeoCol.c"
+   527 ;; Parameters:    Size  Location     Type
+   528 ;;		None
+   529 ;; Auto vars:     Size  Location     Type
+   530 ;;  BitCount        1    5[COMRAM] char 
+   531 ;;  NeoPixel        1    4[COMRAM] unsigned char 
+   532 ;; Return value:  Size  Location     Type
+   533 ;;                  1    wreg      void 
+   534 ;; Registers used:
+   535 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   536 ;; Tracked objects:
+   537 ;;		On entry : 0/0
+   538 ;;		On exit  : 0/0
+   539 ;;		Unchanged: 0/0
+   540 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   541 ;;      Params:         0       0       0       0       0       0       0
+   542 ;;      Locals:         2       0       0       0       0       0       0
+   543 ;;      Temps:          3       0       0       0       0       0       0
+   544 ;;      Totals:         5       0       0       0       0       0       0
+   545 ;;Total ram usage:        5 bytes
+   546 ;; Hardware stack levels used:    1
+   547 ;; Hardware stack levels required when called:    1
+   548 ;; This function calls:
+   549 ;;		_NeoBit
+   550 ;; This function is called by:
+   551 ;;		_main
+   552 ;; This function uses a non-reentrant model
+   553 ;;
+   554                           
+   555                           	psect	text2
+   556  003CB0                     __ptext2:
+   557                           	opt callstack 0
+   558  003CB0                     _NeoDraw:
+   559                           	opt callstack 0
+   560  003CB0  FFFF               	dw	65535	; assembler added errata NOP
+   561  003CB2                     
+   562                           ;NeoCol.c: 74:    uint8_t NeoPixel;;NeoCol.c: 75:    int8_t BitCount;;NeoCol.c: 84:    f
+      +                          or (NeoPixel = 0; NeoPixel < 12; NeoPixel++)
+   563  003CB2  0E00               	movlw	0
+   564  003CB4  6E29               	movwf	NeoDraw@NeoPixel^0,c
+   565  003CB6                     l793:
+   566  003CB6  FFFF               	dw	65535	; assembler added errata NOP
+   567                           
+   568                           ;NeoCol.c: 85:    {;NeoCol.c: 86:       for (BitCount = 7; BitCount >= 0; BitCount--)
+   569  003CB8  0E07               	movlw	7
+   570  003CBA  6E2A               	movwf	NeoDraw@BitCount^0,c
+   571  003CBC                     l799:
+   572  003CBC  FFFF               	dw	65535	; assembler added errata NOP
+   573                           
+   574                           ;NeoCol.c: 87:          NeoBit(((NeoGreen[NeoPixel]) & (1 <<(BitCount))));
+   575  003CBE  0E19               	movlw	low _NeoGreen
+   576  003CC0  2429               	addwf	NeoDraw@NeoPixel^0,w,c
+   577  003CC2  6ED9               	movwf	fsr2l,c
+   578  003CC4  6ADA               	clrf	fsr2h,c
+   579  003CC6  0E00               	movlw	high _NeoGreen
+   580  003CC8  22DA               	addwfc	fsr2h,f,c
+   581  003CCA  50DF               	movf	indf2,w,c
+   582  003CCC  6E26               	movwf	??_NeoDraw^0,c
+   583  003CCE  C02A  F027         	movff	NeoDraw@BitCount,??_NeoDraw+1
+   584  003CD2  0E01               	movlw	1
+   585  003CD4  6E28               	movwf	(??_NeoDraw+2)^0,c
+   586  003CD6  2A27               	incf	(??_NeoDraw+1)^0,f,c
+   587  003CD8  EF71  F01E         	goto	u144
+   588  003CDC                     u145:
+   589  003CDC  FFFF               	dw	65535	; assembler added errata NOP
+   590  003CDE  90D8               	bcf	status,0,c
+   591  003CE0  3628               	rlcf	(??_NeoDraw+2)^0,f,c
+   592  003CE2                     u144:
+   593  003CE2  FFFF               	dw	65535	; assembler added errata NOP
+   594  003CE4  2E27               	decfsz	(??_NeoDraw+1)^0,f,c
+   595  003CE6  EF6E  F01E         	goto	u145
+   596  003CEA  5028               	movf	(??_NeoDraw+2)^0,w,c
+   597  003CEC  1426               	andwf	??_NeoDraw^0,w,c
+   598  003CEE  EC37  F01E         	call	_NeoBit
+   599  003CF2  062A               	decf	NeoDraw@BitCount^0,f,c
+   600  003CF4  BE2A               	btfsc	NeoDraw@BitCount^0,7,c
+   601  003CF6  EF82  F01E         	goto	u150
+   602  003CFA  EF7F  F01E         	goto	u151
+   603  003CFE                     u151:
+   604  003CFE  FFFF               	dw	65535	; assembler added errata NOP
+   605  003D00  EF5E  F01E         	goto	l799
+   606  003D04                     u150:
+   607  003D04  FFFF               	dw	65535	; assembler added errata NOP
+   608  003D06                     
+   609                           ;NeoCol.c: 88:       for (BitCount = 7; BitCount >= 0; BitCount--)
+   610  003D06  0E07               	movlw	7
+   611  003D08  6E2A               	movwf	NeoDraw@BitCount^0,c
+   612  003D0A                     l811:
+   613  003D0A  FFFF               	dw	65535	; assembler added errata NOP
+   614                           
+   615                           ;NeoCol.c: 89:          NeoBit(((NeoRed[NeoPixel]) & (1 <<(BitCount))));
+   616  003D0C  0E01               	movlw	low _NeoRed
+   617  003D0E  2429               	addwf	NeoDraw@NeoPixel^0,w,c
+   618  003D10  6ED9               	movwf	fsr2l,c
+   619  003D12  6ADA               	clrf	fsr2h,c
+   620  003D14  0E00               	movlw	high _NeoRed
+   621  003D16  22DA               	addwfc	fsr2h,f,c
+   622  003D18  50DF               	movf	indf2,w,c
+   623  003D1A  6E26               	movwf	??_NeoDraw^0,c
+   624  003D1C  C02A  F027         	movff	NeoDraw@BitCount,??_NeoDraw+1
+   625  003D20  0E01               	movlw	1
+   626  003D22  6E28               	movwf	(??_NeoDraw+2)^0,c
+   627  003D24  2A27               	incf	(??_NeoDraw+1)^0,f,c
+   628  003D26  EF98  F01E         	goto	u164
+   629  003D2A                     u165:
+   630  003D2A  FFFF               	dw	65535	; assembler added errata NOP
+   631  003D2C  90D8               	bcf	status,0,c
+   632  003D2E  3628               	rlcf	(??_NeoDraw+2)^0,f,c
+   633  003D30                     u164:
+   634  003D30  FFFF               	dw	65535	; assembler added errata NOP
+   635  003D32  2E27               	decfsz	(??_NeoDraw+1)^0,f,c
+   636  003D34  EF95  F01E         	goto	u165
+   637  003D38  5028               	movf	(??_NeoDraw+2)^0,w,c
+   638  003D3A  1426               	andwf	??_NeoDraw^0,w,c
+   639  003D3C  EC37  F01E         	call	_NeoBit
+   640  003D40  062A               	decf	NeoDraw@BitCount^0,f,c
+   641  003D42  BE2A               	btfsc	NeoDraw@BitCount^0,7,c
+   642  003D44  EFA9  F01E         	goto	u170
+   643  003D48  EFA6  F01E         	goto	u171
+   644  003D4C                     u171:
+   645  003D4C  FFFF               	dw	65535	; assembler added errata NOP
+   646  003D4E  EF85  F01E         	goto	l811
+   647  003D52                     u170:
+   648  003D52  FFFF               	dw	65535	; assembler added errata NOP
+   649  003D54                     
+   650                           ;NeoCol.c: 90:       for (BitCount = 7; BitCount >= 0; BitCount--)
+   651  003D54  0E07               	movlw	7
+   652  003D56  6E2A               	movwf	NeoDraw@BitCount^0,c
+   653  003D58                     l823:
+   654  003D58  FFFF               	dw	65535	; assembler added errata NOP
+   655                           
+   656                           ;NeoCol.c: 91:          NeoBit(((NeoBlue[NeoPixel]) & (1 <<(BitCount))));
+   657  003D5A  0E0D               	movlw	low _NeoBlue
+   658  003D5C  2429               	addwf	NeoDraw@NeoPixel^0,w,c
+   659  003D5E  6ED9               	movwf	fsr2l,c
+   660  003D60  6ADA               	clrf	fsr2h,c
+   661  003D62  0E00               	movlw	high _NeoBlue
+   662  003D64  22DA               	addwfc	fsr2h,f,c
+   663  003D66  50DF               	movf	indf2,w,c
+   664  003D68  6E26               	movwf	??_NeoDraw^0,c
+   665  003D6A  C02A  F027         	movff	NeoDraw@BitCount,??_NeoDraw+1
+   666  003D6E  0E01               	movlw	1
+   667  003D70  6E28               	movwf	(??_NeoDraw+2)^0,c
+   668  003D72  2A27               	incf	(??_NeoDraw+1)^0,f,c
+   669  003D74  EFBF  F01E         	goto	u184
+   670  003D78                     u185:
+   671  003D78  FFFF               	dw	65535	; assembler added errata NOP
+   672  003D7A  90D8               	bcf	status,0,c
+   673  003D7C  3628               	rlcf	(??_NeoDraw+2)^0,f,c
+   674  003D7E                     u184:
+   675  003D7E  FFFF               	dw	65535	; assembler added errata NOP
+   676  003D80  2E27               	decfsz	(??_NeoDraw+1)^0,f,c
+   677  003D82  EFBC  F01E         	goto	u185
+   678  003D86  5028               	movf	(??_NeoDraw+2)^0,w,c
+   679  003D88  1426               	andwf	??_NeoDraw^0,w,c
+   680  003D8A  EC37  F01E         	call	_NeoBit
+   681  003D8E  062A               	decf	NeoDraw@BitCount^0,f,c
+   682  003D90  BE2A               	btfsc	NeoDraw@BitCount^0,7,c
+   683  003D92  EFD0  F01E         	goto	u190
+   684  003D96  EFCD  F01E         	goto	u191
+   685  003D9A                     u191:
+   686  003D9A  FFFF               	dw	65535	; assembler added errata NOP
+   687  003D9C  EFAC  F01E         	goto	l823
+   688  003DA0                     u190:
+   689  003DA0  FFFF               	dw	65535	; assembler added errata NOP
+   690  003DA2                     
+   691                           ;NeoCol.c: 92:    }
+   692  003DA2  2A29               	incf	NeoDraw@NeoPixel^0,f,c
+   693  003DA4  0E0B               	movlw	11
+   694  003DA6  6429               	cpfsgt	NeoDraw@NeoPixel^0,c
+   695  003DA8  EFD8  F01E         	goto	u201
+   696  003DAC  EFDB  F01E         	goto	u200
+   697  003DB0                     u201:
+   698  003DB0  FFFF               	dw	65535	; assembler added errata NOP
+   699  003DB2  EF5B  F01E         	goto	l793
+   700  003DB6                     u200:
+   701  003DB6  FFFF               	dw	65535	; assembler added errata NOP
+   702  003DB8                     
+   703                           ;NeoCol.c: 93:    PORTDbits.RD0 = 0;
+   704  003DB8  9083               	bcf	131,0,c	;volatile
+   705  003DBA  0012               	return		;funcret
+   706  003DBC  FFFF               	dw	65535	; errata NOP
+   707  003DBE                     __end_of_NeoDraw:
+   708                           	opt callstack 0
+   709                           
+   710 ;; *************** function _NeoBit *****************
+   711 ;; Defined at:
+   712 ;;		line 20 in file "NeoCol.c"
+   713 ;; Parameters:    Size  Location     Type
+   714 ;;  Bit             1    wreg     unsigned char 
+   715 ;; Auto vars:     Size  Location     Type
+   716 ;;  Bit             1    0[COMRAM] unsigned char 
+   717 ;; Return value:  Size  Location     Type
+   718 ;;                  1    wreg      void 
+   719 ;; Registers used:
+   720 ;;		wreg, status,2
+   721 ;; Tracked objects:
+   722 ;;		On entry : 0/0
+   723 ;;		On exit  : 0/0
+   724 ;;		Unchanged: 0/0
+   725 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   726 ;;      Params:         0       0       0       0       0       0       0
+   727 ;;      Locals:         1       0       0       0       0       0       0
+   728 ;;      Temps:          0       0       0       0       0       0       0
+   729 ;;      Totals:         1       0       0       0       0       0       0
+   730 ;;Total ram usage:        1 bytes
+   731 ;; Hardware stack levels used:    1
+   732 ;; This function calls:
+   733 ;;		Nothing
+   734 ;; This function is called by:
+   735 ;;		_NeoDraw
+   736 ;; This function uses a non-reentrant model
+   737 ;;
+   738                           
+   739                           	psect	text3
+   740  003C6E                     __ptext3:
+   741                           	opt callstack 0
+   742  003C6E                     _NeoBit:
+   743                           	opt callstack 0
+   744  003C6E  FFFF               	dw	65535	; assembler added errata NOP
+   745                           
+   746                           ;incstack = 0
+   747                           ;NeoBit@Bit stored from wreg
+   748  003C70  6E25               	movwf	NeoBit@Bit^0,c
+   749  003C72                     
+   750                           ;NeoCol.c: 20: void NeoBit(uint8_t Bit);NeoCol.c: 21: {;NeoCol.c: 25:    if (Bit != 0)
+   751  003C72  5025               	movf	NeoBit@Bit^0,w,c
+   752  003C74  B4D8               	btfsc	status,2,c
+   753  003C76  EF3F  F01E         	goto	u11
+   754  003C7A  EF42  F01E         	goto	u10
+   755  003C7E                     u11:
+   756  003C7E  FFFF               	dw	65535	; assembler added errata NOP
+   757  003C80  EF4E  F01E         	goto	l13
+   758  003C84                     u10:
+   759  003C84  FFFF               	dw	65535	; assembler added errata NOP
+   760  003C86                     
+   761                           ;NeoCol.c: 26:    {;NeoCol.c: 27:       PORTDbits.RD0 = 1;
+   762  003C86  8083               	bsf	131,0,c	;volatile
+   763                           
+   764                           ;NeoCol.c: 28:       __nop();
+   765  003C88  F000               	nop	
+   766                           
+   767                           ;NeoCol.c: 29:       __nop();
+   768  003C8A  F000               	nop	
+   769                           
+   770                           ;NeoCol.c: 30:       __nop();
+   771  003C8C  F000               	nop	
+   772                           
+   773                           ;NeoCol.c: 31:       __nop();
+   774  003C8E  F000               	nop	
+   775                           
+   776                           ;NeoCol.c: 32:       __nop();
+   777  003C90  F000               	nop	
+   778                           
+   779                           ;NeoCol.c: 33:       __nop();
+   780  003C92  F000               	nop	
+   781                           
+   782                           ;NeoCol.c: 34:       __nop();
+   783  003C94  F000               	nop	
+   784                           
+   785                           ;NeoCol.c: 39:       PORTDbits.RD0 = 0;
+   786  003C96  9083               	bcf	131,0,c	;volatile
+   787                           
+   788                           ;NeoCol.c: 40:    }
+   789  003C98  EF54  F01E         	goto	l15
+   790  003C9C                     l13:
+   791  003C9C  FFFF               	dw	65535	; assembler added errata NOP
+   792                           
+   793                           ;NeoCol.c: 42:    {;NeoCol.c: 43:        PORTDbits.RD0 = 1;
+   794  003C9E  8083               	bsf	131,0,c	;volatile
+   795                           
+   796                           ;NeoCol.c: 44:        __nop();
+   797  003CA0  F000               	nop	
+   798                           
+   799                           ;NeoCol.c: 45:        __nop();
+   800  003CA2  F000               	nop	
+   801                           
+   802                           ;NeoCol.c: 46:        __nop();
+   803  003CA4  F000               	nop	
+   804                           
+   805                           ;NeoCol.c: 49:        PORTDbits.RD0 = 0;
+   806  003CA6  9083               	bcf	131,0,c	;volatile
+   807  003CA8                     l15:
+   808  003CA8  FFFF               	dw	65535	; assembler added errata NOP
+   809  003CAA  0012               	return		;funcret
+   810  003CAC  FFFF               	dw	65535	; errata NOP
+   811  003CAE                     __end_of_NeoBit:
+   812                           	opt callstack 0
+   813  003CAE  FFFF               	dw	65535	; assembler added errata NOP
+   814                           
+   815                           	psect	rparam
+   816  0000                     tosu	equ	0xFFF
+   817                           tosh	equ	0xFFE
+   818                           tosl	equ	0xFFD
+   819                           stkptr	equ	0xFFC
+   820                           pclatu	equ	0xFFB
+   821                           pclath	equ	0xFFA
+   822                           pcl	equ	0xFF9
+   823                           tblptru	equ	0xFF8
+   824                           tblptrh	equ	0xFF7
+   825                           tblptrl	equ	0xFF6
+   826                           tablat	equ	0xFF5
+   827                           prodh	equ	0xFF4
+   828                           prodl	equ	0xFF3
+   829                           indf0	equ	0xFEF
+   830                           postinc0	equ	0xFEE
+   831                           postdec0	equ	0xFED
+   832                           preinc0	equ	0xFEC
+   833                           plusw0	equ	0xFEB
+   834                           fsr0h	equ	0xFEA
+   835                           fsr0l	equ	0xFE9
+   836                           wreg	equ	0xFE8
+   837                           indf1	equ	0xFE7
+   838                           postinc1	equ	0xFE6
+   839                           postdec1	equ	0xFE5
+   840                           preinc1	equ	0xFE4
+   841                           plusw1	equ	0xFE3
+   842                           fsr1h	equ	0xFE2
+   843                           fsr1l	equ	0xFE1
+   844                           bsr	equ	0xFE0
+   845                           indf2	equ	0xFDF
+   846                           postinc2	equ	0xFDE
+   847                           postdec2	equ	0xFDD
+   848                           preinc2	equ	0xFDC
+   849                           plusw2	equ	0xFDB
+   850                           fsr2h	equ	0xFDA
+   851                           fsr2l	equ	0xFD9
+   852                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         36
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      8      44
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_NeoDraw
+    _NeoDraw->_NeoBit
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0     690
+                                              6 COMRAM     2     2      0
+                            _NeoDraw
+                            _NeoInit
+ ---------------------------------------------------------------------------------
+ (1) _NeoInit                                              1     1      0     465
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _NeoDraw                                              5     5      0     225
+                                              1 COMRAM     5     5      0
+                             _NeoBit
+ ---------------------------------------------------------------------------------
+ (2) _NeoBit                                               1     1      0      15
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _NeoDraw
+     _NeoBit
+   _NeoInit
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FF      0       0      16        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F      8      2C       1       46.3%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      2C       9        0.0%
+DATA                 0      0      2C      17        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Thu Feb 20 15:45:41 2020
+
+                                                                l13 3C9C  
+                                                                l15 3CA8  
+                                                                l31 3FFC  
+                                                                l25 3FE4  
+                                                                l42 3DBA  
+                                                                l35 3DB8  
+                                                                u10 3C84  
+                                                                u11 3C7E  
+                                                                u20 3DD8  
+                                                                u21 3DD2  
+                                                                u30 3E22  
+                                                                u31 3E1C  
+                                                                u40 3E36  
+                                                                u41 3E30  
+                                                                u50 3E80  
+                                                                u51 3E7A  
+                                                                u60 3E94  
+                                                                u61 3E8E  
+                                                                u70 3EDE  
+                                                                u71 3ED8  
+                                                                u80 3EF2  
+                                                                u81 3EEC  
+                                                                u90 3F3C  
+                                                                u91 3F36  
+                                                      __CFG_CP0$OFF 000000  
+                                                      __CFG_CP1$OFF 000000  
+                                                      __CFG_CP2$OFF 000000  
+                                                      __CFG_CP3$OFF 000000  
+                                                       __CFG_OSC$HS 000000  
+                                                               l801 3CF2  
+                                                               l811 3D0A  
+                                                               l803 3CF4  
+                                                               l741 3C86  
+                                                               l813 3D40  
+                                                               l805 3D06  
+                                                               l831 3DA4  
+                                                               l823 3D58  
+                                                               l815 3D42  
+                                                               l751 3DDA  
+                                                               l743 3DC0  
+                                                               l825 3D8E  
+                                                               l817 3D54  
+                                                               l761 3E82  
+                                                               l753 3E0E  
+                                                               l739 3C72  
+                                                               l827 3D90  
+                                                               l771 3F28  
+                                                               l763 3E96  
+                                                               l755 3E24  
+                                                               l851 3C4A  
+                                                               l829 3DA2  
+                                                               l781 3FB0  
+                                                               l773 3F3E  
+                                                               l765 3ECA  
+                                                               l757 3E38  
+                                                               l749 3DC4  
+                                                               l845 3C3C  
+                                                               l775 3F52  
+                                                               l767 3EE0  
+                                                               l759 3E6C  
+                                                               l783 3FE4  
+                                                               l847 3C42  
+                                                               l793 3CB6  
+                                                               l785 3FE8  
+                                                               l777 3F86  
+                                                               l769 3EF4  
+                                                               l849 3C46  
+                                                               l787 3CB2  
+                                                               l779 3F9C  
+                                                               l799 3CBC  
+                                                      __CFG_CPB$OFF 000000  
+                                                               u100 3F50  
+                                                               u101 3F4A  
+                                                               u110 3F9A  
+                                                               u111 3F94  
+                                                               u200 3DB6  
+                                                               u120 3FAE  
+                                                               u201 3DB0  
+                                                               u121 3FA8  
+                                                               u130 3FFA  
+                                                               u131 3FF4  
+                                                               u150 3D04  
+                                                               u151 3CFE  
+                                                               u144 3CE2  
+                                                               u145 3CDC  
+                                                               u170 3D52  
+                                                               u171 3D4C  
+                                                               u227 3C56  
+                                                               u164 3D30  
+                                                               u165 3D2A  
+                                                               u190 3DA0  
+                                                               u191 3D9A  
+                                                               u184 3D7E  
+                                                               u185 3D78  
+                                                      __CFG_CPD$OFF 000000  
+                                                      __CFG_BOR$OFF 000000  
+                                                      __CFG_BORV$25 000000  
+                                                               wreg 000FE8  
+                                                      __CFG_LVP$OFF 000000  
+                                                      __CFG_WDT$OFF 000000  
+                                                              _main 3C3C  
+                                                              indf2 000FDF  
+                                                              fsr2l 000FD9  
+                                                              start 0002  
+                                                      ___param_bank 000000  
+                                                   __end_of_NeoDraw 3DBE  
+                                                   __end_of_NeoInit 4000  
+                                                     __CFG_OSCS$OFF 000000  
+                                                             ?_main 0025  
+                                                             _TRISD 000F95  
+                                                     __CFG_PWRT$OFF 000000  
+                                                     __CFG_WRT0$OFF 000000  
+                                                     __CFG_WRT1$OFF 000000  
+                                                     __CFG_WRT2$OFF 000000  
+                                                     __CFG_WRT3$OFF 000000  
+                                                    __CFG_EBTR0$OFF 000000  
+                                                    __CFG_EBTR1$OFF 000000  
+                                                    __CFG_EBTR2$OFF 000000  
+                                                    __CFG_EBTR3$OFF 000000  
+                                                     __CFG_STVR$OFF 000000  
+                                                     __CFG_WRTB$OFF 000000  
+                                                     __CFG_WRTC$OFF 000000  
+                                                     __CFG_WRTD$OFF 000000  
+                                                    __CFG_EBTRB$OFF 000000  
+                                                             status 000FD8  
+                                                   __initialization 3C2A  
+                                                      __end_of_main 3C6E  
+                                                            ??_main 002B  
+                                                     __activetblptr 000000  
+                                                    __CFG_WDTPS$128 000000  
+                                                         ??_NeoDraw 0026  
+                                                         ??_NeoInit 0025  
+                                                            _NeoBit 3C6E  
+                                                            _NeoRed 0001  
+                                                            clear_0 3C30  
+                                                        __accesstop 0060  
+                                           __end_of__initialization 3C36  
+                                                     ___rparam_used 000001  
+                                                    __pcstackCOMRAM 0025  
+                                                           ?_NeoBit 0025  
+                                                   NeoDraw@BitCount 002A  
+                                                           _NeoBlue 000D  
+                                                           _NeoDraw 3CB0  
+                                                           _NeoInit 3DBE  
+                                                           __Hparam 0000  
+                                                   __size_of_NeoBit 0040  
+                                                           __Lparam 0000  
+                                                   NeoDraw@NeoPixel 0029  
+                                                           __pcinit 3C2A  
+                                                           __ramtop 0600  
+                                                           __ptext0 3C3C  
+                                                           __ptext1 3DBE  
+                                                           __ptext2 3CB0  
+                                                           __ptext3 3C6E  
+                                              end_of_initialization 3C36  
+                                                           postinc0 000FEE  
+                                                         _PORTDbits 000F83  
+                                                         NeoBit@Bit 0025  
+                                                    __end_of_NeoBit 3CAE  
+                                               start_initialization 3C2A  
+                                                          ??_NeoBit 0025  
+                                                       __pbssCOMRAM 0001  
+                                                          ?_NeoDraw 0025  
+                                                          ?_NeoInit 0025  
+                                                   NeoInit@NeoPixel 0025  
+                                                          _NeoGreen 0019  
+                                                  __size_of_NeoDraw 010E  
+                                                  __size_of_NeoInit 0242  
+                                                          __Hrparam 0000  
+                                                          __Lrparam 0000  
+                                                     __size_of_main 0032  
