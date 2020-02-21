@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "configuration_bits.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 11 "main.c"
+# 1 "configuration_bits.c" 2
+# 36 "configuration_bits.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9971,104 +9971,53 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 11 "main.c" 2
-
-# 1 "./NeoPxl.h" 1
+# 37 "configuration_bits.c" 2
 
 
+#pragma config OSC = HS
+#pragma config OSCS = OFF
 
 
+#pragma config PWRT = OFF
+#pragma config BOR = OFF
+#pragma config BORV = 25
 
 
+#pragma config WDT = OFF
+#pragma config WDTPS = 128
 
 
-void NeoInit (void);
-void NeoDraw (void);
-# 12 "main.c" 2
-
-# 1 "./EffetsNeoPx.h" 1
+#pragma config STVR = OFF
+#pragma config LVP = OFF
 
 
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
 
 
-
-void NeoRotate (void);
-# 13 "main.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 14 "main.c" 2
+#pragma config CPB = OFF
+#pragma config CPD = OFF
 
 
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
 
 
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
 
 
-void initialisation(void);
-unsigned char rxComm(void);
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
 
 
-void main(void)
-{
-    unsigned char carRx = 2;
+#pragma config EBTRB = OFF
+# 83 "configuration_bits.c"
 
-    initialisation();
-
-    NeoInit();
-    NeoDraw ();
-    while(1)
-
-    {
-      NeoDraw ();
-      NeoRotate ();
-
-      carRx = rxComm();
-    }
-
-    return;
-}
-
-void initialisation(void)
-{
-    TRISD = 0;
-
-
-
-
-    SPBRG = 64;
-
-
-
-    TXSTAbits.BRGH = 0;
-
-
-
-    RCSTAbits.SPEN = 1;
-    TXSTAbits.SYNC = 0;
-
-}
-
-unsigned char rxComm(void)
-{
-    unsigned char carRecu = 0;
-
-
-
-
-
-    RCSTAbits.CREN = 1;
-
-
-
-
-    while(PIR1bits.RC1IF == 0);
-# 86 "main.c"
-    carRecu = RCREG;
-
-
-
-
-
-    RCSTAbits.CREN = 0;
-
-    return carRecu;
-}

@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "EffetsNeoPxl.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 11 "main.c"
+# 1 "EffetsNeoPxl.c" 2
+# 10 "EffetsNeoPxl.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9971,7 +9971,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 11 "main.c" 2
+# 10 "EffetsNeoPxl.c" 2
 
 # 1 "./NeoPxl.h" 1
 
@@ -9984,91 +9984,118 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 void NeoInit (void);
 void NeoDraw (void);
-# 12 "main.c" 2
-
-# 1 "./EffetsNeoPx.h" 1
-
-
-
-
-
-void NeoRotate (void);
-# 13 "main.c" 2
+# 11 "EffetsNeoPxl.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 14 "main.c" 2
+# 12 "EffetsNeoPxl.c" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 173 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
 
 
 
 
 
+typedef long long int64_t;
+# 188 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
 
-void initialisation(void);
-unsigned char rxComm(void);
 
 
-void main(void)
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+# 13 "EffetsNeoPxl.c" 2
+
+
+extern uint8_t NeoGreen [12];
+extern uint8_t NeoBlue [12];
+extern uint8_t NeoRed [12];
+
+
+void NeoRotate (void)
 {
-    unsigned char carRx = 2;
-
-    initialisation();
-
-    NeoInit();
-    NeoDraw ();
-    while(1)
-
-    {
-      NeoDraw ();
-      NeoRotate ();
-
-      carRx = rxComm();
-    }
-
-    return;
-}
-
-void initialisation(void)
-{
-    TRISD = 0;
+   uint8_t NeoPixel;
+   uint8_t R,G,B;
+   G = NeoGreen[0];
+   B = NeoBlue[0];
+   R = NeoRed[0];
 
 
-
-
-    SPBRG = 64;
-
-
-
-    TXSTAbits.BRGH = 0;
-
-
-
-    RCSTAbits.SPEN = 1;
-    TXSTAbits.SYNC = 0;
-
-}
-
-unsigned char rxComm(void)
-{
-    unsigned char carRecu = 0;
-
-
-
-
-
-    RCSTAbits.CREN = 1;
-
-
-
-
-    while(PIR1bits.RC1IF == 0);
-# 86 "main.c"
-    carRecu = RCREG;
-
-
-
-
-
-    RCSTAbits.CREN = 0;
-
-    return carRecu;
+   for (NeoPixel = 0; NeoPixel < 12 - 1; NeoPixel++)
+   {
+      NeoGreen[NeoPixel] = NeoGreen[NeoPixel + 1];
+      NeoBlue[NeoPixel] = NeoBlue[NeoPixel + 1];
+      NeoRed[NeoPixel] = NeoRed[NeoPixel + 1];
+   }
+   NeoGreen[12 - 1] = G;
+   NeoBlue[12 - 1] = B;
+   NeoRed[12 - 1] = R;
 }

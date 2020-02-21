@@ -28,7 +28,6 @@ __Lrparam 0 0 COMRAM 1
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __Hcomram 0 0 ABS 0
-__cntErrataNOP_dist/default/production\Lab6AnneauDEL.X.production.o 3F 0 ABS 0
 __Lcomram 0 0 ABS 0
 __Hsfr 0 0 ABS 0
 __Lsfr 0 0 ABS 0
@@ -75,7 +74,7 @@ _NeoRed 1 0 COMRAM 1
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 __CFG_EBTR3$OFF 0 0 ABS 0
-stackhi 5FF 0 ABS 0
+stackhi 5EE 0 ABS 0
 _NeoBit 3BE0 0 CODE 0
 _rxComm 3B98 0 CODE 0
 __Htemp 0 0 COMRAM 1
@@ -100,7 +99,7 @@ __size_of_NeoDraw 0 0 ABS 0
 _RCSTAbits FAB 0 ABS 0
 _TXSTAbits FAC 0 ABS 0
 _PORTDbits F83 0 ABS 0
-__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\sa4c.o 1 0 ABS 0
+__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\sdh8.o 1 0 ABS 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 _initialisation 3B84 0 CODE 0
@@ -188,6 +187,7 @@ __CFG_EBTRB$OFF 0 0 ABS 0
 __ramtop 600 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
 __size_of_main 0 0 ABS 0
+__cntErrataNOP_dist/default/debug\Lab6AnneauDEL.X.debug.o 3F 0 ABS 0
 __Hconst 0 0 CONST 0
 __Lconst 0 0 CONST 0
 __end_of_NeoRotate 3CB0 0 CODE 0
@@ -244,9 +244,9 @@ text2 3B84 3B97 CODE 3B84 0
 cinit 3B72 3B83 CODE 3B72 0
 text 3B70 3B71 CODE 3B70 0
 %locals
-dist/default/production\Lab6AnneauDEL.X.production.o
+dist/default/debug\Lab6AnneauDEL.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
-C:\Users\tge\AppData\Local\Temp\sa4c.s
+C:\Users\tge\AppData\Local\Temp\sdh8.s
 2183 3B72 0 CODE 0
 2185 3B72 0 CODE 0
 2188 3B72 0 CODE 0

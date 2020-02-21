@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Fri Feb 21 16:18:52 2020
+                                                                                               Fri Feb 21 16:35:35 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F458
@@ -64,12 +64,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
     50                           ; 
     51                           ; SFR Addresses
     52  0000                     _PORTDbits	set	3971
-    53  0000                     _RCREG	set	4014
-    54  0000                     _PIR1bits	set	3998
-    55  0000                     _RCSTAbits	set	4011
-    56  0000                     _TXSTAbits	set	4012
-    57  0000                     _SPBRG	set	4015
-    58  0000                     _TRISD	set	3989
+    53  0000                     _TRISD	set	3989
+    54  0000                     _RCREG	set	4014
+    55  0000                     _PIR1bits	set	3998
+    56  0000                     _RCSTAbits	set	4011
+    57  0000                     _TXSTAbits	set	4012
+    58  0000                     _SPBRG	set	4015
     59                           
     60                           ; #config settings
     61  0000                     
@@ -168,7 +168,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    154 ;;		On entry : 0/0
    155 ;;		On exit  : 0/0
    156 ;;		Unchanged: 0/0
-   157 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   157 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
    158 ;;      Params:         0       0       0       0       0       0       0
    159 ;;      Locals:         1       0       0       0       0       0       0
    160 ;;      Temps:          0       0       0       0       0       0       0
@@ -230,7 +230,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    216 ;;		On entry : 0/0
    217 ;;		On exit  : 0/0
    218 ;;		Unchanged: 0/0
-   219 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   219 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
    220 ;;      Params:         0       0       0       0       0       0       0
    221 ;;      Locals:         1       0       0       0       0       0       0
    222 ;;      Temps:          0       0       0       0       0       0       0
@@ -292,7 +292,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    278 ;;		On entry : 0/0
    279 ;;		On exit  : 0/0
    280 ;;		Unchanged: 0/0
-   281 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   281 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
    282 ;;      Params:         0       0       0       0       0       0       0
    283 ;;      Locals:         0       0       0       0       0       0       0
    284 ;;      Temps:          0       0       0       0       0       0       0
@@ -352,7 +352,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    338 ;;		On entry : 0/0
    339 ;;		On exit  : 0/0
    340 ;;		Unchanged: 0/0
-   341 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   341 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
    342 ;;      Params:         0       0       0       0       0       0       0
    343 ;;      Locals:         4       0       0       0       0       0       0
    344 ;;      Temps:          0       0       0       0       0       0       0
@@ -475,7 +475,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    459 ;;		On entry : 0/0
    460 ;;		On exit  : 0/0
    461 ;;		Unchanged: 0/0
-   462 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   462 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
    463 ;;      Params:         0       0       0       0       0       0       0
    464 ;;      Locals:         1       0       0       0       0       0       0
    465 ;;      Temps:          0       0       0       0       0       0       0
@@ -817,7 +817,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    794 ;;		On entry : 0/0
    795 ;;		On exit  : 0/0
    796 ;;		Unchanged: 0/0
-   797 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   797 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
    798 ;;      Params:         0       0       0       0       0       0       0
    799 ;;      Locals:         2       0       0       0       0       0       0
    800 ;;      Temps:          3       0       0       0       0       0       0
@@ -1003,7 +1003,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    979 ;;		On entry : 0/0
    980 ;;		On exit  : 0/0
    981 ;;		Unchanged: 0/0
-   982 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   982 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
    983 ;;      Params:         0       0       0       0       0       0       0
    984 ;;      Locals:         1       0       0       0       0       0       0
    985 ;;      Temps:          0       0       0       0       0       0       0
@@ -1145,11 +1145,11 @@ Auto Spaces:
     Space          Size  Autos    Used
     COMRAM           95      7      43
     BANK0           160      0       0
-    BANK1           256      0       0
     BANK2           256      0       0
     BANK3           256      0       0
     BANK4           256      0       0
-    BANK5           256      0       0
+    BANK1           256      0       0
+    BANK5           239      0       0
 
 Pointer List with Targets:
 
@@ -1164,10 +1164,6 @@ Critical Paths under _main in BANK0
 
     None.
 
-Critical Paths under _main in BANK1
-
-    None.
-
 Critical Paths under _main in BANK2
 
     None.
@@ -1177,6 +1173,10 @@ Critical Paths under _main in BANK3
     None.
 
 Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK1
 
     None.
 
@@ -1230,258 +1230,268 @@ Call Graph Tables:
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
-BIGRAM             5FF      0       0      16        0.0%
+BIGRAM             5EE      0       0      16        0.0%
 EEDATA             100      0       0       0        0.0%
-BITBANK5           100      0       0      14        0.0%
-BANK5              100      0       0      15        0.0%
-BITBANK4           100      0       0      12        0.0%
-BANK4              100      0       0      13        0.0%
-BITBANK3           100      0       0      10        0.0%
-BANK3              100      0       0      11        0.0%
-BITBANK2           100      0       0       7        0.0%
-BANK2              100      0       0       8        0.0%
-BITBANK1           100      0       0       5        0.0%
-BANK1              100      0       0       6        0.0%
-BITBANK0            A0      0       0       3        0.0%
-BANK0               A0      0       0       4        0.0%
+BITBANK4           100      0       0      13        0.0%
+BANK4              100      0       0       6        0.0%
+BITBANK3           100      0       0      12        0.0%
+BANK3              100      0       0       5        0.0%
+BITBANK2           100      0       0      11        0.0%
+BANK2              100      0       0       4        0.0%
+BITBANK1           100      0       0       9        0.0%
+BANK1              100      0       0      10        0.0%
+BITBANK5            EF      0       0      14        0.0%
+BANK5               EF      0       0      15        0.0%
+BITBANK0            A0      0       0       8        0.0%
+BANK0               A0      0       0       3        0.0%
 BITCOMRAM           5F      0       0       0        0.0%
 COMRAM              5F      7      2B       1       45.3%
+BITSFR_6             0      0       0     200        0.0%
+SFR_6                0      0       0     200        0.0%
+BITSFR_5             0      0       0     200        0.0%
+SFR_5                0      0       0     200        0.0%
+BITSFR_4             0      0       0     200        0.0%
+SFR_4                0      0       0     200        0.0%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
 BITSFR_1             0      0       0     200        0.0%
 SFR_1                0      0       0     200        0.0%
 BITSFR               0      0       0     200        0.0%
 SFR                  0      0       0     200        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0      2B       9        0.0%
+ABS                  0      0      2B       7        0.0%
 DATA                 0      0      2B      17        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Fri Feb 21 16:18:52 2020
+Symbol Table                                                                                   Fri Feb 21 16:35:35 2020
 
-                                                                l33 3B94  
-                                                                l36 3B9C  
-                                                                l70 3C1A  
-                                                                l38 3BB0  
-                                                                l39 3BB8  
-                                                                l81 3DBA  
-                                                                l65 3FFC  
-                                                                l74 3DB8  
-                                                                l59 3FE4  
-                                                                l91 3CA0  
-                                                                l68 3C0E  
-                                                                l92 3CAC  
-                                                                u10 3BF6  
-                                                                u11 3BF0  
-                                                                u20 3DD8  
-                                                                u21 3DD2  
-                                                                u30 3E22  
-                                                                u31 3E1C  
-                                                                u40 3E36  
-                                                                u41 3E30  
-                                                                u50 3E80  
-                                                                u51 3E7A  
-                                                                u60 3E94  
-                                                                u61 3E8E  
-                                                                u70 3EDE  
-                                                                u71 3ED8  
-                                                                u80 3EF2  
-                                                                u81 3EEC  
-                                                                u90 3F3C  
-                                                                u91 3F36  
-                                                      __CFG_CP0$OFF 000000  
-                                                      __CFG_CP1$OFF 000000  
-                                                      __CFG_CP2$OFF 000000  
-                                                      __CFG_CP3$OFF 000000  
-                                                       __CFG_OSC$HS 000000  
-                                                               l800 3E96  
-                                                               l810 3F3E  
-                                                               l802 3ECA  
-                                                               l812 3F52  
-                                                               l804 3EE0  
-                                                               l820 3FE4  
-                                                               l900 3BCA  
-                                                               l830 3CB6  
-                                                               l822 3FE8  
-                                                               l814 3F86  
-                                                               l806 3EF4  
-                                                               l902 3BD0  
-                                                               l840 3CF4  
-                                                               l824 3CB2  
-                                                               l816 3F9C  
-                                                               l808 3F28  
-                                                               l904 3BD4  
-                                                               l770 3BF8  
-                                                               l850 3D40  
-                                                               l842 3D06  
-                                                               l818 3FB0  
-                                                               l860 3D58  
-                                                               l852 3D42  
-                                                               l836 3CBC  
-                                                               l780 3DC0  
-                                                               l772 3B86  
-                                                               l862 3D8E  
-                                                               l854 3D54  
-                                                               l838 3CF2  
-                                                               l790 3E0E  
-                                                               l870 3C24  
-                                                               l774 3B8E  
-                                                               l768 3BE4  
-                                                               l864 3D90  
-                                                               l848 3D0A  
-                                                               l792 3E24  
-                                                               l880 3C8A  
-                                                               l872 3C30  
-                                                               l776 3B90  
-                                                               l866 3DA2  
-                                                               l794 3E38  
-                                                               l786 3DC4  
-                                                               l882 3C8C  
-                                                               l778 3B92  
-                                                               l868 3DA4  
-                                                               l796 3E6C  
-                                                               l788 3DDA  
-                                                               l884 3B9A  
-                                                               l892 3BBC  
-                                                               l798 3E82  
-                                                               l878 3C34  
-                                                               l886 3B9A  
-                                                               l894 3BBC  
-                                                               l888 3BB6  
-                                                               l896 3BC2  
-                                                               l898 3BC6  
-                                                      __CFG_CPB$OFF 000000  
-                                                               u100 3F50  
-                                                               u101 3F4A  
-                                                               u110 3F9A  
-                                                               u111 3F94  
-                                                               u200 3DB6  
-                                                               u120 3FAE  
-                                                               u201 3DB0  
-                                                               u121 3FA8  
-                                                               u130 3FFA  
-                                                               u210 3C9E  
-                                                               u131 3FF4  
-                                                               u211 3C98  
-                                                               u220 3BAE  
-                                                               u221 3BA8  
-                                                               u150 3D04  
-                                                               u151 3CFE  
-                                                               u144 3CE2  
-                                                               u145 3CDC  
-                                                               u170 3D52  
-                                                               u171 3D4C  
-                                                               u164 3D30  
-                                                               u165 3D2A  
-                                                               u190 3DA0  
-                                                               u191 3D9A  
-                                                               u184 3D7E  
-                                                               u185 3D78  
-                                                      __CFG_CPD$OFF 000000  
-                                                      __CFG_BOR$OFF 000000  
-                                                      __CFG_BORV$25 000000  
-                                                               wreg 000FE8  
-                                                      __CFG_LVP$OFF 000000  
-                                                      __CFG_WDT$OFF 000000  
-                                                  ??_initialisation 0025  
-                                                        NeoRotate@B 0027  
-                                                        NeoRotate@G 0026  
-                                                        NeoRotate@R 0025  
-                                                              _main 3BBC  
-                                                              indf1 000FE7  
-                                                              indf2 000FDF  
-                                                              fsr1l 000FE1  
-                                                              fsr2l 000FD9  
-                                                              start 0002  
-                                                      ___param_bank 000000  
-                                                   __end_of_NeoDraw 3DBE  
-                                                   __end_of_NeoInit 4000  
-                                                     __CFG_OSCS$OFF 000000  
-                                                             ?_main 0025  
-                                                             _RCREG 000FAE  
-                                                             _SPBRG 000FAF  
-                                                             _TRISD 000F95  
-                                                     __CFG_PWRT$OFF 000000  
-                                                     __CFG_WRT0$OFF 000000  
-                                                     __CFG_WRT1$OFF 000000  
-                                                     __CFG_WRT2$OFF 000000  
-                                                     __CFG_WRT3$OFF 000000  
-                                                    __CFG_EBTR0$OFF 000000  
-                                                    __CFG_EBTR1$OFF 000000  
-                                                    __CFG_EBTR2$OFF 000000  
-                                                    __CFG_EBTR3$OFF 000000  
-                                                     __CFG_STVR$OFF 000000  
-                                                     __CFG_WRTB$OFF 000000  
-                                                     __CFG_WRTC$OFF 000000  
-                                                     __CFG_WRTD$OFF 000000  
-                                                    __CFG_EBTRB$OFF 000000  
-                                                             status 000FD8  
-                                                   __initialization 3B72  
-                                                      __end_of_main 3BE0  
-                                                            ??_main 002B  
-                                                     __activetblptr 000000  
-                                                    __CFG_WDTPS$128 000000  
-                                                __size_of_NeoRotate 008E  
-                                                         ??_NeoDraw 0026  
-                                                         ??_NeoInit 0025  
-                                                            _NeoBit 3BE0  
-                                                            _NeoRed 0001  
-                                                            clear_0 3B78  
-                                                            _rxComm 3B98  
-                                                        __accesstop 0060  
-                                           __end_of__initialization 3B7E  
-                                                     ___rparam_used 000001  
-                                                    __pcstackCOMRAM 0025  
-                                                 __end_of_NeoRotate 3CB0  
-                                                           ?_NeoBit 0025  
-                                                           ?_rxComm 0025  
-                                                   NeoDraw@BitCount 002A  
-                                                           _NeoBlue 000D  
-                                                           _NeoDraw 3CB0  
-                                                           _NeoInit 3DBE  
-                                                           __Hparam 0000  
-                                                   __size_of_NeoBit 0040  
-                                                           __Lparam 0000  
-                                                 NeoRotate@NeoPixel 0028  
-                                                   NeoDraw@NeoPixel 0029  
-                                                           __pcinit 3B72  
-                                                           __ramtop 0600  
-                                                   __size_of_rxComm 0024  
-                                                           __ptext0 3BBC  
-                                                           __ptext1 3B98  
-                                                           __ptext2 3B84  
-                                                           __ptext3 3C22  
-                                                           __ptext4 3DBE  
-                                                           __ptext5 3CB0  
-                                                           __ptext6 3BE0  
-                                                     rxComm@carRecu 0025  
-                                              end_of_initialization 3B7E  
-                                                         _RCSTAbits 000FAB  
-                                                           postinc0 000FEE  
-                                           __size_of_initialisation 0014  
-                                                         _PORTDbits 000F83  
-                                                         NeoBit@Bit 0025  
-                                                         _TXSTAbits 000FAC  
-                                                    __end_of_NeoBit 3C20  
-                                                    __end_of_rxComm 3BBC  
-                                               start_initialization 3B72  
-                                                         _NeoRotate 3C22  
-                                                          ??_NeoBit 0025  
-                                                          ??_rxComm 0025  
-                                                       __pbssCOMRAM 0001  
-                                                        ?_NeoRotate 0025  
-                                                          ?_NeoDraw 0025  
-                                                          ?_NeoInit 0025  
-                                                    _initialisation 3B84  
-                                                   NeoInit@NeoPixel 0025  
-                                            __end_of_initialisation 3B98  
-                                                          _PIR1bits 000F9E  
-                                                       ??_NeoRotate 0025  
-                                                          _NeoGreen 0019  
-                                                  __size_of_NeoDraw 010E  
-                                                  __size_of_NeoInit 0242  
-                                                          __Hrparam 0000  
-                                                   ?_initialisation 0025  
-                                                          __Lrparam 0000  
-                                                     __size_of_main 0024  
+                                                      l33 3B94  
+                                                      l36 3B9C  
+                                                      l70 3C1A  
+                                                      l38 3BB0  
+                                                      l39 3BB8  
+                                                      l81 3DBA  
+                                                      l65 3FFC  
+                                                      l74 3DB8  
+                                                      l59 3FE4  
+                                                      l91 3CA0  
+                                                      l68 3C0E  
+                                                      l92 3CAC  
+                                                      u10 3BF6  
+                                                      u11 3BF0  
+                                                      u20 3DD8  
+                                                      u21 3DD2  
+                                                      u30 3E22  
+                                                      u31 3E1C  
+                                                      u40 3E36  
+                                                      u41 3E30  
+                                                      u50 3E80  
+                                                      u51 3E7A  
+                                                      u60 3E94  
+                                                      u61 3E8E  
+                                                      u70 3EDE  
+                                                      u71 3ED8  
+                                                      u80 3EF2  
+                                                      u81 3EEC  
+                                                      u90 3F3C  
+                                                      u91 3F36  
+                                            __CFG_CP0$OFF 000000  
+                                            __CFG_CP1$OFF 000000  
+                                            __CFG_CP2$OFF 000000  
+                                            __CFG_CP3$OFF 000000  
+                                             __CFG_OSC$HS 000000  
+                                                     l800 3E96  
+                                                     l810 3F3E  
+                                                     l802 3ECA  
+                                                     l812 3F52  
+                                                     l804 3EE0  
+                                                     l820 3FE4  
+                                                     l900 3BCA  
+                                                     l830 3CB6  
+                                                     l822 3FE8  
+                                                     l814 3F86  
+                                                     l806 3EF4  
+                                                     l902 3BD0  
+                                                     l840 3CF4  
+                                                     l824 3CB2  
+                                                     l816 3F9C  
+                                                     l808 3F28  
+                                                     l904 3BD4  
+                                                     l770 3BF8  
+                                                     l850 3D40  
+                                                     l842 3D06  
+                                                     l818 3FB0  
+                                                     l860 3D58  
+                                                     l852 3D42  
+                                                     l836 3CBC  
+                                                     l780 3DC0  
+                                                     l772 3B86  
+                                                     l862 3D8E  
+                                                     l854 3D54  
+                                                     l838 3CF2  
+                                                     l790 3E0E  
+                                                     l870 3C24  
+                                                     l774 3B8E  
+                                                     l768 3BE4  
+                                                     l864 3D90  
+                                                     l848 3D0A  
+                                                     l792 3E24  
+                                                     l880 3C8A  
+                                                     l872 3C30  
+                                                     l776 3B90  
+                                                     l866 3DA2  
+                                                     l794 3E38  
+                                                     l786 3DC4  
+                                                     l882 3C8C  
+                                                     l778 3B92  
+                                                     l868 3DA4  
+                                                     l796 3E6C  
+                                                     l788 3DDA  
+                                                     l884 3B9A  
+                                                     l892 3BBC  
+                                                     l798 3E82  
+                                                     l878 3C34  
+                                                     l886 3B9A  
+                                                     l894 3BBC  
+                                                     l888 3BB6  
+                                                     l896 3BC2  
+                                                     l898 3BC6  
+                                            __CFG_CPB$OFF 000000  
+                                                     u100 3F50  
+                                                     u101 3F4A  
+                                                     u110 3F9A  
+                                                     u111 3F94  
+                                                     u200 3DB6  
+                                                     u120 3FAE  
+                                                     u201 3DB0  
+                                                     u121 3FA8  
+                                                     u130 3FFA  
+                                                     u210 3C9E  
+                                                     u131 3FF4  
+                                                     u211 3C98  
+                                                     u220 3BAE  
+                                                     u221 3BA8  
+                                                     u150 3D04  
+                                                     u151 3CFE  
+                                                     u144 3CE2  
+                                                     u145 3CDC  
+                                                     u170 3D52  
+                                                     u171 3D4C  
+                                                     u164 3D30  
+                                                     u165 3D2A  
+                                                     u190 3DA0  
+                                                     u191 3D9A  
+                                                     u184 3D7E  
+                                                     u185 3D78  
+                                            __CFG_CPD$OFF 000000  
+                                            __CFG_BOR$OFF 000000  
+                                            __CFG_BORV$25 000000  
+                                                     wreg 000FE8  
+                                            __CFG_LVP$OFF 000000  
+                                            __CFG_WDT$OFF 000000  
+                                        ??_initialisation 0025  
+                                              NeoRotate@B 0027  
+                                              NeoRotate@G 0026  
+                                              NeoRotate@R 0025  
+                                                    _main 3BBC  
+                                                    indf1 000FE7  
+                                                    indf2 000FDF  
+                                                    fsr1l 000FE1  
+                                                    fsr2l 000FD9  
+                                                    start 0002  
+                                            ___param_bank 000000  
+                                         __end_of_NeoDraw 3DBE  
+                                         __end_of_NeoInit 4000  
+                                           __CFG_OSCS$OFF 000000  
+                                                   ?_main 0025  
+                                                   _RCREG 000FAE  
+                                                   _SPBRG 000FAF  
+                                                   _TRISD 000F95  
+                                           __CFG_PWRT$OFF 000000  
+                                           __CFG_WRT0$OFF 000000  
+                                           __CFG_WRT1$OFF 000000  
+                                           __CFG_WRT2$OFF 000000  
+                                           __CFG_WRT3$OFF 000000  
+                                          __CFG_EBTR0$OFF 000000  
+                                          __CFG_EBTR1$OFF 000000  
+                                          __CFG_EBTR2$OFF 000000  
+                                          __CFG_EBTR3$OFF 000000  
+                                           __CFG_STVR$OFF 000000  
+                                           __CFG_WRTB$OFF 000000  
+                                           __CFG_WRTC$OFF 000000  
+                                           __CFG_WRTD$OFF 000000  
+                                          __CFG_EBTRB$OFF 000000  
+                                                   status 000FD8  
+                                         __initialization 3B72  
+                                            __end_of_main 3BE0  
+                                                  ??_main 002B  
+                                           __activetblptr 000000  
+                                          __CFG_WDTPS$128 000000  
+                                      __size_of_NeoRotate 008E  
+                                               ??_NeoDraw 0026  
+                                               ??_NeoInit 0025  
+                                                  _NeoBit 3BE0  
+                                                  _NeoRed 0001  
+                                                  clear_0 3B78  
+                                                  _rxComm 3B98  
+                                              __accesstop 0060  
+                                 __end_of__initialization 3B7E  
+                                           ___rparam_used 000001  
+                                          __pcstackCOMRAM 0025  
+                                       __end_of_NeoRotate 3CB0  
+                                                 ?_NeoBit 0025  
+                                                 ?_rxComm 0025  
+                                         NeoDraw@BitCount 002A  
+                                                 _NeoBlue 000D  
+                                                 _NeoDraw 3CB0  
+                                                 _NeoInit 3DBE  
+                                                 __Hparam 0000  
+                                         __size_of_NeoBit 0040  
+                                                 __Lparam 0000  
+                                       NeoRotate@NeoPixel 0028  
+                                         NeoDraw@NeoPixel 0029  
+                                                 __pcinit 3B72  
+                                                 __ramtop 0600  
+                                         __size_of_rxComm 0024  
+                                                 __ptext0 3BBC  
+                                                 __ptext1 3B98  
+                                                 __ptext2 3B84  
+                                                 __ptext3 3C22  
+                                                 __ptext4 3DBE  
+                                                 __ptext5 3CB0  
+                                                 __ptext6 3BE0  
+                                           rxComm@carRecu 0025  
+                                    end_of_initialization 3B7E  
+                                               _RCSTAbits 000FAB  
+                                                 postinc0 000FEE  
+                                 __size_of_initialisation 0014  
+                                               _PORTDbits 000F83  
+                                               NeoBit@Bit 0025  
+                                               _TXSTAbits 000FAC  
+                                          __end_of_NeoBit 3C20  
+                                          __end_of_rxComm 3BBC  
+                                     start_initialization 3B72  
+                                               _NeoRotate 3C22  
+                                                ??_NeoBit 0025  
+                                                ??_rxComm 0025  
+                                             __pbssCOMRAM 0001  
+                                              ?_NeoRotate 0025  
+                                                ?_NeoDraw 0025  
+                                                ?_NeoInit 0025  
+                                          _initialisation 3B84  
+                                         NeoInit@NeoPixel 0025  
+                                  __end_of_initialisation 3B98  
+                                                _PIR1bits 000F9E  
+                                             ??_NeoRotate 0025  
+                                                _NeoGreen 0019  
+                                        __size_of_NeoDraw 010E  
+                                        __size_of_NeoInit 0242  
+                                                __Hrparam 0000  
+                                         ?_initialisation 0025  
+                                                __Lrparam 0000  
+                                           __size_of_main 0024  

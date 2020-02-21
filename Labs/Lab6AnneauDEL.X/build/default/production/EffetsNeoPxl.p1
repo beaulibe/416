@@ -1,102 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"20 main.c
-[; ;main.c: 20: void initialisation(void);
-[v _initialisation `(v ~T0 @X0 0 ef ]
-"9 ./NeoPxl.h
-[; ;./NeoPxl.h: 9: void NeoInit (void);
-[v _NeoInit `(v ~T0 @X0 0 ef ]
-"10
-[; ;./NeoPxl.h: 10: void NeoDraw (void);
-[v _NeoDraw `(v ~T0 @X0 0 ef ]
-"6 ./EffetsNeoPx.h
-[; ;./EffetsNeoPx.h: 6: void NeoRotate (void);
-[v _NeoRotate `(v ~T0 @X0 0 ef ]
-"21 main.c
-[; ;main.c: 21: unsigned char rxComm(void);
-[v _rxComm `(uc ~T0 @X0 0 ef ]
-"12165 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12165: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"13887
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13887: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
-[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
-"13606
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13606:     struct {
-[s S442 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S442 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
-"13616
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13616:     struct {
-[s S443 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S443 . TXD8 . TX8_9 ]
-"13621
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13621:     struct {
-[s S444 :6 `uc 1 :1 `uc 1 ]
-[n S444 . . NOT_TX8 ]
-"13625
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13625:     struct {
-[s S445 :6 `uc 1 :1 `uc 1 ]
-[n S445 . . nTX8 ]
-"13629
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13629:     struct {
-[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S446 . TX9D1 TRMT1 BRGH1 . SYNC1 TXEN1 TX91 CSRC1 ]
-"13605
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13605: typedef union {
-[u S441 `S442 1 `S443 1 `S444 1 `S445 1 `S446 1 ]
-[n S441 . . . . . . ]
-"13640
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13640: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
-[v _TXSTAbits `VS441 ~T0 @X0 0 e@4012 ]
-"13382
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13382:     struct {
-[s S428 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S428 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"13392
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13392:     struct {
-[s S429 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S429 . RCD8 . RC9 ]
-"13397
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13397:     struct {
-[s S430 :6 `uc 1 :1 `uc 1 ]
-[n S430 . . RC8_9 ]
-"13401
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13401:     struct {
-[s S431 :6 `uc 1 :1 `uc 1 ]
-[n S431 . . NOT_RC8 ]
-"13405
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13405:     struct {
-[s S432 :6 `uc 1 :1 `uc 1 ]
-[n S432 . . nRC8 ]
-"13409
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13409:     struct {
-[s S433 :5 `uc 1 :1 `uc 1 ]
-[n S433 . . SRENA ]
-"13381
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13381: typedef union {
-[u S427 `S428 1 `S429 1 `S430 1 `S431 1 `S432 1 `S433 1 ]
-[n S427 . . . . . . . ]
-"13414
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13414: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0xFAB)));
-[v _RCSTAbits `VS427 ~T0 @X0 0 e@4011 ]
-"12662
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12662:     struct {
-[s S401 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S401 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
-"12672
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12672:     struct {
-[s S402 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S402 . . TX1IF RC1IF ]
-"12661
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12661: typedef union {
-[u S400 `S401 1 `S402 1 ]
-[n S400 . . . ]
-"12678
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12678: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS400 ~T0 @X0 0 e@3998 ]
-"13875
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13875: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
-[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"15 EffetsNeoPxl.c
+[; ;EffetsNeoPxl.c: 15: extern uint8_t NeoGreen [12];
+[v _NeoGreen `uc ~T0 @X0 -> 0 `x e ]
+"16
+[; ;EffetsNeoPxl.c: 16: extern uint8_t NeoBlue [12];
+[v _NeoBlue `uc ~T0 @X0 -> 0 `x e ]
+"17
+[; ;EffetsNeoPxl.c: 17: extern uint8_t NeoRed [12];
+[v _NeoRed `uc ~T0 @X0 -> 0 `x e ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 54: __asm("RXF0SIDH equ 0F00h");
 [; <" RXF0SIDH equ 0F00h ;# ">
@@ -844,116 +755,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16759
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 16759: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"24 main.c
-[; ;main.c: 24: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+"20 EffetsNeoPxl.c
+[; ;EffetsNeoPxl.c: 20: void NeoRotate (void)
+[v _NeoRotate `(v ~T0 @X0 1 ef ]
+"21
+[; ;EffetsNeoPxl.c: 21: {
+{
+[e :U _NeoRotate ]
+[f ]
+"22
+[; ;EffetsNeoPxl.c: 22:    uint8_t NeoPixel;
+[v _NeoPixel `uc ~T0 @X0 1 a ]
+"23
+[; ;EffetsNeoPxl.c: 23:    uint8_t R,G,B;
+[v _R `uc ~T0 @X0 1 a ]
+[v _G `uc ~T0 @X0 1 a ]
+[v _B `uc ~T0 @X0 1 a ]
+"24
+[; ;EffetsNeoPxl.c: 24:    G = NeoGreen[0];
+[e = _G *U + &U _NeoGreen * -> -> -> 0 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux ]
 "25
-[; ;main.c: 25: {
-{
-[e :U _main ]
-[f ]
+[; ;EffetsNeoPxl.c: 25:    B = NeoBlue[0];
+[e = _B *U + &U _NeoBlue * -> -> -> 0 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux ]
 "26
-[; ;main.c: 26:     unsigned char carRx = 2;
-[v _carRx `uc ~T0 @X0 1 a ]
-[e = _carRx -> -> 2 `i `uc ]
-"28
-[; ;main.c: 28:     initialisation();
-[e ( _initialisation ..  ]
-"30
-[; ;main.c: 30:     NeoInit();
-[e ( _NeoInit ..  ]
-"31
-[; ;main.c: 31:     NeoDraw ();
-[e ( _NeoDraw ..  ]
-"32
-[; ;main.c: 32:     while(1)
-[e :U 581 ]
-"34
-[; ;main.c: 34:     {
+[; ;EffetsNeoPxl.c: 26:    R = NeoRed[0];
+[e = _R *U + &U _NeoRed * -> -> -> 0 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux ]
+"29
+[; ;EffetsNeoPxl.c: 29:    for (NeoPixel = 0; NeoPixel < 12 - 1; NeoPixel++)
 {
-"35
-[; ;main.c: 35:       NeoDraw ();
-[e ( _NeoDraw ..  ]
-"36
-[; ;main.c: 36:       NeoRotate ();
-[e ( _NeoRotate ..  ]
-"38
-[; ;main.c: 38:       carRx = rxComm();
-[e = _carRx ( _rxComm ..  ]
-"39
-[; ;main.c: 39:     }
-}
-[e :U 580 ]
+[e = _NeoPixel -> -> 0 `i `uc ]
+[e $ < -> _NeoPixel `i - -> 12 `i -> 1 `i 580  ]
 [e $U 581  ]
-[e :U 582 ]
-"41
-[; ;main.c: 41:     return;
-[e $UE 579  ]
-"42
-[; ;main.c: 42: }
+[e :U 580 ]
+"30
+[; ;EffetsNeoPxl.c: 30:    {
+{
+"31
+[; ;EffetsNeoPxl.c: 31:       NeoGreen[NeoPixel] = NeoGreen[NeoPixel + 1];
+[e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux *U + &U _NeoGreen * -> -> + -> _NeoPixel `i -> 1 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux ]
+"32
+[; ;EffetsNeoPxl.c: 32:       NeoBlue[NeoPixel] = NeoBlue[NeoPixel + 1];
+[e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux *U + &U _NeoBlue * -> -> + -> _NeoPixel `i -> 1 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux ]
+"33
+[; ;EffetsNeoPxl.c: 33:       NeoRed[NeoPixel] = NeoRed[NeoPixel + 1];
+[e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux *U + &U _NeoRed * -> -> + -> _NeoPixel `i -> 1 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux ]
+"34
+[; ;EffetsNeoPxl.c: 34:    }
+}
+[e ++ _NeoPixel -> -> 1 `i `uc ]
+[e $ < -> _NeoPixel `i - -> 12 `i -> 1 `i 580  ]
+[e :U 581 ]
+}
+"35
+[; ;EffetsNeoPxl.c: 35:    NeoGreen[12 - 1] = G;
+[e = *U + &U _NeoGreen * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux _G ]
+"36
+[; ;EffetsNeoPxl.c: 36:    NeoBlue[12 - 1] = B;
+[e = *U + &U _NeoBlue * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux _B ]
+"37
+[; ;EffetsNeoPxl.c: 37:    NeoRed[12 - 1] = R;
+[e = *U + &U _NeoRed * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux _R ]
+"38
+[; ;EffetsNeoPxl.c: 38: }
 [e :UE 579 ]
-}
-"44
-[; ;main.c: 44: void initialisation(void)
-[v _initialisation `(v ~T0 @X0 1 ef ]
-"45
-[; ;main.c: 45: {
-{
-[e :U _initialisation ]
-[f ]
-"46
-[; ;main.c: 46:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51:     SPBRG = 64;
-[e = _SPBRG -> -> 64 `i `uc ]
-"55
-[; ;main.c: 55:     TXSTAbits.BRGH = 0;
-[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
-"59
-[; ;main.c: 59:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"60
-[; ;main.c: 60:     TXSTAbits.SYNC = 0;
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"62
-[; ;main.c: 62: }
-[e :UE 583 ]
-}
-"64
-[; ;main.c: 64: unsigned char rxComm(void)
-[v _rxComm `(uc ~T0 @X0 1 ef ]
-"65
-[; ;main.c: 65: {
-{
-[e :U _rxComm ]
-[f ]
-"66
-[; ;main.c: 66:     unsigned char carRecu = 0;
-[v _carRecu `uc ~T0 @X0 1 a ]
-[e = _carRecu -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"77
-[; ;main.c: 77:     while(PIR1bits.RC1IF == 0);
-[e $U 585  ]
-[e :U 586 ]
-[e :U 585 ]
-[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 586  ]
-[e :U 587 ]
-"86
-[; ;main.c: 86:     carRecu = RCREG;
-[e = _carRecu _RCREG ]
-"92
-[; ;main.c: 92:     RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"94
-[; ;main.c: 94:     return carRecu;
-[e ) _carRecu ]
-[e $UE 584  ]
-"95
-[; ;main.c: 95: }
-[e :UE 584 ]
 }
