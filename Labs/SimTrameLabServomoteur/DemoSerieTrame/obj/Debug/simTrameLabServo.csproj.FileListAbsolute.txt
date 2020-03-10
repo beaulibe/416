@@ -1,0 +1,45 @@
+C:\Users\tge\Desktop\SimTrameLabServomotuer\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe.config
+C:\Users\tge\Desktop\SimTrameLabServomotuer\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe
+C:\Users\tge\Desktop\SimTrameLabServomotuer\DemoSerieTrame\bin\Debug\DemoSerieTrame.pdb
+C:\Users\tge\Desktop\SimTrameLabServomotuer\DemoSerieTrame\obj\Debug\DemoSerieTrame.Form1.resources
+C:\Users\tge\Desktop\SimTrameLabServomotuer\DemoSerieTrame\obj\Debug\DemoSerieTrame.Properties.Resources.resources
+C:\Users\tge\Desktop\SimTrameLabServomotuer\DemoSerieTrame\obj\Debug\simTrameLabServo.csproj.GenerateResource.Cache
+C:\Users\tge\Desktop\SimTrameLabServomotuer\DemoSerieTrame\obj\Debug\DemoSerieTrame.exe
+C:\Users\tge\Desktop\SimTrameLabServomotuer\DemoSerieTrame\obj\Debug\DemoSerieTrame.pdb
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe.config
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.exe
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.pdb
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.pdb
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.Form1.resources
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.Properties.Resources.resources
+C:\Users\Ben\Documents\247-416\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csproj.GenerateResource.Cache
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe.config
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.exe
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.pdb
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.pdb
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csprojResolveAssemblyReference.cache
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.Form1.resources
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.Properties.Resources.resources
+C:\Users\tge\Desktop\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csproj.GenerateResource.Cache
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe.config
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.pdb
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csprojResolveAssemblyReference.cache
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.Form1.resources
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.Properties.Resources.resources
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csproj.GenerateResource.Cache
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csproj.CoreCompileInputs.cache
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.exe
+M:\ACours\247-416 (Prog  Sys Emb)\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.pdb
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe.config
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.exe
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\bin\Debug\DemoSerieTrame.pdb
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csprojAssemblyReference.cache
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.Form1.resources
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.Properties.Resources.resources
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\simTrameLabServo.csproj.GenerateResource.cache
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.exe
+C:\Users\tge\Documents\GitHub\416\Labs\SimTrameLabServomoteur\DemoSerieTrame\obj\Debug\DemoSerieTrame.pdb

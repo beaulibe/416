@@ -36,6 +36,22 @@ uint8_t NeoGreen [NeoNum];
 uint8_t NeoBlue [NeoNum];
 uint8_t NeoRed [NeoNum];
 
+
+/**
+ * @brief Met les courleurs dans les tableaux de couleurs. 
+ * @param R, G, B valeur entre 0 et 255 pour chacune des 3 couleurs 
+ * @return rien
+ */
+void NeoSetColor(uint8_t R, uint8_t G, uint8_t B)
+{
+    for (int i = 0; i < NeoNum; i++)
+    {
+        NeoGreen[i]= G;
+        NeoRed[i]=R;
+        NeoBlue[i]=B;
+    }
+    
+}
 /**
  * @brief Iniialise les tableaux de couleurs. 2 DEL de chaque couleur (rouge, bleu
  * violet,vert, jaune et cian)

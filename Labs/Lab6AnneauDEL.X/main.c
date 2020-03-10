@@ -1,9 +1,13 @@
 /*
  * Fichier:   main.c
  * Auteur: Benoit
- * Crée le 18 février 2020, 15:59
+ * Crée le 18 février 2020
  * Brief: Lab6 du cours 416.
- * Matériel: PIC18F458, osciallateur de 40MHz, Anneau de DEL neoPixel WS2812 (https://www.digikey.ca/product-detail/en/adafruit-industries-llc/1643/1528-1102-ND/5154677)
+ * Matériel: PIC18F458, osciallateur de 40MHz (important pour les timings critiques des DEL NeoPixel, 
+ * Anneau de DEL neoPixel WS2812 
+ * (https://www.digikey.ca/product-detail/en/adafruit-industries-llc/1643/1528-1102-ND/5154677)
+ * Convertisseur USB-Série.
+ * Fonctionne avec le simulateur (SimTrameLabServomoteur) écrit en C# par Benoit
  * 
  */
 
@@ -12,18 +16,29 @@
 #include "NeoPxl.h"
 #include "EffetsNeoPx.h"
 #include <stdbool.h>
+#include <stdint.h>
+
 
 /****** Constantes ************/
 #define _XTAL_FREQ 40000000 //Constante utilisée par delaisMS(x). Doit = fréq de l'oscillateur 
+#define MAX_TRAME 6
+#define SOH 1
+
+enum enumTrame {EFFET=1,R,G,B};
 
 /****** Prototypes ********/
 void initialisation(void);
 unsigned char rxComm(void);
+bool rxTrame(unsigned char* buffer);
+void traiteTrame(unsigned char* buffer);
+
     
 
 void main(void) 
 {
     unsigned char carRx = 2;
+    unsigned char trame[MAX_TRAME];
+    
     
     initialisation();
     
@@ -32,14 +47,93 @@ void main(void)
     while(true)
         
     {       
-      NeoDraw ();
-      NeoRotate ();
       //__delay_ms(50);
-      carRx = rxComm(); //on attend un caractère du port série
+      //carRx = rxComm(); //on attend un caractère du port série
+      if (rxTrame(trame))
+      {
+          traiteTrame(trame);
+          NeoDraw ();
+
+      }
     }
 
     return;
 }
+bool rxTrame(unsigned char* buffer)
+{
+    bool retour = false;
+    unsigned char c; 
+    static int indexTrame = 0;
+    unsigned int chkSum = 0;
+    RCSTAbits.CREN = 1; //1 = Enables continuous receive
+    if (PIR1bits.RC1IF == 1) //un caractère de reçu
+    {
+        c = RCREG;
+        
+        if (c == SOH && indexTrame == 0) //on a recu le 1er caractere de la trame
+        {
+            buffer[0]=c;
+            indexTrame++;
+        }
+        else
+        {
+            if (indexTrame > 0 && indexTrame < MAX_TRAME) //on poursuit la réception de la trame
+            {
+                buffer[indexTrame]=c;
+                indexTrame++;
+            }
+        }
+        
+        if (indexTrame >= MAX_TRAME)
+        {
+            for (int i = 1; i < MAX_TRAME-1; i++) //on calcule le chksum
+            {
+                chkSum = chkSum + (unsigned int)buffer[i];   
+            }
+            chkSum = chkSum & 0x00FF; //on garde que les 8 lsb
+            if (chkSum == buffer[MAX_TRAME-1]) //chksum est bon?
+                retour = true;
+            indexTrame=0; //erreur on recommence
+        }
+        
+        RCSTAbits.CREN = 0;
+    }
+    
+    return retour;
+    
+}
+void traiteTrame(unsigned char* buffer)
+{
+    uint8_t NeoR, NeoG, NeoB;
+    
+      
+    switch (buffer[EFFET])
+    {
+        case 'P': 
+            NeoR = (uint8_t)buffer[R]*255/100;
+            NeoG = (uint8_t)buffer[G]*255/100;
+            NeoB = (uint8_t)buffer[B]*255/100;
+
+            NeoSetColor(NeoR, NeoG,NeoB);
+        break;
+        
+        case 'A':
+            NeoInit();
+        break;
+            
+        case 'B':
+            NeoRotate();
+        break;
+
+        case 'C':
+            NeoWave();
+        break;
+
+        
+    }
+    
+}
+
 
 void initialisation(void)
 {

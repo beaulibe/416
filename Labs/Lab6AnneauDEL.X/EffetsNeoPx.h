@@ -3,6 +3,7 @@
 
 
 /********** prototypes *****************/
-void NeoRotate (void);
+void NeoRotate(void);
+void NeoWave(void);
 
 #endif

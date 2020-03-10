@@ -37,3 +37,44 @@ void NeoRotate (void)
    NeoRed[NeoNum - 1] = R; 
 }
 
+void NeoWave(void)
+{
+   uint8_t NeoPixel; 
+   
+   static int position = 0;
+   static int couleur;
+   
+   // on décale tout le mode
+   for (NeoPixel = 0; NeoPixel < NeoNum - 1; NeoPixel++)   
+   {           
+      NeoGreen[NeoPixel] = NeoGreen[NeoPixel + 1];
+      NeoBlue[NeoPixel] = NeoBlue[NeoPixel + 1];
+      NeoRed[NeoPixel] = NeoRed[NeoPixel + 1];
+   }
+   
+   couleur = (couleur + 10) % 300;
+   
+   if (couleur < 100)
+   {
+        NeoGreen[NeoNum - 1] = (uint8_t) couleur; 
+        NeoBlue[NeoNum - 1] = (uint8_t) 0;
+        NeoRed[NeoNum - 1] = (uint8_t) 0;
+   }
+   else if (couleur < 200)
+   {
+        NeoGreen[NeoNum - 1] = (uint8_t) 0; 
+        NeoBlue[NeoNum - 1] = (uint8_t) couleur % 100;
+        NeoRed[NeoNum - 1] = (uint8_t) 0;
+   }
+
+   else if (couleur < 300)
+   {
+        NeoGreen[NeoNum - 1] = (uint8_t) 0; 
+        NeoBlue[NeoNum - 1] = (uint8_t) 0;
+        NeoRed[NeoNum - 1] = (uint8_t) couleur % 200;
+   }
+
+   
+   
+   
+}

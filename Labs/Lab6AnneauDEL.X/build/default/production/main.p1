@@ -1,54 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"20 main.c
-[; ;main.c: 20: void initialisation(void);
+"30 main.c
+[; ;main.c: 30: void initialisation(void);
 [v _initialisation `(v ~T0 @X0 0 ef ]
-"9 ./NeoPxl.h
-[; ;./NeoPxl.h: 9: void NeoInit (void);
+"10 ./NeoPxl.h
+[; ;./NeoPxl.h: 10: void NeoInit (void);
 [v _NeoInit `(v ~T0 @X0 0 ef ]
-"10
-[; ;./NeoPxl.h: 10: void NeoDraw (void);
+"11
+[; ;./NeoPxl.h: 11: void NeoDraw (void);
 [v _NeoDraw `(v ~T0 @X0 0 ef ]
-"6 ./EffetsNeoPx.h
-[; ;./EffetsNeoPx.h: 6: void NeoRotate (void);
-[v _NeoRotate `(v ~T0 @X0 0 ef ]
-"21 main.c
-[; ;main.c: 21: unsigned char rxComm(void);
-[v _rxComm `(uc ~T0 @X0 0 ef ]
-"12165 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12165: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"13887
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13887: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
-[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
-"13606
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13606:     struct {
-[s S442 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S442 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
-"13616
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13616:     struct {
-[s S443 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S443 . TXD8 . TX8_9 ]
-"13621
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13621:     struct {
-[s S444 :6 `uc 1 :1 `uc 1 ]
-[n S444 . . NOT_TX8 ]
-"13625
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13625:     struct {
-[s S445 :6 `uc 1 :1 `uc 1 ]
-[n S445 . . nTX8 ]
-"13629
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13629:     struct {
-[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S446 . TX9D1 TRMT1 BRGH1 . SYNC1 TXEN1 TX91 CSRC1 ]
-"13605
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13605: typedef union {
-[u S441 `S442 1 `S443 1 `S444 1 `S445 1 `S446 1 ]
-[n S441 . . . . . . ]
-"13640
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13640: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
-[v _TXSTAbits `VS441 ~T0 @X0 0 e@4012 ]
-"13382
+"32 main.c
+[; ;main.c: 32: _Bool rxTrame(unsigned char* buffer);
+[v _rxTrame `(a ~T0 @X0 0 ef1`*uc ]
+"33
+[; ;main.c: 33: void traiteTrame(unsigned char* buffer);
+[v _traiteTrame `(v ~T0 @X0 0 ef1`*uc ]
+"13382 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13382:     struct {
 [s S428 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S428 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
@@ -78,7 +45,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S427 . . . . . . . ]
 "13414
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13414: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0xFAB)));
-[v _RCSTAbits `VS427 ~T0 @X0 0 e@4011 ]
+[v _RCSTAbits `VAS427 ~T0 @X0 0 e@4011 ]
 "12662
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12662:     struct {
 [s S401 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -93,10 +60,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S400 . . . ]
 "12678
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12678: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS400 ~T0 @X0 0 e@3998 ]
+[v _PIR1bits `VAS400 ~T0 @X0 0 e@3998 ]
 "13875
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13875: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
-[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+[v _RCREG `VAuc ~T0 @X0 0 e@4014 ]
+"113 main.c
+[; ;main.c: 113:             NeoR = (uint8_t)buffer[R]*255/100;
+[c E5690 1 2 3 4 .. ]
+[n E5690 enumTrame EFFET R G B  ]
+"12 ./NeoPxl.h
+[; ;./NeoPxl.h: 12: void NeoSetColor(uint8_t R, uint8_t G, uint8_t B);
+[v _NeoSetColor `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"6 ./EffetsNeoPx.h
+[; ;./EffetsNeoPx.h: 6: void NeoRotate(void);
+[v _NeoRotate `(v ~T0 @X0 0 ef ]
+"7
+[; ;./EffetsNeoPx.h: 7: void NeoWave(void);
+[v _NeoWave `(v ~T0 @X0 0 ef ]
+"12165 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 12165: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `VAuc ~T0 @X0 0 e@3989 ]
+"13887
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13887: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
+[v _SPBRG `VAuc ~T0 @X0 0 e@4015 ]
+"13606
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13606:     struct {
+[s S442 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S442 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
+"13616
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13616:     struct {
+[s S443 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S443 . TXD8 . TX8_9 ]
+"13621
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13621:     struct {
+[s S444 :6 `uc 1 :1 `uc 1 ]
+[n S444 . . NOT_TX8 ]
+"13625
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13625:     struct {
+[s S445 :6 `uc 1 :1 `uc 1 ]
+[n S445 . . nTX8 ]
+"13629
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13629:     struct {
+[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S446 . TX9D1 TRMT1 BRGH1 . SYNC1 TXEN1 TX91 CSRC1 ]
+"13605
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13605: typedef union {
+[u S441 `S442 1 `S443 1 `S444 1 `S445 1 `S446 1 ]
+[n S441 . . . . . . ]
+"13640
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 13640: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
+[v _TXSTAbits `VAS441 ~T0 @X0 0 e@4012 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 54: __asm("RXF0SIDH equ 0F00h");
 [; <" RXF0SIDH equ 0F00h ;# ">
@@ -845,115 +858,357 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 16759: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"24 main.c
-[; ;main.c: 24: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"25
-[; ;main.c: 25: {
+[v F5702 `(v ~T0 @X0 1 tf ]
+"37 main.c
+[; ;main.c: 37: void main(void)
+[v _main `AF5702 ~T0 @X0 1 e ]
+"38
+[; ;main.c: 38: {
 {
 [e :U _main ]
 [f ]
-"26
-[; ;main.c: 26:     unsigned char carRx = 2;
+"39
+[; ;main.c: 39:     unsigned char carRx = 2;
 [v _carRx `uc ~T0 @X0 1 a ]
 [e = _carRx -> -> 2 `i `uc ]
-"28
-[; ;main.c: 28:     initialisation();
+"40
+[; ;main.c: 40:     unsigned char trame[6];
+[v _trame `uc ~T0 @X0 -> 6 `i a ]
+"43
+[; ;main.c: 43:     initialisation();
 [e ( _initialisation ..  ]
-"30
-[; ;main.c: 30:     NeoInit();
+"45
+[; ;main.c: 45:     NeoInit();
 [e ( _NeoInit ..  ]
-"31
-[; ;main.c: 31:     NeoDraw ();
+"46
+[; ;main.c: 46:     NeoDraw ();
 [e ( _NeoDraw ..  ]
-"32
-[; ;main.c: 32:     while(1)
+"47
+[; ;main.c: 47:     while(1)
 [e :U 581 ]
-"34
-[; ;main.c: 34:     {
+"49
+[; ;main.c: 49:     {
 {
-"35
-[; ;main.c: 35:       NeoDraw ();
+"52
+[; ;main.c: 52:       if (rxTrame(trame))
+[e $ ! != -> ( _rxTrame (1 &U _trame `i -> 0 `i 583  ]
+"53
+[; ;main.c: 53:       {
+{
+"54
+[; ;main.c: 54:           traiteTrame(trame);
+[e ( _traiteTrame (1 &U _trame ]
+"55
+[; ;main.c: 55:           NeoDraw ();
 [e ( _NeoDraw ..  ]
-"36
-[; ;main.c: 36:       NeoRotate ();
-[e ( _NeoRotate ..  ]
-"38
-[; ;main.c: 38:       carRx = rxComm();
-[e = _carRx ( _rxComm ..  ]
-"39
-[; ;main.c: 39:     }
+"57
+[; ;main.c: 57:       }
+}
+[e :U 583 ]
+"58
+[; ;main.c: 58:     }
 }
 [e :U 580 ]
 [e $U 581  ]
 [e :U 582 ]
-"41
-[; ;main.c: 41:     return;
+"60
+[; ;main.c: 60:     return;
 [e $UE 579  ]
-"42
-[; ;main.c: 42: }
+"61
+[; ;main.c: 61: }
 [e :UE 579 ]
 }
-"44
-[; ;main.c: 44: void initialisation(void)
-[v _initialisation `(v ~T0 @X0 1 ef ]
-"45
-[; ;main.c: 45: {
+[v F5706 `(a ~T0 @X0 1 tf1`*uc ]
+"62
+[; ;main.c: 62: _Bool rxTrame(unsigned char* buffer)
+[v _rxTrame `AF5706 ~T0 @X0 1 e ]
+"63
+[; ;main.c: 63: {
+{
+[e :U _rxTrame ]
+"62
+[; ;main.c: 62: _Bool rxTrame(unsigned char* buffer)
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+"63
+[; ;main.c: 63: {
+[f ]
+"64
+[; ;main.c: 64:     _Bool retour = 0;
+[v _retour `a ~T0 @X0 1 a ]
+[e = _retour -> -> 0 `i `a ]
+"65
+[; ;main.c: 65:     unsigned char c;
+[v _c `uc ~T0 @X0 1 a ]
+"66
+[; ;main.c: 66:     static int indexTrame = 0;
+[v F5710 `Ai ~T0 @X0 1 s indexTrame ]
+[i F5710
+-> 0 `i
+]
+"67
+[; ;main.c: 67:     unsigned int chkSum = 0;
+[v _chkSum `ui ~T0 @X0 1 a ]
+[e = _chkSum -> -> 0 `i `ui ]
+"68
+[; ;main.c: 68:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"69
+[; ;main.c: 69:     if (PIR1bits.RC1IF == 1)
+[e $ ! == -> . . _PIR1bits 1 2 `i -> 1 `i 585  ]
+"70
+[; ;main.c: 70:     {
+{
+"71
+[; ;main.c: 71:         c = RCREG;
+[e = _c _RCREG ]
+"73
+[; ;main.c: 73:         if (c == 1 && indexTrame == 0)
+[e $ ! && == -> _c `i -> 1 `i == F5710 -> 0 `i 586  ]
+"74
+[; ;main.c: 74:         {
+{
+"75
+[; ;main.c: 75:             buffer[0]=c;
+[e = *U + _buffer * -> -> 0 `i `x -> -> # *U _buffer `i `x _c ]
+"76
+[; ;main.c: 76:             indexTrame++;
+[e ++ F5710 -> 1 `i ]
+"77
+[; ;main.c: 77:         }
+}
+[e $U 587  ]
+"78
+[; ;main.c: 78:         else
+[e :U 586 ]
+"79
+[; ;main.c: 79:         {
+{
+"80
+[; ;main.c: 80:             if (indexTrame > 0 && indexTrame < 6)
+[e $ ! && > F5710 -> 0 `i < F5710 -> 6 `i 588  ]
+"81
+[; ;main.c: 81:             {
+{
+"82
+[; ;main.c: 82:                 buffer[indexTrame]=c;
+[e = *U + _buffer * -> F5710 `x -> -> # *U _buffer `i `x _c ]
+"83
+[; ;main.c: 83:                 indexTrame++;
+[e ++ F5710 -> 1 `i ]
+"84
+[; ;main.c: 84:             }
+}
+[e :U 588 ]
+"85
+[; ;main.c: 85:         }
+}
+[e :U 587 ]
+"87
+[; ;main.c: 87:         if (indexTrame >= 6)
+[e $ ! >= F5710 -> 6 `i 589  ]
+"88
+[; ;main.c: 88:         {
+{
+"89
+[; ;main.c: 89:             for (int i = 1; i < 6 -1; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 1 `i ]
+[e $ < _i - -> 6 `i -> 1 `i 590  ]
+[e $U 591  ]
+[e :U 590 ]
+"90
+[; ;main.c: 90:             {
+{
+"91
+[; ;main.c: 91:                 chkSum = chkSum + (unsigned int)buffer[i];
+[e = _chkSum + _chkSum -> *U + _buffer * -> _i `x -> -> # *U _buffer `i `x `ui ]
+"92
+[; ;main.c: 92:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i - -> 6 `i -> 1 `i 590  ]
+[e :U 591 ]
+}
+"93
+[; ;main.c: 93:             chkSum = chkSum & 0x00FF;
+[e = _chkSum & _chkSum -> -> 255 `i `ui ]
+"94
+[; ;main.c: 94:             if (chkSum == buffer[6 -1])
+[e $ ! == _chkSum -> *U + _buffer * -> - -> 6 `i -> 1 `i `x -> -> # *U _buffer `i `x `ui 593  ]
+"95
+[; ;main.c: 95:                 retour = 1;
+[e = _retour -> -> 1 `i `a ]
+[e :U 593 ]
+"96
+[; ;main.c: 96:             indexTrame=0;
+[e = F5710 -> 0 `i ]
+"97
+[; ;main.c: 97:         }
+}
+[e :U 589 ]
+"99
+[; ;main.c: 99:         RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"100
+[; ;main.c: 100:     }
+}
+[e :U 585 ]
+"102
+[; ;main.c: 102:     return retour;
+[e ) _retour ]
+[e $UE 584  ]
+"104
+[; ;main.c: 104: }
+[e :UE 584 ]
+}
+[v F5714 `(v ~T0 @X0 1 tf1`*uc ]
+"105
+[; ;main.c: 105: void traiteTrame(unsigned char* buffer)
+[v _traiteTrame `AF5714 ~T0 @X0 1 e ]
+"106
+[; ;main.c: 106: {
+{
+[e :U _traiteTrame ]
+"105
+[; ;main.c: 105: void traiteTrame(unsigned char* buffer)
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+"106
+[; ;main.c: 106: {
+[f ]
+"107
+[; ;main.c: 107:     uint8_t NeoR, NeoG, NeoB;
+[v _NeoR `uc ~T0 @X0 1 a ]
+[v _NeoG `uc ~T0 @X0 1 a ]
+[v _NeoB `uc ~T0 @X0 1 a ]
+"110
+[; ;main.c: 110:     switch (buffer[EFFET])
+[e $U 596  ]
+"111
+[; ;main.c: 111:     {
+{
+"112
+[; ;main.c: 112:         case 'P':
+[e :U 597 ]
+"113
+[; ;main.c: 113:             NeoR = (uint8_t)buffer[R]*255/100;
+[e = _NeoR -> / * -> *U + _buffer * -> . `E5690 1 `x -> -> # *U _buffer `i `x `i -> 255 `i -> 100 `i `uc ]
+"114
+[; ;main.c: 114:             NeoG = (uint8_t)buffer[G]*255/100;
+[e = _NeoG -> / * -> *U + _buffer * -> . `E5690 2 `x -> -> # *U _buffer `i `x `i -> 255 `i -> 100 `i `uc ]
+"115
+[; ;main.c: 115:             NeoB = (uint8_t)buffer[B]*255/100;
+[e = _NeoB -> / * -> *U + _buffer * -> . `E5690 3 `x -> -> # *U _buffer `i `x `i -> 255 `i -> 100 `i `uc ]
+"117
+[; ;main.c: 117:             NeoSetColor(NeoR, NeoG,NeoB);
+[e ( _NeoSetColor (3 , , _NeoR _NeoG _NeoB ]
+"118
+[; ;main.c: 118:         break;
+[e $U 595  ]
+"120
+[; ;main.c: 120:         case 'A':
+[e :U 598 ]
+"121
+[; ;main.c: 121:             NeoInit();
+[e ( _NeoInit ..  ]
+"122
+[; ;main.c: 122:         break;
+[e $U 595  ]
+"124
+[; ;main.c: 124:         case 'B':
+[e :U 599 ]
+"125
+[; ;main.c: 125:             NeoRotate();
+[e ( _NeoRotate ..  ]
+"126
+[; ;main.c: 126:         break;
+[e $U 595  ]
+"128
+[; ;main.c: 128:         case 'C':
+[e :U 600 ]
+"129
+[; ;main.c: 129:             NeoWave();
+[e ( _NeoWave ..  ]
+"130
+[; ;main.c: 130:         break;
+[e $U 595  ]
+"133
+[; ;main.c: 133:     }
+}
+[e $U 595  ]
+[e :U 596 ]
+[e [\ -> *U + _buffer * -> . `E5690 0 `x -> -> # *U _buffer `i `x `i , $ -> -> 80 `ui `i 597
+ , $ -> -> 65 `ui `i 598
+ , $ -> -> 66 `ui `i 599
+ , $ -> -> 67 `ui `i 600
+ 595 ]
+[e :U 595 ]
+"135
+[; ;main.c: 135: }
+[e :UE 594 ]
+}
+[v F5720 `(v ~T0 @X0 1 tf ]
+"138
+[; ;main.c: 138: void initialisation(void)
+[v _initialisation `AF5720 ~T0 @X0 1 e ]
+"139
+[; ;main.c: 139: {
 {
 [e :U _initialisation ]
 [f ]
-"46
-[; ;main.c: 46:     TRISD = 0;
+"140
+[; ;main.c: 140:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51:     SPBRG = 64;
+"145
+[; ;main.c: 145:     SPBRG = 64;
 [e = _SPBRG -> -> 64 `i `uc ]
-"55
-[; ;main.c: 55:     TXSTAbits.BRGH = 0;
+"149
+[; ;main.c: 149:     TXSTAbits.BRGH = 0;
 [e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
-"59
-[; ;main.c: 59:     RCSTAbits.SPEN = 1;
+"153
+[; ;main.c: 153:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"60
-[; ;main.c: 60:     TXSTAbits.SYNC = 0;
+"154
+[; ;main.c: 154:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"62
-[; ;main.c: 62: }
-[e :UE 583 ]
+"156
+[; ;main.c: 156: }
+[e :UE 601 ]
 }
-"64
-[; ;main.c: 64: unsigned char rxComm(void)
-[v _rxComm `(uc ~T0 @X0 1 ef ]
-"65
-[; ;main.c: 65: {
+[v F5722 `(uc ~T0 @X0 1 tf ]
+"158
+[; ;main.c: 158: unsigned char rxComm(void)
+[v _rxComm `AF5722 ~T0 @X0 1 e ]
+"159
+[; ;main.c: 159: {
 {
 [e :U _rxComm ]
 [f ]
-"66
-[; ;main.c: 66:     unsigned char carRecu = 0;
+"160
+[; ;main.c: 160:     unsigned char carRecu = 0;
 [v _carRecu `uc ~T0 @X0 1 a ]
 [e = _carRecu -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:     RCSTAbits.CREN = 1;
+"166
+[; ;main.c: 166:     RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"77
-[; ;main.c: 77:     while(PIR1bits.RC1IF == 0);
-[e $U 585  ]
-[e :U 586 ]
-[e :U 585 ]
-[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 586  ]
-[e :U 587 ]
-"86
-[; ;main.c: 86:     carRecu = RCREG;
+"171
+[; ;main.c: 171:     while(PIR1bits.RC1IF == 0);
+[e $U 603  ]
+[e :U 604 ]
+[e :U 603 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 604  ]
+[e :U 605 ]
+"180
+[; ;main.c: 180:     carRecu = RCREG;
 [e = _carRecu _RCREG ]
-"92
-[; ;main.c: 92:     RCSTAbits.CREN = 0;
+"186
+[; ;main.c: 186:     RCSTAbits.CREN = 0;
 [e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"94
-[; ;main.c: 94:     return carRecu;
+"188
+[; ;main.c: 188:     return carRecu;
 [e ) _carRecu ]
-[e $UE 584  ]
-"95
-[; ;main.c: 95: }
-[e :UE 584 ]
+[e $UE 602  ]
+"189
+[; ;main.c: 189: }
+[e :UE 602 ]
 }

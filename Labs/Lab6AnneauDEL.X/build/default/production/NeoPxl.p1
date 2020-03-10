@@ -25,7 +25,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S334 . . . . . . ]
 "10742
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 10742: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
-[v _PORTDbits `VS334 ~T0 @X0 0 e@3971 ]
+[v _PORTDbits `VAS334 ~T0 @X0 0 e@3971 ]
 "50 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -778,277 +778,327 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "35 NeoPxl.c
 [; ;NeoPxl.c: 35: uint8_t NeoGreen [12];
-[v _NeoGreen `uc ~T0 @X0 -> 12 `i e ]
+[v _NeoGreen `Auc ~T0 @X0 -> 12 `i e ]
 "36
 [; ;NeoPxl.c: 36: uint8_t NeoBlue [12];
-[v _NeoBlue `uc ~T0 @X0 -> 12 `i e ]
+[v _NeoBlue `Auc ~T0 @X0 -> 12 `i e ]
 "37
 [; ;NeoPxl.c: 37: uint8_t NeoRed [12];
-[v _NeoRed `uc ~T0 @X0 -> 12 `i e ]
+[v _NeoRed `Auc ~T0 @X0 -> 12 `i e ]
+[v F5692 `(v ~T0 @X0 1 tf3`uc`uc`uc ]
+"45
+[; ;NeoPxl.c: 45: void NeoSetColor(uint8_t R, uint8_t G, uint8_t B)
+[v _NeoSetColor `AF5692 ~T0 @X0 1 e ]
 "46
-[; ;NeoPxl.c: 46: void NeoInit (void)
-[v _NeoInit `(v ~T0 @X0 1 ef ]
+[; ;NeoPxl.c: 46: {
+{
+[e :U _NeoSetColor ]
+"45
+[; ;NeoPxl.c: 45: void NeoSetColor(uint8_t R, uint8_t G, uint8_t B)
+[v _R `uc ~T0 @X0 1 r1 ]
+[v _G `uc ~T0 @X0 1 r2 ]
+[v _B `uc ~T0 @X0 1 r3 ]
+"46
+[; ;NeoPxl.c: 46: {
+[f ]
 "47
-[; ;NeoPxl.c: 47: {
+[; ;NeoPxl.c: 47:     for (int i = 0; i < 12; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 12 `i 580  ]
+[e $U 581  ]
+[e :U 580 ]
+"48
+[; ;NeoPxl.c: 48:     {
+{
+"49
+[; ;NeoPxl.c: 49:         NeoGreen[i]= G;
+[e = *U + &U _NeoGreen * -> -> _i `ui `ux -> -> # *U &U _NeoGreen `ui `ux _G ]
+"50
+[; ;NeoPxl.c: 50:         NeoRed[i]=R;
+[e = *U + &U _NeoRed * -> -> _i `ui `ux -> -> # *U &U _NeoRed `ui `ux _R ]
+"51
+[; ;NeoPxl.c: 51:         NeoBlue[i]=B;
+[e = *U + &U _NeoBlue * -> -> _i `ui `ux -> -> # *U &U _NeoBlue `ui `ux _B ]
+"52
+[; ;NeoPxl.c: 52:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 12 `i 580  ]
+[e :U 581 ]
+}
+"54
+[; ;NeoPxl.c: 54: }
+[e :UE 579 ]
+}
+[v F5698 `(v ~T0 @X0 1 tf ]
+"62
+[; ;NeoPxl.c: 62: void NeoInit (void)
+[v _NeoInit `AF5698 ~T0 @X0 1 e ]
+"63
+[; ;NeoPxl.c: 63: {
 {
 [e :U _NeoInit ]
 [f ]
-"48
-[; ;NeoPxl.c: 48:    uint8_t NeoPixel;
+"64
+[; ;NeoPxl.c: 64:    uint8_t NeoPixel;
 [v _NeoPixel `uc ~T0 @X0 1 a ]
-"49
-[; ;NeoPxl.c: 49:    for (NeoPixel = 0; NeoPixel < 12; NeoPixel++)
+"65
+[; ;NeoPxl.c: 65:    for (NeoPixel = 0; NeoPixel < 12; NeoPixel++)
 {
 [e = _NeoPixel -> -> 0 `i `uc ]
-[e $ < -> _NeoPixel `i -> 12 `i 580  ]
-[e $U 581  ]
-[e :U 580 ]
-"50
-[; ;NeoPxl.c: 50:    {
+[e $ < -> _NeoPixel `i -> 12 `i 584  ]
+[e $U 585  ]
+[e :U 584 ]
+"66
+[; ;NeoPxl.c: 66:    {
 {
-"51
-[; ;NeoPxl.c: 51:       if (NeoPixel < 2)
-[e $ ! < -> _NeoPixel `i -> 2 `i 583  ]
-"52
-[; ;NeoPxl.c: 52:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixel] = 64; }
+"67
+[; ;NeoPxl.c: 67:       if (NeoPixel < 2)
+[e $ ! < -> _NeoPixel `i -> 2 `i 587  ]
+"68
+[; ;NeoPxl.c: 68:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixel] = 64; }
 {
 [e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 0 `i `uc ]
 [e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 0 `i `uc ]
-[e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux -> -> 64 `i `uc ]
-}
-[e $U 584  ]
-"53
-[; ;NeoPxl.c: 53:       else if ((NeoPixel >= 2) & (NeoPixel < 4))
-[e :U 583 ]
-[e $ ! & >= -> _NeoPixel `i -> 2 `i < -> _NeoPixel `i -> 4 `i 585  ]
-"54
-[; ;NeoPxl.c: 54:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixel] = 0; }
-{
-[e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 0 `i `uc ]
-[e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 64 `i `uc ]
-[e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux -> -> 0 `i `uc ]
-}
-[e $U 586  ]
-"55
-[; ;NeoPxl.c: 55:       else if ((NeoPixel >= 4) & (NeoPixel < 6))
-[e :U 585 ]
-[e $ ! & >= -> _NeoPixel `i -> 4 `i < -> _NeoPixel `i -> 6 `i 587  ]
-"56
-[; ;NeoPxl.c: 56:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixel] = 64; }
-{
-[e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 0 `i `uc ]
-[e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 64 `i `uc ]
 [e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux -> -> 64 `i `uc ]
 }
 [e $U 588  ]
-"57
-[; ;NeoPxl.c: 57:       else if ((NeoPixel >= 6) & (NeoPixel < 8))
+"69
+[; ;NeoPxl.c: 69:       else if ((NeoPixel >= 2) & (NeoPixel < 4))
 [e :U 587 ]
-[e $ ! & >= -> _NeoPixel `i -> 6 `i < -> _NeoPixel `i -> 8 `i 589  ]
-"58
-[; ;NeoPxl.c: 58:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixel] = 0; }
+[e $ ! & >= -> _NeoPixel `i -> 2 `i < -> _NeoPixel `i -> 4 `i 589  ]
+"70
+[; ;NeoPxl.c: 70:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixel] = 0; }
+{
+[e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 64 `i `uc ]
+[e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux -> -> 0 `i `uc ]
+}
+[e $U 590  ]
+"71
+[; ;NeoPxl.c: 71:       else if ((NeoPixel >= 4) & (NeoPixel < 6))
+[e :U 589 ]
+[e $ ! & >= -> _NeoPixel `i -> 4 `i < -> _NeoPixel `i -> 6 `i 591  ]
+"72
+[; ;NeoPxl.c: 72:          { NeoGreen[NeoPixel] = 0; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixel] = 64; }
+{
+[e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 0 `i `uc ]
+[e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 64 `i `uc ]
+[e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux -> -> 64 `i `uc ]
+}
+[e $U 592  ]
+"73
+[; ;NeoPxl.c: 73:       else if ((NeoPixel >= 6) & (NeoPixel < 8))
+[e :U 591 ]
+[e $ ! & >= -> _NeoPixel `i -> 6 `i < -> _NeoPixel `i -> 8 `i 593  ]
+"74
+[; ;NeoPxl.c: 74:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixel] = 0; }
 {
 [e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 64 `i `uc ]
 [e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 0 `i `uc ]
 [e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux -> -> 0 `i `uc ]
 }
-[e $U 590  ]
-"59
-[; ;NeoPxl.c: 59:       else if ((NeoPixel >= 8) & (NeoPixel < 10))
-[e :U 589 ]
-[e $ ! & >= -> _NeoPixel `i -> 8 `i < -> _NeoPixel `i -> 10 `i 591  ]
-"60
-[; ;NeoPxl.c: 60:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixel] = 64; }
+[e $U 594  ]
+"75
+[; ;NeoPxl.c: 75:       else if ((NeoPixel >= 8) & (NeoPixel < 10))
+[e :U 593 ]
+[e $ ! & >= -> _NeoPixel `i -> 8 `i < -> _NeoPixel `i -> 10 `i 595  ]
+"76
+[; ;NeoPxl.c: 76:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 0; NeoRed[NeoPixel] = 64; }
 {
 [e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 64 `i `uc ]
 [e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 0 `i `uc ]
 [e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux -> -> 64 `i `uc ]
 }
-[e $U 592  ]
-"61
-[; ;NeoPxl.c: 61:       else if ((NeoPixel >= 10) & (NeoPixel < 12))
-[e :U 591 ]
-[e $ ! & >= -> _NeoPixel `i -> 10 `i < -> _NeoPixel `i -> 12 `i 593  ]
-"62
-[; ;NeoPxl.c: 62:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixel] = 0; }
+[e $U 596  ]
+"77
+[; ;NeoPxl.c: 77:       else if ((NeoPixel >= 10) & (NeoPixel < 12))
+[e :U 595 ]
+[e $ ! & >= -> _NeoPixel `i -> 10 `i < -> _NeoPixel `i -> 12 `i 597  ]
+"78
+[; ;NeoPxl.c: 78:          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixel] = 0; }
 {
 [e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 64 `i `uc ]
 [e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 64 `i `uc ]
 [e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux -> -> 0 `i `uc ]
 }
-[e :U 593 ]
+[e :U 597 ]
+[e :U 596 ]
+[e :U 594 ]
 [e :U 592 ]
 [e :U 590 ]
 [e :U 588 ]
-[e :U 586 ]
-[e :U 584 ]
-"63
-[; ;NeoPxl.c: 63:    }
+"79
+[; ;NeoPxl.c: 79:    }
 }
 [e ++ _NeoPixel -> -> 1 `i `uc ]
-[e $ < -> _NeoPixel `i -> 12 `i 580  ]
-[e :U 581 ]
+[e $ < -> _NeoPixel `i -> 12 `i 584  ]
+[e :U 585 ]
 }
-"64
-[; ;NeoPxl.c: 64: }
-[e :UE 579 ]
+"80
+[; ;NeoPxl.c: 80: }
+[e :UE 583 ]
 }
-"75
-[; ;NeoPxl.c: 75: void NeoBit(uint8_t Bit)
-[v _NeoBit `(v ~T0 @X0 1 ef1`uc ]
-"76
-[; ;NeoPxl.c: 76: {
+[v F5701 `(v ~T0 @X0 1 tf1`uc ]
+"91
+[; ;NeoPxl.c: 91: void NeoBit(uint8_t Bit)
+[v _NeoBit `AF5701 ~T0 @X0 1 e ]
+"92
+[; ;NeoPxl.c: 92: {
 {
 [e :U _NeoBit ]
-"75
-[; ;NeoPxl.c: 75: void NeoBit(uint8_t Bit)
-[v _Bit `uc ~T0 @X0 1 r1 ]
-"76
-[; ;NeoPxl.c: 76: {
-[f ]
-"77
-[; ;NeoPxl.c: 77:    if (Bit != 0)
-[e $ ! != -> _Bit `i -> 0 `i 595  ]
-"78
-[; ;NeoPxl.c: 78:    {
-{
-"79
-[; ;NeoPxl.c: 79:       PORTDbits.RD0 = 1;
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-"80
-[; ;NeoPxl.c: 80:       __nop();
-[e ( ___nop ..  ]
-"81
-[; ;NeoPxl.c: 81:       __nop();
-[e ( ___nop ..  ]
-"82
-[; ;NeoPxl.c: 82:       __nop();
-[e ( ___nop ..  ]
-"83
-[; ;NeoPxl.c: 83:       __nop();
-[e ( ___nop ..  ]
-"84
-[; ;NeoPxl.c: 84:       __nop();
-[e ( ___nop ..  ]
-"85
-[; ;NeoPxl.c: 85:       __nop();
-[e ( ___nop ..  ]
-"86
-[; ;NeoPxl.c: 86:       __nop();
-[e ( ___nop ..  ]
-"87
-[; ;NeoPxl.c: 87:       PORTDbits.RD0 = 0;
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-"88
-[; ;NeoPxl.c: 88:    }
-}
-[e $U 596  ]
-"89
-[; ;NeoPxl.c: 89:    else
-[e :U 595 ]
-"90
-[; ;NeoPxl.c: 90:    {
-{
 "91
-[; ;NeoPxl.c: 91:        PORTDbits.RD0 = 1;
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+[; ;NeoPxl.c: 91: void NeoBit(uint8_t Bit)
+[v _Bit `uc ~T0 @X0 1 r1 ]
 "92
-[; ;NeoPxl.c: 92:        __nop();
-[e ( ___nop ..  ]
+[; ;NeoPxl.c: 92: {
+[f ]
 "93
-[; ;NeoPxl.c: 93:        __nop();
-[e ( ___nop ..  ]
+[; ;NeoPxl.c: 93:    if (Bit != 0)
+[e $ ! != -> _Bit `i -> 0 `i 599  ]
 "94
-[; ;NeoPxl.c: 94:        __nop();
-[e ( ___nop ..  ]
+[; ;NeoPxl.c: 94:    {
+{
 "95
-[; ;NeoPxl.c: 95:        PORTDbits.RD0 = 0;
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+[; ;NeoPxl.c: 95:       PORTDbits.RD0 = 1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
 "96
-[; ;NeoPxl.c: 96:    }
-}
-[e :U 596 ]
+[; ;NeoPxl.c: 96:       __nop();
+[e ( ___nop ..  ]
+"97
+[; ;NeoPxl.c: 97:       __nop();
+[e ( ___nop ..  ]
 "98
-[; ;NeoPxl.c: 98: }
-[e :UE 594 ]
+[; ;NeoPxl.c: 98:       __nop();
+[e ( ___nop ..  ]
+"99
+[; ;NeoPxl.c: 99:       __nop();
+[e ( ___nop ..  ]
+"100
+[; ;NeoPxl.c: 100:       __nop();
+[e ( ___nop ..  ]
+"101
+[; ;NeoPxl.c: 101:       __nop();
+[e ( ___nop ..  ]
+"102
+[; ;NeoPxl.c: 102:       __nop();
+[e ( ___nop ..  ]
+"103
+[; ;NeoPxl.c: 103:       PORTDbits.RD0 = 0;
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+"104
+[; ;NeoPxl.c: 104:    }
 }
+[e $U 600  ]
+"105
+[; ;NeoPxl.c: 105:    else
+[e :U 599 ]
+"106
+[; ;NeoPxl.c: 106:    {
+{
 "107
-[; ;NeoPxl.c: 107: void NeoDraw (void)
-[v _NeoDraw `(v ~T0 @X0 1 ef ]
+[; ;NeoPxl.c: 107:        PORTDbits.RD0 = 1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
 "108
-[; ;NeoPxl.c: 108: {
+[; ;NeoPxl.c: 108:        __nop();
+[e ( ___nop ..  ]
+"109
+[; ;NeoPxl.c: 109:        __nop();
+[e ( ___nop ..  ]
+"110
+[; ;NeoPxl.c: 110:        __nop();
+[e ( ___nop ..  ]
+"111
+[; ;NeoPxl.c: 111:        PORTDbits.RD0 = 0;
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+"112
+[; ;NeoPxl.c: 112:    }
+}
+[e :U 600 ]
+"114
+[; ;NeoPxl.c: 114: }
+[e :UE 598 ]
+}
+[v F5704 `(v ~T0 @X0 1 tf ]
+"123
+[; ;NeoPxl.c: 123: void NeoDraw (void)
+[v _NeoDraw `AF5704 ~T0 @X0 1 e ]
+"124
+[; ;NeoPxl.c: 124: {
 {
 [e :U _NeoDraw ]
 [f ]
-"109
-[; ;NeoPxl.c: 109:    uint8_t NeoPixel;
+"125
+[; ;NeoPxl.c: 125:    uint8_t NeoPixel;
 [v _NeoPixel `uc ~T0 @X0 1 a ]
-"110
-[; ;NeoPxl.c: 110:    int8_t BitCount;
+"126
+[; ;NeoPxl.c: 126:    int8_t BitCount;
 [v _BitCount `c ~T0 @X0 1 a ]
-"114
-[; ;NeoPxl.c: 114:    for (NeoPixel = 0; NeoPixel < 12; NeoPixel++)
+"130
+[; ;NeoPxl.c: 130:    for (NeoPixel = 0; NeoPixel < 12; NeoPixel++)
 {
 [e = _NeoPixel -> -> 0 `i `uc ]
-[e $ < -> _NeoPixel `i -> 12 `i 598  ]
-[e $U 599  ]
-[e :U 598 ]
-"115
-[; ;NeoPxl.c: 115:     {
+[e $ < -> _NeoPixel `i -> 12 `i 602  ]
+[e $U 603  ]
+[e :U 602 ]
+"131
+[; ;NeoPxl.c: 131:     {
 {
-"116
-[; ;NeoPxl.c: 116:       for (BitCount = 7; BitCount >= 0; BitCount--)
+"132
+[; ;NeoPxl.c: 132:       for (BitCount = 7; BitCount >= 0; BitCount--)
 {
 [e = _BitCount -> -> 7 `i `c ]
-[e $ >= -> _BitCount `i -> 0 `i 601  ]
-[e $U 602  ]
-[e :U 601 ]
-"117
-[; ;NeoPxl.c: 117:           NeoBit(NeoGreen[NeoPixel] & (1 <<(BitCount)));
+[e $ >= -> _BitCount `i -> 0 `i 605  ]
+[e $U 606  ]
+[e :U 605 ]
+"133
+[; ;NeoPxl.c: 133:           NeoBit(NeoGreen[NeoPixel] & (1 <<(BitCount)));
 [e ( _NeoBit (1 -> & -> *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux `i << -> 1 `i -> _BitCount `i `uc ]
 [e -- _BitCount -> -> 1 `i `c ]
-[e $ >= -> _BitCount `i -> 0 `i 601  ]
-[e :U 602 ]
+[e $ >= -> _BitCount `i -> 0 `i 605  ]
+[e :U 606 ]
 }
-"118
-[; ;NeoPxl.c: 118:       for (BitCount = 7; BitCount >= 0; BitCount--)
+"134
+[; ;NeoPxl.c: 134:       for (BitCount = 7; BitCount >= 0; BitCount--)
 {
 [e = _BitCount -> -> 7 `i `c ]
-[e $ >= -> _BitCount `i -> 0 `i 604  ]
-[e $U 605  ]
-[e :U 604 ]
-"119
-[; ;NeoPxl.c: 119:          NeoBit(NeoRed[NeoPixel] & (1 <<(BitCount)));
+[e $ >= -> _BitCount `i -> 0 `i 608  ]
+[e $U 609  ]
+[e :U 608 ]
+"135
+[; ;NeoPxl.c: 135:          NeoBit(NeoRed[NeoPixel] & (1 <<(BitCount)));
 [e ( _NeoBit (1 -> & -> *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux `i << -> 1 `i -> _BitCount `i `uc ]
 [e -- _BitCount -> -> 1 `i `c ]
-[e $ >= -> _BitCount `i -> 0 `i 604  ]
-[e :U 605 ]
+[e $ >= -> _BitCount `i -> 0 `i 608  ]
+[e :U 609 ]
 }
-"120
-[; ;NeoPxl.c: 120:       for (BitCount = 7; BitCount >= 0; BitCount--)
+"136
+[; ;NeoPxl.c: 136:       for (BitCount = 7; BitCount >= 0; BitCount--)
 {
 [e = _BitCount -> -> 7 `i `c ]
-[e $ >= -> _BitCount `i -> 0 `i 607  ]
-[e $U 608  ]
-[e :U 607 ]
-"121
-[; ;NeoPxl.c: 121:          NeoBit(NeoBlue[NeoPixel] & (1 <<(BitCount)));
+[e $ >= -> _BitCount `i -> 0 `i 611  ]
+[e $U 612  ]
+[e :U 611 ]
+"137
+[; ;NeoPxl.c: 137:          NeoBit(NeoBlue[NeoPixel] & (1 <<(BitCount)));
 [e ( _NeoBit (1 -> & -> *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux `i << -> 1 `i -> _BitCount `i `uc ]
 [e -- _BitCount -> -> 1 `i `c ]
-[e $ >= -> _BitCount `i -> 0 `i 607  ]
-[e :U 608 ]
+[e $ >= -> _BitCount `i -> 0 `i 611  ]
+[e :U 612 ]
 }
-"122
-[; ;NeoPxl.c: 122:     }
+"138
+[; ;NeoPxl.c: 138:     }
 }
 [e ++ _NeoPixel -> -> 1 `i `uc ]
-[e $ < -> _NeoPixel `i -> 12 `i 598  ]
-[e :U 599 ]
+[e $ < -> _NeoPixel `i -> 12 `i 602  ]
+[e :U 603 ]
 }
-"123
-[; ;NeoPxl.c: 123:    PORTDbits.RD0 = 0;
+"139
+[; ;NeoPxl.c: 139:    PORTDbits.RD0 = 0;
 [e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-"124
-[; ;NeoPxl.c: 124: }
-[e :UE 597 ]
+"140
+[; ;NeoPxl.c: 140: }
+[e :UE 601 ]
 }

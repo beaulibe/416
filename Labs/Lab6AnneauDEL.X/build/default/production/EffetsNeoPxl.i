@@ -9977,18 +9977,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-
-
-
-
-
-void NeoInit (void);
-void NeoDraw (void);
-# 11 "EffetsNeoPxl.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 12 "EffetsNeoPxl.c" 2
-
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -10072,7 +10060,21 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 13 "EffetsNeoPxl.c" 2
+# 4 "./NeoPxl.h" 2
+
+
+
+
+
+
+void NeoInit (void);
+void NeoDraw (void);
+void NeoSetColor(uint8_t R, uint8_t G, uint8_t B);
+# 11 "EffetsNeoPxl.c" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 12 "EffetsNeoPxl.c" 2
+
 
 
 extern uint8_t NeoGreen [12];
@@ -10098,4 +10100,26 @@ void NeoRotate (void)
    NeoGreen[12 - 1] = G;
    NeoBlue[12 - 1] = B;
    NeoRed[12 - 1] = R;
+}
+
+void NeoWave(void)
+{
+   uint8_t NeoPixel;
+
+   static int position = 0;
+   static uint24_t couleur;
+
+
+   for (NeoPixel = 0; NeoPixel < 12 - 1; NeoPixel++)
+   {
+      NeoGreen[NeoPixel] = NeoGreen[NeoPixel + 1];
+      NeoBlue[NeoPixel] = NeoBlue[NeoPixel + 1];
+      NeoRed[NeoPixel] = NeoRed[NeoPixel + 1];
+   }
+
+   couleur = couleur + 10;
+
+   NeoGreen[12 - 1] = (uint8_t) couleur & 0x0000FF ;
+   NeoBlue[12 - 1] = (uint8_t) (couleur >> 8) & 0x0000FF ;
+   NeoRed[12 - 1] = (uint8_t) (couleur >> 16) & 0x0000FF ;
 }

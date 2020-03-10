@@ -9977,15 +9977,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-
-
-
-
-
-void NeoInit (void);
-void NeoDraw (void);
-# 28 "NeoPxl.c" 2
-
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -10069,7 +10060,18 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 29 "NeoPxl.c" 2
+# 4 "./NeoPxl.h" 2
+
+
+
+
+
+
+void NeoInit (void);
+void NeoDraw (void);
+void NeoSetColor(uint8_t R, uint8_t G, uint8_t B);
+# 28 "NeoPxl.c" 2
+
 
 
 
@@ -10079,7 +10081,30 @@ typedef uint32_t uint_fast32_t;
 uint8_t NeoGreen [12];
 uint8_t NeoBlue [12];
 uint8_t NeoRed [12];
-# 46 "NeoPxl.c"
+
+
+
+
+
+
+
+void NeoSetColor(uint8_t R, uint8_t G, uint8_t B)
+{
+    for (int i = 0; i < 12; i++)
+    {
+        NeoGreen[i]= G;
+        NeoRed[i]=R;
+        NeoBlue[i]=B;
+    }
+
+}
+
+
+
+
+
+
+
 void NeoInit (void)
 {
    uint8_t NeoPixel;
@@ -10099,7 +10124,7 @@ void NeoInit (void)
          { NeoGreen[NeoPixel] = 64; NeoBlue[NeoPixel] = 64; NeoRed[NeoPixel] = 0; }
    }
 }
-# 75 "NeoPxl.c"
+# 91 "NeoPxl.c"
 void NeoBit(uint8_t Bit)
 {
    if (Bit != 0)
@@ -10124,7 +10149,7 @@ void NeoBit(uint8_t Bit)
    }
 
 }
-# 107 "NeoPxl.c"
+# 123 "NeoPxl.c"
 void NeoDraw (void)
 {
    uint8_t NeoPixel;

@@ -1,13 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "15 EffetsNeoPxl.c
 [; ;EffetsNeoPxl.c: 15: extern uint8_t NeoGreen [12];
-[v _NeoGreen `uc ~T0 @X0 -> 0 `x e ]
+[v _NeoGreen `Auc ~T0 @X0 -> 0 `x e ]
 "16
 [; ;EffetsNeoPxl.c: 16: extern uint8_t NeoBlue [12];
-[v _NeoBlue `uc ~T0 @X0 -> 0 `x e ]
+[v _NeoBlue `Auc ~T0 @X0 -> 0 `x e ]
 "17
 [; ;EffetsNeoPxl.c: 17: extern uint8_t NeoRed [12];
-[v _NeoRed `uc ~T0 @X0 -> 0 `x e ]
+[v _NeoRed `Auc ~T0 @X0 -> 0 `x e ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 54: __asm("RXF0SIDH equ 0F00h");
 [; <" RXF0SIDH equ 0F00h ;# ">
@@ -755,9 +755,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16759
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h: 16759: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+[v F5692 `(v ~T0 @X0 1 tf ]
 "20 EffetsNeoPxl.c
 [; ;EffetsNeoPxl.c: 20: void NeoRotate (void)
-[v _NeoRotate `(v ~T0 @X0 1 ef ]
+[v _NeoRotate `AF5692 ~T0 @X0 1 e ]
 "21
 [; ;EffetsNeoPxl.c: 21: {
 {
@@ -818,4 +819,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;EffetsNeoPxl.c: 38: }
 [e :UE 579 ]
+}
+[v F5698 `(v ~T0 @X0 1 tf ]
+"40
+[; ;EffetsNeoPxl.c: 40: void NeoWave(void)
+[v _NeoWave `AF5698 ~T0 @X0 1 e ]
+"41
+[; ;EffetsNeoPxl.c: 41: {
+{
+[e :U _NeoWave ]
+[f ]
+"42
+[; ;EffetsNeoPxl.c: 42:    uint8_t NeoPixel;
+[v _NeoPixel `uc ~T0 @X0 1 a ]
+"44
+[; ;EffetsNeoPxl.c: 44:    static int position = 0;
+[v F5700 `Ai ~T0 @X0 1 s position ]
+[i F5700
+-> 0 `i
+]
+"45
+[; ;EffetsNeoPxl.c: 45:    static uint24_t couleur;
+[v F5701 `Aum ~T0 @X0 1 s couleur ]
+"48
+[; ;EffetsNeoPxl.c: 48:    for (NeoPixel = 0; NeoPixel < 12 - 1; NeoPixel++)
+{
+[e = _NeoPixel -> -> 0 `i `uc ]
+[e $ < -> _NeoPixel `i - -> 12 `i -> 1 `i 584  ]
+[e $U 585  ]
+[e :U 584 ]
+"49
+[; ;EffetsNeoPxl.c: 49:    {
+{
+"50
+[; ;EffetsNeoPxl.c: 50:       NeoGreen[NeoPixel] = NeoGreen[NeoPixel + 1];
+[e = *U + &U _NeoGreen * -> _NeoPixel `ux -> -> # *U &U _NeoGreen `ui `ux *U + &U _NeoGreen * -> -> + -> _NeoPixel `i -> 1 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux ]
+"51
+[; ;EffetsNeoPxl.c: 51:       NeoBlue[NeoPixel] = NeoBlue[NeoPixel + 1];
+[e = *U + &U _NeoBlue * -> _NeoPixel `ux -> -> # *U &U _NeoBlue `ui `ux *U + &U _NeoBlue * -> -> + -> _NeoPixel `i -> 1 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux ]
+"52
+[; ;EffetsNeoPxl.c: 52:       NeoRed[NeoPixel] = NeoRed[NeoPixel + 1];
+[e = *U + &U _NeoRed * -> _NeoPixel `ux -> -> # *U &U _NeoRed `ui `ux *U + &U _NeoRed * -> -> + -> _NeoPixel `i -> 1 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux ]
+"53
+[; ;EffetsNeoPxl.c: 53:    }
+}
+[e ++ _NeoPixel -> -> 1 `i `uc ]
+[e $ < -> _NeoPixel `i - -> 12 `i -> 1 `i 584  ]
+[e :U 585 ]
+}
+"55
+[; ;EffetsNeoPxl.c: 55:    couleur = couleur + 10;
+[e = F5701 + F5701 -> -> -> 10 `i `m `um ]
+"57
+[; ;EffetsNeoPxl.c: 57:    NeoGreen[12 - 1] = (uint8_t) couleur & 0x0000FF ;
+[e = *U + &U _NeoGreen * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux -> & -> -> F5701 `uc `i -> 255 `i `uc ]
+"58
+[; ;EffetsNeoPxl.c: 58:    NeoBlue[12 - 1] = (uint8_t) (couleur >> 8) & 0x0000FF ;
+[e = *U + &U _NeoBlue * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux -> & -> -> >> F5701 -> 8 `i `uc `i -> 255 `i `uc ]
+"59
+[; ;EffetsNeoPxl.c: 59:    NeoRed[12 - 1] = (uint8_t) (couleur >> 16) & 0x0000FF ;
+[e = *U + &U _NeoRed * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux -> & -> -> >> F5701 -> 16 `i `uc `i -> 255 `i `uc ]
+"60
+[; ;EffetsNeoPxl.c: 60: }
+[e :UE 583 ]
 }
