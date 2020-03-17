@@ -125,7 +125,7 @@ void NeoDraw (void)
    uint8_t NeoPixel;
    int8_t BitCount;
      
-  // while(1) NeoBit(1); //pour tester
+  // while(1) NeoBit(1); //pour tester et ajuster la largeur d'impulsion dans NeoBit()
    
    for (NeoPixel = 0; NeoPixel < NeoNum; NeoPixel++)
     {    
