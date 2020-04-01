@@ -11,6 +11,12 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\TGE\AppData\Local\Temp\sc1c.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 2 2 4 1
+text CODE 0 336A 336A 2 1
+reset_vec CODE 0 0 0 2 1
+config CONFIG 0 300000 300000 E 1
 $dist/default/debug\Lab6AnneauDEL.X.debug.o
 cinit CODE 0 336C 336C 12 1
 text0 CODE 0 33D8 33D8 52 1
@@ -27,12 +33,6 @@ text10 CODE 0 3870 3870 19A 1
 text11 CODE 0 3392 3392 46 1
 cstackBANK0 BANK0 1 8A 8A 16 1
 bssBANK0 BANK0 1 60 60 2A 1
-$C:\Users\tge\AppData\Local\Temp\s5a4.o
-idloc IDLOC 0 200000 200000 8 1
-init CODE 0 2 2 4 1
-text CODE 0 336A 336A 2 1
-reset_vec CODE 0 0 0 2 1
-config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -79,104 +79,104 @@ MEDIUMCONST 4000-7D3F 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\Lab6AnneauDEL.X.debug.o
-3392 text11 CODE >91:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3398 text11 CODE >93:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33AE text11 CODE >95:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33B0 text11 CODE >96:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33B2 text11 CODE >97:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33B4 text11 CODE >98:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33B6 text11 CODE >99:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33B8 text11 CODE >100:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33BA text11 CODE >101:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33BC text11 CODE >102:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33BE text11 CODE >103:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33C0 text11 CODE >104:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33C4 text11 CODE >105:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33C6 text11 CODE >107:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33C8 text11 CODE >108:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33CA text11 CODE >109:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33CC text11 CODE >110:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33CE text11 CODE >111:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-33D0 text11 CODE >114:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3870 text10 CODE >123:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3872 text10 CODE >130:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3892 text10 CODE >132:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-38B2 text10 CODE >133:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3904 text10 CODE >134:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3924 text10 CODE >135:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3976 text10 CODE >136:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3996 text10 CODE >137:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-39E8 text10 CODE >138:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3A04 text10 CODE >139:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3A06 text10 CODE >140:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-337E text9 CODE >138:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3380 text9 CODE >140:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3384 text9 CODE >145:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3388 text9 CODE >149:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-338A text9 CODE >153:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-338C text9 CODE >154:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-338E text9 CODE >156:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3BA4 text8 CODE >62:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3BA6 text8 CODE >64:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3BAC text8 CODE >67:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3BB6 text8 CODE >68:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3BB8 text8 CODE >69:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3BCA text8 CODE >71:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3BCE text8 CODE >73:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3BFC text8 CODE >75:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3C08 text8 CODE >76:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3C0E text8 CODE >77:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3C12 text8 CODE >80:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3C56 text8 CODE >82:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3C6E text8 CODE >83:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3C74 text8 CODE >87:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3C98 text8 CODE >89:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3CC8 text8 CODE >91:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3CF2 text8 CODE >92:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D18 text8 CODE >93:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D22 text8 CODE >94:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D5C text8 CODE >95:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D64 text8 CODE >96:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D6E text8 CODE >99:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D72 text8 CODE >100:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D74 text8 CODE >102:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D78 text8 CODE >104:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3D7C text7 CODE >62:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3D7E text7 CODE >65:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3D9E text7 CODE >67:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3DB6 text7 CODE >68:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3DEC text7 CODE >69:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3E1A text7 CODE >70:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3E50 text7 CODE >71:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3E7E text7 CODE >72:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3EB4 text7 CODE >73:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3EE2 text7 CODE >74:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3F18 text7 CODE >75:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3F46 text7 CODE >76:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3F7C text7 CODE >77:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3FAA text7 CODE >78:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3FE0 text7 CODE >79:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3FFA text7 CODE >80:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-34C0 text6 CODE >20:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-34C2 text6 CODE >24:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-34C6 text6 CODE >25:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-34CA text6 CODE >26:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-34CE text6 CODE >29:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-34EE text6 CODE >31:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-350E text6 CODE >32:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-352A text6 CODE >33:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3546 text6 CODE >34:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3560 text6 CODE >35:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3564 text6 CODE >36:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3568 text6 CODE >37:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-356C text6 CODE >38:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-342A text5 CODE >45:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3430 text5 CODE >47:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3460 text5 CODE >49:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3474 text5 CODE >50:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3484 text5 CODE >51:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-3494 text5 CODE >52:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
-34BA text5 CODE >54:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3392 text11 CODE >91:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3398 text11 CODE >93:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33AE text11 CODE >95:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33B0 text11 CODE >96:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33B2 text11 CODE >97:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33B4 text11 CODE >98:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33B6 text11 CODE >99:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33B8 text11 CODE >100:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33BA text11 CODE >101:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33BC text11 CODE >102:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33BE text11 CODE >103:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33C0 text11 CODE >104:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33C4 text11 CODE >105:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33C6 text11 CODE >107:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33C8 text11 CODE >108:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33CA text11 CODE >109:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33CC text11 CODE >110:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33CE text11 CODE >111:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+33D0 text11 CODE >114:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3870 text10 CODE >123:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3872 text10 CODE >130:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3892 text10 CODE >132:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+38B2 text10 CODE >133:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3904 text10 CODE >134:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3924 text10 CODE >135:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3976 text10 CODE >136:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3996 text10 CODE >137:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+39E8 text10 CODE >138:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3A04 text10 CODE >139:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3A06 text10 CODE >140:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+337E text9 CODE >138:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3380 text9 CODE >140:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3384 text9 CODE >145:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3388 text9 CODE >149:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+338A text9 CODE >153:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+338C text9 CODE >154:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+338E text9 CODE >156:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3BA4 text8 CODE >62:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3BA6 text8 CODE >64:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3BAC text8 CODE >67:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3BB6 text8 CODE >68:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3BB8 text8 CODE >69:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3BCA text8 CODE >71:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3BCE text8 CODE >73:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3BFC text8 CODE >75:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3C08 text8 CODE >76:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3C0E text8 CODE >77:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3C12 text8 CODE >80:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3C56 text8 CODE >82:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3C6E text8 CODE >83:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3C74 text8 CODE >87:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3C98 text8 CODE >89:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3CC8 text8 CODE >91:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3CF2 text8 CODE >92:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D18 text8 CODE >93:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D22 text8 CODE >94:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D5C text8 CODE >95:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D64 text8 CODE >96:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D6E text8 CODE >99:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D72 text8 CODE >100:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D74 text8 CODE >102:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D78 text8 CODE >104:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3D7C text7 CODE >62:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3D7E text7 CODE >65:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3D9E text7 CODE >67:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3DB6 text7 CODE >68:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3DEC text7 CODE >69:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3E1A text7 CODE >70:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3E50 text7 CODE >71:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3E7E text7 CODE >72:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3EB4 text7 CODE >73:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3EE2 text7 CODE >74:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3F18 text7 CODE >75:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3F46 text7 CODE >76:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3F7C text7 CODE >77:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3FAA text7 CODE >78:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3FE0 text7 CODE >79:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3FFA text7 CODE >80:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+34C0 text6 CODE >20:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+34C2 text6 CODE >24:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+34C6 text6 CODE >25:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+34CA text6 CODE >26:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+34CE text6 CODE >29:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+34EE text6 CODE >31:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+350E text6 CODE >32:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+352A text6 CODE >33:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3546 text6 CODE >34:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3560 text6 CODE >35:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3564 text6 CODE >36:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3568 text6 CODE >37:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+356C text6 CODE >38:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+342A text5 CODE >45:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3430 text5 CODE >47:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3460 text5 CODE >49:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3474 text5 CODE >50:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3484 text5 CODE >51:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+3494 text5 CODE >52:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+34BA text5 CODE >54:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
 3570 text4 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 3572 text4 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 3578 text4 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
@@ -198,28 +198,28 @@ $dist/default/debug\Lab6AnneauDEL.X.debug.o
 3638 text4 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 3640 text4 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 364A text4 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
-3A0A text3 CODE >40:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3A0C text3 CODE >48:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3A2C text3 CODE >50:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3A4C text3 CODE >51:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3A68 text3 CODE >52:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3A84 text3 CODE >53:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3A9C text3 CODE >55:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3AC8 text3 CODE >57:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3AEA text3 CODE >59:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3AEE text3 CODE >60:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3AF4 text3 CODE >61:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3AFA text3 CODE >62:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3AFE text3 CODE >63:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B22 text3 CODE >65:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B28 text3 CODE >66:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B46 text3 CODE >67:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B4C text3 CODE >68:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B50 text3 CODE >70:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B74 text3 CODE >72:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B7A text3 CODE >73:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B80 text3 CODE >74:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
-3B9E text3 CODE >80:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3A0A text3 CODE >40:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3A0C text3 CODE >48:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3A2C text3 CODE >50:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3A4C text3 CODE >51:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3A68 text3 CODE >52:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3A84 text3 CODE >53:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3A9C text3 CODE >55:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3AC8 text3 CODE >57:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3AEA text3 CODE >59:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3AEE text3 CODE >60:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3AF4 text3 CODE >61:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3AFA text3 CODE >62:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3AFE text3 CODE >63:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B22 text3 CODE >65:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B28 text3 CODE >66:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B46 text3 CODE >67:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B4C text3 CODE >68:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B50 text3 CODE >70:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B74 text3 CODE >72:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B7A text3 CODE >73:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B80 text3 CODE >74:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+3B9E text3 CODE >80:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
 364E text2 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
 3650 text2 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
 3656 text2 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
@@ -245,41 +245,41 @@ $dist/default/debug\Lab6AnneauDEL.X.debug.o
 372A text2 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
 3732 text2 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
 373C text2 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-3740 text1 CODE >105:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3742 text1 CODE >110:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3746 text1 CODE >113:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-377E text1 CODE >114:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-37B4 text1 CODE >115:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-37EA text1 CODE >117:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-37FA text1 CODE >118:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-37FE text1 CODE >121:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3804 text1 CODE >122:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3808 text1 CODE >125:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-380E text1 CODE >126:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3812 text1 CODE >129:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3818 text1 CODE >130:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-381C text1 CODE >133:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-386A text1 CODE >135:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-33D8 text0 CODE >37:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-33D8 text0 CODE >39:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-33E0 text0 CODE >43:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-33E4 text0 CODE >45:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-33E8 text0 CODE >46:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-33EC text0 CODE >52:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-3410 text0 CODE >54:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-341E text0 CODE >55:C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
-336C cinit CODE >2191:C:\Users\tge\AppData\Local\Temp\s5a4.s
-336C cinit CODE >2193:C:\Users\tge\AppData\Local\Temp\s5a4.s
-336C cinit CODE >2196:C:\Users\tge\AppData\Local\Temp\s5a4.s
-336C cinit CODE >2220:C:\Users\tge\AppData\Local\Temp\s5a4.s
-3370 cinit CODE >2221:C:\Users\tge\AppData\Local\Temp\s5a4.s
-3372 cinit CODE >2222:C:\Users\tge\AppData\Local\Temp\s5a4.s
-3372 cinit CODE >2223:C:\Users\tge\AppData\Local\Temp\s5a4.s
-3374 cinit CODE >2224:C:\Users\tge\AppData\Local\Temp\s5a4.s
-3376 cinit CODE >2225:C:\Users\tge\AppData\Local\Temp\s5a4.s
-3378 cinit CODE >2231:C:\Users\tge\AppData\Local\Temp\s5a4.s
-3378 cinit CODE >2233:C:\Users\tge\AppData\Local\Temp\s5a4.s
-337A cinit CODE >2234:C:\Users\tge\AppData\Local\Temp\s5a4.s
+3740 text1 CODE >105:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3742 text1 CODE >110:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3746 text1 CODE >113:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+377E text1 CODE >114:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+37B4 text1 CODE >115:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+37EA text1 CODE >117:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+37FA text1 CODE >118:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+37FE text1 CODE >121:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3804 text1 CODE >122:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3808 text1 CODE >125:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+380E text1 CODE >126:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3812 text1 CODE >129:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3818 text1 CODE >130:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+381C text1 CODE >133:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+386A text1 CODE >135:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+33D8 text0 CODE >37:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+33D8 text0 CODE >39:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+33E0 text0 CODE >43:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+33E4 text0 CODE >45:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+33E8 text0 CODE >46:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+33EC text0 CODE >52:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+3410 text0 CODE >54:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+341E text0 CODE >55:C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+336C cinit CODE >2191:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+336C cinit CODE >2193:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+336C cinit CODE >2196:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+336C cinit CODE >2220:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+3370 cinit CODE >2221:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+3372 cinit CODE >2222:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+3372 cinit CODE >2223:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+3374 cinit CODE >2224:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+3376 cinit CODE >2225:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+3378 cinit CODE >2231:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+3378 cinit CODE >2233:C:\Users\TGE\AppData\Local\Temp\sc1c.s
+337A cinit CODE >2234:C:\Users\TGE\AppData\Local\Temp\sc1c.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -304,23 +304,23 @@ __size_of_NeoDraw 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __size_of_NeoInit 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __size_of_NeoWave 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\Lab6AnneauDEL.X.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\tge\AppData\Local\Temp\s5a4.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\TGE\AppData\Local\Temp\sc1c.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\Lab6AnneauDEL.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\s5a4.o
+___sp 0 0 STACK 2 stack C:\Users\TGE\AppData\Local\Temp\sc1c.o
 _main 33D8 0 CODE 0 text0 dist/default/debug\Lab6AnneauDEL.X.debug.o
-start 2 0 CODE 0 init C:\Users\tge\AppData\Local\Temp\s5a4.o
+start 2 0 CODE 0 init C:\Users\TGE\AppData\Local\Temp\sc1c.o
 __end_of_NeoBit 33D6 0 CODE 0 text11 dist/default/debug\Lab6AnneauDEL.X.debug.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __size_of___awmod 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __size_of_main 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Hpowerup 2 0 CODE 0 powerup dist/default/debug\Lab6AnneauDEL.X.debug.o
 ___awmod@sign 8F 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
-__accesstop 60 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\s5a4.o
-intlevel0 336A 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\s5a4.o
-intlevel1 336A 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\s5a4.o
-intlevel2 336A 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\s5a4.o
-intlevel3 336A 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\s5a4.o
+__accesstop 60 0 ABS 0 - C:\Users\TGE\AppData\Local\Temp\sc1c.o
+intlevel0 336A 0 CODE 0 text C:\Users\TGE\AppData\Local\Temp\sc1c.o
+intlevel1 336A 0 CODE 0 text C:\Users\TGE\AppData\Local\Temp\sc1c.o
+intlevel2 336A 0 CODE 0 text C:\Users\TGE\AppData\Local\Temp\sc1c.o
+intlevel3 336A 0 CODE 0 text C:\Users\TGE\AppData\Local\Temp\sc1c.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\Lab6AnneauDEL.X.debug.o
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
@@ -337,8 +337,9 @@ __end_of_NeoDraw 3A0A 0 CODE 0 text10 dist/default/debug\Lab6AnneauDEL.X.debug.o
 __end_of_NeoInit 4000 0 CODE 0 text7 dist/default/debug\Lab6AnneauDEL.X.debug.o
 __end_of_NeoWave 3BA4 0 CODE 0 text3 dist/default/debug\Lab6AnneauDEL.X.debug.o
 ___awdiv@dividend 8A 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\s5a4.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\s5a4.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\TGE\AppData\Local\Temp\sc1c.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\TGE\AppData\Local\Temp\sc1c.o
+__cntErrataNOP_C:\Users\TGE\AppData\Local\Temp\sc1c.o 1 0 ABS 0 - C:\Users\TGE\AppData\Local\Temp\sc1c.o
 traiteTrame@NeoB 98 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
 traiteTrame@NeoG 97 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
 traiteTrame@NeoR 96 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
@@ -394,7 +395,7 @@ __Htext8 0 0 ABS 0 text8 dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Htext9 0 0 ABS 0 text9 dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\Lab6AnneauDEL.X.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\tge\AppData\Local\Temp\s5a4.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\TGE\AppData\Local\Temp\sc1c.o
 __size_of_NeoBit 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Hcomram 0 0 ABS 0 comram dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/debug\Lab6AnneauDEL.X.debug.o
@@ -488,8 +489,8 @@ __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\Lab6AnneauDEL.X.debug.o
 main@trame 99 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
 NeoWave@NeoPixel 90 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
 NeoBit@Bit 8A 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
-stackhi 5EE 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\s5a4.o
-stacklo A0 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\s5a4.o
+stackhi 5EE 0 ABS 0 - C:\Users\TGE\AppData\Local\Temp\sc1c.o
+stacklo A0 0 ABS 0 - C:\Users\TGE\AppData\Local\Temp\sc1c.o
 __Lintcode 2 0 CODE 0 intcode dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\Lab6AnneauDEL.X.debug.o
@@ -500,7 +501,6 @@ __Lspace_1 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Lspace_2 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
 _PIR1bits F9E 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
-__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\s5a4.o 1 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\s5a4.o
 end_of_initialization 3378 0 CODE 0 cinit dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Hintentry 0 0 ABS 0 intentry dist/default/debug\Lab6AnneauDEL.X.debug.o
@@ -530,7 +530,7 @@ __CFG_STVR$OFF 0 0 ABS 0 - dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Ltext10 0 0 ABS 0 text10 dist/default/debug\Lab6AnneauDEL.X.debug.o
 __Ltext11 0 0 ABS 0 text11 dist/default/debug\Lab6AnneauDEL.X.debug.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\tge\AppData\Local\Temp\s5a4.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\TGE\AppData\Local\Temp\sc1c.o
 NeoRotate@B 8C 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
 NeoRotate@G 8B 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o
 NeoRotate@R 8A 0 BANK0 1 cstackBANK0 dist/default/debug\Lab6AnneauDEL.X.debug.o

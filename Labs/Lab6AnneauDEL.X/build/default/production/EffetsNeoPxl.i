@@ -10107,7 +10107,7 @@ void NeoWave(void)
    uint8_t NeoPixel;
 
    static int position = 0;
-   static uint24_t couleur;
+   static int couleur;
 
 
    for (NeoPixel = 0; NeoPixel < 12 - 1; NeoPixel++)
@@ -10117,9 +10117,29 @@ void NeoWave(void)
       NeoRed[NeoPixel] = NeoRed[NeoPixel + 1];
    }
 
-   couleur = couleur + 10;
+   couleur = (couleur + 10) % 300;
 
-   NeoGreen[12 - 1] = (uint8_t) couleur & 0x0000FF ;
-   NeoBlue[12 - 1] = (uint8_t) (couleur >> 8) & 0x0000FF ;
-   NeoRed[12 - 1] = (uint8_t) (couleur >> 16) & 0x0000FF ;
+   if (couleur < 100)
+   {
+        NeoGreen[12 - 1] = (uint8_t) couleur;
+        NeoBlue[12 - 1] = (uint8_t) 0;
+        NeoRed[12 - 1] = (uint8_t) 0;
+   }
+   else if (couleur < 200)
+   {
+        NeoGreen[12 - 1] = (uint8_t) 0;
+        NeoBlue[12 - 1] = (uint8_t) couleur % 100;
+        NeoRed[12 - 1] = (uint8_t) 0;
+   }
+
+   else if (couleur < 300)
+   {
+        NeoGreen[12 - 1] = (uint8_t) 0;
+        NeoBlue[12 - 1] = (uint8_t) 0;
+        NeoRed[12 - 1] = (uint8_t) couleur % 200;
+   }
+
+
+
+
 }

@@ -839,8 +839,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "45
-[; ;EffetsNeoPxl.c: 45:    static uint24_t couleur;
-[v F5701 `Aum ~T0 @X0 1 s couleur ]
+[; ;EffetsNeoPxl.c: 45:    static int couleur;
+[v F5701 `Ai ~T0 @X0 1 s couleur ]
 "48
 [; ;EffetsNeoPxl.c: 48:    for (NeoPixel = 0; NeoPixel < 12 - 1; NeoPixel++)
 {
@@ -868,18 +868,70 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 585 ]
 }
 "55
-[; ;EffetsNeoPxl.c: 55:    couleur = couleur + 10;
-[e = F5701 + F5701 -> -> -> 10 `i `m `um ]
+[; ;EffetsNeoPxl.c: 55:    couleur = (couleur + 10) % 300;
+[e = F5701 % + F5701 -> 10 `i -> 300 `i ]
 "57
-[; ;EffetsNeoPxl.c: 57:    NeoGreen[12 - 1] = (uint8_t) couleur & 0x0000FF ;
-[e = *U + &U _NeoGreen * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux -> & -> -> F5701 `uc `i -> 255 `i `uc ]
+[; ;EffetsNeoPxl.c: 57:    if (couleur < 100)
+[e $ ! < F5701 -> 100 `i 587  ]
 "58
-[; ;EffetsNeoPxl.c: 58:    NeoBlue[12 - 1] = (uint8_t) (couleur >> 8) & 0x0000FF ;
-[e = *U + &U _NeoBlue * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux -> & -> -> >> F5701 -> 8 `i `uc `i -> 255 `i `uc ]
+[; ;EffetsNeoPxl.c: 58:    {
+{
 "59
-[; ;EffetsNeoPxl.c: 59:    NeoRed[12 - 1] = (uint8_t) (couleur >> 16) & 0x0000FF ;
-[e = *U + &U _NeoRed * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux -> & -> -> >> F5701 -> 16 `i `uc `i -> 255 `i `uc ]
+[; ;EffetsNeoPxl.c: 59:         NeoGreen[12 - 1] = (uint8_t) couleur;
+[e = *U + &U _NeoGreen * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux -> F5701 `uc ]
 "60
-[; ;EffetsNeoPxl.c: 60: }
+[; ;EffetsNeoPxl.c: 60:         NeoBlue[12 - 1] = (uint8_t) 0;
+[e = *U + &U _NeoBlue * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 0 `i `uc ]
+"61
+[; ;EffetsNeoPxl.c: 61:         NeoRed[12 - 1] = (uint8_t) 0;
+[e = *U + &U _NeoRed * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux -> -> 0 `i `uc ]
+"62
+[; ;EffetsNeoPxl.c: 62:    }
+}
+[e $U 588  ]
+"63
+[; ;EffetsNeoPxl.c: 63:    else if (couleur < 200)
+[e :U 587 ]
+[e $ ! < F5701 -> 200 `i 589  ]
+"64
+[; ;EffetsNeoPxl.c: 64:    {
+{
+"65
+[; ;EffetsNeoPxl.c: 65:         NeoGreen[12 - 1] = (uint8_t) 0;
+[e = *U + &U _NeoGreen * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 0 `i `uc ]
+"66
+[; ;EffetsNeoPxl.c: 66:         NeoBlue[12 - 1] = (uint8_t) couleur % 100;
+[e = *U + &U _NeoBlue * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux -> % -> -> F5701 `uc `i -> 100 `i `uc ]
+"67
+[; ;EffetsNeoPxl.c: 67:         NeoRed[12 - 1] = (uint8_t) 0;
+[e = *U + &U _NeoRed * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux -> -> 0 `i `uc ]
+"68
+[; ;EffetsNeoPxl.c: 68:    }
+}
+[e $U 590  ]
+"70
+[; ;EffetsNeoPxl.c: 70:    else if (couleur < 300)
+[e :U 589 ]
+[e $ ! < F5701 -> 300 `i 591  ]
+"71
+[; ;EffetsNeoPxl.c: 71:    {
+{
+"72
+[; ;EffetsNeoPxl.c: 72:         NeoGreen[12 - 1] = (uint8_t) 0;
+[e = *U + &U _NeoGreen * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoGreen `ui `ux -> -> 0 `i `uc ]
+"73
+[; ;EffetsNeoPxl.c: 73:         NeoBlue[12 - 1] = (uint8_t) 0;
+[e = *U + &U _NeoBlue * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoBlue `ui `ux -> -> 0 `i `uc ]
+"74
+[; ;EffetsNeoPxl.c: 74:         NeoRed[12 - 1] = (uint8_t) couleur % 200;
+[e = *U + &U _NeoRed * -> -> - -> 12 `i -> 1 `i `ui `ux -> -> # *U &U _NeoRed `ui `ux -> % -> -> F5701 `uc `i -> 200 `i `uc ]
+"75
+[; ;EffetsNeoPxl.c: 75:    }
+}
+[e :U 591 ]
+[e :U 590 ]
+[e :U 588 ]
+"80
+[; ;EffetsNeoPxl.c: 80: }
 [e :UE 583 ]
 }

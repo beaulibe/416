@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F458 ]
 [d frameptr 4065 ]
-"113 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+"113 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
 [e E5690 enumTrame `uc
 EFFET 1
 R 2
@@ -12,6 +12,8 @@ B 4
 ]
 "7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
@@ -36,11 +38,11 @@ B 4
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"20 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+"20 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
 [v _NeoRotate NeoRotate `A(v  1 e 1 0 ]
 "40
 [v _NeoWave NeoWave `A(v  1 e 1 0 ]
-"37 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+"37 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
 [v _main main `A(v  1 e 1 0 ]
 "62
 [v _rxTrame rxTrame `A(a  1 e 1 0 ]
@@ -48,7 +50,7 @@ B 4
 [v _traiteTrame traiteTrame `A(v  1 e 1 0 ]
 "138
 [v _initialisation initialisation `A(v  1 e 1 0 ]
-"45 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+"45 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
 [v _NeoSetColor NeoSetColor `A(v  1 e 1 0 ]
 "62
 [v _NeoInit NeoInit `A(v  1 e 1 0 ]
@@ -173,13 +175,13 @@ B 4
 [v _RCREG RCREG `VAEuc  1 e 1 @4014 ]
 "13887
 [v _SPBRG SPBRG `VAEuc  1 e 1 @4015 ]
-"35 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+"35 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
 [v _NeoGreen NeoGreen `A[12]uc  1 e 12 0 ]
 "36
 [v _NeoBlue NeoBlue `A[12]uc  1 e 12 0 ]
 "37
 [v _NeoRed NeoRed `A[12]uc  1 e 12 0 ]
-"37 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+"37 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
 [v _main main `A(v  1 e 1 0 ]
 {
 "40
@@ -212,16 +214,27 @@ B 4
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"40 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+"40 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
 [v _NeoWave NeoWave `A(v  1 e 1 0 ]
 {
 "42
-[v NeoWave@NeoPixel NeoPixel `uc  1 a 1 3 ]
+[v NeoWave@NeoPixel NeoPixel `uc  1 a 1 6 ]
 "45
-[v NeoWave@couleur couleur `Aum  1 s 3 couleur ]
-"60
+[v NeoWave@couleur couleur `Ai  1 s 2 couleur ]
+"80
 } 0
-"45 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"45 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
 [v _NeoSetColor NeoSetColor `A(v  1 e 1 0 ]
 {
 [v NeoSetColor@R R `uc  1 a 1 wreg ]
@@ -235,7 +248,7 @@ B 4
 [v NeoSetColor@R R `uc  1 a 1 2 ]
 "54
 } 0
-"20 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
+"20 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\EffetsNeoPxl.c
 [v _NeoRotate NeoRotate `A(v  1 e 1 0 ]
 {
 "22
@@ -246,14 +259,14 @@ B 4
 [v NeoRotate@R R `uc  1 a 1 0 ]
 "38
 } 0
-"62 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+"62 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
 [v _NeoInit NeoInit `A(v  1 e 1 0 ]
 {
 "64
 [v NeoInit@NeoPixel NeoPixel `uc  1 a 1 0 ]
 "80
 } 0
-"62 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
+"62 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\main.c
 [v _rxTrame rxTrame `A(a  1 e 1 0 ]
 {
 "89
@@ -275,7 +288,7 @@ B 4
 {
 "156
 } 0
-"123 C:\Users\tge\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
+"123 C:\Users\TGE\Documents\GitHub\416\Labs\Lab6AnneauDEL.X\NeoPxl.c
 [v _NeoDraw NeoDraw `A(v  1 e 1 0 ]
 {
 "126

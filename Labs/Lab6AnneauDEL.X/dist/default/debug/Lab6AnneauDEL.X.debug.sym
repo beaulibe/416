@@ -42,6 +42,7 @@ __Hnvrram 0 0 COMRAM 1
 __Lnvrram 0 0 COMRAM 1
 __Heeprom_data 0 0 EEDATA 0
 __Leeprom_data 0 0 EEDATA 0
+__cntErrataNOP_C:\Users\TGE\AppData\Local\Temp\sc1c.o 1 0 ABS 0
 _PIR1bits F9E 0 ABS 0
 NeoSetColor@B 8B 0 BANK0 1
 __Hintsave_regs 0 0 BIGRAM 1
@@ -115,7 +116,6 @@ NeoWave@couleur 84 0 BANK0 1
 _RCSTAbits FAB 0 ABS 0
 _TXSTAbits FAC 0 ABS 0
 _PORTDbits F83 0 ABS 0
-__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\s5a4.o 1 0 ABS 0
 __end_of_NeoSetColor 34C0 0 CODE 0
 __size_of_traiteTrame 0 0 ABS 0
 __Hibigdata 0 0 CODE 0
@@ -309,7 +309,7 @@ text 336A 336B CODE 336A 0
 %locals
 dist/default/debug\Lab6AnneauDEL.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
-C:\Users\tge\AppData\Local\Temp\s5a4.s
+C:\Users\TGE\AppData\Local\Temp\sc1c.s
 2191 336C 0 CODE 0
 2193 336C 0 CODE 0
 2196 336C 0 CODE 0
