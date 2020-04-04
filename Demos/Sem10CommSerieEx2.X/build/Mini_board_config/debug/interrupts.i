@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "interrupts.c"
 
 # 18 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -4740,152 +4740,20 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef __int24 int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 52
-typedef unsigned char uint8_t;
-
-# 58
-typedef unsigned int uint16_t;
-
-# 65
-typedef __uint24 uint24_t;
-
-# 72
-typedef unsigned long int uint32_t;
-
-# 88
-typedef signed char int_least8_t;
-
-# 96
-typedef signed int int_least16_t;
-
-# 109
-typedef __int24 int_least24_t;
-
-# 118
-typedef signed long int int_least32_t;
-
-# 136
-typedef unsigned char uint_least8_t;
-
-# 143
-typedef unsigned int uint_least16_t;
-
-# 154
-typedef __uint24 uint_least24_t;
-
-# 162
-typedef unsigned long int uint_least32_t;
-
-# 181
-typedef signed char int_fast8_t;
-
-# 188
-typedef signed int int_fast16_t;
-
-# 200
-typedef __int24 int_fast24_t;
-
-# 208
-typedef signed long int int_fast32_t;
-
-# 224
-typedef unsigned char uint_fast8_t;
-
-# 230
-typedef unsigned int uint_fast16_t;
-
-# 240
-typedef __uint24 uint_fast24_t;
-
-# 247
-typedef unsigned long int uint_fast32_t;
-
-# 268
-typedef int32_t intmax_t;
-
-# 282
-typedef uint32_t uintmax_t;
-
-# 289
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
 # 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 15 "main.c"
-void initialisation(void);
+# 13 "interrupts.c"
+unsigned char g_rxCar = 0;
 
-void main(void)
+# 17
+void interrupt high_isr(void)
 {
-unsigned char carTx = 1;
-unsigned char carRx = 0;
-
-initialisation();
-
-
-for (int i = 0; i < 6; i++)
-{
-PORTDbits.RD0 ^= 1;
-_delay((unsigned long)((300)*(1000000/4000.0)));
-}
-
-while(1)
-{
-TXREG = carTx++;
-_delay((unsigned long)((500)*(1000000/4000.0)));
-
-
 if (PIR1bits.RC1IF == 1)
 {
-carRx = RCREG;
-PORTD = carRx;
+PIR1bits.RC1IF = 0;
+g_rxCar = RCREG;
+PORTD = g_rxCar;
+}
 }
 
-}
-
-}
-
-# 50
-void initialisation(void)
-{
-
-TRISD = 0;
-
-# 59
-SPBRG = 25;
-
-
-
-TRISCbits.RC6 = 1;
-TRISCbits.RC7 = 1;
-
-
-
-TXSTAbits.TXEN = 1;
-
-# 78
-RCSTAbits.SPEN = 1;
-TXSTAbits.SYNC = 0;
-
-
-RCSTAbits.CREN = 1;
-
-# 94
-}

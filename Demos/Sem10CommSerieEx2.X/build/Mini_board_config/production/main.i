@@ -4830,12 +4830,18 @@ typedef uint16_t uintptr_t;
 typedef unsigned char bool;
 
 # 15 "main.c"
+extern unsigned char g_rxCar;
+
+
+const unsigned char msg[] = "Bravo!";
+
+
 void initialisation(void);
 
 void main(void)
 {
-unsigned char carTx = 1;
-unsigned char carRx = 0;
+int i = 0;
+
 
 initialisation();
 
@@ -4845,30 +4851,29 @@ for (int i = 0; i < 6; i++)
 PORTDbits.RD0 ^= 1;
 _delay((unsigned long)((300)*(1000000/4000.0)));
 }
+TXREG = 'G';
 
 while(1)
 {
-TXREG = carTx++;
-_delay((unsigned long)((500)*(1000000/4000.0)));
-
-
-if (PIR1bits.RC1IF == 1)
+if (g_rxCar == 'A')
 {
-carRx = RCREG;
-PORTD = carRx;
+i = 0;
+while (msg[i] != '\0')
+{
+TXREG = msg[i];
+i++;
+}
+}
+}
 }
 
-}
-
-}
-
-# 50
+# 55
 void initialisation(void)
 {
 
 TRISD = 0;
 
-# 59
+# 64
 SPBRG = 25;
 
 
@@ -4880,12 +4885,17 @@ TRISCbits.RC7 = 1;
 
 TXSTAbits.TXEN = 1;
 
-# 78
+# 83
 RCSTAbits.SPEN = 1;
 TXSTAbits.SYNC = 0;
 
 
 RCSTAbits.CREN = 1;
 
-# 94
+PIE1bits.RC1IE = 1;
+
+
+
+INTCONbits.PEIE = 1;
+INTCONbits.GIE = 1;
 }

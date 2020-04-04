@@ -2,7 +2,7 @@
  * @file   main.c
  * @author Benoit Beaulieu
  * @date   Avril  2020
- * @brief  Exercice 1 de la semaine 10
+ * @brief  Exercice 2 de la semaine 10
  */
 
 #include <xc.h>
@@ -11,37 +11,43 @@
 
 #define _XTAL_FREQ 1000000
 
+/*************var globales *************/
+extern unsigned char g_rxCar;
+
+
+const unsigned char msg[] = "Bravo!";
+
 /*********** prototypes *****************/
 void initialisation(void);
 
 void main(void)
 {
-    unsigned char carTx = 1;
-    unsigned char carRx = 0;
+    int i = 0;
+    
     
     initialisation();
     
     //On clignote D0 3x pour montrer le départ du programme
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 1226; i++)
     {
         PORTDbits.RD0 ^= 1;
-        __delay_ms(300);
+        __delay_ms(2000);
+        TXREG = 'G';
     }
+    
     
     while(1) //Boucle principale du programme
     {
-        TXREG = carTx++; //envoie au port série
-         __delay_ms(500); //500ms entre chaque tx pour voir l'effet sur les DEL
-        
-         //lecture par pooling 
-        if (PIR1bits.RC1IF == 1) //une donnée reçue
+        if (g_rxCar == 'A')
         {
-            carRx = RCREG; //lecture au port série
-            PORTD = carRx; //affiche la donnée reçu sur les DEL
-        }
-       
+            i = 0;
+            while (msg[i] != '\0')
+            {
+                TXREG = msg[i];
+                i++;
+            }          
+        }          
     }
-    
 }
 
 /**
@@ -58,6 +64,14 @@ void initialisation(void)
     //baud rate. If a high-speed baud rate is desired,
     SPBRG = 25; //9600bps Voir tableau p187. Osc = 40MHz 
 	//à tester.... Devrait plutôt être 25. Fosc = 1MHz. Tableau 18-5. Page 250
+    
+        //set bit BRGH (Section 18.1 ?USART Baud
+    //Rate Generator (BRG)?).
+    TXSTAbits.BRGH = 1; //Low speed. 0 = valeur par défaut
+    BAUDCONbits.BRG16 = 1;
+
+    
+    
     
     //2. Set the RX/DT and TX/CK TRIS controls to ?1?.
     TRISCbits.RC6 = 1;
@@ -81,14 +95,10 @@ void initialisation(void)
     //7. Enable reception by setting the CREN bit
     RCSTAbits.CREN = 1;
     
-    //set bit BRGH (Section 18.1 ?USART Baud
-    //Rate Generator (BRG)?).
-   // TXSTAbits.BRGH = 0; //Low speed. 0 = valeur par défaut
-    
-    
+    PIE1bits.RC1IE = 1; //permet interruption en réception
     
     
     //Interruptions générales
-    //INTCONbits.PEIE = 1; //permet interruption des périphériques
-    //INTCONbits.GIE = 1;  //interruptions globales permises
+    INTCONbits.PEIE = 1; //permet interruption des périphériques
+    INTCONbits.GIE = 1;  //interruptions globales permises
 }
