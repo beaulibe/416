@@ -4816,7 +4816,7 @@ void main(void)
     int i;
 
     initialisation();
-
+    PORTD = 0xC1;
 
     while(1)
     {
@@ -4834,6 +4834,7 @@ void initialisation(void)
 
     ANSELH = 0;
     TRISBbits.RB0 = 1;
+
 
 
 

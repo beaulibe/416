@@ -3,7 +3,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 main.c
 [; ;main.c: 12: void initialisation(void);
 [v _initialisation `(v ~T0 @X0 0 ef ]
-"2698 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h
+"1184 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 1184: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
+[v _PORTD `VAuc ~T0 @X0 0 e@3971 ]
+"2698
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h: 2698: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `VAuc ~T0 @X0 0 e@3989 ]
 "508
@@ -615,6 +618,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [; ;main.c: 18:     initialisation();
 [e ( _initialisation ..  ]
+"19
+[; ;main.c: 19:     PORTD = 0x15;
+[e = _PORTD -> -> 21 `i `uc ]
 "21
 [; ;main.c: 21:     while(1)
 [e :U 303 ]

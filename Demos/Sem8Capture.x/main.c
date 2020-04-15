@@ -16,7 +16,7 @@ void main(void)
     int i;
 
     initialisation();
-    //PORTD = 0xC1;  //D7,D6 et D0 allumées
+    PORTD = 0x15;  //D7,D6 et D0 allumées
      
     while(1) // Boucle principale du programme
     {

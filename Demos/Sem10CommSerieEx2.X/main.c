@@ -3,6 +3,10 @@
  * @author Benoit Beaulieu
  * @date   Avril  2020
  * @brief  Exercice 2 de la semaine 10
+ * Relier TX (RC6) du PIC sur RXD de la clé usb.
+ * Relier RX (RC7) du PIC sur TXD de la clé usb.
+ * Note: On doit alimenter la carte par un pwr supply 3.3V externe, car si on 
+ * aliment par usb, ça cause des problèmes.
  */
 
 #include <xc.h>
@@ -23,18 +27,11 @@ void initialisation(void);
 void main(void)
 {
     int i = 0;
-    
-    
     initialisation();
-    
-    //On clignote D0 3x pour montrer le départ du programme
-    for (int i = 0; i < 1226; i++)
-    {
-        PORTDbits.RD0 ^= 1;
-        __delay_ms(2000);
-        TXREG = 'G';
-    }
-    
+    while(PIR1bits.TXIF==0); //on attend que le registe de transmission soit prêt 
+    TXREG = 'G';   
+    while(PIR1bits.TXIF==0); //on attend que le registe de transmission soit prêt     
+    TXREG = 'O';     
     
     while(1) //Boucle principale du programme
     {
@@ -43,9 +40,12 @@ void main(void)
             i = 0;
             while (msg[i] != '\0')
             {
+                while(PIR1bits.TXIF==0); //on attend que le registe de transmission soit prêt 
                 TXREG = msg[i];
                 i++;
-            }          
+                //__delay_ms(10);
+            }  
+            g_rxCar = 0;
         }          
     }
 }
@@ -58,47 +58,30 @@ void initialisation(void)
     
     TRISD = 0; //port D en sortie
  
-      
-    /********** Transmission Communication série ************/
-    //1. Initialize the SPBRG register for the appropriate
-    //baud rate. If a high-speed baud rate is desired,
-    SPBRG = 25; //9600bps Voir tableau p187. Osc = 40MHz 
-	//à tester.... Devrait plutôt être 25. Fosc = 1MHz. Tableau 18-5. Page 250
     
-        //set bit BRGH (Section 18.1 ?USART Baud
-    //Rate Generator (BRG)?).
+    //La vitesse de communication se configure via les registres SPBRG, TXSTA (bit BRGH) et BAUDCON (bit BRG16). Voir tableau 18-5 p248.
+    SPBRG = 25; //9600bps Voir tableau p187. Osc = 1MHz
     TXSTAbits.BRGH = 1; //Low speed. 0 = valeur par défaut
     BAUDCONbits.BRG16 = 1;
-
     
-    
-    
-    //2. Set the RX/DT and TX/CK TRIS controls to ?1?.
+    //Les broches TX et RX (RC6 et RC7) doivent être en entrée. 
     TRISCbits.RC6 = 1;
     TRISCbits.RC7 = 1;
-    
-    //6. Enable the transmission by setting the TXEN
-    //control bit. This will cause the TXIF interrupt bit to be set.
+     
+    //Permettre la transmission via le bit TXEN du registre TXSTA.  
     TXSTAbits.TXEN = 1;
-    
-    //7. If interrupts are desired, set the TXIE interrupt
-    //enable bit. An interrupt will occur immediately
-    //provided that the GIE and PEIE bits of the INTCON register are also set.
-    //NON, on ne veut pas d'interruptions lors de la transmission
-    
-    
-    //3. Enable the asynchronous serial port by clearing
-    //bit SYNC and setting bit SPEN.
+     
+    //Activer le port de communication asynchrone via le bit SPEN (=1) du registre RCSTA et le bit  SYNC (=0) du registre TXSTA.
     RCSTAbits.SPEN = 1; // 1 = Serial port enabled (configures RX/DT and TX/CK pins as serial port pins) 
     TXSTAbits.SYNC = 0; //0 = Asynchronous mode 
- 
-    //7. Enable reception by setting the CREN bit
-    RCSTAbits.CREN = 1;
     
+    //Permettre la réception via le bit CREN du registre RCSTA.
+    RCSTAbits.CREN = 1;
+
+    //Au besoin, permettre les interruptions lors de la réception d?une donnée par le bit RCIE du registre PIE1.	
     PIE1bits.RC1IE = 1; //permet interruption en réception
     
-    
-    //Interruptions générales
+    //Au besoin, permettre les interruptions des périphériques PEIE et les interruptions globales GIE.
     INTCONbits.PEIE = 1; //permet interruption des périphériques
     INTCONbits.GIE = 1;  //interruptions globales permises
-}
+}      

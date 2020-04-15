@@ -4816,7 +4816,7 @@ void main(void)
     int i;
 
     initialisation();
-
+    PORTD = 0x15;
 
     while(1)
     {

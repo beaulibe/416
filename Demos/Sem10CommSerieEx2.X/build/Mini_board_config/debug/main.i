@@ -4829,7 +4829,7 @@ typedef uint16_t uintptr_t;
 # 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 15 "main.c"
+# 19 "main.c"
 extern unsigned char g_rxCar;
 
 
@@ -4841,18 +4841,11 @@ void initialisation(void);
 void main(void)
 {
 int i = 0;
-
-
 initialisation();
-
-
-for (int i = 0; i < 1226; i++)
-{
-PORTDbits.RD0 ^= 1;
-_delay((unsigned long)((2000)*(1000000/4000.0)));
+while(PIR1bits.TXIF==0);
 TXREG = 'G';
-}
-
+while(PIR1bits.TXIF==0);
+TXREG = 'O';
 
 while(1)
 {
@@ -4861,9 +4854,12 @@ if (g_rxCar == 'A')
 i = 0;
 while (msg[i] != '\0')
 {
+while(PIR1bits.TXIF==0);
 TXREG = msg[i];
 i++;
+
 }
+g_rxCar = 0;
 }
 }
 }
@@ -4874,32 +4870,28 @@ void initialisation(void)
 
 TRISD = 0;
 
-# 65
+
+
 SPBRG = 25;
-
-
-
-
 TXSTAbits.BRGH = 1;
 BAUDCONbits.BRG16 = 1;
 
-# 77
+
 TRISCbits.RC6 = 1;
 TRISCbits.RC7 = 1;
 
 
-
 TXSTAbits.TXEN = 1;
 
-# 92
+
 RCSTAbits.SPEN = 1;
 TXSTAbits.SYNC = 0;
 
 
 RCSTAbits.CREN = 1;
 
-PIE1bits.RC1IE = 1;
 
+PIE1bits.RC1IE = 1;
 
 
 INTCONbits.PEIE = 1;
