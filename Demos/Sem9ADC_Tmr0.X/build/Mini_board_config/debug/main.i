@@ -4829,7 +4829,7 @@ typedef uint16_t uintptr_t;
 # 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 24 "main.c"
+# 25 "main.c"
 extern int g_resAN;
 
 
@@ -4851,7 +4851,7 @@ PORTD = (PORTD & 0xF0) | (g_resAN >> 4);
 
 }
 
-# 48
+# 49
 void initialisation(void)
 {
 
@@ -4881,7 +4881,7 @@ T0CONbits.T0CS = 0;
 T0CONbits.PSA = 0;
 T0CONbits.T0PS = 0b011;
 
-# 91
+# 92
 TMR0H = 0xC2;
 TMR0L = 0xF6;
 

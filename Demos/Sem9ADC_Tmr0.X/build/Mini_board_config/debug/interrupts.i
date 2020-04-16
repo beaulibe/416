@@ -4770,7 +4770,7 @@ diviseurAN = 1;
 
 TMR0 = 65536 - (((unsigned long)1000000)/(4*(unsigned int)16))/diviseurAN;
 
-# 50
+
 PORTDbits.RD7 ^= 1;
 }
 

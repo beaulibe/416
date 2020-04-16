@@ -1,0 +1,8 @@
+Programme pour tester les Pickit3
+
+1- Branchez la carte démo noire au Pickit3 (rouge).
+2- Reliez un Pickit3 au port USB de l'ordinateur
+3- Lancez MPLAB X IDE 3.50 (ou plus)
+4- Charger le projet (File, Open projetc... et choisir Sem3Ex1et2.x
+5- Lancer le programme (Debug, debug project).
+6- Le programme doit allumer les desl (8) selon la valeur analogique provenant du potentiomètre (RP1).

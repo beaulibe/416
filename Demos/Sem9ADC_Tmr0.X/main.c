@@ -3,7 +3,8 @@
  * @author Benoit Beaulieu
  * @date   Mars 2020
  * @brief  Exercice 1 - Encore des timers!
-Réalisez un programme qui lit la valeur du potentiomètre et utilise cette valeur pour faire varier la fréquence de clignotement de la DEL7. Les contraintes suivantes doivent être respectées pour votre programme :
+ * Réalisez un programme qui lit la valeur du potentiomètre et utilise cette valeur pour faire varier la fréquence de clignotement de la DEL7. 
+ * Les contraintes suivantes doivent être respectées pour votre programme :
 Conservez seulement les 4 MSB du résultat de la conversion de l'ADC.
 Affichez ces quatre bits sur les DEL0 à DEL3.
 Faites la lecture du résultat de conversion de l'ADC par interruption.
