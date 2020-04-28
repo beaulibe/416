@@ -7,7 +7,7 @@ __CFG_PWRT$OFF 0 0 ABS 0
 __Lintentry 0 0 ABS 0
 _msg 601 0 SMALLCONST 0
 _main 60A 0 CODE 0
-__end_of_initialisation 6E2 0 CODE 0
+__end_of_initialisation 6E4 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 1 0 COMRAM 1
 start 26 0 CODE 0
@@ -82,7 +82,7 @@ __CFG_EBTR2$OFF 0 0 ABS 0
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 __CFG_EBTR3$OFF 0 0 ABS 0
-stackhi 5FF 0 ABS 0
+stackhi 5F3 0 ABS 0
 __HcstackBANK0 0 0 ABS 0
 __LcstackBANK0 0 0 ABS 0
 __pcstackBANK0 60 0 BANK0 1
@@ -96,18 +96,19 @@ __Linit 26 0 CODE 0
 __Hintcodelo 26 0 CODE 0
 __Lintcodelo 26 0 CODE 0
 __Hrbss 0 0 COMRAM 1
-__end_of_main 6C2 0 CODE 0
+__end_of_main 6C4 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-end_of_initialization 6E6 0 CODE 0
+end_of_initialization 6E8 0 CODE 0
 _RCSTAbits FAB 0 ABS 0
 _TRISCbits F94 0 ABS 0
 _TXSTAbits FAC 0 ABS 0
+_PORTDbits F83 0 ABS 0
 __end_of_high_isr 26 0 CODE 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
-_initialisation 6C2 0 CODE 0
+_initialisation 6C4 0 CODE 0
 __Hifardata 0 0 CODE 0
 __Lifardata 0 0 CODE 0
 __Hbank0 0 0 ABS 0
@@ -129,12 +130,12 @@ __Ltext0 0 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
 __ptext0 60A 0 CODE 0
-__ptext1 6C2 0 CODE 0
+__ptext1 6C4 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 __CFG_BORV$18 0 0 ABS 0
 __CFG_HFOFST$ON 0 0 ABS 0
-__end_of__initialization 6E6 0 CODE 0
+__end_of__initialization 6E8 0 CODE 0
 _BAUDCONbits FB8 0 ABS 0
 ___rparam_used 0 0 ABS 0
 __Hidata 0 0 CODE 0
@@ -163,7 +164,7 @@ __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
-__pcinit 6E2 0 CODE 0
+__pcinit 6E4 0 CODE 0
 __CFG_EBTRB$OFF 0 0 ABS 0
 __ramtop 600 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
@@ -204,11 +205,11 @@ __CFG_WRTC$OFF 0 0 ABS 0
 __CFG_WRTD$OFF 0 0 ABS 0
 __CFG_CPB$OFF 0 0 ABS 0
 __CFG_CPD$OFF 0 0 ABS 0
-start_initialization 6E2 0 CODE 0
+start_initialization 6E4 0 CODE 0
 __CFG_BOREN$SBORDIS 0 0 ABS 0
 __CFG_IESO$OFF 0 0 ABS 0
 __CFG_MCLRE$ON 0 0 ABS 0
-__initialization 6E2 0 CODE 0
+__initialization 6E4 0 CODE 0
 __CFG_LPT1OSC$OFF 0 0 ABS 0
 __activetblptr 3 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
@@ -220,21 +221,21 @@ config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
 temp 1 1 COMRAM 1 1
 cstackBANK0 60 62 BANK0 60 1
-text0 60A 6EF CODE 60A 0
+text0 60A 6F1 CODE 60A 0
 %locals
 dist/Mini_board_config/debug\Sem10CommSerieEx2.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h
-C:\Users\TGE\AppData\Local\Temp\sers.s
-1105 6E2 0 CODE 0
-1107 6E2 0 CODE 0
-1110 6E2 0 CODE 0
-1122 6E2 0 CODE 0
-1123 6E4 0 CODE 0
-1129 6E6 0 CODE 0
-1131 6E6 0 CODE 0
-1132 6E8 0 CODE 0
-1133 6EA 0 CODE 0
-1134 6EC 0 CODE 0
+C:\Users\TGE\AppData\Local\Temp\s1so.s
+1107 6E4 0 CODE 0
+1109 6E4 0 CODE 0
+1112 6E4 0 CODE 0
+1124 6E4 0 CODE 0
+1125 6E6 0 CODE 0
+1131 6E8 0 CODE 0
+1133 6E8 0 CODE 0
+1134 6EA 0 CODE 0
+1135 6EC 0 CODE 0
+1136 6EE 0 CODE 0
 main.c
 27 60A 0 CODE 0
 29 60A 0 CODE 0
@@ -242,33 +243,34 @@ main.c
 31 618 0 CODE 0
 32 626 0 CODE 0
 33 62A 0 CODE 0
-34 638 0 CODE 0
-38 63C 0 CODE 0
-40 650 0 CODE 0
-41 65A 0 CODE 0
-43 65E 0 CODE 0
-44 66C 0 CODE 0
-45 686 0 CODE 0
-41 68C 0 CODE 0
-48 6B4 0 CODE 0
+34 62C 0 CODE 0
+35 63A 0 CODE 0
+38 63E 0 CODE 0
+40 652 0 CODE 0
+41 65C 0 CODE 0
+43 660 0 CODE 0
+44 66E 0 CODE 0
+45 688 0 CODE 0
+41 68E 0 CODE 0
+48 6B6 0 CODE 0
 main.c
-56 6C2 0 CODE 0
-59 6C2 0 CODE 0
-63 6C6 0 CODE 0
-64 6CA 0 CODE 0
-65 6CC 0 CODE 0
-68 6CE 0 CODE 0
-69 6D0 0 CODE 0
-72 6D2 0 CODE 0
-75 6D4 0 CODE 0
-76 6D6 0 CODE 0
-79 6D8 0 CODE 0
-82 6DA 0 CODE 0
-85 6DC 0 CODE 0
-86 6DE 0 CODE 0
-87 6E0 0 CODE 0
-C:\Users\TGE\AppData\Local\Temp\sers.s
-1660 8 0 CODE 0
+56 6C4 0 CODE 0
+59 6C4 0 CODE 0
+63 6C8 0 CODE 0
+64 6CC 0 CODE 0
+65 6CE 0 CODE 0
+68 6D0 0 CODE 0
+69 6D2 0 CODE 0
+72 6D4 0 CODE 0
+75 6D6 0 CODE 0
+76 6D8 0 CODE 0
+79 6DA 0 CODE 0
+82 6DC 0 CODE 0
+85 6DE 0 CODE 0
+86 6E0 0 CODE 0
+87 6E2 0 CODE 0
+C:\Users\TGE\AppData\Local\Temp\s1so.s
+1677 8 0 CODE 0
 interrupts.c
 17 8 0 CODE 0
 19 A 0 CODE 0

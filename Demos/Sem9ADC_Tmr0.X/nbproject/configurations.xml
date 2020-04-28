@@ -47,7 +47,6 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>commun.p1</linkerLibFileItem>
             <linkerLibFileItem>configuration_bits.p1</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>

@@ -5,16 +5,14 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt -cs \
   -h+dist/Mini_board_config/debug\_Lab5_Servo.X.debug.sym \
   --cmf=dist/Mini_board_config/debug\_Lab5_Servo.X.debug.cmf -z -Q18F458 \
-  -oC:\Users\tge\AppData\Local\Temp\sbjk.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\TGE\AppData\Local\Temp\sn8c.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/Mini_board_config/debug/_Lab5_Servo.X.debug.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=07Ch-05EEh -pstack=STACK \
-  -ACODE=00h-03FFFh,04000h-07D3Fh -ACONST=00h-07D3Fh \
-  -ASMALLCONST=0600h-06FFhx119,07D00h-07D3Fh -AMEDIUMCONST=0600h-07D3Fh \
-  -ACOMRAM=01h-05Fh -AABS1=00h-05EEh -ABIGRAM=01h-05EEh \
-  -ARAM=060h-0FFh,0100h-01FFhx4,0500h-05EEh -ABANK0=060h-0FFh \
+  --acfsm=1493 -ASTACK=07Ch-05FFh -pstack=STACK -ACODE=00h-03FFFhx2 \
+  -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
+  -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-05Fh -AABS1=00h-05FFh \
+  -ABIGRAM=01h-05FFh -ARAM=060h-0FFh,0100h-01FFhx5 -ABANK0=060h-0FFh \
   -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh \
-  -ABANK4=0400h-04FFh -ABANK5=0500h-05EEh \
-  -ASFR=0F00h-0F5Fh,0F60h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFBh \
+  -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh -ASFR=0F00h-0F5Fh,0F60h-0FFFh \
   -preset_vec=00h,intcode=08h,intcodelo,powerup,init -pramtop=0600h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
   -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
@@ -24,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\tge\AppData\Local\Temp\sbjk.o \
+  C:\Users\TGE\AppData\Local\Temp\sn8c.o \
   dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o 
 
 Object code version is 3.11
@@ -37,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\tge\AppData\Local\Temp\sbjk.o
+C:\Users\TGE\AppData\Local\Temp\sn8c.o
                 text                                44A      44A        2      225       0
                 init                                10E      10E        4        4       0
                 reset_vec                             0        0        6        0       0
@@ -150,27 +148,22 @@ UNUSED ADDRESS RANGES
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
         BANK4            000400-0004FF              100
-        BANK5            000500-0005EE               EF
+        BANK5            000500-0005FF              100
         BIGRAM           000002-00005F               5E
-                         00007C-0005EE              573
+                         00007C-0005FF              584
         CODE             000006-000007                2
                          000449-000449                1
-                         00044C-007D3F             3BB4
+                         00044C-007FFF             3BB4
         COMRAM           000002-00005F               5E
         CONST            000006-000007                2
                          000449-000449                1
-                         00044C-007D3F             78F4
+                         00044C-007FFF             7BB4
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000600-007D3F             7740
-        RAM              00007C-0005EE              100
-        SFR              000F00-000F9B               60
-                         000F9D-000FD3               37
-                         000FD5-000FDA                6
-                         000FE0-000FE2                3
-                         000FE8-000FEA                3
-                         000FF0-000FFB                C
-        SMALLCONST       000600-007D3F              100
-        STACK            00007C-0005EE              573
+        MEDIUMCONST      000600-007FFF             7A00
+        RAM              00007C-0005FF              100
+        SFR              000F00-000FFF               60
+        SMALLCONST       000600-007FFF              100
+        STACK            00007C-0005FF              584
 
                                   Symbol Table
 
@@ -387,7 +380,7 @@ ___wmul@multiplier                                                cstackBANK0  0
 ___wmul@product                                                   cstackBANK0  000064
 __accesstop                                                       (abs)        000060
 __activetblptr                                                    (abs)        000003
-__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\sbjk.o             (abs)        000001
+__cntErrataNOP_C:\Users\TGE\AppData\Local\Temp\sn8c.o             (abs)        000001
 __cntErrataNOP_dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o (abs)        000047
 __end_of___awdiv                                                  text10       000340
 __end_of___wmul                                                   text9        0003A2
@@ -460,7 +453,7 @@ intlevel1                                                         text         0
 intlevel2                                                         text         00044A
 intlevel3                                                         text         00044A
 main@dutyWiper                                                    cstackBANK0  000070
-stackhi                                                           (abs)        0005EE
+stackhi                                                           (abs)        0005FF
 stacklo                                                           (abs)        00007C
 start                                                             init         00010E
 start_initialization                                              cinit        000340
@@ -487,7 +480,7 @@ FUNCTION INFORMATION:
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       1       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0
@@ -518,7 +511,7 @@ Total ram usage:        3 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -554,7 +547,7 @@ Total ram usage:        0 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -584,7 +577,7 @@ Total ram usage:        0 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -614,7 +607,7 @@ Total ram usage:        0 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -644,7 +637,7 @@ Total ram usage:        0 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -674,7 +667,7 @@ Total ram usage:        0 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -704,7 +697,7 @@ Total ram usage:        0 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -734,7 +727,7 @@ Total ram usage:        0 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -765,7 +758,7 @@ Total ram usage:        0 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       4       0       0       0       0       0
       Locals:         0       2       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -798,7 +791,7 @@ Total ram usage:        6 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       4       0       0       0       0       0
       Locals:         0       4       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
@@ -828,7 +821,7 @@ Total ram usage:        8 bytes
 		On entry : 
 		On exit  : 
 		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0

@@ -52,6 +52,7 @@ _PIE1bits F9D 0 ABS 0
 _PIE2bits FA0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 0
 __Leeprom_data 0 0 EEDATA 0
+__cntErrataNOP_C:\Users\TGE\AppData\Local\Temp\sn8c.o 1 0 ABS 0
 _PIR1bits F9E 0 ABS 0
 _PIR2bits FA1 0 ABS 0
 __Hintsave_regs 0 0 BIGRAM 1
@@ -92,7 +93,7 @@ __end_of_initialisation_ConfigTmr3 426 0 CODE 0
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 __CFG_EBTR3$OFF 0 0 ABS 0
-stackhi 5EE 0 ABS 0
+stackhi 5FF 0 ABS 0
 __HcstackBANK0 0 0 ABS 0
 __LcstackBANK0 0 0 ABS 0
 __cntErrataNOP_dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o 47 0 ABS 0
@@ -133,7 +134,6 @@ _PORTCbits F82 0 ABS 0
 _T0CONbits FD5 0 ABS 0
 _T2CONbits FCA 0 ABS 0
 __size_of_initialisation_ActiverPWM 0 0 ABS 0
-__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\sbjk.o 1 0 ABS 0
 __end_of_initialisation_ActiverInterruptions 446 0 CODE 0
 __end_of_high_isr 10C 0 CODE 0
 __Hibigdata 0 0 CODE 0
@@ -303,7 +303,7 @@ text 44A 44B CODE 44A 0
 %locals
 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f458.h
-C:\Users\tge\AppData\Local\Temp\sbjk.s
+C:\Users\TGE\AppData\Local\Temp\sn8c.s
 2246 340 0 CODE 0
 2248 340 0 CODE 0
 2251 340 0 CODE 0
@@ -452,8 +452,8 @@ C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 39 32A 0 CODE 0
 40 332 0 CODE 0
 41 33C 0 CODE 0
-C:\Users\tge\AppData\Local\Temp\sbjk.s
-3862 8 0 CODE 0
+C:\Users\TGE\AppData\Local\Temp\sn8c.s
+3852 8 0 CODE 0
 interrupts.c
 30 8 0 CODE 0
 37 C 0 CODE 0

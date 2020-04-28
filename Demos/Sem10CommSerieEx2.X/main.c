@@ -29,10 +29,10 @@ void main(void)
     int i = 0;
     initialisation();
     while(PIR1bits.TXIF==0); //on attend que le registe de transmission soit prêt 
-    TXREG = 'G';   
+    TXREG = 'G'; 
+    PORTDbits.RD0 ^= 1;
     while(PIR1bits.TXIF==0); //on attend que le registe de transmission soit prêt     
     TXREG = 'O';     
-    
     while(1) //Boucle principale du programme
     {
         if (g_rxCar == 'A')

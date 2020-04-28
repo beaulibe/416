@@ -9978,12 +9978,14 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 10 "interrupts.c" 2
+# 9 "interrupts.c" 2
+
 # 1 "./interrupts.h" 1
 # 13 "./interrupts.h"
 void __attribute__((picinterrupt(("high_priority")))) high_isr(void);
 void __attribute__((picinterrupt(("low_priority")))) low_isr(void);
-# 11 "interrupts.c" 2
+# 10 "interrupts.c" 2
+
 
 
 unsigned int g_echo[10] = {0};
@@ -10027,8 +10029,11 @@ void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
     {
         if (CCP1CONbits.CCP1M == 0b0101)
         {
+
             PORTCbits.RC0 = 1;
             t1 = CCPR1;
+            CCP1CONbits.CCP1M = 0b0100;
+
         }
         else
         {
@@ -10040,11 +10045,10 @@ void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
                 g_compteEcho = 0;
             }
 
-   T3CONbits.TMR3ON = 0;
+
             PORTCbits.RC0 = 0;
         }
 
-        CCP1CONbits.CCP1M = 0b0100;
         PIR1bits.CCP1IF = 0;
     }
 }

@@ -9971,7 +9971,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 32 "Lcd4Lignes.c" 2
+# 31 "Lcd4Lignes.c" 2
+
 # 1 "./Lcd4Lignes.h" 1
 # 24 "./Lcd4Lignes.h"
 void lcd_init(void);
@@ -10026,7 +10027,7 @@ void lcd_cacheCurseur(void);
 
 
 void lcd_montreCurseur(void);
-# 33 "Lcd4Lignes.c" 2
+# 32 "Lcd4Lignes.c" 2
 # 65 "Lcd4Lignes.c"
 char matCGRAM[8][8] =
 {

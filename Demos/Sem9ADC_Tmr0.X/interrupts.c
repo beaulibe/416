@@ -41,7 +41,7 @@ void interrupt high_isr(void)
         if (diviseurAN == 0)
             diviseurAN = 1;
         
-        TMR0 = 65536 - (((unsigned long)FOSC)/(4*(unsigned int)PRESCALER))/diviseurAN;
+        TMR0 = 65536 - (((unsigned long)FOSC)/(4*(unsigned int)PRESCALER))/diviseurAN; //15625/diviseurAN
        
 
         PORTDbits.RD7 ^= 1; //Toggle del 0

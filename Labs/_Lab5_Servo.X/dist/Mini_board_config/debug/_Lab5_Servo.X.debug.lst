@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Mon Feb 17 16:40:48 2020
+                                                                                               Fri Apr 17 11:45:46 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F458
@@ -92,28 +92,28 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
     78  00007A                     _g_etat:
     79                           	opt callstack 0
     80  00007A                     	ds	2
-    81  0000                     _TRISCbits	set	3988
-    82  0000                     _TRISAbits	set	3986
-    83  0000                     _TRISD	set	3989
-    84  0000                     _PORTCbits	set	3970
-    85  0000                     _PORTD	set	3971
-    86  0000                     _PIE2bits	set	4000
-    87  0000                     _T3CON	set	4017
-    88  0000                     _T2CONbits	set	4042
-    89  0000                     _CCP1CONbits	set	4029
-    90  0000                     _PR2	set	4043
-    91  0000                     _PIE1bits	set	3997
-    92  0000                     _ADCON1bits	set	4033
-    93  0000                     _ADCON1	set	4033
-    94  0000                     _PIR2bits	set	4001
-    95  0000                     _ADCON0bits	set	4034
-    96  0000                     _ADRESH	set	4036
-    97  0000                     _PIR1bits	set	3998
-    98  0000                     _CCPR1L	set	4030
-    99  0000                     _TMR0L	set	4054
-   100  0000                     _TMR0H	set	4055
-   101  0000                     _T0CONbits	set	4053
-   102  0000                     _INTCONbits	set	4082
+    81  0000                     _PIE2bits	set	4000
+    82  0000                     _T3CON	set	4017
+    83  0000                     _T2CONbits	set	4042
+    84  0000                     _TRISCbits	set	3988
+    85  0000                     _CCP1CONbits	set	4029
+    86  0000                     _PR2	set	4043
+    87  0000                     _PIE1bits	set	3997
+    88  0000                     _ADCON1bits	set	4033
+    89  0000                     _ADCON1	set	4033
+    90  0000                     _TRISAbits	set	3986
+    91  0000                     _TRISD	set	3989
+    92  0000                     _PORTCbits	set	3970
+    93  0000                     _PIR2bits	set	4001
+    94  0000                     _TMR0L	set	4054
+    95  0000                     _TMR0H	set	4055
+    96  0000                     _INTCONbits	set	4082
+    97  0000                     _ADCON0bits	set	4034
+    98  0000                     _ADRESH	set	4036
+    99  0000                     _PIR1bits	set	3998
+   100  0000                     _T0CONbits	set	4053
+   101  0000                     _PORTD	set	3971
+   102  0000                     _CCPR1L	set	4030
    103                           
    104                           ; #config settings
    105  0000                     
@@ -256,7 +256,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    242 ;;		On entry : 0/0
    243 ;;		On exit  : 0/0
    244 ;;		Unchanged: 0/0
-   245 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   245 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    246 ;;      Params:         0       0       0       0       0       0       0
    247 ;;      Locals:         0       1       0       0       0       0       0
    248 ;;      Temps:          0       2       0       0       0       0       0
@@ -510,7 +510,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    495 ;;		On entry : 0/0
    496 ;;		On exit  : 0/0
    497 ;;		Unchanged: 0/0
-   498 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   498 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    499 ;;      Params:         0       0       0       0       0       0       0
    500 ;;      Locals:         0       0       0       0       0       0       0
    501 ;;      Temps:          0       0       0       0       0       0       0
@@ -578,7 +578,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    563 ;;		On entry : 0/0
    564 ;;		On exit  : 0/0
    565 ;;		Unchanged: 0/0
-   566 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   566 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    567 ;;      Params:         0       0       0       0       0       0       0
    568 ;;      Locals:         0       0       0       0       0       0       0
    569 ;;      Temps:          0       0       0       0       0       0       0
@@ -623,7 +623,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    608 ;;		On entry : 0/0
    609 ;;		On exit  : 0/0
    610 ;;		Unchanged: 0/0
-   611 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   611 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    612 ;;      Params:         0       0       0       0       0       0       0
    613 ;;      Locals:         0       0       0       0       0       0       0
    614 ;;      Temps:          0       0       0       0       0       0       0
@@ -686,7 +686,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    671 ;;		On entry : 0/0
    672 ;;		On exit  : 0/0
    673 ;;		Unchanged: 0/0
-   674 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   674 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    675 ;;      Params:         0       0       0       0       0       0       0
    676 ;;      Locals:         0       0       0       0       0       0       0
    677 ;;      Temps:          0       0       0       0       0       0       0
@@ -737,7 +737,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    722 ;;		On entry : 0/0
    723 ;;		On exit  : 0/0
    724 ;;		Unchanged: 0/0
-   725 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   725 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    726 ;;      Params:         0       0       0       0       0       0       0
    727 ;;      Locals:         0       0       0       0       0       0       0
    728 ;;      Temps:          0       0       0       0       0       0       0
@@ -805,7 +805,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    790 ;;		On entry : 0/0
    791 ;;		On exit  : 0/0
    792 ;;		Unchanged: 0/0
-   793 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   793 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    794 ;;      Params:         0       0       0       0       0       0       0
    795 ;;      Locals:         0       0       0       0       0       0       0
    796 ;;      Temps:          0       0       0       0       0       0       0
@@ -874,7 +874,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    859 ;;		On entry : 0/0
    860 ;;		On exit  : 0/0
    861 ;;		Unchanged: 0/0
-   862 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   862 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    863 ;;      Params:         0       0       0       0       0       0       0
    864 ;;      Locals:         0       0       0       0       0       0       0
    865 ;;      Temps:          0       0       0       0       0       0       0
@@ -921,7 +921,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    906 ;;		On entry : 0/0
    907 ;;		On exit  : 0/0
    908 ;;		Unchanged: 0/0
-   909 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   909 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    910 ;;      Params:         0       0       0       0       0       0       0
    911 ;;      Locals:         0       0       0       0       0       0       0
    912 ;;      Temps:          0       0       0       0       0       0       0
@@ -972,7 +972,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    957 ;;		On entry : 0/0
    958 ;;		On exit  : 0/0
    959 ;;		Unchanged: 0/0
-   960 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+   960 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
    961 ;;      Params:         0       4       0       0       0       0       0
    962 ;;      Locals:         0       2       0       0       0       0       0
    963 ;;      Temps:          0       0       0       0       0       0       0
@@ -1035,7 +1035,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1020 ;;		On entry : 0/0
   1021 ;;		On exit  : 0/0
   1022 ;;		Unchanged: 0/0
-  1023 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+  1023 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
   1024 ;;      Params:         0       4       0       0       0       0       0
   1025 ;;      Locals:         0       4       0       0       0       0       0
   1026 ;;      Temps:          0       0       0       0       0       0       0
@@ -1234,7 +1234,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1219 ;;		On entry : 0/0
   1220 ;;		On exit  : 0/0
   1221 ;;		Unchanged: 0/0
-  1222 ;; Data sizes:     COMRAM   BANK0   BANK2   BANK3   BANK4   BANK1   BANK5
+  1222 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
   1223 ;;      Params:         0       0       0       0       0       0       0
   1224 ;;      Locals:         0       0       0       0       0       0       0
   1225 ;;      Temps:          0       0       0       0       0       0       0
@@ -1502,11 +1502,11 @@ Auto Spaces:
     Space          Size  Autos    Used
     COMRAM           94      0       0
     BANK0           160     17      28
+    BANK1           256      0       0
     BANK2           256      0       0
     BANK3           256      0       0
     BANK4           256      0       0
-    BANK1           256      0       0
-    BANK5           239      0       0
+    BANK5           256      0       0
 
 Pointer List with Targets:
 
@@ -1526,6 +1526,14 @@ Critical Paths under _main in BANK0
     ___awdiv->___wmul
 
 Critical Paths under _high_isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _high_isr in BANK1
 
     None.
 
@@ -1550,14 +1558,6 @@ Critical Paths under _main in BANK4
     None.
 
 Critical Paths under _high_isr in BANK4
-
-    None.
-
-Critical Paths under _main in BANK1
-
-    None.
-
-Critical Paths under _high_isr in BANK1
 
     None.
 
@@ -1638,45 +1638,35 @@ _initialisation_ConfigurerPortDSorti
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
-BIGRAM             5EE      0       0      16        0.0%
+BIGRAM             5FF      0       0      16        0.0%
 EEDATA             100      0       0       0        0.0%
-BITBANK4           100      0       0      13        0.0%
-BANK4              100      0       0       6        0.0%
-BITBANK3           100      0       0      12        0.0%
-BANK3              100      0       0       5        0.0%
-BITBANK2           100      0       0      11        0.0%
-BANK2              100      0       0       4        0.0%
-BITBANK1           100      0       0       9        0.0%
-BANK1              100      0       0      10        0.0%
-BITBANK5            EF      0       0      14        0.0%
-BANK5               EF      0       0      15        0.0%
-BITBANK0            A0      0       0       8        0.0%
-BANK0               A0     11      1C       3       17.5%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0     11      1C       4       17.5%
 BITCOMRAM           5E      0       0       0        0.0%
 COMRAM              5E      0       0       1        0.0%
-BITSFR_6             0      0       0     200        0.0%
-SFR_6                0      0       0     200        0.0%
-BITSFR_5             0      0       0     200        0.0%
-SFR_5                0      0       0     200        0.0%
-BITSFR_4             0      0       0     200        0.0%
-SFR_4                0      0       0     200        0.0%
-BITSFR_3             0      0       0     200        0.0%
-SFR_3                0      0       0     200        0.0%
-BITSFR_2             0      0       0     200        0.0%
-SFR_2                0      0       0     200        0.0%
 BITSFR_1             0      0       0     200        0.0%
 SFR_1                0      0       0     200        0.0%
 BITSFR               0      0       0     200        0.0%
 SFR                  0      0       0     200        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0      1C       7        0.0%
+ABS                  0      0      1C       9        0.0%
 DATA                 0      0      1C      17        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Mon Feb 17 16:40:48 2020
+Symbol Table                                                                                   Fri Apr 17 11:45:46 2020
 
                             __end_of_initialisation_ActiverIntAdc 0432  
                            __size_of_initialisation_ActiverIntAdc 000C  

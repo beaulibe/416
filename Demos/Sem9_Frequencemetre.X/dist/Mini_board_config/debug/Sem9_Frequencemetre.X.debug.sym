@@ -253,7 +253,7 @@ cstackBANK0 60 82 BANK0 60 1
 %locals
 dist/Mini_board_config/debug\Sem9_Frequencemetre.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h
-C:\Users\TGE\AppData\Local\Temp\saac.s
+C:\Users\TGE\AppData\Local\Temp\si48.s
 1404 262 0 CODE 0
 1406 262 0 CODE 0
 1409 262 0 CODE 0
@@ -312,12 +312,12 @@ main.c
 120 242 0 CODE 0
 121 244 0 CODE 0
 122 246 0 CODE 0
-C:\Users\TGE\AppData\Local\Temp\saac.s
+C:\Users\TGE\AppData\Local\Temp\si48.s
 2032 18 0 CODE 0
 interrupts.c
 81 18 0 CODE 0
 84 1E 0 CODE 0
-C:\Users\TGE\AppData\Local\Temp\saac.s
+C:\Users\TGE\AppData\Local\Temp\si48.s
 2089 8 0 CODE 0
 interrupts.c
 27 8 0 CODE 0

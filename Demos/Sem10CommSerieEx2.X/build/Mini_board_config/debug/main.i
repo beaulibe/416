@@ -4844,9 +4844,9 @@ int i = 0;
 initialisation();
 while(PIR1bits.TXIF==0);
 TXREG = 'G';
+PORTDbits.RD0 ^= 1;
 while(PIR1bits.TXIF==0);
 TXREG = 'O';
-
 while(1)
 {
 if (g_rxCar == 'A')

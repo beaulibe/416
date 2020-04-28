@@ -16,11 +16,20 @@ Résultat de l'ADC	Fréquence de la DEL7
 3	3 Hz
 ...	...
 15	15 Hz
+ * 
+ * **** Pour 2020 *******
+ * On serait mieux de séparer l'affichage des 4MSB et du clignotement de la DEL7.
+ * Ça apporte plus de confusion chez l'étudiant.
+ * Mette le clignotement sur une DEL ailleur que PORTD
+ * 
+ * 
  */
 
 #include <xc.h>
-#include <stdint.h>        /* For uint8_t definition */
-#include <stdbool.h>       /* For true/false definition */
+//#include <stdint.h>        /* For uint8_t definition */
+//#include <stdbool.h>       /* For true/false definition */
+
+#define _XTAL_FREQ 1000000
 
 extern int g_resAN;
 
@@ -37,6 +46,8 @@ void main(void)
  
     while(1) //Boucle principale du programme
     {
+       
+        __delay_ms(5);  //va mieux avec ce délai. Affiche trop vite vs interruption du timer0
          //La DEL7 clignote selon la fréquence du timer 0 modulée par l'ADC
          PORTD = (PORTD & 0xF0) | (g_resAN >> 4); //Les DEL0 à DEL3 reçoivent les 4 MSB du résultat de conversion de l'ADC
     }
@@ -62,7 +73,7 @@ void initialisation(void)
     ADCON2bits.ACQT = 7; //20 TAD (on laisse le max de temps au Chold du convertisseur AN pour se charger)
     ADCON2bits.ADCS = 6; //Fosc/64 (Fréquence pour la conversion la plus longue possible)
     //Config AN par interruption
-    PIR1bits.ADIF = false; //on reset le flag
+    PIR1bits.ADIF = 0; //on reset le flag
     PIE1bits.ADIE = 1; //permet interruptions de l'AD
     ADCON0bits.GO_DONE = 1;  //lance une conversion    
     

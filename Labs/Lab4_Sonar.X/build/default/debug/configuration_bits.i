@@ -9971,7 +9971,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 37 "configuration_bits.c" 2
+# 36 "configuration_bits.c" 2
+
 
 
 #pragma config OSC = HS

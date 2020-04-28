@@ -51,8 +51,11 @@ void __interrupt(high_priority) high_isr(void)
     {
         if (CCP1CONbits.CCP1M == 0b0101) //Si le module CCP1 est configuré pour détecter un front montant
         {
+            
             PORTCbits.RC0 = 1; //La DEL jaune est allumée dès que le front montant de l'echo a été détecté
             t1 = CCPR1; //La valeur du timer 3 qui a été capturée par le module CCP1 est enregistrée dans la variable t1 
+            CCP1CONbits.CCP1M = 0b0100; //Le module CCP1 est utilisé en mode capture pour chaque front descendant du signal d'echo à percevoir
+ 
         }
         else //Si le module CCP1 est configuré pour détecter un front descendant
         {
@@ -64,11 +67,10 @@ void __interrupt(high_priority) high_isr(void)
                 g_compteEcho = 0; //Le compte des échos est remis à zéro
             }
             
-			T3CONbits.TMR3ON = 0; //Le timer 3 est arrêté
+			//T3CONbits.TMR3ON = 0; //Le timer 3 est arrêté
             PORTCbits.RC0 = 0; //La DEL jaune est éteinte dès que le front descendant de l'echo a été détecté
         }
        
-        CCP1CONbits.CCP1M = 0b0100; //Le module CCP1 est utilisé en mode capture pour chaque front descendant du signal d'echo à percevoir
         PIR1bits.CCP1IF = 0; //On remet à zéro le flag d'interruption du module CCP1
     }
 }

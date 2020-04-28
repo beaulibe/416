@@ -1012,76 +1012,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 "53
 [; ;interrupts.c: 53:         {
 {
-"54
-[; ;interrupts.c: 54:             PORTCbits.RC0 = 1;
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
 "55
-[; ;interrupts.c: 55:             t1 = CCPR1;
-[e = F5658 -> _CCPR1 `ui ]
+[; ;interrupts.c: 55:             PORTCbits.RC0 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
 "56
-[; ;interrupts.c: 56:         }
+[; ;interrupts.c: 56:             t1 = CCPR1;
+[e = F5658 -> _CCPR1 `ui ]
+"57
+[; ;interrupts.c: 57:             CCP1CONbits.CCP1M = 0b0100;
+[e = . . _CCP1CONbits 0 0 -> -> 4 `i `uc ]
+"59
+[; ;interrupts.c: 59:         }
 }
 [e $U 587  ]
-"57
-[; ;interrupts.c: 57:         else
-[e :U 586 ]
-"58
-[; ;interrupts.c: 58:         {
-{
-"59
-[; ;interrupts.c: 59:             g_echo[g_compteEcho] = CCPR1 - t1;
-[e = *U + &U _g_echo * -> -> _g_compteEcho `Aui `ux -> -> # *U &U _g_echo `ui `ux - -> _CCPR1 `ui F5658 ]
 "60
-[; ;interrupts.c: 60:             g_compteEcho++;
-[e ++ _g_compteEcho -> 1 `i ]
-"62
-[; ;interrupts.c: 62:             if (g_compteEcho > 10)
-[e $ ! > _g_compteEcho -> 10 `i 588  ]
-"63
-[; ;interrupts.c: 63:             {
+[; ;interrupts.c: 60:         else
+[e :U 586 ]
+"61
+[; ;interrupts.c: 61:         {
 {
-"64
-[; ;interrupts.c: 64:                 g_compteEcho = 0;
-[e = _g_compteEcho -> 0 `i ]
+"62
+[; ;interrupts.c: 62:             g_echo[g_compteEcho] = CCPR1 - t1;
+[e = *U + &U _g_echo * -> -> _g_compteEcho `Aui `ux -> -> # *U &U _g_echo `ui `ux - -> _CCPR1 `ui F5658 ]
+"63
+[; ;interrupts.c: 63:             g_compteEcho++;
+[e ++ _g_compteEcho -> 1 `i ]
 "65
-[; ;interrupts.c: 65:             }
+[; ;interrupts.c: 65:             if (g_compteEcho > 10)
+[e $ ! > _g_compteEcho -> 10 `i 588  ]
+"66
+[; ;interrupts.c: 66:             {
+{
+"67
+[; ;interrupts.c: 67:                 g_compteEcho = 0;
+[e = _g_compteEcho -> 0 `i ]
+"68
+[; ;interrupts.c: 68:             }
 }
 [e :U 588 ]
-"67
-[; ;interrupts.c: 67:    T3CONbits.TMR3ON = 0;
-[e = . . _T3CONbits 1 0 -> -> 0 `i `uc ]
-"68
-[; ;interrupts.c: 68:             PORTCbits.RC0 = 0;
+"71
+[; ;interrupts.c: 71:             PORTCbits.RC0 = 0;
 [e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-"69
-[; ;interrupts.c: 69:         }
+"72
+[; ;interrupts.c: 72:         }
 }
 [e :U 587 ]
-"71
-[; ;interrupts.c: 71:         CCP1CONbits.CCP1M = 0b0100;
-[e = . . _CCP1CONbits 0 0 -> -> 4 `i `uc ]
-"72
-[; ;interrupts.c: 72:         PIR1bits.CCP1IF = 0;
+"74
+[; ;interrupts.c: 74:         PIR1bits.CCP1IF = 0;
 [e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
-"73
-[; ;interrupts.c: 73:     }
+"75
+[; ;interrupts.c: 75:     }
 }
 [e :U 585 ]
-"74
-[; ;interrupts.c: 74: }
+"76
+[; ;interrupts.c: 76: }
 [e :UE 579 ]
 }
 [v $root$_low_isr `(v ~T0 @X0 0 e ]
 [v F5661 `(v ~T0 @X0 1 tf ]
-"77
-[; ;interrupts.c: 77: void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
+"79
+[; ;interrupts.c: 79: void __attribute__((picinterrupt(("low_priority")))) low_isr(void)
 [v _low_isr `AF5661 ~T43 @X0 1 e ]
-"78
-[; ;interrupts.c: 78: {
+"80
+[; ;interrupts.c: 80: {
 {
 [e :U _low_isr ]
 [f ]
-"80
-[; ;interrupts.c: 80: }
+"82
+[; ;interrupts.c: 82: }
 [e :UE 589 ]
 }

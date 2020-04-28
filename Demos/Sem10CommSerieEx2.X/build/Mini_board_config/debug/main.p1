@@ -15,6 +15,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS114 ~T0 @X0 0 e@3998 ]
 "4221
 [v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
+"1190
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"1200
+[s S48 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S48 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
+"1210
+[s S49 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S49 . . P1B P1C P1D ]
+"1216
+[s S50 :7 `uc 1 :1 `uc 1 ]
+[n S50 . . SS2 ]
+"1189
+[u S46 `S47 1 `S48 1 `S49 1 `S50 1 ]
+[n S46 . . . . . ]
+"1221
+[v _PORTDbits `VS46 ~T0 @X0 0 e@3971 ]
 "19 main.c
 [v _g_rxCar `uc ~T0 @X0 0 e ]
 "2698 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h
@@ -3135,15 +3152,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 32: TXREG = 'G';
 "32
 [e = _TXREG -> -> 71 `ui `uc ]
-[; ;main.c: 33: while(PIR1bits.TXIF==0);
+[; ;main.c: 33: PORTDbits.RD0 ^= 1;
 "33
+[e =^ . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 34: while(PIR1bits.TXIF==0);
+"34
 [e $U 300  ]
 [e :U 301 ]
 [e :U 300 ]
 [e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 301  ]
 [e :U 302 ]
-[; ;main.c: 34: TXREG = 'O';
-"34
+[; ;main.c: 35: TXREG = 'O';
+"35
 [e = _TXREG -> -> 79 `ui `uc ]
 [; ;main.c: 36: while(1)
 "36

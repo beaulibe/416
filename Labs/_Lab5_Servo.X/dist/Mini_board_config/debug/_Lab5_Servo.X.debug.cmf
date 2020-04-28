@@ -11,6 +11,12 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\TGE\AppData\Local\Temp\sn8c.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 10E 10E 4 1
+text CODE 0 44A 44A 2 1
+reset_vec CODE 0 0 0 6 1
+config CONFIG 0 300000 300000 E 1
 $dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 cinit CODE 0 340 340 36 1
 text0 CODE 0 112 112 13C 1
@@ -31,44 +37,33 @@ bssBANK0 BANK0 1 71 71 6 1
 intcode CODE 0 8 8 106 1
 idataBANK0 CODE 0 446 446 3 1
 dataBANK0 BANK0 1 77 77 3 1
-$C:\Users\tge\AppData\Local\Temp\sbjk.o
-idloc IDLOC 0 200000 200000 8 1
-init CODE 0 10E 10E 4 1
-text CODE 0 44A 44A 2 1
-reset_vec CODE 0 0 0 6 1
-config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 7C-5EE 1
-SFR F00-F9B 1
-SFR F9D-FD3 1
-SFR FD5-FDA 1
-SFR FE0-FE2 1
-SFR FE8-FEA 1
-SFR FF0-FFB 1
+RAM 7C-5FF 1
+SFR F00-FFF 1
 BANK0 7C-FF 1
 BANK1 100-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
 BANK4 400-4FF 1
-BANK5 500-5EE 1
+BANK5 500-5FF 1
 CONST 6-7 1
 CONST 449-449 1
-CONST 44C-7D3F 1
-STACK 7C-5EE 1
-SMALLCONST 600-7D3F 1
+CONST 44C-7FFF 1
+STACK 7C-5FF 1
+SMALLCONST 600-7FFF 1
 CODE 6-7 1
 CODE 449-449 1
-CODE 44C-7D3F 1
+CODE 44C-7FFF 1
 BIGRAM 2-5F 1
-BIGRAM 7C-5EE 1
+BIGRAM 7C-5FF 1
 COMRAM 2-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 600-7D3F 1
+MEDIUMCONST 600-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -83,32 +78,32 @@ MEDIUMCONST 600-7D3F 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-8 intcode CODE >3862:C:\Users\tge\AppData\Local\Temp\sbjk.s
-8 intcode CODE >30:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-C intcode CODE >37:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-1E intcode CODE >39:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-26 intcode CODE >41:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-28 intcode CODE >42:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-2A intcode CODE >43:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-2C intcode CODE >46:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-3E intcode CODE >49:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-42 intcode CODE >50:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-58 intcode CODE >52:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-5C intcode CODE >53:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-72 intcode CODE >54:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-7C intcode CODE >58:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-82 intcode CODE >59:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-98 intcode CODE >61:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-BA intcode CODE >63:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-BC intcode CODE >67:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-C4 intcode CODE >72:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-C8 intcode CODE >78:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-CC intcode CODE >80:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-D0 intcode CODE >87:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-E4 intcode CODE >89:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-EA intcode CODE >91:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-102 intcode CODE >92:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
-104 intcode CODE >100:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+8 intcode CODE >3852:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+8 intcode CODE >30:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+C intcode CODE >37:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+1E intcode CODE >39:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+26 intcode CODE >41:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+28 intcode CODE >42:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+2A intcode CODE >43:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+2C intcode CODE >46:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+3E intcode CODE >49:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+42 intcode CODE >50:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+58 intcode CODE >52:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+5C intcode CODE >53:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+72 intcode CODE >54:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+7C intcode CODE >58:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+82 intcode CODE >59:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+98 intcode CODE >61:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+BA intcode CODE >63:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+BC intcode CODE >67:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+C4 intcode CODE >72:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+C8 intcode CODE >78:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+CC intcode CODE >80:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+D0 intcode CODE >87:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+E4 intcode CODE >89:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+EA intcode CODE >91:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+102 intcode CODE >92:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
+104 intcode CODE >100:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\interrupts.c
 24E text10 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 250 text10 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 256 text10 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
@@ -140,112 +135,112 @@ EA intcode CODE >91:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\interru
 38E text9 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
 396 text9 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
 39E text9 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-426 text8 CODE >54:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-428 text8 CODE >57:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-42A text8 CODE >58:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-42C text8 CODE >59:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-42E text8 CODE >60:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-43C text7 CODE >25:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-43E text7 CODE >27:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-440 text7 CODE >28:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-442 text7 CODE >29:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3C4 text6 CODE >65:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3C6 text6 CODE >73:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3C8 text6 CODE >76:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3CC text6 CODE >77:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3D0 text6 CODE >81:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3D2 text6 CODE >85:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3D4 text6 CODE >86:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3D8 text6 CODE >87:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3DA text6 CODE >91:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3DE text6 CODE >93:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3E2 text5 CODE >98:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3E4 text5 CODE >100:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3E6 text5 CODE >101:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3E8 text5 CODE >102:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3EA text5 CODE >103:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3EC text5 CODE >104:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3F0 text5 CODE >105:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3F2 text5 CODE >113:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3F6 text5 CODE >114:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3FA text5 CODE >117:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-418 text4 CODE >123:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-41A text4 CODE >126:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-41E text4 CODE >127:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-420 text4 CODE >128:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-422 text4 CODE >129:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3FE text3 CODE >35:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-400 text3 CODE >38:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-402 text3 CODE >40:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-406 text3 CODE >42:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-408 text3 CODE >43:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-40A text3 CODE >46:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-412 text3 CODE >47:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-414 text3 CODE >49:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-432 text2 CODE >17:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-434 text2 CODE >19:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-438 text2 CODE >20:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
-3A2 text1 CODE >42:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-3A4 text1 CODE >44:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-3A8 text1 CODE >45:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-3AC text1 CODE >46:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-3B0 text1 CODE >47:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-3B4 text1 CODE >48:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-3B8 text1 CODE >49:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-3BC text1 CODE >50:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-3C0 text1 CODE >52:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-112 text0 CODE >54:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-112 text0 CODE >56:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-11A text0 CODE >58:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-11E text0 CODE >60:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-122 text0 CODE >68:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-158 text0 CODE >69:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-162 text0 CODE >71:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-166 text0 CODE >81:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-184 text0 CODE >84:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-18A text0 CODE >85:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-18C text0 CODE >86:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-19A text0 CODE >91:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1B8 text0 CODE >93:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1BE text0 CODE >94:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1C0 text0 CODE >95:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1CE text0 CODE >100:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1D6 text0 CODE >101:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1D8 text0 CODE >102:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1DC text0 CODE >105:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1E4 text0 CODE >106:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1E6 text0 CODE >107:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1EA text0 CODE >110:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1F2 text0 CODE >111:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1F4 text0 CODE >112:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-1F8 text0 CODE >71:C:\Users\tge\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
-340 cinit CODE >2246:C:\Users\tge\AppData\Local\Temp\sbjk.s
-340 cinit CODE >2248:C:\Users\tge\AppData\Local\Temp\sbjk.s
-340 cinit CODE >2251:C:\Users\tge\AppData\Local\Temp\sbjk.s
-340 cinit CODE >2287:C:\Users\tge\AppData\Local\Temp\sbjk.s
-342 cinit CODE >2288:C:\Users\tge\AppData\Local\Temp\sbjk.s
-344 cinit CODE >2289:C:\Users\tge\AppData\Local\Temp\sbjk.s
-346 cinit CODE >2290:C:\Users\tge\AppData\Local\Temp\sbjk.s
-348 cinit CODE >2291:C:\Users\tge\AppData\Local\Temp\sbjk.s
-34A cinit CODE >2292:C:\Users\tge\AppData\Local\Temp\sbjk.s
-34C cinit CODE >2293:C:\Users\tge\AppData\Local\Temp\sbjk.s
-34E cinit CODE >2294:C:\Users\tge\AppData\Local\Temp\sbjk.s
-352 cinit CODE >2295:C:\Users\tge\AppData\Local\Temp\sbjk.s
-354 cinit CODE >2296:C:\Users\tge\AppData\Local\Temp\sbjk.s
-358 cinit CODE >2297:C:\Users\tge\AppData\Local\Temp\sbjk.s
-35A cinit CODE >2298:C:\Users\tge\AppData\Local\Temp\sbjk.s
-35E cinit CODE >2302:C:\Users\tge\AppData\Local\Temp\sbjk.s
-360 cinit CODE >2303:C:\Users\tge\AppData\Local\Temp\sbjk.s
-362 cinit CODE >2304:C:\Users\tge\AppData\Local\Temp\sbjk.s
-364 cinit CODE >2305:C:\Users\tge\AppData\Local\Temp\sbjk.s
-366 cinit CODE >2306:C:\Users\tge\AppData\Local\Temp\sbjk.s
-368 cinit CODE >2307:C:\Users\tge\AppData\Local\Temp\sbjk.s
-36A cinit CODE >2308:C:\Users\tge\AppData\Local\Temp\sbjk.s
-36C cinit CODE >2314:C:\Users\tge\AppData\Local\Temp\sbjk.s
-36C cinit CODE >2316:C:\Users\tge\AppData\Local\Temp\sbjk.s
-36E cinit CODE >2317:C:\Users\tge\AppData\Local\Temp\sbjk.s
-370 cinit CODE >2318:C:\Users\tge\AppData\Local\Temp\sbjk.s
-372 cinit CODE >2319:C:\Users\tge\AppData\Local\Temp\sbjk.s
+426 text8 CODE >54:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+428 text8 CODE >57:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+42A text8 CODE >58:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+42C text8 CODE >59:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+42E text8 CODE >60:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+43C text7 CODE >25:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+43E text7 CODE >27:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+440 text7 CODE >28:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+442 text7 CODE >29:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3C4 text6 CODE >65:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3C6 text6 CODE >73:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3C8 text6 CODE >76:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3CC text6 CODE >77:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3D0 text6 CODE >81:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3D2 text6 CODE >85:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3D4 text6 CODE >86:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3D8 text6 CODE >87:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3DA text6 CODE >91:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3DE text6 CODE >93:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3E2 text5 CODE >98:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3E4 text5 CODE >100:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3E6 text5 CODE >101:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3E8 text5 CODE >102:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3EA text5 CODE >103:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3EC text5 CODE >104:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3F0 text5 CODE >105:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3F2 text5 CODE >113:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3F6 text5 CODE >114:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3FA text5 CODE >117:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+418 text4 CODE >123:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+41A text4 CODE >126:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+41E text4 CODE >127:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+420 text4 CODE >128:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+422 text4 CODE >129:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3FE text3 CODE >35:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+400 text3 CODE >38:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+402 text3 CODE >40:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+406 text3 CODE >42:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+408 text3 CODE >43:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+40A text3 CODE >46:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+412 text3 CODE >47:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+414 text3 CODE >49:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+432 text2 CODE >17:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+434 text2 CODE >19:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+438 text2 CODE >20:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\initialisation.c
+3A2 text1 CODE >42:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+3A4 text1 CODE >44:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+3A8 text1 CODE >45:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+3AC text1 CODE >46:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+3B0 text1 CODE >47:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+3B4 text1 CODE >48:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+3B8 text1 CODE >49:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+3BC text1 CODE >50:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+3C0 text1 CODE >52:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+112 text0 CODE >54:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+112 text0 CODE >56:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+11A text0 CODE >58:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+11E text0 CODE >60:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+122 text0 CODE >68:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+158 text0 CODE >69:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+162 text0 CODE >71:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+166 text0 CODE >81:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+184 text0 CODE >84:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+18A text0 CODE >85:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+18C text0 CODE >86:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+19A text0 CODE >91:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1B8 text0 CODE >93:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1BE text0 CODE >94:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1C0 text0 CODE >95:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1CE text0 CODE >100:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1D6 text0 CODE >101:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1D8 text0 CODE >102:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1DC text0 CODE >105:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1E4 text0 CODE >106:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1E6 text0 CODE >107:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1EA text0 CODE >110:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1F2 text0 CODE >111:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1F4 text0 CODE >112:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+1F8 text0 CODE >71:C:\Users\TGE\Documents\GitHub\416\Labs\_Lab5_Servo.X\main.c
+340 cinit CODE >2246:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+340 cinit CODE >2248:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+340 cinit CODE >2251:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+340 cinit CODE >2287:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+342 cinit CODE >2288:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+344 cinit CODE >2289:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+346 cinit CODE >2290:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+348 cinit CODE >2291:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+34A cinit CODE >2292:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+34C cinit CODE >2293:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+34E cinit CODE >2294:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+352 cinit CODE >2295:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+354 cinit CODE >2296:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+358 cinit CODE >2297:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+35A cinit CODE >2298:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+35E cinit CODE >2302:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+360 cinit CODE >2303:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+362 cinit CODE >2304:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+364 cinit CODE >2305:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+366 cinit CODE >2306:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+368 cinit CODE >2307:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+36A cinit CODE >2308:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+36C cinit CODE >2314:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+36C cinit CODE >2316:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+36E cinit CODE >2317:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+370 cinit CODE >2318:C:\Users\TGE\AppData\Local\Temp\sn8c.s
+372 cinit CODE >2319:C:\Users\TGE\AppData\Local\Temp\sn8c.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -268,14 +263,14 @@ _initialisation_ActiverInterruptions 43C 0 CODE 0 text7 dist/Mini_board_config/d
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 _g_resAN 75 0 BANK0 1 bssBANK0 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\tge\AppData\Local\Temp\sbjk.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\TGE\AppData\Local\Temp\sn8c.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 high_isr@sensUp 77 0 BANK0 1 dataBANK0 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\sbjk.o
+___sp 0 0 STACK 2 stack C:\Users\TGE\AppData\Local\Temp\sn8c.o
 _main 112 0 CODE 0 text0 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 btemp 1 0 COMRAM 1 temp dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-start 10E 0 CODE 0 init C:\Users\tge\AppData\Local\Temp\sbjk.o
+start 10E 0 CODE 0 init C:\Users\TGE\AppData\Local\Temp\sn8c.o
 __size_of___awdiv 0 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __size_of_main 0 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 ?___wmul 60 0 BANK0 1 cstackBANK0 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
@@ -285,11 +280,11 @@ _T0CONbits FD5 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 ttemp5 2 0 COMRAM 1 temp dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 ttemp6 5 0 COMRAM 1 temp dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 ttemp7 9 0 COMRAM 1 temp dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-__accesstop 60 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\sbjk.o
-intlevel0 44A 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\sbjk.o
-intlevel1 44A 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\sbjk.o
-intlevel2 44A 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\sbjk.o
-intlevel3 44A 0 CODE 0 text C:\Users\tge\AppData\Local\Temp\sbjk.o
+__accesstop 60 0 ABS 0 - C:\Users\TGE\AppData\Local\Temp\sn8c.o
+intlevel0 44A 0 CODE 0 text C:\Users\TGE\AppData\Local\Temp\sn8c.o
+intlevel1 44A 0 CODE 0 text C:\Users\TGE\AppData\Local\Temp\sn8c.o
+intlevel2 44A 0 CODE 0 text C:\Users\TGE\AppData\Local\Temp\sn8c.o
+intlevel3 44A 0 CODE 0 text C:\Users\TGE\AppData\Local\Temp\sn8c.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 wtemp8 2 0 COMRAM 1 temp dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
@@ -307,9 +302,10 @@ _ADCON1 FC1 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 _ADRESH FC4 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __size_of_initialisation_ConfigurerAdc 0 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 ___awdiv@dividend 66 0 BANK0 1 cstackBANK0 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\sbjk.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\tge\AppData\Local\Temp\sbjk.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\TGE\AppData\Local\Temp\sn8c.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\TGE\AppData\Local\Temp\sn8c.o
 _CCPR1L FBE 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
+__cntErrataNOP_C:\Users\TGE\AppData\Local\Temp\sn8c.o 1 0 ABS 0 - C:\Users\TGE\AppData\Local\Temp\sn8c.o
 __end_of_initialisation_ConfigurerAdc 418 0 CODE 0 text3 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 _initialisation 3A2 0 CODE 0 text1 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
@@ -357,7 +353,7 @@ __Htext8 0 0 ABS 0 text8 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Htext9 0 0 ABS 0 text9 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\tge\AppData\Local\Temp\sbjk.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\TGE\AppData\Local\Temp\sn8c.o
 __end_of_initialisation_ConfigTmr0 3FE 0 CODE 0 text5 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __end_of_initialisation_ConfigTmr3 426 0 CODE 0 text4 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Hcomram 0 0 ABS 0 comram dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
@@ -450,8 +446,8 @@ ___wmul@multiplier 60 0 BANK0 1 cstackBANK0 dist/Mini_board_config/debug\_Lab5_S
 __size_of_initialisation_ActiverPWM 0 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-stackhi 5EE 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\sbjk.o
-stacklo 7C 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\sbjk.o
+stackhi 5FF 0 ABS 0 - C:\Users\TGE\AppData\Local\Temp\sn8c.o
+stacklo 7C 0 ABS 0 - C:\Users\TGE\AppData\Local\Temp\sn8c.o
 __Lintcode 8 0 CODE 0 intcode dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
@@ -470,7 +466,6 @@ __end_of_high_isr 10C 0 CODE 0 intcode dist/Mini_board_config/debug\_Lab5_Servo.
 end_of_initialization 36C 0 CODE 0 cinit dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Hintentry 0 0 ABS 0 intentry dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-__cntErrataNOP_C:\Users\tge\AppData\Local\Temp\sbjk.o 1 0 ABS 0 - C:\Users\tge\AppData\Local\Temp\sbjk.o
 __CFG_OSC$HS 0 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 ___awdiv@quotient 6C 0 BANK0 1 cstackBANK0 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 ?___awdiv 66 0 BANK0 1 cstackBANK0 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
@@ -494,7 +489,7 @@ __CFG_STVR$OFF 0 0 ABS 0 - dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Lstruct 0 0 COMRAM 1 struct dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __end_of_initialisation_ConfigurerPortDSortie 43C 0 CODE 0 text2 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Ltext10 0 0 ABS 0 text10 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\tge\AppData\Local\Temp\sbjk.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\TGE\AppData\Local\Temp\sn8c.o
 _initialisation_ConfigTmr0 3E2 0 CODE 0 text5 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 _initialisation_ConfigTmr3 418 0 CODE 0 text4 dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o
 __Lpowerup 10E 0 CODE 0 powerup dist/Mini_board_config/debug\_Lab5_Servo.X.debug.o

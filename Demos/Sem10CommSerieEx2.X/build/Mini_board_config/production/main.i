@@ -4842,11 +4842,13 @@ void main(void)
 {
 int i = 0;
 initialisation();
+while(1)
+{
 while(PIR1bits.TXIF==0);
 TXREG = 'G';
 while(PIR1bits.TXIF==0);
 TXREG = 'O';
-
+}
 while(1)
 {
 if (g_rxCar == 'A')
@@ -4864,7 +4866,7 @@ g_rxCar = 0;
 }
 }
 
-# 56
+# 58
 void initialisation(void)
 {
 
