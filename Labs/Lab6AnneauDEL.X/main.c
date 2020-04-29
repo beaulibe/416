@@ -28,7 +28,7 @@ enum enumTrame {EFFET=1,R,G,B};
 
 /****** Prototypes ********/
 void initialisation(void);
-unsigned char rxComm(void);
+//unsigned char rxComm(void);  //pour tests
 bool rxTrame(unsigned char* buffer);
 void traiteTrame(unsigned char* buffer);
 
@@ -36,7 +36,7 @@ void traiteTrame(unsigned char* buffer);
 
 void main(void) 
 {
-    unsigned char carRx = 2;
+    
     unsigned char trame[MAX_TRAME];
     
     
@@ -59,6 +59,18 @@ void main(void)
 
     return;
 }
+
+
+/**
+ * @brief Vérifie s'il y a un caractère de reçu par le port série. Si oui
+ * on l'ajoute à la trame. La variable indexTrame nous indique où mettre le 
+ * caracère reçu dans le buffer de réception.
+ * @param Le pointeur du buffer de réception des caractères
+ * @return Vrai si tous les caractères de la trame ont été reçu (indexTrame = MAX_TRAME) et 
+ * si le checksum est bon.
+ * Faux Si tous les caractères n'ont pas encore été reçu.
+ * 
+ */
 bool rxTrame(unsigned char* buffer)
 {
     bool retour = false;
@@ -102,6 +114,13 @@ bool rxTrame(unsigned char* buffer)
     return retour;
     
 }
+
+/**
+ * @brief Selon l'octet "Effet" (buffer[EFFET]) dans la trame, appelle la méthode correspondant à l'effet désiré.
+ * @param Le pointeur de la trame reçue.
+ * @return rien
+ * 
+ */
 void traiteTrame(unsigned char* buffer)
 {
     uint8_t NeoR, NeoG, NeoB;

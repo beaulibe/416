@@ -10089,7 +10089,7 @@ enum enumTrame {EFFET=1,R,G,B};
 
 
 void initialisation(void);
-unsigned char rxComm(void);
+
 _Bool rxTrame(unsigned char* buffer);
 void traiteTrame(unsigned char* buffer);
 
@@ -10097,7 +10097,7 @@ void traiteTrame(unsigned char* buffer);
 
 void main(void)
 {
-    unsigned char carRx = 2;
+
     unsigned char trame[6];
 
 
@@ -10120,6 +10120,7 @@ void main(void)
 
     return;
 }
+# 74 "main.c"
 _Bool rxTrame(unsigned char* buffer)
 {
     _Bool retour = 0;
@@ -10163,6 +10164,13 @@ _Bool rxTrame(unsigned char* buffer)
     return retour;
 
 }
+
+
+
+
+
+
+
 void traiteTrame(unsigned char* buffer)
 {
     uint8_t NeoR, NeoG, NeoB;
@@ -10230,7 +10238,7 @@ unsigned char rxComm(void)
 
 
     while(PIR1bits.RC1IF == 0);
-# 180 "main.c"
+# 199 "main.c"
     carRecu = RCREG;
 
 

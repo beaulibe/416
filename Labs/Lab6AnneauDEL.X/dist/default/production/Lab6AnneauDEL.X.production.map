@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Lab6AnneauDEL.X.production.sym \
   --cmf=dist/default/production\Lab6AnneauDEL.X.production.cmf -z -Q18F458 \
-  -oC:\Users\TGE\AppData\Local\Temp\sb8g.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\TGE\AppData\Local\Temp\s3mo.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Lab6AnneauDEL.X.production.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=0A0h-05FFh -pstack=STACK -ACODE=00h-03FFFhx2 \
+  --acfsm=1493 -ASTACK=09Fh-05FFh -pstack=STACK -ACODE=00h-03FFFhx2 \
   -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
   -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-05Fh -AABS1=00h-05FFh \
   -ABIGRAM=01h-05FFh -ARAM=060h-0FFh,0100h-01FFhx5 -ABANK0=060h-0FFh \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\TGE\AppData\Local\Temp\sb8g.o \
+  C:\Users\TGE\AppData\Local\Temp\s3mo.o \
   dist/default/production\Lab6AnneauDEL.X.production.o 
 
 Object code version is 3.11
@@ -35,16 +35,16 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\TGE\AppData\Local\Temp\sb8g.o
-                text                               336A     336A        2     19B5       0
+C:\Users\TGE\AppData\Local\Temp\s3mo.o
+                text                               3370     3370        2     19B8       0
                 init                                  2        2        4        0       0
                 reset_vec                             0        0        2        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\Lab6AnneauDEL.X.production.o
-                text11                             3392     3392       46     19C9       0
+                text11                             3398     3398       46     19CC       0
                 text10                             3870     3870      19A     1C38       0
-                text9                              337E     337E       14     19BF       0
+                text9                              3384     3384       14     19C2       0
                 text8                              3BA4     3BA4      1D8     1DD2       0
                 text7                              3D7C     3D7C      284     1EBE       0
                 text6                              34C0     34C0       B0     1A60       0
@@ -53,21 +53,21 @@ dist/default/production\Lab6AnneauDEL.X.production.o
                 text3                              3A0A     3A0A      19A     1D05       0
                 text2                              364E     364E       F2     1B27       0
                 text1                              3740     3740      130     1BA0       0
-                text0                              33D8     33D8       52     19EC       0
-                cstackBANK0                          8A       8A       16       60       1
+                text0                              33DE     33DE       4C     19EF       0
+                cstackBANK0                          8A       8A       15       60       1
                 bssBANK0                             60       60       2A       60       1
-                cinit                              336C     336C       12     19B6       0
+                cinit                              3372     3372       12     19B9       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
-                text                               336A     336A        2         0
+                text                               3370     3370        2         0
                 init                                  2        2        4         0
                 reset_vec                             0        0        2         0
-                text11                             3392     3392       46         0
+                text11                             3398     3398       46         0
                 text10                             3870     3870      19A         0
-                text9                              337E     337E       14         0
+                text9                              3384     3384       14         0
                 text8                              3BA4     3BA4      1D8         0
                 text7                              3D7C     3D7C      284         0
                 text6                              34C0     34C0       B0         0
@@ -76,8 +76,8 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text3                              3A0A     3A0A      19A         0
                 text2                              364E     364E       F2         0
                 text1                              3740     3740      130         0
-                text0                              33D8     33D8       52         0
-                cinit                              336C     336C       12         0
+                text0                              33DE     33DE       4C         0
+                cinit                              3372     3372       12         0
 
         CLASS   CONST          
 
@@ -94,7 +94,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                cstackBANK0                          8A       8A       16         1
+                cstackBANK0                          8A       8A       15         1
                 bssBANK0                             60       60       2A         1
 
         CLASS   BANK1          
@@ -124,12 +124,12 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000006  000006         0       0  CODE    
-                bssBANK0                       000060  000040  0000A0        60       1  BANK0   
-                text                           00336A  000002  00336C      19B5       0  CODE    
-                cinit                          00336C  000012  00337E      19B6       0  CODE    
-                text9                          00337E  000014  003392      19BF       0  CODE    
-                text11                         003392  000046  0033D8      19C9       0  CODE    
-                text0                          0033D8  000052  00342A      19EC       0  CODE    
+                bssBANK0                       000060  00003F  00009F        60       1  BANK0   
+                text                           003370  000002  003372      19B8       0  CODE    
+                cinit                          003372  000012  003384      19B9       0  CODE    
+                text9                          003384  000014  003398      19C2       0  CODE    
+                text11                         003398  000046  0033DE      19CC       0  CODE    
+                text0                          0033DE  00004C  00342A      19EF       0  CODE    
                 text5                          00342A  000096  0034C0      1A15       0  CODE    
                 text6                          0034C0  0000B0  003570      1A60       0  CODE    
                 text4                          003570  0000DE  00364E      1AB8       0  CODE    
@@ -146,27 +146,27 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0000A0-0000FF               60
+        BANK0            00009F-0000FF               61
         BANK1            000100-0001FF              100
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
         BANK4            000400-0004FF              100
         BANK5            000500-0005FF              100
         BIGRAM           000001-00005F               5F
-                         0000A0-0005FF              560
-        CODE             000006-003369             3364
+                         00009F-0005FF              561
+        CODE             000006-00336F             336A
                          004000-007FFF             4000
         COMRAM           000001-00005F               5F
-        CONST            000006-003369             3364
+        CONST            000006-00336F             336A
                          004000-007FFF             4000
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000600-003369             2D6A
+        MEDIUMCONST      000600-00336F             2D70
                          004000-007FFF             4000
-        RAM              0000A0-0005FF              100
+        RAM              00009F-0005FF              100
         SFR              000F00-000FFF               60
-        SMALLCONST       000600-003369              100
+        SMALLCONST       000600-00336F              100
                          004000-007FFF              100
-        STACK            0000A0-0005FF              560
+        STACK            00009F-0005FF              561
 
                                   Symbol Table
 
@@ -186,7 +186,7 @@ NeoSetColor@R                                                       cstackBANK0 
 NeoSetColor@i                                                       cstackBANK0  00008D
 NeoWave@NeoPixel                                                    cstackBANK0  000090
 NeoWave@couleur                                                     bssBANK0     000084
-_NeoBit                                                             text11       003392
+_NeoBit                                                             text11       003398
 _NeoBlue                                                            bssBANK0     00006C
 _NeoDraw                                                            text10       003870
 _NeoGreen                                                           bssBANK0     000078
@@ -280,7 +280,7 @@ __Hreset_vec                                                        reset_vec   
 __Hsfr                                                              sfr          000000
 __Hsmallconst                                                       smallconst   000000
 __Hspace_0                                                          (abs)        30000E
-__Hspace_1                                                          (abs)        0000A0
+__Hspace_1                                                          (abs)        00009F
 __Hspace_2                                                          (abs)        000000
 __Hstack                                                            stack        000000
 __Hstruct                                                           struct       000000
@@ -368,7 +368,7 @@ __Ltext7                                                            text7       
 __Ltext8                                                            text8        000000
 __Ltext9                                                            text9        000000
 __S0                                                                (abs)        30000E
-__S1                                                                (abs)        0000A0
+__S1                                                                (abs)        00009F
 __S2                                                                (abs)        000000
 ___awdiv                                                            text2        00364E
 ___awdiv@counter                                                    cstackBANK0  00008E
@@ -388,9 +388,9 @@ ___rparam_used                                                      (abs)       
 ___sp                                                               stack        000000
 __accesstop                                                         (abs)        000060
 __activetblptr                                                      (abs)        000003
-__cntErrataNOP_C:\Users\TGE\AppData\Local\Temp\sb8g.o               (abs)        000001
+__cntErrataNOP_C:\Users\TGE\AppData\Local\Temp\s3mo.o               (abs)        000001
 __cntErrataNOP_dist/default/production\Lab6AnneauDEL.X.production.o (abs)        0000AD
-__end_of_NeoBit                                                     text11       0033D6
+__end_of_NeoBit                                                     text11       0033DC
 __end_of_NeoDraw                                                    text10       003A0A
 __end_of_NeoInit                                                    text7        004000
 __end_of_NeoRotate                                                  text6        003570
@@ -398,20 +398,20 @@ __end_of_NeoSetColor                                                text5       
 __end_of_NeoWave                                                    text3        003BA4
 __end_of___awdiv                                                    text2        003740
 __end_of___awmod                                                    text4        00364E
-__end_of__initialization                                            cinit        003378
-__end_of_initialisation                                             text9        003392
+__end_of__initialization                                            cinit        00337E
+__end_of_initialisation                                             text9        003398
 __end_of_main                                                       text0        00342A
 __end_of_rxTrame                                                    text8        003D7C
 __end_of_traiteTrame                                                text1        003870
-__initialization                                                    cinit        00336C
+__initialization                                                    cinit        003372
 __mediumconst                                                       mediumconst  000000
 __pbssBANK0                                                         bssBANK0     000060
-__pcinit                                                            cinit        00336C
+__pcinit                                                            cinit        003372
 __pcstackBANK0                                                      cstackBANK0  00008A
-__ptext0                                                            text0        0033D8
+__ptext0                                                            text0        0033DE
 __ptext1                                                            text1        003740
 __ptext10                                                           text10       003870
-__ptext11                                                           text11       003392
+__ptext11                                                           text11       003398
 __ptext2                                                            text2        00364E
 __ptext3                                                            text3        003A0A
 __ptext4                                                            text4        003570
@@ -419,7 +419,7 @@ __ptext5                                                            text5       
 __ptext6                                                            text6        0034C0
 __ptext7                                                            text7        003D7C
 __ptext8                                                            text8        003BA4
-__ptext9                                                            text9        00337E
+__ptext9                                                            text9        003384
 __ramtop                                                            ramtop       000600
 __size_of_NeoBit                                                    (abs)        000000
 __size_of_NeoDraw                                                   (abs)        000000
@@ -434,16 +434,15 @@ __size_of_main                                                      (abs)       
 __size_of_rxTrame                                                   (abs)        000000
 __size_of_traiteTrame                                               (abs)        000000
 __smallconst                                                        smallconst   000000
-_initialisation                                                     text9        00337E
-_main                                                               text0        0033D8
+_initialisation                                                     text9        003384
+_main                                                               text0        0033DE
 _rxTrame                                                            text8        003BA4
 _traiteTrame                                                        text1        003740
-end_of_initialization                                               cinit        003378
-intlevel0                                                           text         00336A
-intlevel1                                                           text         00336A
-intlevel2                                                           text         00336A
-intlevel3                                                           text         00336A
-main@carRx                                                          cstackBANK0  00009F
+end_of_initialization                                               cinit        00337E
+intlevel0                                                           text         003370
+intlevel1                                                           text         003370
+intlevel2                                                           text         003370
+intlevel3                                                           text         003370
 main@trame                                                          cstackBANK0  000099
 rxTrame@buffer                                                      cstackBANK0  00008A
 rxTrame@c                                                           cstackBANK0  000091
@@ -452,9 +451,9 @@ rxTrame@i                                                           cstackBANK0 
 rxTrame@indexTrame                                                  bssBANK0     000088
 rxTrame@retour                                                      cstackBANK0  00008E
 stackhi                                                             (abs)        0005FF
-stacklo                                                             (abs)        0000A0
+stacklo                                                             (abs)        00009F
 start                                                               init         000002
-start_initialization                                                cinit        00336C
+start_initialization                                                cinit        003372
 traiteTrame@NeoB                                                    cstackBANK0  000098
 traiteTrame@NeoG                                                    cstackBANK0  000097
 traiteTrame@NeoR                                                    cstackBANK0  000096
@@ -470,7 +469,6 @@ FUNCTION INFORMATION:
 		None
  Auto vars:     Size  Location     Type
   trame           6   15[BANK0 ] unsigned char [6]
-  carRx           1   21[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -481,10 +479,10 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
       Params:         0       0       0       0       0       0       0
-      Locals:         0       7       0       0       0       0       0
+      Locals:         0       6       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0
-      Totals:         0       7       0       0       0       0       0
-Total ram usage:        7 bytes
+      Totals:         0       6       0       0       0       0       0
+Total ram usage:        6 bytes
  Hardware stack levels required when called:    3
  This function calls:
 		_NeoDraw
@@ -499,7 +497,7 @@ Total ram usage:        7 bytes
 
  *************** function _traiteTrame *****************
  Defined at:
-		line 105 in file "main.c"
+		line 124 in file "main.c"
  Parameters:    Size  Location     Type
   buffer          2    8[BANK0 ] PTR unsigned char 
 		 -> main@trame(6), 
@@ -723,7 +721,7 @@ Total ram usage:        1 bytes
 
  *************** function _rxTrame *****************
  Defined at:
-		line 62 in file "main.c"
+		line 74 in file "main.c"
  Parameters:    Size  Location     Type
   buffer          2    0[BANK0 ] PTR unsigned char 
 		 -> main@trame(6), 
@@ -756,7 +754,7 @@ Total ram usage:       10 bytes
 
  *************** function _initialisation *****************
  Defined at:
-		line 138 in file "main.c"
+		line 157 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -854,14 +852,14 @@ C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c estima
 
 NeoPxl.c
 		_NeoSetColor   		CODE           	342A	0000	151
-		_NeoBit        		CODE           	3392	0000	69
+		_NeoBit        		CODE           	3398	0000	69
 		_NeoDraw       		CODE           	3870	0000	411
 		_NeoInit       		CODE           	3D7C	0000	645
 
 NeoPxl.c estimated size: 1276
 
 shared
-		__initialization		CODE           	336C	0000	13
+		__initialization		CODE           	3372	0000	13
 
 shared estimated size: 13
 
@@ -877,10 +875,10 @@ C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c estimated size: 223
 
 main.c
-		_initialisation		CODE           	337E	0000	21
-		_main          		CODE           	33D8	0000	83
+		_initialisation		CODE           	3384	0000	21
+		_main          		CODE           	33DE	0000	77
 		_traiteTrame   		CODE           	3740	0000	305
 		_rxTrame       		CODE           	3BA4	0000	473
 
-main.c estimated size: 882
+main.c estimated size: 876
 
