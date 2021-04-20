@@ -1,50 +1,50 @@
-Microchip MPLAB XC8 Compiler V2.10 ()
+Microchip MPLAB XC8 Compiler V2.31
 
 Linker command line:
 
---edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt -cs \
+--edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/Mini_board_config/debug\Sem9_Frequencemetre.X.debug.sym \
   --cmf=dist/Mini_board_config/debug\Sem9_Frequencemetre.X.debug.cmf -z \
-  -Q18F45K20 -oC:\Users\TGE\AppData\Local\Temp\si48.2 \
+  -Q18F45K20 -oC:\Users\TGE\AppData\Local\Temp\sh9o.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/Mini_board_config/debug/Sem9_Frequencemetre.X.debug.map -E1 \
-  -ver=XC8 --acfsm=1493 -ASTACK=083h-05EEh -pstack=STACK -ACODE=00h-07D3Fh \
-  -ACONST=00h-07D3Fh -ASMALLCONST=0600h-06FFhx119,07D00h-07D3Fh \
-  -AMEDIUMCONST=0600h-07D3Fh -ACOMRAM=01h-05Fh -AABS1=00h-05EEh \
-  -ABIGRAM=01h-05EEh -ARAM=060h-0FFh,0100h-01FFhx4,0500h-05EEh \
-  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
-  -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05EEh \
+  -ver=XC8 Compiler --acfsm=1493 -ASTACK=083h-05EEh -pstack=STACK \
+  -ACODE=00h-07D3Fh -ACONST=00h-07D3Fh \
+  -ASMALLCONST=0600h-06FFhx119,07D00h-07D3Fh -AMEDIUMCONST=0600h-07D3Fh \
+  -ACOMRAM=01h-05Fh -AABS1=00h-05EEh -ABIGRAM=01h-05EEh \
+  -ARAM=060h-0FFh,0100h-01FFhx4,0500h-05EEh -ABANK0=060h-0FFh \
+  -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh \
+  -ABANK4=0400h-04FFh -ABANK5=0500h-05EEh \
   -ASFR=0F60h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFBh \
+  -ACONFIG=0300000h-030000Dh -AIDLOC=0200000h-0200007h \
+  -AEEDATA=0F00000h-0F000FFh -peeprom_data=EEDATA \
   -preset_vec=00h,intcode=08h,intcodelo=018h,powerup,init -pramtop=0600h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
-  -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
-  -AIDLOC=0200000h-0200007h -pidloc=IDLOC -AEEDATA=0F00000h-0F000FFh \
-  -peeprom_data=EEDATA \
+  -AFARRAM=00h-00h \
   -prdata=COMRAM,nvrram=COMRAM,nvbit=COMRAM,rbss=COMRAM,rbit=COMRAM \
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\TGE\AppData\Local\Temp\si48.o \
+  C:\Users\TGE\AppData\Local\Temp\sh9o.o \
   dist/Mini_board_config/debug\Sem9_Frequencemetre.X.debug.o 
 
 Object code version is 3.11
 
 Machine type is 18F45K20
 
-Call graph: (short form)
-
-
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\TGE\AppData\Local\Temp\si48.o
+C:\Users\TGE\AppData\Local\Temp\sh9o.o
+                idloc                            200000   200000        8        0       5
+                config                           300000   300000        E        0       4
                 init                                 26       26        4        C       0
                 reset_vec                             0        0        4        0       0
-                idloc                            200000   200000        8   200000       0
-                config                           300000   300000        E   300000       0
 dist/Mini_board_config/debug\Sem9_Frequencemetre.X.debug.o
                 intcodelo                            18       18        E        C       0
                 intcode                               8        8        6        4       0
+                idloc                            200000   200000        8        0       5
+                config                           300000   300000        E        0       4
                 temp                                  1        1        1        1       1
                 text4                               13A      13A       A6        C       0
                 intcode_body                         2A       2A      110        C       0
@@ -99,15 +99,15 @@ TOTAL           Name                               Link     Load   Length     Sp
 
         CLASS   SFR            
 
-        CLASS   FARRAM         
-
         CLASS   CONFIG         
-                config                           300000   300000        E         0
+                config                           300000   300000        E         4
 
         CLASS   IDLOC          
-                idloc                            200000   200000        8         0
+                idloc                            200000   200000        8         5
 
         CLASS   EEDATA         
+
+        CLASS   FARRAM         
 
 
 
@@ -118,8 +118,6 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 intcode                        000008  000006  00000E         4       0  CODE    
                 intcodelo                      000018  000260  000278         C       0  CODE    
                 cstackBANK0                    000060  000023  000083        60       1  BANK0   
-                idloc                          200000  000008  200008    200000       0  IDLOC   
-                config                         300000  00000E  30000E    300000       0  CONFIG  
 
 
 UNUSED ADDRESS RANGES
@@ -176,40 +174,6 @@ _TMR1                       (abs)        000FCE
 _TRISAbits                  (abs)        000F92
 _TRISBbits                  (abs)        000F93
 _TRISD                      (abs)        000F95
-__CFG_BOREN$SBORDIS         (abs)        000000
-__CFG_BORV$18               (abs)        000000
-__CFG_CCP2MX$PORTC          (abs)        000000
-__CFG_CP0$OFF               (abs)        000000
-__CFG_CP1$OFF               (abs)        000000
-__CFG_CP2$OFF               (abs)        000000
-__CFG_CP3$OFF               (abs)        000000
-__CFG_CPB$OFF               (abs)        000000
-__CFG_CPD$OFF               (abs)        000000
-__CFG_EBTR0$OFF             (abs)        000000
-__CFG_EBTR1$OFF             (abs)        000000
-__CFG_EBTR2$OFF             (abs)        000000
-__CFG_EBTR3$OFF             (abs)        000000
-__CFG_EBTRB$OFF             (abs)        000000
-__CFG_FCMEN$OFF             (abs)        000000
-__CFG_FOSC$INTIO67          (abs)        000000
-__CFG_HFOFST$ON             (abs)        000000
-__CFG_IESO$OFF              (abs)        000000
-__CFG_LPT1OSC$OFF           (abs)        000000
-__CFG_LVP$OFF               (abs)        000000
-__CFG_MCLRE$ON              (abs)        000000
-__CFG_PBADEN$ON             (abs)        000000
-__CFG_PWRT$OFF              (abs)        000000
-__CFG_STVREN$ON             (abs)        000000
-__CFG_WDTEN$OFF             (abs)        000000
-__CFG_WDTPS$32768           (abs)        000000
-__CFG_WRT0$OFF              (abs)        000000
-__CFG_WRT1$OFF              (abs)        000000
-__CFG_WRT2$OFF              (abs)        000000
-__CFG_WRT3$OFF              (abs)        000000
-__CFG_WRTB$OFF              (abs)        000000
-__CFG_WRTC$OFF              (abs)        000000
-__CFG_WRTD$OFF              (abs)        000000
-__CFG_XINST$OFF             (abs)        000000
 __HRAM                      (abs)        000000
 __Habs1                     abs1         000000
 __Hbank0                    bank0        000000
@@ -260,9 +224,10 @@ __Hrdata                    rdata        000000
 __Hreset_vec                reset_vec    000004
 __Hsfr                      sfr          000000
 __Hsmallconst               smallconst   000000
-__Hspace_0                  (abs)        30000E
+__Hspace_0                  (abs)        000600
 __Hspace_1                  (abs)        000083
 __Hspace_2                  (abs)        000000
+__Hspace_4                  (abs)        60000E
 __Hstack                    stack        000000
 __Hstruct                   struct       000000
 __Htemp                     temp         000002
@@ -286,7 +251,7 @@ __LbssBANK0                 bssBANK0     000000
 __Lcinit                    cinit        000000
 __Lclrtext                  clrtext      000000
 __Lcomram                   comram       000000
-__Lconfig                   config       300000
+__Lconfig                   config       000000
 __Lconst                    const        000000
 __LcstackBANK0              cstackBANK0  000000
 __Ldata                     data         000000
@@ -295,7 +260,7 @@ __Lfarbss                   farbss       000000
 __Lfardata                  fardata      000000
 __Libigdata                 ibigdata     000000
 __Lidata                    idata        000000
-__Lidloc                    idloc        200000
+__Lidloc                    idloc        000000
 __Lifardata                 ifardata     000000
 __Linit                     init         000026
 __Lintcode                  intcode      000008
@@ -323,6 +288,7 @@ __Lsmallconst               smallconst   000000
 __Lspace_0                  (abs)        000000
 __Lspace_1                  (abs)        000000
 __Lspace_2                  (abs)        000000
+__Lspace_4                  (abs)        000000
 __Lstack                    stack        000000
 __Lstruct                   struct       000000
 __Ltemp                     temp         000001
@@ -330,9 +296,11 @@ __Ltext                     text         000000
 __Ltext0                    text0        000000
 __Ltext1                    text1        000000
 __Ltext4                    text4        000000
-__S0                        (abs)        30000E
+__S0                        (abs)        000278
 __S1                        (abs)        000083
 __S2                        (abs)        000000
+__S4                        (abs)        000000
+__S5                        (abs)        000000
 ___inthi_sp                 stack        000000
 ___intlo_sp                 stack        000000
 ___lldiv                    text4        00013A
@@ -523,7 +491,7 @@ Total ram usage:        5 bytes
 
  *************** function ___lldiv *****************
  Defined at:
-		line 7 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c"
+		line 7 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c"
  Parameters:    Size  Location     Type
   dividend        4    0[BANK0 ] unsigned long 
   divisor         4    4[BANK0 ] unsigned long 
@@ -556,25 +524,25 @@ Total ram usage:       13 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+		___lldiv       		CODE           	013A	0000	166
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c estimated size: 166
+
 interrupts.c
-		_high_isr      		CODE           	0008	0000	279
-		_low_isr       		CODE           	0018	0000	15
+		_high_isr      		CODE           	0008	0000	278
+		_low_isr       		CODE           	0018	0000	14
 
-interrupts.c estimated size: 294
-
-C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-		___lldiv       		CODE           	013A	0000	167
-
-C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c estimated size: 167
+interrupts.c estimated size: 292
 
 shared
-		__initialization		CODE           	0262	0000	13
+		__initialization		CODE           	0262	0000	12
 
-shared estimated size: 13
+shared estimated size: 12
 
 main.c
-		_initialisation		CODE           	01E0	0000	105
-		_main          		CODE           	0248	0000	27
+		_initialisation		CODE           	01E0	0000	104
+		_main          		CODE           	0248	0000	26
 
-main.c estimated size: 132
+main.c estimated size: 130
 

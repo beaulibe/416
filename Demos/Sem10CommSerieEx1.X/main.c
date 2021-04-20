@@ -65,6 +65,8 @@ void initialisation(void)
      
     //Permettre la transmission via le bit TXEN du registre TXSTA.  
     TXSTAbits.TXEN = 1;
+    TXSTAbits.TX9 = 0; //8 bits par carac.
+
      
     //Activer le port de communication asynchrone via le bit SPEN (=1) du registre RCSTA et le bit  SYNC (=0) du registre TXSTA.
     RCSTAbits.SPEN = 1; // 1 = Serial port enabled (configures RX/DT and TX/CK pins as serial port pins) 
@@ -72,6 +74,8 @@ void initialisation(void)
     
     //Permettre la réception via le bit CREN du registre RCSTA.
     RCSTAbits.CREN = 1;
+    RCSTAbits.RX9 = 0; //8 bits par carac.
+
 
     //Au besoin, permettre les interruptions lors de la réception d?une donnée par le bit RCIE du registre PIE1.	
     //PIE1bits.RC1IE = 1; //permet interruption en réception

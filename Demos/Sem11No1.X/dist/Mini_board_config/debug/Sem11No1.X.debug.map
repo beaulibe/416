@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt -cs \
   -h+dist/Mini_board_config/debug\Sem11No1.X.debug.sym \
   --cmf=dist/Mini_board_config/debug\Sem11No1.X.debug.cmf -z -Q18F45K20 \
-  -oC:\Users\TGE\AppData\Local\Temp\sjrk.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\TGE\AppData\Local\Temp\scu0.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/Mini_board_config/debug/Sem11No1.X.debug.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=062h-05F3h -pstack=STACK -ACODE=00h-07DBFh \
   -ACONST=00h-07DBFh -ASMALLCONST=0600h-06FFhx119,07D00h-07DBFh \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\TGE\AppData\Local\Temp\sjrk.o \
+  C:\Users\TGE\AppData\Local\Temp\scu0.o \
   dist/Mini_board_config/debug\Sem11No1.X.debug.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\TGE\AppData\Local\Temp\sjrk.o
+C:\Users\TGE\AppData\Local\Temp\scu0.o
                 init                                 60       60        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0

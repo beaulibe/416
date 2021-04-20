@@ -74,7 +74,7 @@ void initialisation(void)
 
     //#6 init du timer 2
     PIR1bits.TMR2IF = 0;
-    T2CONbits.T2CKPS = 0; //Prescaler 1:16
+    T2CONbits.T2CKPS = 0; //Prescaler 1
     T2CONbits.TMR2ON = 1; //Timer2 ON
     
     //#7

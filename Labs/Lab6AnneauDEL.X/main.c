@@ -1,7 +1,7 @@
 /*
  * Fichier:   main.c
  * Auteur: Benoit
- * Crée le 18 février 2020
+ * Crée le 18 février 2020, modif le 16 avril 2021
  * Brief: Lab6 du cours 416.
  * Matériel: PIC18F458, osciallateur de 40MHz (important pour les timings critiques des DEL NeoPixel, 
  * Anneau de DEL neoPixel WS2812 
@@ -42,8 +42,8 @@ void main(void)
     
     initialisation();
     
-    NeoInit();   
-    NeoDraw ();    
+    NeoSet6Couleur();   //rempli les tableaux g_NeoGreen[], g_NeoBlue[] et g_NeoRed[] avec 2 DEL de chaque couleur. Il y aura donc 6 couleurs au total]
+    NeoDraw (); //envoie les valeurs de tableaux aux DEL pour afficher   
     while(true)
         
     {       
@@ -77,7 +77,7 @@ bool rxTrame(unsigned char* buffer)
     unsigned char c; 
     static int indexTrame = 0;
     unsigned int chkSum = 0;
-    RCSTAbits.CREN = 1; //1 = Enables continuous receive
+   // RCSTAbits.CREN = 1; //1 = Enables continuous receive
     if (PIR1bits.RC1IF == 1) //un caractère de reçu
     {
         c = RCREG;
@@ -108,7 +108,7 @@ bool rxTrame(unsigned char* buffer)
             indexTrame=0; //erreur on recommence
         }
         
-        RCSTAbits.CREN = 0;
+        //RCSTAbits.CREN = 0;
     }
     
     return retour;
@@ -137,7 +137,7 @@ void traiteTrame(unsigned char* buffer)
         break;
         
         case 'A':
-            NeoInit();
+            NeoSet6Couleur();
         break;
             
         case 'B':
@@ -171,6 +171,8 @@ void initialisation(void)
     //bit SYNC and setting bit SPEN.
     RCSTAbits.SPEN = 1; // 1 = Serial port enabled (configures RX/DT and TX/CK pins as serial port pins) 
     TXSTAbits.SYNC = 0; //0 = Asynchronous mode 
+    RCSTAbits.CREN = 1; //1 = Enables continuous receive
+    
     
 }
 

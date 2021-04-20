@@ -37,6 +37,7 @@ void __interrupt(high_priority) high_isr(void)
         T3CONbits.TMR3ON = 1; //Le timer 3 est redémaré
         
         INTCONbits.TMR0IF = 0; //On remet à zéro le flag d'interruption du timer 0
+        TMR0 = 0xF77F;
         TMR0H = 0b00010101;
         TMR0L = 0b10100000; //La valeur du timer 0 est rechargée pour qu'il puisse recommencer à s'écouler à partir de cette valeur
     }

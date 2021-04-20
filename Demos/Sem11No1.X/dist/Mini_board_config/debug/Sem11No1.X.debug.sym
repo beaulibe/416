@@ -223,7 +223,7 @@ bssBANK0 60 61 BANK0 60 1
 %locals
 dist/Mini_board_config/debug\Sem11No1.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k20.h
-C:\Users\TGE\AppData\Local\Temp\sjrk.s
+C:\Users\TGE\AppData\Local\Temp\scu0.s
 1097 A0 0 CODE 0
 1099 A0 0 CODE 0
 1102 A0 0 CODE 0
@@ -263,7 +263,7 @@ main.c
 65 9A 0 CODE 0
 66 9C 0 CODE 0
 71 9E 0 CODE 0
-C:\Users\TGE\AppData\Local\Temp\sjrk.s
+C:\Users\TGE\AppData\Local\Temp\scu0.s
 1546 8 0 CODE 0
 interrupts.c
 16 8 0 CODE 0

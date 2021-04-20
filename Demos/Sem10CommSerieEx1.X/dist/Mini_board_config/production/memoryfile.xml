@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/Mini_board_config/production\Sem10CommSerie.X.production.hex">
+  <executable name="dist/Mini_board_config/production\Sem10CommSerieEx1.X.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>32768</length>
-      <used>222</used>
-      <free>32546</free>
+      <used>226</used>
+      <free>32542</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
