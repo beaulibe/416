@@ -4819,18 +4819,14 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 2 3
 # 9 "main.c" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
-# 10 "main.c" 2
 
 
 void initialisation(void);
 
 
-
-
 void main(void)
 {
-    char msg[] = "No 1";
+    char msg[] = "No 1: ";
     int i = 0;
 
     initialisation();
@@ -4841,11 +4837,11 @@ void main(void)
         TXREG = msg[i++];
     }
 
-    PORTD = 'A';
+
 
     while(1)
     {
-# 45 "main.c"
+# 43 "main.c"
     }
 }
 
@@ -4864,8 +4860,13 @@ void initialisation(void)
     INTCONbits.INT0IF = 0;
     INTCONbits.INT0IE = 1;
     INTCON2bits.INTEDG0 = 0;
-# 83 "main.c"
-    SPBRG = 25;
+
+
+
+
+
+
+    SPBRG = 12;
     TXSTAbits.BRGH = 1;
     BAUDCONbits.BRG16 = 1;
 

@@ -19,9 +19,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4233
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h: 4233: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
 [v _RCREG `VAuc ~T0 @X0 0 e@4014 ]
-"1184
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h: 1184: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
-[v _PORTD `VAuc ~T0 @X0 0 e@3971 ]
+"4221
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h: 4221: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
+[v _TXREG `VAuc ~T0 @X0 0 e@4013 ]
 "7023
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h: 7023:     struct {
 [s S295 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -41,9 +41,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7049
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h: 7049: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VAS294 ~T0 @X0 0 e@4082 ]
-"4221
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h: 4221: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
-[v _TXREG `VAuc ~T0 @X0 0 e@4013 ]
+"1184
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h: 1184: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
+[v _PORTD `VAuc ~T0 @X0 0 e@3971 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f45k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -484,66 +484,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_high_isr `(v ~T0 @X0 0 e ]
 [v F2672 `(v ~T0 @X0 1 tf ]
-"21 interrupts.c
-[; ;interrupts.c: 21: void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
+"12 interrupts.c
+[; ;interrupts.c: 12: void __attribute__((picinterrupt(("high_priority")))) high_isr(void)
 [v _high_isr `AF2672 ~T40 @X0 1 e ]
-"22
-[; ;interrupts.c: 22: {
+"13
+[; ;interrupts.c: 13: {
 {
 [e :U _high_isr ]
 [f ]
-"23
-[; ;interrupts.c: 23:     static unsigned char g_caracRx = 'A';
+"14
+[; ;interrupts.c: 14:     static unsigned char g_caracRx = 'A';
 [v F2673 `Auc ~T0 @X0 1 s g_caracRx ]
 [i F2673
 -> -> 65 `ui `uc
 ]
-"26
-[; ;interrupts.c: 26:     if (PIR1bits.RC1IF)
+"17
+[; ;interrupts.c: 17:     if (PIR1bits.RC1IF)
 [e $ ! != -> . . _PIR1bits 1 2 `i -> 0 `i 302  ]
-"27
-[; ;interrupts.c: 27:     {
+"18
+[; ;interrupts.c: 18:     {
 {
-"28
-[; ;interrupts.c: 28:         g_caracRx = RCREG;
+"19
+[; ;interrupts.c: 19:         g_caracRx = RCREG;
 [e = F2673 _RCREG ]
-"29
-[; ;interrupts.c: 29:         PORTD = g_caracRx;
-[e = _PORTD F2673 ]
-"30
-[; ;interrupts.c: 30:         PIR1bits.RC1IF = 1;
+"21
+[; ;interrupts.c: 21:         while(PIR1bits.TXIF==0);
+[e $U 303  ]
+[e :U 304 ]
+[e :U 303 ]
+[e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 304  ]
+[e :U 305 ]
+"22
+[; ;interrupts.c: 22:         TXREG = ' ';
+[e = _TXREG -> -> 32 `ui `uc ]
+"25
+[; ;interrupts.c: 25:         PIR1bits.RC1IF = 1;
 [e = . . _PIR1bits 1 2 -> -> 1 `i `uc ]
-"31
-[; ;interrupts.c: 31:     }
+"26
+[; ;interrupts.c: 26:     }
 }
 [e :U 302 ]
-"34
-[; ;interrupts.c: 34:     if ( INTCONbits.INT0IF)
-[e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 303  ]
-"35
-[; ;interrupts.c: 35:     {
+"29
+[; ;interrupts.c: 29:     if ( INTCONbits.INT0IF)
+[e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 306  ]
+"30
+[; ;interrupts.c: 30:     {
 {
-"36
-[; ;interrupts.c: 36:         while(PIR1bits.TXIF==0);
-[e $U 304  ]
-[e :U 305 ]
-[e :U 304 ]
-[e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 305  ]
-[e :U 306 ]
-"37
-[; ;interrupts.c: 37:         PORTD = g_caracRx;
+"31
+[; ;interrupts.c: 31:         while(PIR1bits.TXIF==0);
+[e $U 307  ]
+[e :U 308 ]
+[e :U 307 ]
+[e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 308  ]
+[e :U 309 ]
+"32
+[; ;interrupts.c: 32:         PORTD = g_caracRx;
 [e = _PORTD F2673 ]
-"38
-[; ;interrupts.c: 38:         TXREG = g_caracRx++;
+"33
+[; ;interrupts.c: 33:         TXREG = g_caracRx++;
 [e = _TXREG ++ F2673 -> -> 1 `i `Auc ]
-"39
-[; ;interrupts.c: 39:         INTCONbits.INT0IF = 0;
+"34
+[; ;interrupts.c: 34:         INTCONbits.INT0IF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"40
-[; ;interrupts.c: 40:     }
+"35
+[; ;interrupts.c: 35:     }
 }
-[e :U 303 ]
-"41
-[; ;interrupts.c: 41: }
+[e :U 306 ]
+"36
+[; ;interrupts.c: 36: }
 [e :UE 301 ]
 }

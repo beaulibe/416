@@ -6,17 +6,8 @@
  * 
  */
 
-
 #include "xc.h"
 
-
-
-
-/******************************************************************************/
-/* Interrupt Routines                                                         */
-/******************************************************************************/
-
-/* High-priority service */
 
 void __interrupt(high_priority) high_isr(void)
 {
@@ -26,7 +17,11 @@ void __interrupt(high_priority) high_isr(void)
     if (PIR1bits.RC1IF)
     {
         g_caracRx = RCREG;
-        PORTD = g_caracRx;
+        //PORTD = g_caracRx;
+        while(PIR1bits.TXIF==0); //on attend que le registe de transmission soit prêt 
+        TXREG = ' ';
+
+        
         PIR1bits.RC1IF = 1;
     }
     

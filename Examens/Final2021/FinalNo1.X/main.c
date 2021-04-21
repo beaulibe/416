@@ -1,22 +1,19 @@
  /**
- * @file   main.c, projet Final 2021
+ * @file   main.c, projet FinalNo1
  * @author Benoit Beaulieu
  * @date   avril 2021
- * @brief  
- */
+ * @brief  No 1 de l'examen final du cours 247-416
+  */
 
 #include "xc.h"
-#include "stdbool.h"
 
 #define _XTAL_FREQ 1000000
 void initialisation(void);
 
-//unsigned char g_caracRx = 'a';
-
 
 void main(void)
 {
-    char msg[] = "No 1";
+    char msg[] = "No 1: ";
     int i = 0;
     
     initialisation();
@@ -27,11 +24,12 @@ void main(void)
         TXREG = msg[i++];
     }
 
-    PORTD = 'A';
+
     
     while(1) // Boucle principale du programme
     {
-/* //par pooling
+
+        /* //par pooling
         if (PORTBbits.RB0 == 0)
         {
             while (PORTBbits.RB0 == 0);
@@ -62,25 +60,11 @@ void initialisation(void)
     INTCON2bits.INTEDG0 = 0; //Choisir le front de l'interruption INT0
     
     
-    //Configuration du port analogique
-/*    TRISAbits.TRISA0 = 1; //A0 en entrée
-    ANSELbits.ANS0 = 1;  //A0 en mode analogique
-    
-    ADCON0bits.ADON = 1; //Convertisseur AN à on
-    ADCON1bits.VCFG1 = 0; //Tension de référence V- reliée à VSS
-    ADCON1bits.VCFG0 = 0; //Tension de référence V+ reliée à VDD
-    ADCON2bits.ADFM = 0; //Alignement à gauche des 10bits de la conversion (8 MSB dans ADRESH, 2 LSB dans ADRESL)
-    ADCON2bits.ACQT = 7; //20 TAD (on laisse le max de temps au Chold du convertisseur AN pour se charger)
-    ADCON2bits.ADCS = 6; //Fosc/64 (Fréquence pour la conversion la plus longue possible)
-   */ //Config AN par interruption
- //   PIR1bits.ADIF = false; //on reset le flag
- //   PIE1bits.ADIE = 1; //permet interruptions de l'AD
-    
     
  
     
     //La vitesse de communication se configure via les registres SPBRG, TXSTA (bit BRGH) et BAUDCON (bit BRG16). Voir tableau 18-5 p248.
-    SPBRG = 25; //9600bps Voir tableau p187. Osc = 1MHz
+    SPBRG = 12; //9600bps Voir tableau p187. Osc = 1MHz
     TXSTAbits.BRGH = 1; //Low speed. 0 = valeur par défaut
     BAUDCONbits.BRG16 = 1;
     
